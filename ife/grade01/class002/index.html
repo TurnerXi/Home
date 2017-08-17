@@ -9,7 +9,8 @@
 		address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
 		h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;font-family: Microsoft YaHei;}
 		table{border-collapse:collapse;border-spacing:0;}
-		ol,ul,li{list-style:none outside none;}
+		th,td{border-right: 1px solid #DCDCDC;border-bottom:  1px solid #DCDCDC; }
+		ul{list-style:none outside none;}
 		fieldset,img{border:0 none;}
 		caption,th{text-align:left;}
 		body{background:#000;}
@@ -18,9 +19,20 @@
 		/*global*/
 		.lf {float: left;}
 		.lr {float: right;}
-		
+		.mtb10 {margin: 10px 0;}
+		.pt10 {padding-top: 10px;}
+		.plr10 {padding: 0 10px;}
+		.plr40 {padding: 0 40px;}
+		.pd20 {padding: 20px};
+		.pb20 {padding-bottom: 20px};
+		.lh15 {line-height: 1.5}
+		.center {align-self: center;}
 		/*end global*/
 		.main {background: #000;}
+		.account-table {width: 100%;border: 1px solid #000;font-size: 0.8em}
+		.account-table th{background-color: #000;font-weight: bold;color:#FFF;}
+		.account-table>tfoot{background-color: #DCDCDC;font-weight: bold; }
+
 		/*head*/
 		.header {width:100%;height:80px;line-height: 80px;background: #000002;}
 		.logo {margin: 10px 20px;}
@@ -33,14 +45,19 @@
 		.content{clear:both;background: #DCDCDC;padding: 20px;}
 		.wrapper{margin:20px 20px;padding: 10px 20px;}
 		.panel{background: #fff;border: 1px solid #C6C6C6;box-shadow: 10px 10px 8px #A3A3A3;}
+
 		.title {font: bold 24px/48px MicroSoft YaHei;}
 		.subtitle {font: bold 20px/34px MicroSoft YaHei;color: #A3A3A3;}
 		.summary {font: 14px/34px MicroSoft YaHei;}
 		.article_content{padding:10px 0 ;}
 		.article_content p{line-height: 24px;text-indent: 2em;}
-
 		.footer{text-align: center;}
+		
+		.album-list {padding : 20px 40px;}
+		.album-item {width: 150px;padding: 10px 10px;margin: 20px 0;border: 2px solid #DCDCDC;text-align: center;}
+		.album-item img{width: 100%;margin-top: 10px;}
 
+		.rank-list {line-height: 1.5;font-weight: 600;padding: 0 40px 20px;}
 	</style>
 </head>
 <body>
@@ -65,54 +82,76 @@
 					<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br/>
 					这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br/>
 					这是一个很长很长的段落，这是一个很长很长的段落，<a href="javascript;">这里有一个链接链接到http://ife.baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，<b>这里有个粗体字</b>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
-					<img src="IMG_001.JPG"/>
-					<ul>
-						<li>列表项目一</li>
-						<li>列表项目二</li>
-						<li>列表项目三</li>
+					<img class="mtb10" src="IMG_001.JPG"/>
+					<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br/>
+					这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br/>
+					这是一个很长很长的段落，这是一个很长很长的段落，<a href="javascript;">这里有一个链接链接到http://ife.baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，<b>这里有个粗体字</b>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+				</div>
+			</div>
+			<div class="wrapper panel">
+				<div>
+					<h2 class="title">另一篇文章一级标题</h2>
+					<h3 class="subtitle">文章二级标题</h3>
+					<div class="summary"><span>文章作者</span>&nbsp;<span>文章发表时间</span></div>
+				</div>
+				<div class="article_content">
+					<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br/>
+					这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br/>
+					这是一个很长很长的段落，这是一个很长很长的段落，<a href="javascript;">这里有一个链接链接到http://ife.baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，<b>这里有个粗体字</b>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+					<img class="mtb10" src="IMG_001.JPG"/>
+					<ul class="plr10">
+						<li class="lh15">列表项目一</li>
+						<li class="lh15">列表项目二</li>
+						<li class="lh15">列表项目三</li>
 					</ul>
 				</div>
 			</div>
 			<div class="wrapper panel">
-					<h3>图片</h3>
-					<ul style="list-style: none;">
-						<li><p>好看的图片</p><img src="IMG_001.JPG"/></li>
-						<li><p>好看的图片</p><img src="IMG_001.JPG"/></li>
-						<li><p>好看的图片</p><img src="IMG_001.JPG"/></li>
-						<li><p>好看的图片</p><img src="IMG_001.JPG"/></li>
-						<li><p>好看的图片</p><img src="IMG_001.JPG"/></li>
-						<li><p>好看的图片</p><img src="IMG_001.JPG"/></li>	
+					<h2 class="title">图片</h2>
+					<ul class="album-list">
+						<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+						<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+						<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+						<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+						<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+						<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>	
 					</ul>
 			</div>
 			<div class="wrapper panel">
-					<h2>最后一片文章一级标题</h2>
-					<h3>文章二级标题</h3>
-					<span>文章作者</span>&nbsp;<span>文章发表时间</span>
-					<ol>
+					<h2 class="title">最后一片文章一级标题</h2>
+					<h3 class="subtitle">文章二级标题</h3>
+					<div class="summary"><span>文章作者</span>&nbsp;<span>文章发表时间</span></div>
+					<ol class="rank-list">
 						<li>排名1</li>
 						<li>排名2</li>
 						<li>排名3</li>
 					</ol>
 					下面是一个表格，给表格加了一个border="1"好让你看出是一个表格
-					<table border="1">
-						<tr>
-							<th>表头</th><th>表头</th><th>表头</th>
-						</tr>
-						<tr>
-							<td>表内容单元格</td><td>表内容单元格</td><td><a href="">操作</a></td>
-						</tr>	
-						<tr>
-							<td>表内容单元格</td><td>表内容单元格</td><td><a href="">操作</a></td>
-						</tr>	
-						<tr>
-							<td>表内容单元格</td><td>表内容单元格</td><td><a href="">操作</a></td>
-						</tr>	
-						<tr>
-							<td>表内容单元格</td><td>表内容单元格</td><td><a href="">操作</a></td>
-						</tr>	
-						<tr>
-							<td>總計</td><td colspan="2">1000</td>
-						</tr>
+					<table class="account-table">
+						<thead>
+							<tr>
+								<th>表头</th><th>表头</th><th>表头</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>表内容单元格</td><td>表内容单元格</td><td><a href="">操作</a></td>
+							</tr>	
+							<tr>
+								<td>表内容单元格</td><td>表内容单元格</td><td><a href="">操作</a></td>
+							</tr>	
+							<tr>
+								<td>表内容单元格</td><td>表内容单元格</td><td><a href="">操作</a></td>
+							</tr>	
+							<tr>
+								<td>表内容单元格</td><td>表内容单元格</td><td><a href="">操作</a></td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td>總計</td><td colspan="2">1000</td>
+							</tr>	
+						</tfoot>	
 					</table>
 			</div>
 			<div class="wrapper panel sidebar">
