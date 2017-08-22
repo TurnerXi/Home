@@ -7,17 +7,19 @@
 		/*reset*/
 		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
 		address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
-		h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;font-family: Microsoft YaHei;}
+		h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
 		table{border-collapse:collapse;border-spacing:0;}
 		ul{list-style:none outside none;}
 		fieldset,img{border:0 none;}
 		caption,th{text-align:left;}
 		body{background:#000;}
 		strong{font-weight:800;}
+		textarea{width: 100%;height: 100px}
 		/*end reset*/
 		/*global*/
 		.lf {float: left;}
 		.lr {float: right;}
+		.alr {text-align: right;}
 		.mtb10 {margin: 10px 0;}
 		.pt10 {padding-top: 10px;}
 		.plr10 {padding: 0 10px;}
@@ -26,14 +28,28 @@
 		.pb20 {padding-bottom: 20px};
 		.lh15 {line-height: 1.5}
 		.center {align-self: center;}
+		.bg-blue {background-color: #3355D0; }
+		.white {color: #FFF;}
+		/**
+		 * compent global
+		 */
+		.text-input {width: 140px;line-height: 1.2rem;}
+		.input-hint {color: #CDCDCD;font-size: 14px;line-height: 1.2rem;padding: 5px 0;}
+		.full-button {width: 100%;height: 40px;font-size:16px;font-weight:bold;border:none;border-radius: 0.2rem;}
 		/*end global*/
+		
+		
+
+
 		.main {background: #000;}
 		.account-table {width: 100%;border: 1px solid #000;font-size: 0.8em;border:1px solid #DCDCDC;}
 		.account-table th{background-color: #000;font-weight: bold;color:#FFF;}
 		.account-table th,td{height:20px;padding: 5px;border-right: 1px solid #DCDCDC;border-bottom:  1px solid #DCDCDC;}
 		.account-table>tfoot{background-color: #DCDCDC;font-weight: bold; }
-		.side-column-title{margin:20px inherit;padding:5px 20px 5px;border-left:2px solid #DCDCDC;font: bold 18px MicroSoft YaHei;}
-		.side-column-form{}
+		.side-column-title{margin:20px inherit;padding:5px 20px 5px;border-left:2px solid #DCDCDC;font-size: 18px;font-weight: bold;}
+		.side-column-form{width: 100%;border: 0px;}
+		.side-column-form td{border: 0px;}
+		.side-column-form-label {text-align: right;font-size: 13px;line-height: 1.5rem;vertical-align: top;}
 		/*head*/
 		.header {width:100%;height:80px;line-height: 80px;background: #000002;}
 		.logo {margin: 10px 20px;}
@@ -47,15 +63,15 @@
 		.wrapper{margin:20px 20px;padding: 10px 20px;}
 		.panel{background: #fff;border: 1px solid #C6C6C6;box-shadow: 10px 10px 8px #A3A3A3;}
 
-		.title {font: bold 24px/48px MicroSoft YaHei;}
-		.subtitle {font: bold 20px/34px MicroSoft YaHei;color: #A3A3A3;}
-		.summary {font: 14px/34px MicroSoft YaHei;}
+		.title {font-size:24px;line-height: 48px;font-weight: bold;}
+		.subtitle {font-size:20px;line-height: 34px;font-weight: bold;color: #A3A3A3;}
+		.summary {font-size:14px;line-height: 34px;}
 		.article_content{padding:10px 0 ;}
 		.article_content p{line-height: 24px;text-indent: 2em;}
-		.footer{text-align: center;}
+		.footer{text-align: center;color: #FFF;height:80px;padding-top: 40px;font-size: 14px;}
 		
 		.album-list {padding : 20px 40px;}
-		.album-item {width: 150px;padding: 10px 10px;margin: 20px 0;border: 2px solid #DCDCDC;text-align: center;}
+		.album-item {width: 150px;padding: 10px 10px;margin: 20px 0;border: 2px solid #DCDCDC;text-align: center;vertical-align: center;}
 		.album-item img{width: 100%;margin-top: 10px;}
 
 		.rank-list {line-height: 1.5;font-weight: 600;padding: 0 40px 20px;}
@@ -159,47 +175,60 @@
 				<div>
 					<h2 class="side-column-title">这里以后是一个侧栏，这是侧栏的标题</h2>
 				</div>
-				<div class="side-column-form">
-					<form>
-						<table>
-						<div>
-							<span>请输入邮箱地址：</span><input type="text" name="email" placeholder="这是一个文本输入框"/>
-						</div>
-						<div>
-							<p>邮箱地址请按要求格式输入</p>
-						</div>
-						<div>
-							<span>请输入密码：</span><input type="text" name="pwd" placeholder="这是一个文本输入框" /><span>请重复输入密码：</span><input type="text" name="rpwd" placeholder="这是一个文本输入框">
-							<p>密码请为6-16位英文数字</p>					
-						</div>
-						<div>
-							<span>性别：</span>
-							<input type="radio" name="sex" id="sex01">
+				<form>
+					<table class="side-column-form">
+						<tr>
+							<td class="side-column-form-label">请输入邮箱地址</td>
+							<td><input type="text" name="email" class="text-input" placeholder="这是一个文本输入框"/>
+							<p class="input-hint">邮箱地址请按要求格式输入</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="side-column-form-label">请输入密码</td>
+							<td><input type="password" class="text-input" name="pwd" value="这是一个文本输入框" />
+							</td>
+						</tr>
+						<tr>
+							<td class="side-column-form-label">请重复输入密码</td>
+							<td><input type="password" class="text-input" name="rpwd" value="这是一个文本输入框">
+							<p class="input-hint">密码请为6-16位英文数字</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="side-column-form-label">性别</td>
+							<td><input type="radio" name="sex" id="sex01">
 							<label for="sex01">男</label>
 							<input type="radio" name="sex" id="sex02">
-							<label for="sex02">女</label>
-							<span>城市：</span>
-							<select name="city">
-								<option>请选择</option>
-								<option selected="selected">北京</option>
-							</select>
-							<span>爱好：</span>
-							<input type="checkbox" name="hobby" id="hobby01"/>
+							<label for="sex02">女</label></td>
+						</tr>
+						<tr>
+							<td class="side-column-form-label">城市</td>
+							<td><select name="city">
+							<option>请选择</option>
+							<option selected="selected">北京</option>
+							</select></td>
+						</tr>
+						<tr>
+							<td class="side-column-form-label">爱好</td>
+							<td><input type="checkbox" name="hobby" id="hobby01"/>
 							<label for="hobby01">运动</label>
 							<input type="checkbox" name="hobby" id="hobby02"/>
 							<label for="hobby02">艺术</label>
 							<input type="checkbox" name="hobby" id="hobby03"/>
-							<label for="hobby03">科学</label>
-							<span>个人描述：</span>
-							<textarea cols="30" rows="3">这是一个多行输入框，输入您的个人描述</textarea>
-							<input type="submit" name="" value="确认提交"/>
-						</div>
-						</table>
-					</form>
-				</div>
+							<label for="hobby03">科学</label></td>
+						</tr>
+						<tr>
+							<td class="side-column-form-label">个人描述</td>
+							<td><textarea cols="30" rows="3">这是一个多行输入框，输入您的个人描述</textarea></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input class="full-button bg-blue white" type="submit" name="" value="确认提交"/></td>
+						</tr>
+					</table>
+				</form>
 			</div>
 		</div>
-		<div class="footer">版权所有&copy;</div>
+		<div class="footer"><span>版权所有&copy;</span></div>
 	</div>
 </body>
 </html>
