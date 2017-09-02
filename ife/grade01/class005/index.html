@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>差不多先生</title>
+	<style type="text/css">
+		/*reset*/
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;word-break: break-word;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+		h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
+		table{border-collapse:collapse;border-spacing:0;}
+		ul{list-style:none outside none;}
+		fieldset,img{border:0 none;}
+		caption,th{text-align:left;}
+		body{background:#000;}
+		strong{font-weight:800;}
+		textarea{width: 100%;height: 100px}
+		img{ width:100%;height: auto;max-width: 100%; display: block; }  
+		/*end reset*/
+		/*global*/
+		.lf {float: left;}
+		.lr {float: right;}
+		.alr {text-align: right;}
+		.w200 {width: 200px;}
+		.mtb10 {margin: 10px 0;}
+		.pt10 {padding-top: 10px;}
+		.plr10 {padding: 0 10px;}
+		.plr40 {padding: 0 40px;}
+		.pd20 {padding: 20px};
+		.pb20 {padding-bottom: 20px};
+		.lh15 {line-height: 1.5}
+		.center {align-self: center;}
+		.bg-blue {background-color: #3355D0; }
+		.white {color: #FFF;}
+		/**
+		 * compent global
+		 */
+		.text-input {width: 140px;line-height: 1.2rem;}
+		.input-hint {color: #CDCDCD;font-size: 14px;line-height: 1.2rem;padding: 5px 0;}
+		.full-button {width: 100%;height: 40px;font-size:16px;font-weight:bold;border:none;border-radius: 0.2rem;}
+		/*end global*/
+		
+		
+
+
+		.main {background: #000;}
+		.article {margin-right: 420px;}
+		.sidebar {float: right; width: 350px;}
+		.account-table {width: 100%;border: 1px solid #000;font-size: 0.8em;border:1px solid #DCDCDC;}
+		.account-table th{background-color: #000;font-weight: bold;color:#FFF;}
+		.account-table th,td{height:20px;padding: 5px;border-right: 1px solid #DCDCDC;border-bottom:  1px solid #DCDCDC;}
+		.account-table>tfoot{background-color: #DCDCDC;font-weight: bold; }
+		.side-column-title{margin:20px inherit;padding:5px 20px 5px;border-left:2px solid #DCDCDC;font-size: 18px;font-weight: bold;}
+		.side-column-form{width: 100%;border: 0px;}
+		.side-column-form td{border: 0px;}
+		.side-column-form-label {text-align: right;font-size: 13px;line-height: 1.5rem;vertical-align: top;}
+		/*head*/
+		.header {width:100%;height:80px;line-height: 80px;background: #000002;}
+		.logo {margin: 10px 20px;}
+		.logo img{width: 160px;height: auto;}
+		.nav {padding:5px 10px;margin-right: 40px;}
+		.nav-a {font-weight:bold;text-decoration: none;color:#fff;}
+		.nav-a:hover{color:#DCDCDC;}
+		.nav li{display: inline;margin: 0 5px;}/*块状元素变为行内元素*/
+
+		.content{clear:both;background: #DCDCDC;padding: 20px;}
+		.wrapper{margin:20px 20px;padding: 10px 20px;}
+		.panel{background: #fff;border: 1px solid #C6C6C6;box-shadow: 10px 10px 8px #A3A3A3;}
+
+		.title {font-size:24px;line-height: 48px;font-weight: bold;}
+		.subtitle {font-size:20px;line-height: 34px;font-weight: bold;color: #A3A3A3;}
+		.summary {font-size:14px;line-height: 34px;}
+		.article_content{padding:10px 0 ;}
+		.article_content p{line-height: 24px;text-indent: 2em;}
+		.footer{text-align: center;color: #FFF;height:80px;padding-top: 40px;font-size: 14px;}
+		
+		.album-list {padding : 20px 40px;}
+		.album-list li{display: inline-block;margin: 20px;}
+		.album-item {width: 150px;max-width:100%;padding: 10px 10px;margin: 20px 0;border: 2px solid #DCDCDC;text-align: center;vertical-align: center;}
+		.album-item img{width: 100%;margin-top: 10px;}
+
+		.rank-list {line-height: 1.5;font-weight: 600;padding: 0 40px 20px;}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="header lf">
+			<div class="logo lf"><img src="logo.png" /></div>
+			<ul class="nav lr">
+				<li><a class="nav-a" href="javascript;">导航链接一</a></li>
+				<li><a class="nav-a" href="javascript;">导航链接二</a></li>
+				<li><a class="nav-a" href="javascript;">导航链接三</a></li>
+				<li><a class="nav-a" href="javascript;">导航链接四</a></li>
+			</ul>	
+		</div>
+		<div class="content">
+			<div class="wrapper panel sidebar">
+				<div>
+					<h2 class="side-column-title">这里以后是一个侧栏，这是侧栏的标题</h2>
+				</div>
+				<form>
+					<table class="side-column-form">
+						<tr>
+							<td class="side-column-form-label">请输入邮箱地址</td>
+							<td><input type="text" name="email" class="text-input" placeholder="这是一个文本输入框"/>
+							<p class="input-hint">邮箱地址请按要求格式输入</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="side-column-form-label">请输入密码</td>
+							<td><input type="password" class="text-input" name="pwd" value="这是一个文本输入框" />
+							</td>
+						</tr>
+						<tr>
+							<td class="side-column-form-label">请重复输入密码</td>
+							<td><input type="password" class="text-input" name="rpwd" value="这是一个文本输入框">
+							<p class="input-hint">密码请为6-16位英文数字</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="side-column-form-label">性别</td>
+							<td><input type="radio" name="sex" id="sex01">
+							<label for="sex01">男</label>
+							<input type="radio" name="sex" id="sex02">
+							<label for="sex02">女</label></td>
+						</tr>
+						<tr>
+							<td class="side-column-form-label">城市</td>
+							<td><select name="city">
+							<option>请选择</option>
+							<option selected="selected">北京</option>
+							</select></td>
+						</tr>
+						<tr>
+							<td class="side-column-form-label">爱好</td>
+							<td><input type="checkbox" name="hobby" id="hobby01"/>
+							<label for="hobby01">运动</label>
+							<input type="checkbox" name="hobby" id="hobby02"/>
+							<label for="hobby02">艺术</label>
+							<input type="checkbox" name="hobby" id="hobby03"/>
+							<label for="hobby03">科学</label></td>
+						</tr>
+						<tr>
+							<td class="side-column-form-label">个人描述</td>
+							<td><textarea cols="30" rows="3">这是一个多行输入框，输入您的个人描述</textarea></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input class="full-button bg-blue white" type="submit" name="" value="确认提交"/></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class="article">
+				<div class="wrapper panel">
+					<div>
+						<h2 class="title">文章一级标题</h2>
+						<h3 class="subtitle">文章二级标题</h3>
+						<div class="summary"><span>文章作者</span>&nbsp;<span>文章发表时间</span></div>
+					</div>
+					<div class="article_content">
+						<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br/>
+						这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br/>
+						这是一个很长很长的段落，这是一个很长很长的段落，<a href="javascript;">这里有一个链接链接到http://ife.baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，<b>这里有个粗体字</b>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+						<img class="mtb10 w200" src="IMG_001.JPG"/>
+						<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br/>
+						这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br/>
+						这是一个很长很长的段落，这是一个很长很长的段落，<a href="javascript;">这里有一个链接链接到http://ife.baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，<b>这里有个粗体字</b>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+					</div>
+				</div>
+				<div class="wrapper panel">
+					<div>
+						<h2 class="title">另一篇文章一级标题</h2>
+						<h3 class="subtitle">文章二级标题</h3>
+						<div class="summary"><span>文章作者</span>&nbsp;<span>文章发表时间</span></div>
+					</div>
+					<div class="article_content">
+						<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br/>
+						这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br/>
+						这是一个很长很长的段落，这是一个很长很长的段落，<a href="javascript;">这里有一个链接链接到http://ife.baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，<b>这里有个粗体字</b>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+						<img class="mtb10 w200" src="IMG_001.JPG"/>
+						<ul class="plr10">
+							<li class="lh15">列表项目一</li>
+							<li class="lh15">列表项目二</li>
+							<li class="lh15">列表项目三</li>
+						</ul>
+					</div>
+				</div>
+				<div class="wrapper panel">
+						<h2 class="title">图片</h2>
+						<ul class="album-list">
+							<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+							<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+							<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+							<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+							<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+							<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>	
+							<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+							<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+							<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+							<li><div class="album-item"><span class="center">好看的图片</span><img src="IMG_001.JPG"/></div></li>
+						</ul>
+				</div>
+				<div class="wrapper panel">
+						<h2 class="title">最后一片文章一级标题</h2>
+						<h3 class="subtitle">文章二级标题</h3>
+						<div class="summary"><span>文章作者</span>&nbsp;<span>文章发表时间</span></div>
+						<ol class="rank-list">
+							<li>排名1</li>
+							<li>排名2</li>
+							<li>排名3</li>
+						</ol>
+						下面是一个表格，给表格加了一个border="1"好让你看出是一个表格
+						<table class="account-table">
+							<thead>
+								<tr>
+									<th>表头</th><th>表头</th><th>表头</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>表内容单元格</td><td>表内容单元格</td><td><a href="">操作</a></td>
+								</tr>	
+								<tr>
+									<td>表内容单元格</td><td>表内容单元格</td><td><a href="">操作</a></td>
+								</tr>	
+								<tr>
+									<td>表内容单元格</td><td>表内容单元格</td><td><a href="">操作</a></td>
+								</tr>	
+								<tr>
+									<td>表内容单元格</td><td>表内容单元格</td><td><a href="">操作</a></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td>總計</td><td colspan="2">1000</td>
+								</tr>	
+							</tfoot>	
+						</table>
+				</div>
+			</div>
+
+		</div>
+		<div class="footer"><span>版权所有&copy;</span></div>
+	</div>
+</body>
+</html>
