@@ -29,6 +29,7 @@
 .fc-lyel {color: #F5E327;}
 .fc-pink {color: #CC7680;}
 .fc-db {color: #11456B;}
+.rb2 {border-right: 2px solid;} 
 .bg-green {background: green;}
 .bg-red {background: red;}
 .ftsi {font-style: italic;}
@@ -65,3 +66,9 @@
 .portal-entry .title{font-size: 60px;line-height: 1.6;}
 .portal-entry .subtitle{font-size: 21px;line-height: 1.75;color: #fffdfd;}
 .portal-entry .entry-btn{background-color: #e7504d;  width: 331px;  height: 65px;margin-top:2.5em;font-size: 30px;font-weight: bold;color: #FFFFFF;border:none;}
+
+.i-subject {width: 100%;height: 250px;font: 14px/1.2 "黑体";color: #767777;} 
+.subject-list {padding-top: 45px;} 
+.subject-item {display: inline-block;margin:0 auto;width:24%;text-align: center;}
+.subject-item img {width: 28px;margin: 0 auto;}
+.subject-item p {width: 165px; margin:0 auto;}
