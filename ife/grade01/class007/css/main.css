@@ -71,4 +71,19 @@
 .subject-list {padding-top: 45px;} 
 .subject-item {display: inline-block;margin:0 auto;width:24%;text-align: center;}
 .subject-item img {width: 28px;margin: 0 auto;}
-.subject-item p {width: 165px; margin:0 auto;}
+.subject-item p {width: 165px; height:50px;margin:0 auto;}
+
+.i-question{height: 360px;text-align: center;background-color: #edecec;}
+.i-question img{width: 94px;margin:0 auto;padding-top: 90px;}
+.i-question h1{padding-top:48px;color: #a1a1a1;font: 54px "黑体";}
+
+.i-search {position: relative;height: 340px;text-align: center;background: url(../img/look_map.png) no-repeat center;background-size:100% 100%;color: #FFFFFF;line-height: 2em;font-family: "Microsoft YaHei";}
+.i-search-mask {position: absolute;width: 100%;height: 100%;right: 0;top: 0;background-color: red;opacity: .2;}
+.i-search-content {position: relative;}
+.i-search h1{padding-top:53px;padding-bottom: 10px;font-weight: bold;font-size: 21px;}
+.i-search h2{padding-top:20px;font-size: 12px;}
+.i-search .show-line{width: 2em;border: 1.5px solid #FFF;margin: 0 auto;}
+.i-search .search-form{padding-top: 50px;}
+.i-search .search-form select{margin-right:30px;width: 236px;height: 36px;border: none;}
+.i-search .search-form select:after{content:"234";}
+.i-search .search-form button{width: 236px;height: 36px;border: none;background-color: #be4f48;color: inherit;font-size: 14px;font-weight: bold;}
