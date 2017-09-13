@@ -49,9 +49,19 @@
 .ff-ht {font-family: '黑体';}
 .ff-st {font-family: '宋体';}
 .inb {display: inline-block;}
+.bg-e74{background-color: #e74f4d;}
 .clearfix {clear: both;}
 
 /*global*/
+.no-select{
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select:none;
+	-khtml-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
  .select {
  	position: relative;
  	display: inline-block;
@@ -108,6 +118,14 @@
 .select.active .dropdown {
     display: block;
 }
+
+.form table{border: none;width: 100%;}
+.form td{padding: 6px 8px;}
+.form input,textarea,button{width: 100%;min-height: 40px;background-color: #edecee;border: none;}
+.form input,textarea{text-indent:1em;}
+.form textarea{padding-top: 1em;}
+.form button{font-size:14px;font-weight:bold;color: #323333;}
+
 /*div {border:1px solid ;}*/
 .main{min-width: 1280px;margin: 0 auto;}
 .header {position: relative;}
@@ -142,3 +160,28 @@
 .i-search .show-line{width: 2em;border: 1.5px solid #FFF;margin: 0 auto;}
 .i-search .search-form{padding-top: 50px;}
 .i-search .search-form button{width: 236px;height: 38px;background-color: #be4f48;color: inherit;font-size: 14px;font-weight: bold;    border: solid 1px transparent;}
+
+.i-gallery{height: 605px;background-color: #f7f7f7;text-align: center;font-family: "Microsoft YaHei"}
+.gallery-list{display: inline-block;padding-top: 100px;}
+.gallery-list:after{clear:both;}
+.gallery-item{float:left;margin-right: 36px;}
+.photo-frame{width:220px;height: 338px;padding: 12px 9px; border: solid 1px #e0e0e0;}
+.gallery-title{padding-top:10px;font-size: 16px;font-weight: bold;line-height: 2em;color: #323333;}
+.gallery-maintitle{letter-spacing: 2em;margin-right:-2em;padding-bottom:5px;font-size: 24px;font-weight: bold;line-height: 1em;color: #323333; }
+.gallery-subtitle{font-size: 14px;font-weight: bold;line-height: 2em;color: #a8aaaa; }
+
+.i-intro{height:1088px;}
+.intro-top{height: 567px;clear: both;}
+.intro-bottom{height: 521px;clear: both;}
+.intro-main{float:left;width: 852px;}
+.intro-right{height: 100%; margin-left:0; overflow: hidden;}
+.intro-block{float:left;width: 426px;height: 100%;}
+
+.i-form{padding: 168px 140px;text-align: center;}
+.i-form .form-body{padding-top: 107px;}
+.i-form .form-explain{display: table-cell;padding-right: 75px;text-align: left;}
+.i-form .form{display: table-cell; width: 640px;}
+
+.footer{height:361px;text-align: center;color: #FFFFFF;background: #32353e;}
+.footer-form{padding: 92px;width: 512px;}
+.footer-bottom{height: 60px;color: #FFFFFF;background: #303039;line-height: 60px;padding: 0 20px;clear: both;}
