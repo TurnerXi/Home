@@ -70,12 +70,13 @@
 				<h1 >查找新世界城市活动信息</h1>
 				<div class="show-line"></div>
 				<h2 >每个城市的有不同的活动信息，请自主查询您所需要了解的城市</h2>
-				<div class="search-form">
-					<select name="" id="">
-						<option></option>
-					</select>
-					<select name="" id=""></select>
-					<select name="" id=""></select>
+				<div class="search-form" >
+					<div class="select" onclick="toggleClass(this,'active')">
+						<span class="select-text">中国</span>
+						<ul class="dropdown">
+							<li>中国</li>
+						</ul>
+					</div>
 					<button>搜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;索</button>
 				</div>
 			</div>
@@ -119,4 +120,28 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+    function hasClass(obj, cls) {  
+        return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));  
+    }  
+      
+    function addClass(obj, cls) {  
+        if (!this.hasClass(obj, cls)) obj.className += " " + cls;  
+    }  
+      
+    function removeClass(obj, cls) {  
+        if (hasClass(obj, cls)) {  
+            var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');  
+            obj.className = obj.className.replace(reg, ' ');  
+        }  
+    }  
+      
+    function toggleClass(obj,cls){  
+        if(hasClass(obj,cls)){  
+            removeClass(obj, cls);  
+        }else{  
+            addClass(obj, cls);  
+        }  
+    }  
+</script>
 </html>
