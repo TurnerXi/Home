@@ -16,37 +16,13 @@
 <link rel="stylesheet" href="./static/css/cart.css"></link>
 <link rel="stylesheet" href="./static/css/trend.css"></link>
 <link rel="stylesheet" href="./static/css/dlt-wyjj.css"></link>
-
-<style type="text/css">
-/*玩法说明样式*/
-.m-dialog_submit a{display: block; width:100%;}
-.g-dialog_body.lotto_rule{padding: .833rem 1.41rem;}
-.lotto_rule .tit{ line-height: 2.58rem; font-size: 1.33rem; font-weight: 700;}
-.lotto_rule .des{line-height: 1.54rem; margin-top: .2rem;}
-.lotto_rule .rule_tbl{display: table; margin: 1rem 0; border: #d8d7d7 solid 1px; border-collapse: collapse; width: 100%; box-sizing: border-box;}
-.lotto_rule .rule_tbl .th,.lotto_rule .rule_tbl .td{ display: table-cell; border-bottom: #d8d7d7 solid 1px; vertical-align: middle; text-align: center; white-space: nowrap;}
-.lotto_rule .rule_tbl .th{height: 2.41rem; background-color: #f4f4f4; color: #9f9f9f;}
-.lotto_rule .rule_tbl .tr{display: table-row;}
-.lotto_rule .rule_tbl .td{ padding: 1rem .1rem; line-height: 1.125rem;}
-.lotto_rule .rule_tbl .balls{font-size:0; padding:  0; display: block; vertical-align: middle;}
-.lotto_rule .rule_tbl .balls i{margin-right: 0.08rem;}
-.lotto_rule .rule_tbl .balls i:last-child{margin-right: 0;}
-.lotto_rule .rule_tbl .th.spline{ width: auto; font-size: 1rem; background-repeat: no-repeat; background-size: 1px .875rem; background-position: right center;}
-
-.i-redball_mini,.i-blueball_mini,.i-greyball_mini{ border-radius: 50%; width:.875rem; height: .875rem; display: inline-block; }
-.i-redball_mini{background-color: #eb3026;}
-.i-blueball_mini{background-color: #438ed3;}
-.i-greyball_mini{background-color: #ccc;}
-
-.zsszcdebox .zsszcdeqhks {z-index:1}
-
-#zst_page {overflow-x: hidden;}
-</style>
+<link rel="stylesheet" href="./static/css/dlt.css"></link>
 </head>
 
 <body>
 <div id = "selhm" class="pagewrap p-ssq_chooseBall">
-	<header-component></header-component>
+	<header-component :current_play="currentPlay"></header-component>
+
 	<div class="head_tabbox" v-show="show_nav" id="g-nav_b">
 
         <ul class="head_tablist ssqdlt" id="switchPlay">
@@ -1072,39 +1048,37 @@
 
 
 <!-- templates-->
+
+</body>
 <script type="text/x-template" id="header-template">
-	<header class="backtitle">
+	<div class="backtitle">
 		<div class="backtitlefix ui-cvertical" >
 			<a href="javascript:;" class="return" @click="cp_back();"></a>
 			<div class="tabplay ui-chorizontal">
 				<p class="play_f">玩<br>法</p>
 				<div class="tabplayBox" :class="{ fold: show_nav }" @click="show_nav = !show_nav">
-					<span :play_type="play.type">{{play.name}}</span><i class="i-sj"></i>
+					<span :play_type="currentPlay.type">{{currentPlay.name}}</span><i class="i-sj"></i>
 				</div>
 			</div>
-			<show-more-component></show-more-component>
+			<show-more-component :tools="tools" @tools-taped="toolsTaped"></show-more-component>
 		</div>
-	</header>
+	</div>
 </script>
 
 <script type="text/x-template" id="show-more-template">
 	<div class="b-flex ta_r g-toprighticon" >
 		<i class="i-head_more mr_10" :class="{ on: show }" @click="show = !show">
 			<ul class="moreUl" >
-				<li v-for="item in tools" @click="item.">
+				<li v-for="item in tools" @click="toolsEvent(item.key)">
 					<i class="i-more_wf mr_6"></i>{{item.text}}
 				</li>
-				<li id="g-sm"  @click="$('#Mi_rule_box').show();$(this).parent().parent().removeClass('on');"><i class="i-more_wf mr_6"></i></li>
-
-				<li @click="$(this).parent().parent().removeClass('on');$('#showHistory').trigger('tap');$('#zst_section_short').trigger('tap');"><i class="i-more_zs mr_6"></i>历史走势</li>
-
-				<li @click="$('#g-dqjsbody').show();$(this).parent().parent().removeClass('on');"><i class="i-more_js mr_6"></i>多期机选</li>
 			</ul>
 		</i>
 	</div>
 </script>
-
-</body>
 <script type="text/javascript" src="./src/js/vue.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/require.js/2.3.5/require.js"></script>
 <script type="text/javascript" src="./src/js/app.js"></script>
+
+
 </html>
