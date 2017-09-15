@@ -5,6 +5,7 @@
 	<title>常见官网页面布局</title>
 	<link rel="stylesheet" type="text/css" href="./css/reset.css">
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<link rel="stylesheet" type="text/css" href="./css/sheet.css">
 </head>
 <body>
 	<div class="main">
@@ -74,24 +75,24 @@
 					<div class="select" onclick="toggleClass(this,'active')">
 						<div  class="select-text">中国</div>
 						<ul class="select-option">
-							<li>中国</li>
-							<li>中国</li>
-							<li>中国</li>
-							<li>中国</li>
-							<li>中国</li>
-							<li>中国</li>
+							<li class="select-item">中国</li>
+						</ul>
+					</div>
+					<div class="select active" onclick="toggleClass(this,'active')">
+						<div  class="select-text">省份</div>
+						<ul class="select-option">
+							<li class="select-item on">北京市</li>
+							<li class="select-item">天津市</li>
+							<li class="select-item">河北省</li>
+							<li class="select-item">陕西省</li>
+							<li class="select-item">内蒙古自治区</li>
+							<li class="select-item">辽宁省</li>
 						</ul>
 					</div>
 					<div class="select" onclick="toggleClass(this,'active')">
-						<div  class="select-text">中国</div>
+						<div  class="select-text">城市</div>
 						<ul class="select-option">
-							<li>中国</li>
-						</ul>
-					</div>
-					<div class="select" onclick="toggleClass(this,'active')">
-						<div  class="select-text">中国</div>
-						<ul class="select-option">
-							<li>中国</li>
+							<li class="select-item">城市</li>
 						</ul>
 					</div>
 					<button>搜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;索</button> 
@@ -132,15 +133,44 @@
 		</div>
 		<div class="i-intro">
 			<div class="intro-top">
-				<div class="intro-main"><img src="./img/new_world.png" alt=""></div>
-				<div class="intro-right">bb</div>
+				<div class="intro-main">
+					<div class="right-artarrow"></div>
+					<img src="./img/new_world.png" alt="">
+				</div>
+				<div class="intro-right">
+					<div class="intro-content">
+						<p class="intro-t">新世界／<em class="c-e75">01</em></p>
+						<p class="intro-p">新世界是个新世界新世界是个新世界新世界是个新世界 新世界是个新世界新世界是个新世界新世界是个新世界 新世界是个新世界新世界是个新世界新世界是个新世界 新世界是个新世界新世界是个新世界</p>
+						<div class="intro-more">更多详情</div>
+						<ul class="dot-list">
+							<li class="dot on"></li>
+							<li class="dot"></li>
+							<li class="dot"></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div class="intro-bottom">
-				<div class="intro-block">aa</div>
-				<div class="intro-block bg-e74">
-					<div>ccc</div>
+				<div class="intro-block">
+					<div class="intro-content ">
+						<p class="intro-t">新时代</p>
+						<p class="intro-t">关于爱生活的我们</p>
+						<div class="c-aba show-line m24"></div>
+						<div class="intro-more">查看更多</div>
+					</div>
 				</div>
-				<div class="intro-right"><img src="./img/wait_train.png" alt=""></div>	
+				<div class="intro-block bg-e74">
+					<div class="intro-content c-fff">
+						<p class="intro-t">新时代</p>
+						<p class="intro-t">关于爱生活的我们</p>
+						<div class="show-line m24"></div>
+						<div class="intro-more c-fff">查看更多</div>
+					</div>
+				</div>
+				<div class="intro-right">
+					<div class="left-artarrow"></div>
+					<img src="./img/wait_train.png" alt="">
+				</div>	
 			</div>
 		</div>
 		<div class="i-form">
