@@ -21,26 +21,11 @@
 
 <body>
 <div id = "selhm" class="pagewrap p-ssq_chooseBall">
-	<header-component :current_play="currentPlay"></header-component>
-
-	<div class="head_tabbox" v-show="show_nav" id="g-nav_b">
-
-        <ul class="head_tablist ssqdlt" id="switchPlay">
-        	<li class="on">
-                <div class="btn_tabfu" playid="1001" data-text="大乐透-普通">普通投注</div>
-            </li>
-
-            <li>
-                <div class="btn_tabfu" playid="1004" data-text="大乐透-胆拖">胆拖投注</div>
-            </li>
-        </ul>
-    </div>
+	<header-component ></header-component>
 
 	<section class="g-ball_box" id="touzhubox">
-		<div class="plr_16 m-lottery_win" id="open_code_time_id">
-			<span id="openshow"></span>
-			<span class="red ml_6">奖池<span id="jiangchishow"></span></span>
-		</div>
+		<open-time-component></open-time-component>
+
 		<article class="histroy_wrap">
 			<div  class="m-lottery_history plr_16" ontap="$('#showHistory').trigger('tap')">
 					<span class="i-slide" ></span>
@@ -1056,12 +1041,14 @@
 			<a href="javascript:;" class="return" @click="cp_back();"></a>
 			<div class="tabplay ui-chorizontal">
 				<p class="play_f">玩<br>法</p>
-				<div class="tabplayBox" :class="{ fold: show_nav }" @click="show_nav = !show_nav">
-					<span :play_type="currentPlay.type">{{currentPlay.name}}</span><i class="i-sj"></i>
+				<div class="tabplayBox" :class="{ fold: is_show_play }" @click="is_show_play = !is_show_play">
+					<span :play_type="currentPlay.p_type">{{currentPlayText}}</span><i class="i-sj"></i>
 				</div>
 			</div>
 			<show-more-component :tools="tools" @tools-taped="toolsTaped"></show-more-component>
+			<switch-play-component	:show_play_box="is_show_play" :current_play_type="currentPlay.p_type" @switch-play-type="switchPlayType"></switch-play-component>
 		</div>
+		
 	</div>
 </script>
 
@@ -1076,8 +1063,28 @@
 		</i>
 	</div>
 </script>
+
+<script type="text/x-template" id="switch-play-template">
+	<div class="head_tabbox" v-show="show_play_box" >
+        <ul class="head_tablist ssqdlt" >
+        	<li v-for="item in play_types" :class="{on:is_current_play_type(item.p_type)}" @click="switch_play(item)">
+        		<div class="btn_tabfu" >{{item.p_name}}</div>
+        	</li>
+        </ul>
+    </div>
+</script>
+
+
+<script type="text/x-template"  id="open_time_template">
+	<div class="plr_16 m-lottery_win" >
+		<span >第{{issue_code}}期  {{end_time}}截止</span>
+		<span class="red ml_6" v-show="accmulate_prize">奖池{{accmulate_prize}}</span>
+	</div>
+</script>
+
 <script type="text/javascript" src="./src/js/vue.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/require.js/2.3.5/require.js"></script>
+<script type="text/javascript" src="./src/js/defined.js"></script>
 <script type="text/javascript" src="./src/js/app.js"></script>
 
 
