@@ -23,8 +23,8 @@ const i18n = new VueI18n({
 })
 
 // 导入全局css,scss路径在webpack.base.config.js配置了别名
-require('scss/common.scss')
-import 'mint-ui/lib/style.css';
+// require('scss/common.scss')
+// import 'mint-ui/lib/style.css';
 module.exports = {
     Vue, $, Common, wx, i18n, VueRouter
 }

@@ -55,20 +55,6 @@ import {mapGetters} from 'vuex'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import store from '../../vuex/store'
 export default{
-    data () {
-        return {
-            swiperOption: {
-                swiperSlides: 0,
-                autoplay: 5000,
-                autoplayDisableOnInteraction: false,
-                notNextTick: true,
-                pagination: '.swiper-pagination',
-                onSlideNextEnd: () => {
-                    this.swiperSlideEnd()
-                }
-            }
-        }
-    },
     computed: {
         swiper () {
             return this.$refs.mySwiperA.swiper

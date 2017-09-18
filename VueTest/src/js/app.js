@@ -106,6 +106,9 @@ var app = new Vue({
   	}
 });
 
+require.config()
+
+
 require(["text!../data/mockdata.map.json"],function(mockdata){
 	console.log(mockdata)
 });

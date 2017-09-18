@@ -1,0 +1,22 @@
+@charset "utf-8";
+.i-jyhbBox{ height:6rem;}
+.i-jyhb{ position:fixed; z-index:9; bottom:7.25rem; right:1rem; width:5.75rem; height:6.55rem; background: url(../images/dlt-wy/icon_jy_hb.png) no-repeat; background-size:5.75rem auto; text-align:center;}
+.jyBox{ height:8.888rem;}
+.jyBoxfix{ position:fixed; z-index:10; width:100%; background:rgba(0,0,0,.75);  box-sizing: border-box; bottom:7.333rem;}
+.jyBoxfix .l_fold{ width:2rem; height:8.75rem; background:url(../images/dlt-wy/icon_jy_arrowr.png) no-repeat center; background-size:1rem auto;}
+.jyBoxfix .tabwytab li{ height:2.5reh; background:#c21010; color:#fff; font-size:1.16rem; line-height:2.5rem; text-align:center;}
+.jyBoxfix .tabwytab li.on{background:#f63f3f; color:#fff046;}
+
+.jyBoxfix .r_Box{position:relative; height:6.25rem; padding:0rem 3rem; background:#f63f3f; color:#fff;}
+.jyBoxfix .r_Box .i-jyexp{ position: absolute; top:1rem; right:.5rem; width:1.5rem; height:1.5rem; background:url(../images/dlt-wy/icon_jy_exp.png) no-repeat center; background-size:1.5rem auto;}
+
+.wjpjtb{ border-collapse:collapse; width:100%; background:#fff046; border-radius:.5rem;}
+.wjpjtb td{ text-align:center; border:1px solid #f63f3f; line-height:2.22rem; color:#333;}
+
+.wjpjtb td .fz_wja{ font-size:1.33rem; color:#f63f3f;}
+
+/* pop */
+.jypopexp .title{ font-size:1.333rem; text-align:center; padding-bottom:.5rem; border-bottom:1px solid #dcdddd;}
+.jypopexp .con_f{ padding:.5rem 0;}
+.jypopexp .con_f .p_f{ padding-left:1.91rem; font-size:.833rem; color:#999; padding-top:.15rem; margin-bottom:.35rem;}
+/* popEnd */

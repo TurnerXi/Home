@@ -14,9 +14,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     modules: {
-        index,
-        common,
         my,
+        common,
+        index,
         messageList,
         login,
         collect,
