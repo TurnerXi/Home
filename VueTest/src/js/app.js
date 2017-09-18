@@ -1,3 +1,10 @@
+var lot_id = 1;
+var lot_name = "大乐透";
+var play_types = [
+		{p_type:1001,p_name:"普通投注"},
+		{p_type:1002,p_name:"胆拖投注"}
+]
+
 Vue.component('show-more-component', {
 	props:{
 		tools : {
@@ -82,16 +89,23 @@ Vue.component('header-component', {
 
 Vue.component('open-time-component',{
 	data : function(){
-		var current_issue = data_2004.current;
-		setInterval(function(){current_issue.accmulate_prize++},1000);
-		return current_issue;
+		
+			console.log(mockdata)
+			var current_issue = mockdata.data_2004.current;
+			setInterval(function(){current_issue.accmulate_prize++},1000);
+			return current_issue;
+		
 	},
 	template : "#open_time_template"
 });
+
 var app = new Vue({
     el: '#selhm',
 	data: {
     	show_nav:false
   	}
-})
+});
 
+require(["text!../data/mockdata.map.json"],function(mockdata){
+	console.log(mockdata)
+});
