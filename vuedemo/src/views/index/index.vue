@@ -72,17 +72,6 @@ export default{
                 console.log(error);
             }
         })()
-        /* this.$http.get('../../../static/api/home/homepageV3.json').then((response) => {
-            // indexData，然后html就可以遍历
-            console.log(response.data)
-            this.indexData = response.data
-            // 使用$nextTick来对更新后的mounted节点进行操作
-            this.$nextTick(function () {
-                this.swiperSlideEnd()
-            })
-        }, (response) => {
-            console.log(response)
-        }) */
     },
     components: {
         swiper,

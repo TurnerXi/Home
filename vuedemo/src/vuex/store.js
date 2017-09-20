@@ -6,10 +6,10 @@ import my from './modules/my'
 import login from './modules/login'
 import index from './modules/index'
 import collect from './modules/collect'
+import cp from './modules/cp'
 import destinationIndex from './modules/destinationIndex'
 import shoppingCart from './modules/shoppingCart'
 import beComment from './modules/center/becomment'
-
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -22,7 +22,8 @@ export default new Vuex.Store({
         collect,
         destinationIndex,
         shoppingCart,
-        beComment
+        beComment,
+        cp
     },
     strict: process.env.NODE_ENV !== 'production'// 线上环境关掉
 })
