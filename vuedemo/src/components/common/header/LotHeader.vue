@@ -52,13 +52,15 @@ export default {
             console.log(key);
         },
         switchPlayType: function (playType) {
-            this.currentPlay = playType;
+            this.$store.dispatch('switchPlay', playType);
             this.isShowPlay = !this.isShowPlay;
         }
     },
     computed: {
         currentPlayText: function () {
-            return this.lotName + '-' + (this.currentPlay && this.currentPlay.pName.substring(0, 2));
+            if (this.currentPlay && this.currentPlay.pName) {
+                return this.lotName + '-' + this.currentPlay.pName.substring(0, 2);
+            }
         }
     }
 }
