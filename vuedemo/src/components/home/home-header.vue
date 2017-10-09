@@ -22,11 +22,3 @@
   }
 </script>
 
-<style lang='scss' scoped>
-  header{
-    position: fixed;
-    width: 100%;
-    left:0;
-    z-index: 3;
-  }
-</style>

@@ -1,0 +1,26 @@
+.header{position: absolute; height: 56px; width: 100%; line-height: 56px; background-color: #228abf;}
+.wrapper{max-width: 1024px;width: 100%;height: 100%;margin: 0 auto;}
+.logo{display: inline-block; height: 100%; margin-left: 51px;}
+.logo>img{display: inline-block;  vertical-align: middle;}
+.login{display: inline-block; float: right;margin-right: 94px;line-height:56px;font-size: 12px;font-family: "Adobe Heiti Std";color:#FFF;}
+.search-box{margin-right: 20px;padding-left: 32px;padding-right: 10px; width: 313px; height: 28px; border: none; border-radius: 28px; vertical-align: middle; background-color: #FFF;box-sizing: border-box; overflow: hidden;}
+.search-box:focus{border: 1px solid lightblue; border-radius: 28px; outline: none;}
+.search-icon{position: absolute;display: inline-block;width: 20px;top: 20px;left: 10px;}
+.search-wrapper{display: inline-block;position: relative;}
+.user-login{float: right;}
+.user-login>img{ float: left; width: 15px; margin-top: 20px; margin-right: 5px;}
+
+.side-bar{float: left; width: 260px; padding-top: 56px; box-sizing: border-box; min-height: 100%; background: #2a2e3d; }
+.user-info{padding-top: 21px; padding-left: 46px; font-size: 16px;font-family: "SimHei";color: #bababe;}
+.user-avatar-wrapper{display: inline-block; width: 47px; height: 47px; border-radius: 50px; border: 1px solid #bababe; padding: 5px; vertical-align: middle;}
+.user-avatar{border-radius: 50px;}
+.user-name{display: inline-block; margin-left: 20px;}
+
+.user-data{margin-top: 15px;height: 30px;text-align: center; font: bold 12px "SimSun"; color: #6e8095;}
+.user-stats{display: inline-block; padding: 0 31px;  }
+
+.main{padding-top: 56px; min-height: 100%; box-sizing: border-box;}
+
+
+
+.v-line{display: inline-block; vertical-align: top; width: 0px; height: 100%; border: 1px solid;color: #9c9ea7; opacity: .2;box-sizing: border-box;}

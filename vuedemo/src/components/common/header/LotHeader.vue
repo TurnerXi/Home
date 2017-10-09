@@ -17,6 +17,7 @@
 import { Vue, $, Common } from 'js/base'
 import ShowMore from './showmore.vue'
 import SwitchPlay from './switchplay.vue'
+import store from '../../vuex/store'
 export default {
     props: {
         lotName: '',

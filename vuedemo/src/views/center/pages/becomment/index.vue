@@ -80,31 +80,3 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-  @import "../../../../assets/scss/base/necessary.scss";
-  @import "../../../../assets/fonts/iconfont.css";
-  .becomment{
-    background: $white;
-    a{
-      color: $color_424242;
-      padding: px2rem(24);
-      border-bottom: solid 1px $color_E1E9F0;
-      @include px2px(font-size,24);
-    }
-    .title{
-      margin-bottom:px2rem(10);
-      @include px2px(font-size,30);
-      @include clamp(2);
-    }
-    .goComment{
-      color: $color_55C1DD;
-    }
-    time{
-      color: $color_9E9E9E;
-    }
-    .icon-arrow{
-      color: $color_9E9E9E;
-      @include px2px(font-size,12);
-    }
-  }
-</style>

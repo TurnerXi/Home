@@ -38,7 +38,7 @@ module.exports = {
             'images': path.resolve(__dirname, '../src/assets/images'),
             'js': path.resolve(__dirname, '../src/assets/js'),
             'components': path.resolve(__dirname, '../src/components'),
-            'scss': path.resolve(__dirname, '../src/assets/scss'), 
+            // 'scss': path.resolve(__dirname, '../src/assets/scss'), 
             'css': path.resolve(__dirname, '../src/assets/css')
         }
     },

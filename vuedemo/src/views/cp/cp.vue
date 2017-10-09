@@ -93,6 +93,7 @@
 <script type="text/javascript">
 import LotHeader from '../../components/common/header/LotHeader.vue'
 import store from '../../vuex/store'
+import {mapState} from 'vuex'
 var playTypes = [{pType: 1001, pName: '普通投注'}, {pType: 1002, pName: '胆拖投注'}];
 export default{
     data: () => {
@@ -106,6 +107,11 @@ export default{
     },
     components: {
         'lot-header': LotHeader
+    },
+    computed: {
+    	currentPlay: function(){
+    		return 
+    	}
     }
 }
 </script>

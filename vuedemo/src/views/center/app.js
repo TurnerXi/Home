@@ -8,7 +8,7 @@ const service = resolve => require(['./pages/service'], resolve)
 const setting = resolve => require(['./pages/setting'], resolve)
 const message = resolve => require(['./pages/message'], resolve)
 const collect = resolve => require(['./pages/collect'], resolve)
-import './scss/center.scss'
+// import './scss/center.scss'
 // 个人中心router
 const router = new VueRouter({
     routes: [
