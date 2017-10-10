@@ -54,5 +54,11 @@
 
 .main{padding-top: 56px; padding-left: 260px; min-height: 100%; box-sizing: border-box; background-color: #eeeeed;}
 .nav-bar{position: fixed; padding-left: 31px; width: 100%; height: 31px; font: 12.3px/31px "SimHei"; color: #aaaaaa; background-color: #ffffff;}
+.content{padding: 50px 70px;}
+.search-form{box-shadow: 0 0 1px 1px #838a96; background-color: #FFF;padding: 15px 30px; opacity: .5;}
+.search-item{display: inline-block; vertical-align: top; padding-right: 37px;}
+.search-label{padding-right: 16px;}
+.switch-form:after{content: url(../images/icon/switch.png); display: inline-block; float: right;}
+
 
 .v-line{display: inline-block; vertical-align: top; width: 0px; height: 100%; border: 1px solid;color: #9c9ea7; opacity: .2;box-sizing: border-box;}
