@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{display: flex;}
+	div{display:flex;flex-wrap: wrap;max-width:1024px;justify-content: center;border:1px solid #000000;margin: 10px 5px;padding: 10px 20px; background: #fff;}
+	div.on{background: blue;}
+	</style>
+</head>
+<body>
+	<div style="margin: 10px auto;">
+		<div>
+			<div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+<script>
+	var root = document.getElementsByTagName("body")[0].firstElementChild;
+	const SLEEP_MILLISECONDS = 500;
+	function clr(root,array){
+		array.push(root);
+		if(root.firstElementChild){
+			clr(root.firstElementChild,array);
+		}
+		if(root.childElementCount == 2 && root.lastElementChild){
+			clr(root.lastElementChild,array);
+		}
+		return array;
+	}
+	function lcr(root,array){
+		if(root.firstElementChild){
+			lcr(root.firstElementChild,array);
+		}
+		array.push(root);
+		if(root.childElementCount == 2 && root.lastElementChild){
+			lcr(root.lastElementChild,array);
+		}
+		return array;
+	}
+	function rlc(root,array){
+		if(root.firstElementChild){
+			rlc(root.firstElementChild,array);
+		}
+		if(root.childElementCount == 2 && root.lastElementChild){
+			rlc(root.lastElementChild,array);
+		}
+		array.push(root);
+		return array;
+	}
+	
+	function render(array){
+		for (var j = 0; j < array.length; j++) {
+		    var item = array[j];
+		    var lastItem = j > 0 ? array[j-1] : null ;
+		    
+		    (function(item,lastItem) {
+		        setTimeout(function() {
+		           item.className="on";
+		           if(lastItem){
+		           		lastItem.className = "";
+		           }
+		        }, j * SLEEP_MILLISECONDS);
+		    })(item,lastItem);
+		}
+	}
+
+	function init(){
+		document.addEventListener("click",function(event){
+			if(event.target.hasChildNodes()){
+				render(clr(root,[]));	
+			}else if(event.target.parentElement.firstElementChild == event.target){
+				render(lcr(root,[]));	
+			}else{
+				render(rlc(root,[]));	
+			}
+		});
+	}
+
+	init();
+</script>
+</html>
