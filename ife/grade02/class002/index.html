@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{display: flex;align-self: center;padding: 20px 15px;margin:0 5px;border:1px solid;}
+	</style>
+</head>
+<body>
+	<div style="height: 200px;">
+		Super
+		<div>
+			Dev
+			<div>
+				Apple
+				<div>Pear</div>
+				<div>Pig</div>
+				<div>Cola</div>
+				<div>Soccer</div>
+			</div>
+			<div>Phone</div>
+			<div>
+				Lab
+				<div>Book</div>
+				<div>School</div>
+			</div>
+		</div>
+		<div>
+			Note
+			<div>
+				Human
+				<div>Code</div>
+				<div>Operate</div>
+				<div>Man</div>
+			</div>
+			<div>
+				Program
+				<div>
+					Element
+					<div>Cat</div>
+				</div>
+				<div>Class</div>
+			</div>
+		</div>
+		<div>Fish</div>
+	</div>
+	<div style="margin-top: 20px;border:none;">message</div>
+	<script>
+		var root = document.getElementsByTagName("body")[0].firstElementChild;
+		const SLEEP_MS_TIME = 500;
+		var isFind = false;
+		function search(item,root,arr){
+			if(!isFind){
+				arr.push(root);
+			}
+			if(root.firstChild.nodeValue.trim() == item){
+				isFind = true;
+				return arr;
+			}
+			for(var i=0;i<root.childElementCount;i++){
+				search(item,root.children[i],arr);
+			}
+			return arr;
+		}
+
+		function render(arr){
+			for(var i=0;i<arr.length;i++){
+				var item = arr[i];
+				(function(e){
+					setTimeout(function(){
+						e.style.backgroundColor = "hsl("+Math.random()*360+",50%,50%)";
+					},i * SLEEP_MS_TIME);
+				})(item);
+			}
+		}
+
+		function init(){
+			document.addEventListener("click",function(e){
+				if(!e.target.firstChild.nodeValue) return false;
+				var targetText = e.target.firstChild.nodeValue.trim();
+				if(e.target.firstChild.nodeName.trim() == "#text" ){
+					(function(arr){
+						render(arr);
+					})(search(targetText,root,[]));
+
+					if(isFind){
+						root.nextElementSibling.innerHTML = 'Find &nbsp;<span> '+targetText+ ' <span> ！';	
+					}else{
+						root.nextElementSibling.innerHTML = 'Not Find &nbsp;<span> '+targetText+ ' <span> ！';
+					}
+					isFind = false;
+				}
+
+			})
+		}
+
+		init();
+	</script>
+</body>
+</html>
