@@ -3,8 +3,45 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		.nav{height:50px;}
+		.nav button{height:30px;width: 50px;}
+		.card_wrapper{display: flex;}
+		.card_wrapper>div{display:flex;border: 1px solid; width: 120px; height: 150px; border-radius: 5px; margin: 5px; border-color: #000;}
+		.card_left{align-self: flex-start;padding: 5px;}
+		.card_center{align-self: center;margin: 0 auto;font-size: 50px;}
+		.card_right{align-self: flex-end;padding: 5px;}
+	</style>
 </head>
 <body>
+	<div class="nav"><button  onclick="send_card();">发牌</button></div>
+	<div id="player_0" class="card_wrapper"></div>
+	<div id="player_1" class="card_wrapper"></div>
+	<div id="player_2" class="card_wrapper"></div>
+	<div id="player_3" class="card_wrapper"></div>
+
 	<script type="text/javascript" src="index.js"></script>
+	<script>
+		var cardpic = {0:"♠",1:"♥",2:"♣",3:"♦"};
+		function send_card(){
+			for(var i = 0 ; i<4 ; i++){
+				var card = Texas.show_card();
+				if(card){
+					document.getElementById("player_"+i).append(render(card));
+				}
+			}
+		}
+
+		var render = function(card){
+			var dom = document.createElement("div");
+			if(card.type == 0 || card.type == 2){
+				dom.style.color = "#000";	
+			}else{
+				dom.style.color = "red";
+			}
+			dom.innerHTML = "<div class='card_left'>" + cardpic[card.type] + card.num + "</div><div class='card_center'>" + cardpic[card.type] + "</div><div class='card_right'>" + card.num + cardpic[card.type] + "</div>";
+			return dom;
+		}
+	</script>
 </body>
 </html>
