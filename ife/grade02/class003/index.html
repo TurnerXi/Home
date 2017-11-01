@@ -14,7 +14,14 @@
 	</style>
 </head>
 <body>
-	<div class="nav"><button  onclick="send_card();">发牌</button></div>
+	<div class="nav">
+		<button  onclick="send_card();">发牌</button> 
+		<input type="checkbox" name="choose_player" value="1">
+		<input type="checkbox" name="choose_player" value="2">
+		<input type="checkbox" name="choose_player" value="3">
+		<input type="checkbox" name="choose_player" value="4">
+		<button  onclick="compare();">比较</button>
+	</div>
 	<div id="player_0" class="card_wrapper"></div>
 	<div id="player_1" class="card_wrapper"></div>
 	<div id="player_2" class="card_wrapper"></div>
@@ -22,7 +29,7 @@
 
 	<script type="text/javascript" src="index.js"></script>
 	<script>
-		var cardpic = {0:"♠",1:"♥",2:"♣",3:"♦"};
+		
 		function send_card(){
 			for(var i = 0 ; i<4 ; i++){
 				var card = Texas.show_card();
@@ -39,9 +46,42 @@
 			}else{
 				dom.style.color = "red";
 			}
-			dom.innerHTML = "<div class='card_left'>" + cardpic[card.type] + card.num + "</div><div class='card_center'>" + cardpic[card.type] + "</div><div class='card_right'>" + card.num + cardpic[card.type] + "</div>";
+			dom.setAttribute("num",card.num);
+			dom.innerHTML = "<div class='card_left'>" 
+							+ card.stype + card.snum 
+							+ "</div><div class='card_center'>" 
+							+ card.stype + "</div><div class='card_right'>" 
+							+ card.snum + card.stype + "</div>";
 			return dom;
 		}
+
+		function compare(){
+			var boxes = document.getElementsByName("choose_player");
+			var players = [];
+			for(var i=0;i<boxes.length;i++){
+				if(boxes[i].checked){
+					players.push(boxes[i].value-1);
+				}
+			}
+
+			if(players.length != 2){
+				alert("只支持两者比较！");
+			}else{
+				var result = Texas.compare(getPlayerCards("player_"+players[0]),getPlayerCards("player_"+players[1]));
+				console.log(result);
+			}
+		}
+
+		function getPlayerCards(player){
+			var cards = document.getElementById(player).children;
+			var nums = [];
+			for (var i = 0; i < cards.length; i++) {
+				nums.push(cards[i].getAttribute("num"));
+			}
+			return nums;
+		}
+
+
 	</script>
 </body>
 </html>

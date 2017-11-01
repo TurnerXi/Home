@@ -11,8 +11,9 @@ var Texas = (function(){
 	// 8：一对（One Pair）
 	// 9：高牌（high card）
 	var card_arr = [];
-	var nums = {0:"2",1:"3",2:"4",3:"5",4:"6",5:"7",6:"8",7:"9",8:"10",9:"J",10:"Q",11:"K",12:"A"};
-	
+	var snums = {0:"2",1:"3",2:"4",3:"5",4:"6",5:"7",6:"8",7:"9",8:"10",9:"J",10:"Q",11:"K",12:"A"};
+	var stypes = {0:"♠",1:"♥",2:"♣",3:"♦"};
+
 	var calc_val = function(num){
 		return parseInt(num/4);
 	}
@@ -59,15 +60,25 @@ var Texas = (function(){
 
 	// 张数相同的排由多到少比较牌的大小，优先比较张数多的牌的大小
 	var compare_pairs = function(map_a,map_b){
-		var a = reverseMap(map_a);
-		var b = reverseMap(map_b);
+		var a = map_a.reverseMap();
+		var b = map_b.reverseMap();
 		var card_nums = Object.keys(a).sort(function(a,b){return b-a;});
 		for(var i=0;i<card_nums.length;i++){
 			var item = card_nums[i];
 			var keys_a = a[item].sort(function(a,b){return b-a;});
 			var keys_b = b[item].sort(function(a,b){return b-a;});
 			if (keys_a.join() != keys_b.join()){
-				return keys_a>keys_b?1:-1;
+				return keys_a.compareTo(keys_b);
+			}
+		}
+		return 0;
+	}
+
+	Array.prototype.compareTo = function(arr){
+		var self = this;
+		for (var i = 0; i < self.length; i++) {
+			if(self[i] != arr[i] && typeof +self[i] == 'number' && typeof +arr[i] == 'number'){
+				return +self[i]>+arr[i]?1:-1;
 			}
 		}
 		return 0;
@@ -81,7 +92,7 @@ var Texas = (function(){
 		var map_b = card_b.values.valueMap();
 
 		var result = false;
-		if(card_a.level == card_b.level){
+		if(card_a.level == card_b.level ){
 			result = compare_pairs(map_a,map_b);
 		}else{
 			result = card_a.level<card_b.level?1:-1;
@@ -105,8 +116,10 @@ var Texas = (function(){
 
 	var trans_card = function(card){
 		return {
+			num : card,
 			type : calc_type(card),
-			num : nums[calc_val(card)]
+			stype : stypes[calc_type(card)],
+			snum : snums[calc_val(card)],
 		}
 	}
 	// 判断数组是否连续
@@ -129,10 +142,12 @@ var Texas = (function(){
 	// 将键值互换，值为原对象相同值的键的数组
 	Object.prototype.reverseMap = function(){
 		var obj = {};
-		var entries = Object.entries(this);
-		for (var entry in entries){
-			if(!obj[entry.value])obj[entry.value] = [];
-			obj[entry.value].push(entry.key);
+		var self = this;
+		for (var key in self){
+			if(typeof self[key] != 'function'){
+				if(!obj[self[key]])obj[self[key]] = [];
+				obj[self[key]].push(key);
+			}
 		}
 		return obj;
 	}
