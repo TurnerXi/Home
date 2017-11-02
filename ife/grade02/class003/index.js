@@ -122,21 +122,67 @@ var Texas = (function(){
 			snum : snums[calc_val(card)],
 		}
 	}
+
+	var get_max = function(nums){
+		var all = nums.cnm(5,nums.length);
+		var best = Array.prototype.sort.call(all,compare).reverse()[0];
+		best = best.sort(function(a,b){return (+b)-(+a);});
+		var res = [];
+		for(var i=0;i<best.length;i++){
+			res.push(trans_card(best[i]));
+		}
+		return res;
+	}
+
+	// 数组排列组合
+	Array.prototype.cnm = function(n,m){
+		var self = this;
+		var all = [];
+		var units = comb(n,m,[]);
+		for(var i=0;i<units.length;i++){
+			var arr = [];
+			var unit_arr = units[i].split("");
+			for(var j=0;j<unit_arr.length;j++){
+				if(unit_arr[j] == '1'){
+					arr.push(self[j]);
+				}
+			}
+			all.push(arr);
+		}
+		return all;
+	}
+
+	var comb = function(n,m,arr,str){
+		if(str == undefined){
+		    var i = 0 ,str = "";
+		    while(i++<n){str += '1'}
+		    while(i++<m+1){str += '0'}
+		}
+		arr.push(str);
+	    if(str.indexOf('10')>-1){
+	        var index = str.indexOf('10');
+	        str = str.replace('10','01');
+	        var sub = str.substr(0,index);
+	        var sortsub = sub.split("").sort().reverse().join("")
+	        if(sub != sortsub){
+	            str = str.replace(sub,sub.split("").sort().reverse().join(""));    
+	        }
+	        return comb(n,m,arr,str);
+	    }
+	    return arr;
+	}
 	// 判断数组是否连续
 	Array.prototype.isStraight = function(){
 		var arr = this;
-		if(typeof arr == 'object'){
-			var _temp = arr[0];
-			for(var i = 1; i < arr.length; i++){
-				if(arr[i]-_temp != 1){
-					return false;
-				}else{
-					_temp = arr[i];
-				}
+		var _temp = arr[0];
+		for(var i = 1; i < arr.length; i++){
+			if(arr[i]-_temp != 1){
+				return false;
+			}else{
+				_temp = arr[i];
 			}
-			return true;
 		}
-		return false;
+		return true;
 	}
 
 	// 将键值互换，值为原对象相同值的键的数组
@@ -167,6 +213,7 @@ var Texas = (function(){
 	return {
 		card_transform,
 		compare,
-		show_card
+		show_card,
+		get_max
 	}
 })()
