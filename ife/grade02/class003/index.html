@@ -70,11 +70,15 @@
 		}
 		function game_begin(){
 			if(!is_begin){
-				is_begin = true;
-				sets.forEach(function(item){item.isBegin = item.player?true:false;})
+				sets.forEach(function(item){
+					is_begin = true;
+					item.isBegin = item.player?true:false;
+				});
 			}
-			send_card(round);
-			round++;
+			if(is_begin){
+				send_card(round);
+				round++;
+			}
 		}
 
 		function send_card(){
