@@ -12,6 +12,10 @@
 		.card_center{align-self: center;margin: 0 auto;font-size: 50px;}
 		.card_right{align-self: flex-end;padding: 5px;}
 		.mrl50{margin-left: 50px;}
+		.container{display: flex;}
+		.players{flex-grow:1;line-height: 1em;}
+		.res{flex-grow:3;}
+		.res>div{height: 176px;align-items: flex-end;}
 	</style>
 </head>
 <body>
@@ -20,13 +24,20 @@
 		<button  onclick="compare();">比牌</button>
 	</div>
 	<div id="pool" class="card_wrapper"></div>
-	<div>
-		<div name="set"><button onclick="join('player_0',0)">加入</button></div><div id="player_0" class="card_wrapper"></div><div id="res_0" class="mrl50 card_wrapper"></div>
-		<div name="set"><button onclick="join('player_1',1)">加入</button></div><div id="player_1" class="card_wrapper"></div><div id="res_1" class="mrl50 card_wrapper"></div>
-		<div name="set"><button onclick="join('player_2',2)">加入</button></div><div id="player_2" class="card_wrapper"></div><div id="res_2" class="mrl50 card_wrapper"></div>
-		<div name="set"><button onclick="join('player_3',3)">加入</button></div><div id="player_3" class="card_wrapper"></div><div id="res_3" class="mrl50 card_wrapper"></div>
+	<div class="container">
+		<div class="players">
+			<div><div name="set"><button onclick="join('player_0',0)">加入</button></div><div id="player_0" class="card_wrapper"></div></div>
+			<div><div name="set"><button onclick="join('player_1',1)">加入</button></div><div id="player_1" class="card_wrapper"></div></div>
+			<div><div name="set"><button onclick="join('player_2',2)">加入</button></div><div id="player_2" class="card_wrapper"></div></div>
+			<div><div name="set"><button onclick="join('player_3',3)">加入</button></div><div id="player_3" class="card_wrapper"></div></div>
+		</div>
+		<div class="res">
+			<div id="res_0" class="mrl50 card_wrapper"></div>
+			<div id="res_1" class="mrl50 card_wrapper"></div>
+			<div id="res_2" class="mrl50 card_wrapper"></div>
+			<div id="res_3" class="mrl50 card_wrapper"></div>
+		</div>
 	</div>
-
 	<script type="text/javascript" src="index.js"></script>
 	<script>
 		var sets = [];
@@ -60,6 +71,7 @@
 		function game_begin(){
 			if(!is_begin){
 				is_begin = true;
+				sets.forEach(function(item){item.isBegin = item.player?true:false;})
 			}
 			send_card(round);
 			round++;
@@ -117,13 +129,36 @@
 			return dom;
 		}
 
-		function compare(){
-			var result = Texas.get_max(getPlayerCards("player_0"));
-			document.getElementById("res_0").innerHTML = "";
-			for(var i=0;i<result.length;i++){
-				document.getElementById("res_0").append(render(result[i]));
+		var render_result = function(results){
+			for(var i=0;i<results.length;i++){
+				var dom = document.createElement("p");
+				dom.innerHTML = results[i].level_text;
+				if(results[i].rank == 0){
+					dom.style.color = "red";	
+				}
+				document.getElementById("res_"+i).appendChild(dom);
 			}
 		}
+
+		function compare(){
+			if(document.getElementById("pool").children.length >=3 ){
+				var all = [];
+				sets.forEach(function(item,idx){
+					if(item.isBegin){
+						var single = [];
+						var result = Texas.get_max(getPlayerCards("player_"+idx));
+						document.getElementById("res_"+idx).innerHTML = "";
+						for(var i=0;i<result.length;i++){
+							single.push(result[i].num);
+							document.getElementById("res_"+idx).append(render(result[i]));
+						}
+					}
+					all.push(single);
+				})
+				render_result(Texas.get_result(all));
+			}
+		}
+
 
 		function getPlayerCards(player){
 			var cards = document.getElementById(player).children;

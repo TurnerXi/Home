@@ -1,24 +1,24 @@
 var Texas = (function(){
 	// level 
-	// 0： 同花大顺（Royal Flush） 
-	// 1： 同花顺（Straight Flush）
-	// 2： 四条（Four of a Kind） 
-	// 3： 葫芦（Fullhouse） 
-	// 4：同花（Flush） 
-	// 5：顺子（Straight） 
-	// 6：三条（Three of a kind）
-	// 7：两对（Two Pairs）
-	// 8：一对（One Pair）
-	// 9：高牌（high card）
+	// 0: 同花大顺（Royal Flush） 
+	// 1: 同花顺（Straight Flush）
+	// 2: 四条（Four of a Kind） 
+	// 3: 葫芦（Fullhouse） 
+	// 4:同花（Flush） 
+	// 5:顺子（Straight） 
+	// 6:三条（Three of a kind）
+	// 7:两对（Two Pairs）
+	// 8:一对（One Pair）
+	// 9:高牌（high card）
 	var card_arr = [];
 	var snums = {0:"2",1:"3",2:"4",3:"5",4:"6",5:"7",6:"8",7:"9",8:"10",9:"J",10:"Q",11:"K",12:"A"};
 	var stypes = {0:"♠",1:"♥",2:"♣",3:"♦"};
-
+	var levels = {0: '同花大顺（Royal Flush）' ,1: '同花顺（Straight Flush）',2: '四条（Four of a Kind） ',3: '葫芦（Fullhouse）',4:'同花（Flush）',5:'顺子（Straight）' ,6:'三条（Three of a kind）',7:'两对（Two Pairs）',8:'一对（One Pair）',9:'高牌（high card）'}
 	var calc_val = function(num){
 		return parseInt(num/4);
 	}
 
-	// 0：黑桃 1：红桃 2：梅花 3：方块
+	// 0:黑桃 1:红桃 2:梅花 3:方块
 	var calc_type = function(num){
 		return num%4;
 	}
@@ -54,7 +54,8 @@ var Texas = (function(){
 		return {
 			types : origin_types,
 			values : origin_values,
-			level
+			level,
+			level_text: levels[level]
 		}
 	}
 
@@ -98,6 +99,17 @@ var Texas = (function(){
 			result = card_a.level<card_b.level?1:-1;
 		}
 		return result;
+	}
+
+	var get_result = function(all_cards){
+		var orgin_arr = all_cards.slice();
+		Array.prototype.sort.call(all_cards,compare).reverse()[0];
+		return orgin_arr.map(function(item,idx){
+			var result = {};
+			Object.assign(result,card_transform(item));
+			result['rank'] = all_cards.indexOf(item);
+			return result;
+		})
 	}
 
 	var show_card = function(){
@@ -214,6 +226,7 @@ var Texas = (function(){
 		card_transform,
 		compare,
 		show_card,
-		get_max
+		get_max,
+		get_result
 	}
 })()
