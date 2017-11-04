@@ -20,7 +20,7 @@
 </head>
 <body>
 	<div class="nav">
-		<button  onclick="game_begin();">发牌</button> 
+		<button  onclick="game_begin();">发牌</button>
 		<button  onclick="compare();">比牌</button>
 	</div>
 	<div id="pool" class="card_wrapper"></div>
@@ -56,7 +56,7 @@
 							join(player,i);
 							break;
 						}
-						
+
 					}
 				}
 				render_set(player,no);
@@ -93,7 +93,7 @@
 									document.getElementById("player_"+idx).append(render(card));
 								}
 							}
-						})		
+						})
 					}
 				})(2)
 			}else if(round == 1){
@@ -120,15 +120,15 @@
 		var render = function(card){
 			var dom = document.createElement("div");
 			if(card.type == 0 || card.type == 2){
-				dom.style.color = "#000";	
+				dom.style.color = "#000";
 			}else{
 				dom.style.color = "red";
 			}
 			dom.setAttribute("num",card.num);
-			dom.innerHTML = "<div class='card_left'>" 
-							+ card.stype + card.snum 
-							+ "</div><div class='card_center'>" 
-							+ card.stype + "</div><div class='card_right'>" 
+			dom.innerHTML = "<div class='card_left'>"
+							+ card.stype + card.snum
+							+ "</div><div class='card_center'>"
+							+ card.stype + "</div><div class='card_right'>"
 							+ card.snum + card.stype + "</div>";
 			return dom;
 		}
@@ -138,7 +138,7 @@
 				var dom = document.createElement("p");
 				dom.innerHTML = results[i].level_text;
 				if(results[i].rank == 0){
-					dom.style.color = "red";	
+					dom.style.color = "red";
 				}
 				document.getElementById("res_"+i).appendChild(dom);
 			}
