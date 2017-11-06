@@ -2,6 +2,12 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const KoaBody = require('koa-body');
 const session = require("koa-session2");
+const Redis = require("ioredis");
+const redis = new Redis();
+redis.set("foo","123");
+redis.get("foo").then(function(result){
+  console.log(result);
+})
 const app = new Koa();
 const router = new Router();
 app.use(router['routes']());

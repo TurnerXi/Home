@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "ioredis": "^3.2.1",
     "koa": "^2.3.0",
     "koa-body": "^2.5.0",
     "koa-router": "^7.2.1",
