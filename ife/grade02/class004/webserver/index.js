@@ -3,19 +3,12 @@ const Router = require('koa-router');
 const KoaBody = require('koa-body');
 const session = require("koa-session2");
 const Redis = require("ioredis");
-const redis = new Redis();
-redis.set("foo","123");
-redis.get("foo").then(function(result){
-  console.log(result);
-})
 const app = new Koa();
 const router = new Router();
 app.use(router['routes']());
-app.use(session());
-app.use(ctx => {
-    let user = ctx.session.user;
-    console.log(user);
-});
+app.use(session({
+    key: "SESSIONID",   //default yy"koa:sess"
+}));
 router.post("/api/login",KoaBody(),function(ctx,next){
   var fields = ctx.request.body;
   var username = fields['username'];
