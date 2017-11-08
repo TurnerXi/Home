@@ -1,9 +1,29 @@
 {
+  {
+    "name": "act-koa2",
+    "version": "1.0.0",
+    "description": "use es6 in koa2",
+    "main": "app.js",
+    "scripts": {
+      "start": "babel-node src/index.js",
+      "build": "babel src --out-dir lib"
+  },
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "ioredis": "^3.2.1",
     "koa": "^2.3.0",
     "koa-body": "^2.5.0",
     "koa-router": "^7.2.1",
     "koa-session2": "^2.2.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-es2015-parameters": "^6.24.1",
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-plugin-transform-strict-mode": "^6.24.1"
   }
 }
