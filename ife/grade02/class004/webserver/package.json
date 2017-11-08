@@ -1,13 +1,4 @@
 {
-  {
-    "name": "act-koa2",
-    "version": "1.0.0",
-    "description": "use es6 in koa2",
-    "main": "app.js",
-    "scripts": {
-      "start": "babel-node src/index.js",
-      "build": "babel src --out-dir lib"
-  },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
