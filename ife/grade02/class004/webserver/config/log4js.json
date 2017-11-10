@@ -1,0 +1,21 @@
+{
+    "baseLevel": "DEBUG",
+    "isWriteFile": "true",
+    "baseDir" :"D://coding/Home/ife/grade02/class004/webserver/logs/",
+    "layoutDef": {"type": "pattern", "pattern": "%[[%d] [%p] - %m%n%]" },
+    "defaultAttr" :{
+        "type": "dateFile",
+        "absolute": true,
+        "pattern": ".yyyy-MM-dd-hh",
+        "alwaysIncludePattern": true,
+        "keepFileExt": true
+    },
+    "appenderDef": [
+            {"type": "console", "category": "console"},
+            {"filename": "app-debug.log", "category": "logDebug"},
+            {"filename": "app-info.log", "category": "logInfo"},
+            {"filename": "app-warn.log", "category": "logWarn"},
+            {"filename": "app-error.log", "category": "logErr"}
+    ],
+    "replaceConsole": true
+}
