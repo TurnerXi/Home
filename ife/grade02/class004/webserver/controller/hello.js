@@ -10,15 +10,8 @@ var login_api = async function(ctx,next){
   var fields = ctx.request.body;
   var username = fields['username'];
   var password = fields['pwd'];
-  var user = {user_id:0,user_name:"root",user_pwd:"123456"};// 查询用户是否存在
-  if (!user){
-    ctx.body = "用户不存在！";
-  }else if (user.user_pwd != password.toString()) {
-    ctx.body = "密码不正确！";
-  }else {
-    ctx.session.user = {"id": 1, "name": "root"};
-    ctx.body = "登录成功！";
-  }
+  ctx.session.user = {"id": 1, "name": username};
+  ctx.body = "登录成功！";
 }
 
 var routers = [

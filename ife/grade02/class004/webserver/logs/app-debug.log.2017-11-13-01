@@ -1,0 +1,115 @@
+[36m[2017-11-13 01:52:40.089] [DEBUG] [::1] - { request: 
+   { method: 'GET',
+     url: '/hello',
+     header: 
+      { host: 'localhost:3000',
+        connection: 'keep-alive',
+        'cache-control': 'max-age=0',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'zh-CN,zh;q=0.8' } },
+  response: { status: 404, message: 'Not Found', header: {} },
+  app: { subdomainOffset: 2, proxy: false, env: 'production' },
+  originalUrl: '/hello',
+  req: '<original node req>',
+  res: '<original node res>',
+  socket: '<original node socket>' } 'begin....'
+[39m
+[36m[2017-11-13 01:52:40.392] [DEBUG] [::1] - { request: 
+   { method: 'GET',
+     url: '/favicon.ico',
+     header: 
+      { host: 'localhost:3000',
+        connection: 'keep-alive',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+        accept: 'image/webp,image/apng,image/*,*/*;q=0.8',
+        referer: 'http://localhost:3000/hello',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'zh-CN,zh;q=0.8' } },
+  response: { status: 404, message: 'Not Found', header: {} },
+  app: { subdomainOffset: 2, proxy: false, env: 'production' },
+  originalUrl: '/favicon.ico',
+  req: '<original node req>',
+  res: '<original node res>',
+  socket: '<original node socket>' } 'begin....'
+[39m
+[36m[2017-11-13 01:53:06.877] [DEBUG] [::1] - { request: 
+   { method: 'GET',
+     url: '/hello',
+     header: 
+      { host: 'localhost:3000',
+        connection: 'keep-alive',
+        'cache-control': 'max-age=0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+        'upgrade-insecure-requests': '1',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'zh-CN,zh;q=0.8' } },
+  response: { status: 404, message: 'Not Found', header: {} },
+  app: { subdomainOffset: 2, proxy: false, env: 'production' },
+  originalUrl: '/hello',
+  req: '<original node req>',
+  res: '<original node res>',
+  socket: '<original node socket>' } 'begin....'
+[39m
+[36m[2017-11-13 01:53:07.034] [DEBUG] [::1] - { request: 
+   { method: 'GET',
+     url: '/favicon.ico',
+     header: 
+      { host: 'localhost:3000',
+        connection: 'keep-alive',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+        accept: 'image/webp,image/apng,image/*,*/*;q=0.8',
+        referer: 'http://localhost:3000/hello',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'zh-CN,zh;q=0.8' } },
+  response: { status: 404, message: 'Not Found', header: {} },
+  app: { subdomainOffset: 2, proxy: false, env: 'production' },
+  originalUrl: '/favicon.ico',
+  req: '<original node req>',
+  res: '<original node res>',
+  socket: '<original node socket>' } 'begin....'
+[39m
+[36m[2017-11-13 01:53:49.363] [DEBUG] [::1] - { request: 
+   { method: 'GET',
+     url: '/hello',
+     header: 
+      { host: 'localhost:3000',
+        connection: 'keep-alive',
+        'cache-control': 'max-age=0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+        'upgrade-insecure-requests': '1',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'zh-CN,zh;q=0.8' } },
+  response: { status: 404, message: 'Not Found', header: {} },
+  app: { subdomainOffset: 2, proxy: false, env: 'production' },
+  originalUrl: '/hello',
+  req: '<original node req>',
+  res: '<original node res>',
+  socket: '<original node socket>' } 'begin....'
+[39m
+[36m[2017-11-13 01:53:49.600] [DEBUG] [::1] - { request: 
+   { method: 'GET',
+     url: '/favicon.ico',
+     header: 
+      { host: 'localhost:3000',
+        connection: 'keep-alive',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+        accept: 'image/webp,image/apng,image/*,*/*;q=0.8',
+        referer: 'http://localhost:3000/hello',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'zh-CN,zh;q=0.8' } },
+  response: { status: 404, message: 'Not Found', header: {} },
+  app: { subdomainOffset: 2, proxy: false, env: 'production' },
+  originalUrl: '/favicon.ico',
+  req: '<original node req>',
+  res: '<original node res>',
+  socket: '<original node socket>' } 'begin....'
+[39m
+[36m[2017-11-13 01:55:15.877] [DEBUG] [::1] - begin....
+[39m
+[36m[2017-11-13 01:55:16.105] [DEBUG] [::1] - begin....
+[39m
