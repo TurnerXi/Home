@@ -2,7 +2,7 @@
     "baseLevel": "DEBUG",
     "isWriteFile": "false",
     "baseDir" :"D://coding/Home/ife/grade02/class004/webserver/logs/",
-    "layoutDef": {"type": "pattern", "pattern": "%[[%d] [%p] [%X{IP}] [%X{USER}] - %m%n%]" },
+    "layoutDef": {"type": "pattern", "pattern": "%[[%d] [%p] [%X{IP}] [%X{USER}] - %m%]" },
     "defaultAttr" :{
         "type": "dateFile",
         "absolute": true,

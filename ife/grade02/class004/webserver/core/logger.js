@@ -78,36 +78,37 @@ const logErr = log4js.getLogger('logErr');
 
 const logger = {};
 const loggers = [logDebug,logInfo,logWarn,logErr];
-function resolveLogContext(ctx){
-  var args = {};
-  args["IP"] = "127.0.0.1";
-  args["USER"] = "system";
-  if(ctx && typeof ctx != "string"){
-    args["IP"] = ctx.ip||args["IP"];
-    args["USER"] = ctx.session && ctx.session.user && ctx.session.user.name||args["USER"];
-  }
+
+//default context
+(function(){
+  var args = {"IP": "127.0.0.1","USER": "system"};
   loggers.forEach(function(item){
     Object.entries(args).forEach(function(entry){
       item.addContext(entry[0],entry[1]);
     })
   })
+})();
+
+logger.addContext = function(key,value){
+  loggers.forEach(function(item){
+      item.addContext(key,value);
+  })
 }
-logger.debug = function(ctx,...msg){
-    resolveLogContext(ctx);
-    let message = typeof ctx == "string"?arguments:msg;
-    logDebug.debug(...message||"");
+
+logger.debug = function(...msg){
+    logDebug.debug(...msg||"");
 };
 
-logger.info = function(msg){
-    logInfo.info(msg||"");
+logger.info = function(...msg){
+    logInfo.info(...msg||"");
 };
 
-logger.warn = function(msg){
-    logWarn.warn(msg||"");
+logger.warn = function(...msg){
+    logWarn.warn(...msg||"");
 };
 
-logger.error = function(msg){
-    logErr.error(msg||"");
+logger.error = function(...msg){
+    logErr.error(...msg||"");
 };
 
 export default logger
