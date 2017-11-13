@@ -1,11 +1,11 @@
 import Koa from 'koa';
 import session from 'koa-session2'
 import bodypaser from 'koa-body'
-import router from './core/router.js'
-import filter from './core/filter.js'
-import listener from './core/listener.js'
-import store from './core/session.js'
-import logger from './core/logger.js'
+import router from './lib/router.js'
+import filter from './lib/filter.js'
+import listener from './lib/listener.js'
+import store from './lib/session.js'
+import logger from './lib/logger.js'
 const app = new Koa();
 app.use(bodypaser());
 app.use(session({store}));

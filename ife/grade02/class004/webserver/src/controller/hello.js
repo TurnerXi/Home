@@ -1,4 +1,4 @@
-import Exception from '../core/exception'
+import Exception from '../../lib/exception'
 var hello_api = async function(ctx,next){
   console.log("helloing");
   var user = ctx.session.user;

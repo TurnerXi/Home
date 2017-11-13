@@ -1,4 +1,4 @@
-import logger from './logger.js'
+import logger from './logger'
 export default {
     resFormat: async function(ctx,next){
       try{

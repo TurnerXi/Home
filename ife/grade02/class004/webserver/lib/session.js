@@ -1,7 +1,6 @@
 import {Store} from 'koa-session2'
 import Redis from 'ioredis'
 
-
 class RedisStore extends Store{
   constructor(){
     super();
