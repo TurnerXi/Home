@@ -19,7 +19,7 @@ app.use(async function(ctx,next){
   try{
     await next();
   }catch(e){
-    logger.error("系统错误：" + JSON.stringify(e));
+    logger.error("系统错误：", e);
   }
   let cast = new Date().getTime()-begin;
   logger.info(`request ${ctx.path} cast ${cast} ms`);
