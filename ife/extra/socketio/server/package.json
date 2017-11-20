@@ -1,0 +1,15 @@
+{
+  "name": "socketio_server",
+  "version": "1.0.0",
+  "description": "learn socketio ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Turner",
+  "license": "ISC",
+  "dependencies": {
+    "socketio": "^1.0.0"
+  }
+}
