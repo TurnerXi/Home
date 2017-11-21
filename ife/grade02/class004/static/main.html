@@ -7,10 +7,11 @@
   <title>Document</title>
 </head>
 <body>
-  <form action="http://localhost:3000/user/login" method="post">
+  <form action="http://localhost:3000/user/register" method="post">
     <input type="text" name="username" placeholder="username"/>
     <input type="password" name="pwd" placeholder="password"/>
-    <button onclick="document.form.submit()">submit</button>
+    <input type="text" name="capcha" placeholder="capcha"/><img onclick="this.src=(this.src.split('?')[0]+'?_='+new Date().getTime())" src="http://localhost:3000/user/get_captha"/>
+    <button>submit</button>
   </form>
 </body>
 </html>

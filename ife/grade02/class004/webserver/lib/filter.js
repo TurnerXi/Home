@@ -4,7 +4,9 @@ export default {
       try{
         ctx.body = {}
         await next()
-        ctx.body = {'code': ctx.body.flag ,'msg': ctx.body.msg}
+        if(!Buffer.isBuffer(ctx.body)){
+          ctx.body = {'code': ctx.body.flag ,'msg': ctx.body.msg};
+        }
       }catch(e){
         ctx.body = {'code': e.code,'msg': "接口请求错误：" + e.msg}
         throw e
