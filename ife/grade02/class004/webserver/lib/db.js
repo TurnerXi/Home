@@ -1,29 +1,18 @@
-import Redis from 'ioredis'
+import { MongoClient } from 'mongodb'
 import logger from './logger'
-class DataBase{
-      /**
-      * @nsp 命名空间
-      */
-     constructor (nsp){
-        try {
-             let options = {
-               keyPrefix: nsp?`${nsp}:`:''
-             }
-             let redis = new Redis( "127.0.0.1", 6379, options);
-             redis.monitor(function(err, monitor){
-               monitor.on('monitor', function(time, args, source, database){
-                  logger.info(`connect to redis , args : ${args}`);
-               })
-             })
-             this.db = redis.multi();
-        } catch (e) {
-             logger.error("Redis初始化失败",e.message);
-        }
-     }
 
-     static getInstance(nsp){
-       return new DataBase(nsp).db;
-     }
+class DataBase extends MongoClient {
+
+  constructor() {
+    DataBase.DB_URL = "mongodb://localhost:27017/texas";
+    super();
+  }
+
+  static getConnect() {
+    if (!DataBase.db) {
+      DataBase.db = new DataBase();
+    }
+    return DataBase.db.connect(DataBase.DB_URL);
+  }
 }
-
 export default DataBase
