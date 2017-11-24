@@ -1,10 +1,11 @@
-import { MongoClient } from 'mongodb'
+import { MongoClient,ObjectId } from 'mongodb'
 import logger from './logger'
 
 class DataBase extends MongoClient {
 
   constructor() {
     DataBase.DB_URL = "mongodb://localhost:27017/texas";
+    DataBase.ObjectId = ObjectId;
     super();
   }
 
