@@ -18,14 +18,14 @@ export default [{
       }
       if (username) {
         let dto = await UserInfoService.findByUserName(username);
-        dto.login_ip = ctx.ip;
-        dto.login_time = new Date();
-        if(dto == null){
+        if (dto == null) {
           throw Exception.ERROR_01_0004;
         }
-        if(dto.password != password){
+        if (dto.password != password) {
           throw Exception.ERROR_01_0006;
         }
+        dto.login_ip = ctx.ip;
+        dto.login_time = new Date();
         await UserInfoService.save(dto.getEntity());
         ctx.session.user = dto;
         ctx.body.flag = 1;
@@ -52,10 +52,10 @@ export default [{
     path: 'Get /user/check_login',
     auth: false,
     method: async function (ctx, next) {
-      if(ctx.session.user){
+      if (ctx.session.user) {
         ctx.body.flag = 1;
         ctx.body.msg = '用户已登录!';
-      }else{
+      } else {
         ctx.body.flag = 0;
         ctx.body.msg = '用户未登录!';
       }
@@ -87,10 +87,10 @@ export default [{
         throw Exception.ERROR_01_0002;
       }
       let info = await UserInfoService.findByUserName(username);
-      if(info != null){
+      if (info != null) {
         throw Exception.ERROR_01_0003;
       }
-      await UserInfoService.save(new UserInfoDto({username,password,reg_ip:ctx.ip,reg_time:new Date(),status:1}).getEntity());
+      await UserInfoService.save(new UserInfoDto({ username, password, reg_ip: ctx.ip, reg_time: new Date(), status: 1 }).getEntity());
       logger.info(`用户【${username}】注册成功，注册地址${ctx.ip}！`);
       ctx.body.flag = 1;
       ctx.body.msg = '用户注册成功!';

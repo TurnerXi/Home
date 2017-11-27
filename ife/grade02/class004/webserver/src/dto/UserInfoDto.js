@@ -1,7 +1,7 @@
 import UserInfo from '../entity/UserInfo'
-class UserInfoDto{
+class UserInfoDto {
 
-  constructor({userid,username,password,login_ip,login_time,reg_ip,reg_time,status} = {}){
+  constructor({ userid, username, password, login_ip, login_time, reg_ip, reg_time, status } = {}) {
     this.userid = userid;
     this.username = username;
     this.password = password;
@@ -12,15 +12,15 @@ class UserInfoDto{
     this.status = status;
   }
 
-  getEntity(){
-    let entity = Object.assign(new UserInfo(),this);
+  getEntity() {
+    let entity = Object.assign(new UserInfo(), this);
     entity.u_name = this.username;
     entity.u_pwd = this.password;
     return entity;
   }
 
-  getInfo(){
-    return {username:this.username,login_ip:this.login_ip,login_time:this.login_time,reg_ip:this.reg_ip,reg_time:this.reg_time,status:this.status};
+  getInfo() {
+    return { username: this.username, login_ip: this.login_ip, login_time: this.login_time, reg_ip: this.reg_ip, reg_time: this.reg_time, status: this.status };
   }
 }
 

@@ -1,50 +1,47 @@
 import logger from '../../lib/logger'
-import exception from '../../lib/exception'
+import util from '../../lib/util'
+import Exception from '../../lib/exception'
+import RoomService from '../service/RoomService'
+import RoomDto from '../dto/RoomInfoDto'
 
-let create_room = async function(ctx,next){
-  global.room = {"players":1,"isbegin":false};
-  logger.info("房间创建成功！");
-  ctx.body.flag = 1;
-  ctx.body.msg = global.room;
-  await next();
-}
-
-let join_room = async function(ctx,next){
-  if(!global.room){
-      throw exception.ERROR_02_0001
-  }else{
-    if(++global.room.players == 4){
-      global.room.isbegin = true;
+export default [{
+    path: 'Get /room/create',
+    auth: true,
+    method: async function (ctx, next) {
+      let room = await RoomService.create(ctx.session.user.userid);
+      logger.info(`房间${room.room_num}创建成功！`);
+      ctx.body.flag = 1;
+      ctx.body.msg = room;
+      await next();
     }
-    ctx.body.flag = 1;
-    ctx.body.msg = global.room;
+  },
+  {
+    path: 'Get /room/list',
+    auth: true,
+    method: async function (ctx, next) {
+      ctx.body.flag = 1;
+      ctx.body.msg = await RoomService.rooms();
+      await next();
+    }
+  },
+  {
+    path: 'Get /room/join/:room_num',
+    auth: true,
+    method: async function (ctx, next) {
+      let room_num = ctx.params.room_num;
+      let play_id = ctx.session.user.id;
+      let flag = await RoomService.join(room_num, play_id);
+      ctx.body.flag = flag;
+      if (flag == 1) {
+        ctx.body.msg = `用户${play_id}加入房间${room_num}成功!`;
+      }else if(flag == -1){
+        ctx.body.msg = `房间${room_num}已开局，用户${play_id}加入失败!`;
+      }else if(flag == -2){
+        ctx.body.msg = `房间${room_num}已满员，用户${play_id}加入失败!`;
+      }else{
+        ctx.body.msg = `用户${play_id}加入房间${room_num}失败!`;
+      }
+      await next();
+    }
   }
-  await next();
-}
-
-let has_room = async function(ctx,next){
-  if(global.room){
-    ctx.body.flag = 1;
-    ctx.body.msg = "成功！";
-  }else{
-    ctx.body.flag = 0;
-    ctx.body.msg = "失败！";
-  }
-  await next();
-}
-
-let destory_room = async function(ctx,next){
-  global.room = null;
-  ctx.body.flag = 1;
-  ctx.body.msg = "成功！";
-  await next();
-}
-
-let routers = [
-  {path:'Get /room/create',auth:true,method:create_room},
-  {path:'Get /room/hasroom',auth:true,method:has_room},
-  {path:'Get /room/join',auth:true,method:join_room},
-  {path:'Get /room/destroy',auth:true,method:destory_room},
 ]
-
-export default routers

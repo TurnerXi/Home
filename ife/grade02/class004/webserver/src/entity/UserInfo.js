@@ -1,7 +1,7 @@
 import UserInfoDto from '../dto/UserInfoDto'
-class UserInfo{
+class UserInfo {
 
-  constructor({_id,u_name,u_pwd,login_ip,login_time,reg_ip,reg_time,status} = {}){
+  constructor({ _id, u_name, u_pwd, login_ip, login_time, reg_ip, reg_time, status } = {}) {
     this._id = _id;
     this.u_name = u_name;
     this.u_pwd = u_pwd;
@@ -12,8 +12,8 @@ class UserInfo{
     this.status = status;
   }
 
-  getDto(){
-    let dto = Object.assign(new UserInfoDto(),this);
+  getDto() {
+    let dto = Object.assign(new UserInfoDto(), this);
     dto.userid = this._id;
     dto.username = this.u_name;
     dto.password = this.u_pwd;

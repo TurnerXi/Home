@@ -9,6 +9,7 @@
     "koa-body": "^2.5.0",
     "koa-router": "^7.2.1",
     "koa-session2": "^2.2.5",
+    "koa2-cors": "^2.0.5",
     "log4js": "^2.3.11",
     "mongodb": "^2.2.33"
   },
