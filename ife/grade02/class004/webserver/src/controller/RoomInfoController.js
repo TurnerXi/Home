@@ -41,10 +41,10 @@ let destory_room = async function(ctx,next){
 }
 
 let routers = [
-  {path:'Get /room/create',method:create_room,auth:true},
-  {path:'Get /room/hasroom',method:has_room,auth:true},
-  {path:'Get /room/join',method:join_room,auth:true},
-  {path:'Get /room/destroy',method:destory_room,auth:true},
+  {path:'Get /room/create',auth:true,method:create_room},
+  {path:'Get /room/hasroom',auth:true,method:has_room},
+  {path:'Get /room/join',auth:true,method:join_room},
+  {path:'Get /room/destroy',auth:true,method:destory_room},
 ]
 
 export default routers
