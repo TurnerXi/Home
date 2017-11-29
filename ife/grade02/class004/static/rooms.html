@@ -38,8 +38,7 @@
     function create_room() {
       doAjax("http://localhost:3000/room/create", "get", {}, function(rs) {
         if (rs.code == 1) {
-          console.log(rs.msg);
-          reload();
+          window.location.href='D:\\coding\\Home\\ife\\grade02\\class004\\static\\room.html?room_num='+rs.msg.room_num;
         } else {
           console.error(rs.msg);
         }
