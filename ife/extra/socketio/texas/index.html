@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.nav{height:50px;}
+		.nav button{height:30px;width: 50px;}
+		.card_wrapper{display: flex;height: 160px;}
+		.card_wrapper>div{display:flex;border: 1px solid; width: 120px; height: 150px; border-radius: 5px; margin: 5px; border-color: #000;}
+		.card_left{align-self: flex-start;padding: 5px;}
+		.card_center{align-self: center;margin: 0 auto;font-size: 50px;}
+		.card_right{align-self: flex-end;padding: 5px;}
+		.mrl50{margin-left: 50px;}
+		.container{display: flex;}
+		.players{flex-grow:1;line-height: 1em;}
+		.res{flex-grow:3;}
+		.res>div{height: 176px;align-items: flex-end;}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<button  onclick="game_begin();">发牌</button>
+		<button  onclick="compare();">比牌</button>
+	</div>
+	<div id="pool" class="card_wrapper"></div>
+	<div class="container">
+		<div class="players">
+			<div><div name="set"><button onclick="join('player_0',0)">加入</button></div><div id="player_0" class="card_wrapper"></div></div>
+			<div><div name="set"><button onclick="join('player_1',1)">加入</button></div><div id="player_1" class="card_wrapper"></div></div>
+			<div><div name="set"><button onclick="join('player_2',2)">加入</button></div><div id="player_2" class="card_wrapper"></div></div>
+			<div><div name="set"><button onclick="join('player_3',3)">加入</button></div><div id="player_3" class="card_wrapper"></div></div>
+		</div>
+		<div class="res">
+			<div id="res_0" class="mrl50 card_wrapper"></div>
+			<div id="res_1" class="mrl50 card_wrapper"></div>
+			<div id="res_2" class="mrl50 card_wrapper"></div>
+			<div id="res_3" class="mrl50 card_wrapper"></div>
+		</div>
+	</div>
+	<!-- <script type="text/javascript" src="/index.js"></script> -->
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io();
+		socket.emit("add user",{username:getQueryParam("username"),wallet:1000});
+		socket.emit("create room",1);
+		socket.emit("join room",1);
+		socket.on("game begin",function(players){
+			console.log("game begin");
+		})
+		socket.on("join room",function(players){
+			players.forEach((item)=>{
+					console.log(decodeURI(item.username));
+			})
+		})
+		socket.on("bet success",function(betmoney){
+			console.log("我下注了",betmoney);
+		});
+		socket.on("begin bet",function(pool_money){
+			socket.emit("bet",10);
+		});
+		socket.on("begin over",function(obj){
+			console.log(obj.user.username,"下注",obj.betmoney);
+		});
+		socket.on("send pri card",function(cards){
+			console.log(cards);
+		});
+		socket.on("send pub card",function(cards){
+			console.log(cards);
+		});
+		socket.on("compare all",function(result){
+			console.log(result);
+		});
+		function getQueryParam(param,url){
+				url = url || window.location.href;
+				var query = url.split("?")[1];
+				var result = "";
+				query.split("&").forEach(function(item){
+					if(param == item.split("=")[0]){
+						result = item.split("=")[1];
+					}
+				})
+				return result;
+		}
+		// var sets = [];
+		// var is_begin = false;
+		// var round = 0;
+		// function join(player,no){
+		// 	if(!is_begin && sets.filter(function(item){return item.player;}).length < 4 && (!no || no<4)){
+		// 		if(no != undefined){
+		// 			sets[no] = {'player':player};
+		// 		}else{
+		// 			for(var i=0;i<4;i++){
+		// 				if(!sets[i]){
+		// 					sets[i] = {};
+		// 				}
+		// 				if(!sets[i]['player']){
+		// 					join(player,i);
+		// 					break;
+		// 				}
+    //
+		// 			}
+		// 		}
+		// 		render_set(player,no);
+		// 	}
+		// }
+		// function render_set(player,no){
+		// 	var set = document.getElementsByName("set")[no];
+		// 	if(set){
+		// 		set.innerHTML = player;
+		// 	}
+		// }
+		// function game_begin(){
+		// 	if(!is_begin){
+		// 		sets.forEach(function(item){
+		// 			is_begin = true;
+		// 			item.isBegin = item.player?true:false;
+		// 		});
+		// 	}
+		// 	if(is_begin){
+		// 		send_card(round);
+		// 		round++;
+		// 	}
+		// }
+    //
+		// function send_card(){
+		// 	if(round == 0){
+		// 		(function(r){
+		// 			var i=0;
+		// 			while(i++<r){
+		// 				sets.forEach(function(item,idx){
+		// 					if(item){
+		// 						var card = Texas.show_card();
+		// 						if(card){
+		// 							document.getElementById("player_"+idx).append(render(card));
+		// 						}
+		// 					}
+		// 				})
+		// 			}
+		// 		})(2)
+		// 	}else if(round == 1){
+		// 		send_to_pool(3);
+		// 	}else if(round == 2){
+		// 		send_to_pool(1);
+		// 	}else if(round == 3){
+		// 		send_to_pool(1);
+		// 	}
+		// }
+    //
+		// var send_to_pool = function(num){
+		// 	(function(round){
+		// 		var i=0;
+		// 		while(i++<round){
+		// 			var card = Texas.show_card();
+		// 			if(card){
+		// 				document.getElementById("pool").append(render(card));
+		// 			}
+		// 		}
+		// 	})(num)
+		// }
+    //
+		// var render = function(card){
+		// 	var dom = document.createElement("div");
+		// 	if(card.type == 0 || card.type == 2){
+		// 		dom.style.color = "#000";
+		// 	}else{
+		// 		dom.style.color = "red";
+		// 	}
+		// 	dom.setAttribute("num",card.num);
+		// 	dom.innerHTML = "<div class='card_left'>"
+		// 					+ card.stype + card.snum
+		// 					+ "</div><div class='card_center'>"
+		// 					+ card.stype + "</div><div class='card_right'>"
+		// 					+ card.snum + card.stype + "</div>";
+		// 	return dom;
+		// }
+    //
+		// var render_result = function(results){
+		// 	for(var i=0;i<results.length;i++){
+		// 		var dom = document.createElement("p");
+		// 		dom.innerHTML = results[i].level_text;
+		// 		if(results[i].rank == 0){
+		// 			dom.style.color = "red";
+		// 		}
+		// 		document.getElementById("res_"+i).appendChild(dom);
+		// 	}
+		// }
+    //
+		// function compare(){
+		// 	if(document.getElementById("pool").children.length >=3 ){
+		// 		var all = [];
+		// 		sets.forEach(function(item,idx){
+		// 			if(item.isBegin){
+		// 				var single = [];
+		// 				var result = Texas.get_max(getPlayerCards("player_"+idx));
+		// 				document.getElementById("res_"+idx).innerHTML = "";
+		// 				for(var i=0;i<result.length;i++){
+		// 					single.push(result[i].num);
+		// 					document.getElementById("res_"+idx).append(render(result[i]));
+		// 				}
+		// 			}
+		// 			all.push(single);
+		// 		})
+		// 		render_result(Texas.get_result(all));
+		// 	}
+		// }
+    //
+    //
+		// function getPlayerCards(player){
+		// 	var cards = document.getElementById(player).children;
+		// 	var polls = document.getElementById("pool").children;
+		// 	var nums = [];
+		// 	for (var i = 0; i < cards.length; i++) {
+		// 		nums.push(cards[i].getAttribute("num"));
+		// 	}
+		// 	for (var i = 0; i < polls.length; i++) {
+		// 		nums.push(polls[i].getAttribute("num"));
+		// 	}
+		// 	return nums;
+		// }
+
+
+	</script>
+</body>
+</html>
