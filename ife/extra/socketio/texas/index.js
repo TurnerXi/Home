@@ -136,7 +136,7 @@
 	}
 
 	var get_max = function(nums){
-		var all = nums.cnm(5,nums.length);
+		var all = nums.cnm(Math.min(5,nums.length),nums.length);
 		var best = Array.prototype.sort.call(all,compare).reverse()[0];
 		best = best.sort(function(a,b){return (+b)-(+a);});
 		var res = [];

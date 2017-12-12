@@ -75,6 +75,19 @@ io.on('connection', (socket) => {
       io.sockets.emit("compare all",rooms[room].players.map(function(item){ return {"user":item.user,"cards":item.cards}}));
     }
   });
+  socket.on('max card type',function(fn){
+    let cards = texas.get_max(socket.cards.concat(rooms[room].pub_cards).map(item=>{return item.num}));
+    let card_type = texas.card_transform(cards.map(item=>{return item.num})).level_text;
+    fn && fn(cards,card_type);
+  });
+  socket.on("compare all",function(){
+    rooms[room].all_cards = [];
+    rooms[room].players.forEach(function(item){
+      rooms[room].all_cards.push(texas.get_max(item.cards.concat(rooms[room].pub_cards).map(item=>{return item.num})));
+    });
+    let result = texas.get_result(rooms[room].all_cards);
+    io.sockets.emit("compare all",result);
+  });
   socket.on("disconnect",()=>{
     if(rooms[room]){
       rooms[room].nums--;

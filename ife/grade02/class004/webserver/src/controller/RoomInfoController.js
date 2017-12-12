@@ -34,11 +34,11 @@ export default [{
       ctx.body.flag = flag;
       if (flag == 1) {
         ctx.body.msg = `用户${play_id}加入房间${room_num}成功!`;
-      }else if(flag == -1){
+      } else if (flag == -1) {
         ctx.body.msg = `房间${room_num}已开局，用户${play_id}加入失败!`;
-      }else if(flag == -2){
+      } else if (flag == -2) {
         ctx.body.msg = `房间${room_num}已满员，用户${play_id}加入失败!`;
-      }else{
+      } else {
         ctx.body.msg = `用户${play_id}加入房间${room_num}失败!`;
       }
       await next();
