@@ -85,7 +85,12 @@ io.on('connection', (socket) => {
     rooms[room].players.forEach(function(item){
       rooms[room].all_cards.push(texas.get_max(item.cards.concat(rooms[room].pub_cards).map(item=>{return item.num})));
     });
-    let result = texas.get_result(rooms[room].all_cards);
+    let result = texas.get_result(rooms[room].all_cards).map(function(item,idx){
+      let player = rooms[room].players[idx];
+      item.under_cards = player.cards;
+      item.user = player.user;
+      return item;
+    });
     io.sockets.emit("compare all",result);
   });
   socket.on("disconnect",()=>{
@@ -94,6 +99,7 @@ io.on('connection', (socket) => {
       let players = rooms[room].players;
       players.splice(players.indexOf(socket),1);
       nUsers --;
+      socket.broadcast.emit("leave room",players.map((item)=>{return item.user}));
     }
   })
 });

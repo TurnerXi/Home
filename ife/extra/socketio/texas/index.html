@@ -1,145 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
-		.nav{height:50px;}
-		.nav button{height:30px;width: 50px;}
-		.card_wrapper{display: flex;height: 160px;}
-		.card_wrapper>div{display:flex;border: 1px solid; width: 120px; height: 150px; border-radius: 5px; margin: 5px; border-color: #000;}
-		.card_left{align-self: flex-start;padding: 5px;}
-		.card_center{align-self: center;margin: 0 auto;font-size: 50px;}
-		.card_right{align-self: flex-end;padding: 5px;}
-		.mrl50{margin-left: 50px;}
-		.container{display: flex;}
-		.players{flex-grow:1;line-height: 1em;}
-		.res{flex-grow:3;}
-		.res>div{height: 176px;align-items: flex-end;}
-		.betbox{display: flex;}
-		.betbox>button{align-self: center;border: none;}
-		.disabled>button{background-color: #9E9E9E;color: white;}
+		.nav {
+			height: 50px;
+		}
+
+		.nav button {
+			height: 30px;
+			width: 50px;
+		}
+
+		.card_wrapper {
+			display: flex;
+			height: 160px;
+		}
+
+		.card_wrapper>div {
+			display: flex;
+			border: 1px solid;
+			width: 120px;
+			height: 150px;
+			border-radius: 5px;
+			margin: 5px;
+			border-color: #000;
+		}
+
+		.card_left {
+			align-self: flex-start;
+			padding: 5px;
+		}
+
+		.card_center {
+			align-self: center;
+			margin: 0 auto;
+			font-size: 50px;
+		}
+
+		.card_right {
+			align-self: flex-end;
+			padding: 5px;
+		}
+
+		.mrl50 {
+			margin-left: 50px;
+		}
+
+		.container {
+			display: flex;
+		}
+
+		.players {
+			flex-grow: 1;
+			line-height: 1em;
+		}
+
+		.res {
+			flex-grow: 3;
+		}
+
+		.res>div {
+			height: 176px;
+			align-items: flex-end;
+		}
+
+		.betbox {
+			display: flex;
+		}
+
+		.betbox>button {
+			align-self: center;
+			border: none;
+		}
+
+		.disabled>button {
+			background-color: #9E9E9E;
+			color: white;
+		}
+
+		.winbox{
+			border-color:red;
+			border-width: 5px;
+		}
 	</style>
 </head>
+
 <body>
-	<div  class="betbox disabled" id="betbox">
+	<div class="betbox disabled" id="betbox">
 		<button name="follow_bet">跟注</button>
 		<button name="compare_all">比牌</button>
 	</div>
 	<div id="pool" class="card_wrapper"></div>
 	<div class="container">
 		<div class="players">
-			<div><div id="card_type"></div><div id="player_0" class="card_wrapper"></div></div>
-			<div><div id="player_1" class="card_wrapper"></div></div>
-			<div><div id="player_2" class="card_wrapper"></div></div>
-			<div><div id="player_3" class="card_wrapper"></div></div>
+			<div>
+				<div><span id="user_name"></span>&emsp;<span id="card_type"></span></div>
+				<div id="player" class="card_wrapper"></div>
+			</div>
+			<div>
+				<div><span id="user_name_0"></span>&emsp;<span id="card_type_0"></span></div>
+				<div id="player_0" class="card_wrapper"></div>
+			</div>
+			<div>
+				<div><span id="user_name_1"></span>&emsp;<span id="card_type_1"></span></div>
+				<div id="player_1" class="card_wrapper"></div>
+			</div>
+			<div>
+				<div><span id="user_name_2"></span>&emsp;<span id="card_type_2"></span></div>
+				<div id="player_2" class="card_wrapper"></div>
+			</div>
 		</div>
 		<div class="res">
+			<div id="res" class="mrl50 card_wrapper"></div>
 			<div id="res_0" class="mrl50 card_wrapper"></div>
 			<div id="res_1" class="mrl50 card_wrapper"></div>
 			<div id="res_2" class="mrl50 card_wrapper"></div>
-			<div id="res_3" class="mrl50 card_wrapper"></div>
 		</div>
 	</div>
 	<!-- <script type="text/javascript" src="/index.js"></script> -->
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js" charset="utf-8"></script>
 	<script>
+		var players = [];
+		var username = decodeURI(getQueryParam("username"));
 		var socket = io();
-		socket.emit("add user",{username:getQueryParam("username"),wallet:1000});
-		socket.emit("create room",1);
-		socket.emit("join room",1);
-		socket.on("game begin",function(players){
+		init_page();
+
+		function init_page() {
+			$("#user_name").html(username);
+		}
+		socket.emit("add user", {
+			username,
+			wallet: 1000
+		});
+		socket.emit("create room", 1);
+		socket.emit("join room", 1);
+		socket.on("game begin", function(players) {
 			console.log("game begin");
 		})
-		socket.on("join room",function(players){
-			players.forEach((item)=>{
-					console.log(decodeURI(item.username));
-			})
+		socket.on("join room", function(join_users) {
+			players = join_users.concat();
+			players.slice(getUserIdxByName(username),1);
+			render_user()
 		})
-		socket.on("bet success",function(betmoney){
-			console.log("我下注了",betmoney);
+		socket.on("leave room",function(join_users){
+			players = join_users.concat();
+			players.splice(getUserIdxByName(username),1);
+			render_user()
+		})
+		function render_user(){
+			players.forEach(function(item,idx){
+				$("#user_name_" + idx).html(item.username);
+			})
+		}
+		socket.on("bet success", function(betmoney) {
+			console.log("我下注了", betmoney);
 		});
-		socket.on("begin bet",function(under_money){
-			$("#betbox").removeClass("disabled").one("click",function(e){
-				if($(e.target).attr("name") == 'follow_bet'){
-					socket.emit("bet",10);
-				}else if($(e.target).attr("name") == 'compare_all'){
+		socket.on("begin bet", function(under_money) {
+			$("#betbox").removeClass("disabled").one("click", function(e) {
+				if ($(e.target).attr("name") == 'follow_bet') {
+					socket.emit("bet", 10);
+				} else if ($(e.target).attr("name") == 'compare_all') {
 					socket.emit("compare all");
 				}
 				$(this).addClass("disabled");
 			})
 		});
-		socket.on("begin over",function(obj){
-			console.log(obj.user.username,"下注",obj.betmoney);
+		socket.on("begin over", function(obj) {
+			console.log(obj.user.username, "下注", obj.betmoney);
 		});
-		socket.on("send pri card",function(cards){
-				cards.forEach(function(item){
-						document.getElementById("player_0").append(render(item));
+		socket.on("send pri card", function(cards) {
+			cards.forEach(function(item) {
+				document.getElementById("player").append(render(item));
+				players.forEach(function(player, idx) {
+					document.getElementById("player_"+idx).append(render());
 				})
-				socket.emit("max card type",function(cards,card_type){
-					document.getElementById("res_0").innerHTML = "";
-					cards.forEach(function(item){
-						document.getElementById("res_0").append(render(item));
-					});
-					$("#card_type").html(card_type);
-				});
-		});
-		socket.on("send pub card",function(cards){
-			document.getElementById("pool").innerHTML = "";
-			cards.forEach(function(item){
-					document.getElementById("pool").append(render(item));
-			})
-			socket.emit("max card type",function(cards,card_type){
-				document.getElementById("res_0").innerHTML = "";
-				cards.forEach(function(item){
-					document.getElementById("res_0").append(render(item));
+			});
+			socket.emit("max card type", function(cards, card_type) {
+				document.getElementById("res").innerHTML = "";
+				cards.forEach(function(item) {
+					document.getElementById("res").append(render(item));
 				});
 				$("#card_type").html(card_type);
 			});
 		});
-		socket.on("compare all",function(result){
-			console.log(result);
+		socket.on("send pub card", function(cards) {
+			document.getElementById("pool").innerHTML = "";
+			cards.forEach(function(item) {
+				document.getElementById("pool").append(render(item));
+			})
+			socket.emit("max card type", function(cards, card_type) {
+				document.getElementById("res").innerHTML = "";
+				cards.forEach(function(item) {
+					document.getElementById("res").append(render(item));
+				});
+				$("#card_type").html(card_type);
+			});
 		});
-		function getQueryParam(param,url){
-				url = url || window.location.href;
-				var query = url.split("?")[1];
-				var result = "";
-				query.split("&").forEach(function(item){
-					if(param == item.split("=")[0]){
-						result = item.split("=")[1];
+		socket.on("compare all", function(result) {
+			result.forEach(function(item,idx){
+				if(item.user.username == username){
+					if(item.rank == 0){
+						$("res").addClass("winbox");
 					}
-				})
-				return result;
+				}else{
+						var index = getUserIdxByName(item.user.username);
+						$("#card_type_"+index).html(item.level_text);
+						$("#player_"+index).html('');
+						item.under_cards.forEach(function(card){
+							$("#player_"+index).append(render(card));
+						});
+						if(item.rank == 0){
+							$("res_"+index).addClass("winbox");
+						}
+				}
+			})
+		});
+
+		function getUserIdxByName(name){
+			for(var i=0;i<players.length;i++){
+				if(players[i].username == name){
+					return i;
+				}
+			}
 		}
 
-		var render = function(card){
+		function getQueryParam(param, url) {
+			url = url || window.location.href;
+			var query = url.split("?")[1];
+			var result = "";
+			query.split("&").forEach(function(item) {
+				if (param == item.split("=")[0]) {
+					result = item.split("=")[1];
+				}
+			})
+			return result;
+		}
+
+		var render = function(card) {
 			var dom = document.createElement("div");
-			if(card.type == 0 || card.type == 2){
+			if(!card){
+				return dom;
+			}
+			if (card.type == 0 || card.type == 2) {
 				dom.style.color = "#000";
-			}else{
+			} else {
 				dom.style.color = "red";
 			}
-			dom.setAttribute("num",card.num);
-			dom.innerHTML = "<div class='card_left'>"
-							+ card.stype + card.snum
-							+ "</div><div class='card_center'>"
-							+ card.stype + "</div><div class='card_right'>"
-							+ card.snum + card.stype + "</div>";
+			dom.setAttribute("num", card.num);
+			dom.innerHTML = "<div class='card_left'>" +
+				card.stype + card.snum +
+				"</div><div class='card_center'>" +
+				card.stype + "</div><div class='card_right'>" +
+				card.snum + card.stype + "</div>";
 			return dom;
-		}
-
-		var render_result = function(results){
-			for(var i=0;i<results.length;i++){
-				var dom = document.createElement("p");
-				dom.innerHTML = results[i].level_text;
-				if(results[i].rank == 0){
-					dom.style.color = "red";
-				}
-				document.getElementById("res_"+i).appendChild(dom);
-			}
 		}
 
 	</script>
 </body>
+
 </html>
