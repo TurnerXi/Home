@@ -5,7 +5,7 @@ import RoomService from '../service/RoomService'
 import RoomDto from '../dto/RoomInfoDto'
 
 export default [{
-    path: 'Get /room/create',
+    path: 'Get /api/room/create',
     auth: true,
     method: async function (ctx, next) {
       let room = await RoomService.create(ctx.session.user.userid);
@@ -16,7 +16,7 @@ export default [{
     }
   },
   {
-    path: 'Get /room/list',
+    path: 'Get /api/room/list',
     auth: true,
     method: async function (ctx, next) {
       ctx.body.flag = 1;
@@ -25,7 +25,7 @@ export default [{
     }
   },
   {
-    path: 'Get /room/join/:room_num',
+    path: 'Get /api/room/join/:room_num',
     auth: true,
     method: async function (ctx, next) {
       let room_num = ctx.params.room_num;

@@ -5,7 +5,7 @@ import UserInfoService from '../service/UserInfoService'
 import UserInfoDto from '../dto/UserInfoDto'
 
 export default [{
-    path: 'Post /user/login',
+    path: 'Post /api/user/login',
     auth: false,
     method: async function (ctx, next) {
       let fields = ctx.request.body;
@@ -38,7 +38,7 @@ export default [{
 
   },
   {
-    path: 'Get /user/info',
+    path: 'Get /api/user/info',
     auth: true,
     method: async function (ctx, next) {
       let dto = await UserInfoService.get(ctx.session.user.userid);
@@ -49,7 +49,7 @@ export default [{
 
   },
   {
-    path: 'Get /user/check_login',
+    path: 'Get /api/user/check_login',
     auth: false,
     method: async function (ctx, next) {
       if (ctx.session.user) {
@@ -64,7 +64,7 @@ export default [{
 
   },
   {
-    path: 'Get /user/get_captha',
+    path: 'Get /api/user/get_captha',
     auth: false,
     method: async function (ctx, next) {
       let capcha = util.Capcha();
@@ -75,7 +75,7 @@ export default [{
 
   },
   {
-    path: 'Post /user/register',
+    path: 'Post /api/user/register',
     auth: false,
     method: async function (ctx, next) {
       let fields = ctx.request.body;
