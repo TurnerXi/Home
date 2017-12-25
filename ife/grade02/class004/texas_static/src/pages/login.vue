@@ -36,7 +36,7 @@ export default {
       let self = this;
       let formdata = new FormData(e.target);
       ajax.post('/api/user/login', formdata).then(function(response, err) {
-        if(response.data.code == 1){
+        if(+response.data.code === 1){
           self.$router.push('room');
         }else{
           self.error_msg = response.data.msg;

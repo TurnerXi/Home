@@ -1,8 +1,6 @@
 <template lang="html">
   <span> hello room</span>
-<!-- <script src="https://cdn.bootcss.com/socket.io/2.0.4/socket.io.js">< /script>-->
 </template>
-
 <script>
 import ajax from '@/core/http'
 export default {
@@ -25,7 +23,10 @@ export default {
     //   }
     // }
     // var room_num = getQueryString("room_num");
-    // var socket = io("ws://127.0.0.1:7777");
+    var socket = io("ws://127.0.0.1:3004");
+    socket.on("monitor",function(data){
+      console.log(data);
+    })
     // socket.emit("join room", room_num);
     // window.onload = function() {
     //   document.getElementsByTagName("body")[0].innerHTML = room_num;
