@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.2",
+    "ioredis": "^3.2.2",
+    "koa": "^2.4.1",
+    "koa-session2": "^2.2.5",
+    "koa-socket": "^4.4.0",
     "socketio": "^1.0.0"
   }
 }
