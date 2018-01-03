@@ -1,29 +1,44 @@
-const koa = require('koa');
-const socket = require('koa-socket');
-const session = require('koa-session2');
-const store = require('./session');
-const app = new koa();
-const io = new socket();
-io.attach(app);
-app.use(session({store}));
-let rooms = [];
-let user_nums = 0;
-app.use(async function(ctx,next){
-  console.log("123",ctx.session);
-  await next();
-})
-app.io.on('connection', (ctx,data) => {
-   user_nums ++;
+const Koa = require('koa')
+const app = new Koa()
+const views = require('koa-views')
+const json = require('koa-json')
+const onerror = require('koa-onerror')
+const bodyparser = require('koa-bodyparser')
+const logger = require('koa-logger')
 
-   ctx.socket.on('disconnect',function(){
-     user_nums -- ;
-   })
-   //console.log(ctx);
-   setInterval(function(){
-    //  app._io.sockets.emit("monitor",{user_nums},ctx.session.user);
-   });
+const index = require('./routes/index')
+const users = require('./routes/users')
+
+// error handler
+onerror(app)
+
+// middlewares
+app.use(bodyparser({
+  enableTypes:['json', 'form', 'text']
+}))
+app.use(json())
+app.use(logger())
+app.use(require('koa-static')(__dirname + '/public'))
+
+app.use(views(__dirname + '/views', {
+  extension: 'pug'
+}))
+
+// logger
+app.use(async (ctx, next) => {
+  const start = new Date()
+  await next()
+  const ms = new Date() - start
+  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+})
+
+// routes
+app.use(index.routes(), index.allowedMethods())
+app.use(users.routes(), users.allowedMethods())
+
+// error-handling
+app.on('error', (err, ctx) => {
+  console.error('server error', err, ctx)
 });
 
-app.listen("3004",function(){
-    console.log("server listening on *:3004");
-})
+module.exports = app
