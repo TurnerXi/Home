@@ -35,13 +35,8 @@ export default {
     login: function(e) {
       let self = this;
       let formdata = new FormData(e.target);
-<<<<<<< HEAD
       ajax.post('/login', formdata).then(function(response, err) {
         if(response.data.code == 1){
-=======
-      ajax.post('/api/user/login', formdata).then(function(response, err) {
-        if(+response.data.code === 1){
->>>>>>> faa370b0cef54433e720d2b1ede1b5ef4aab2212
           self.$router.push('room');
         }else{
           self.error_msg = response.data.msg;

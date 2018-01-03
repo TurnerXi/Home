@@ -1,5 +1,5 @@
 const DB = require('../lib/db')
-const UserInfo = require('./entity/UserInfo')
+const UserEntity = require('./entity/UserEntity')
 
 class UserService {
   static findByUserName(username) {
@@ -9,7 +9,7 @@ class UserService {
           'username': username
         }, function (err, doc) {
           if (!err && doc) {
-            resolve(new UserInfo(doc).getDto());
+            resolve(new UserEntity(doc));
           } else {
             resolve(null);
           }
@@ -37,7 +37,7 @@ class UserService {
     return new Promise((resolve, reject) => {
       DB.getConnect().then((conn) => {
         conn.collection("user_info").findOne({ _id: DB.ObjectId(id) }, function (err, doc) {
-          err ? reject() : resolve(new UserInfo(doc).getDto());
+          err ? reject() : resolve(new UserEntity(doc).getDto());
         })
       });
     });

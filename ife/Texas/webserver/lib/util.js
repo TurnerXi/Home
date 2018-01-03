@@ -1,4 +1,5 @@
 const { BMP24 } = require('gd-bmp')
+const jwt = require('jsonwebtoken')
 
 function rand(min, max) {
   return Math.random() * (max - min + 1) + min | 0; //特殊的技巧，|0可以强制转换为整数
@@ -76,5 +77,6 @@ module.exports = {
       img,
       code: str
     }
-  }
+  },
+  jwt:jwt
 }
