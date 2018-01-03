@@ -1,0 +1,21 @@
+{
+    "baseLevel": "DEBUG",
+    "isWriteFile": "false",
+    "baseDir" :"D://coding/Home/ife/Texas/webserver/logs/",
+    "layoutDef": {"type": "pattern", "pattern": "%[[%d] [%p] [%X{IP}] [%X{USER}] - %m%]" },
+    "defaultAttr" :{
+        "type": "dateFile",
+        "absolute": true,
+        "pattern": ".yyyy-MM-dd-hh",
+        "alwaysIncludePattern": true,
+        "keepFileExt": true
+    },
+    "appenderDef": [
+            {"type": "console", "category": "console"},
+            {"filename": "app-debug.log", "category": "logDebug"},
+            {"filename": "app-info.log", "category": "logInfo"},
+            {"filename": "app-warn.log", "category": "logWarn"},
+            {"filename": "app-error.log", "category": "logErr"}
+    ],
+    "replaceConsole": true
+}

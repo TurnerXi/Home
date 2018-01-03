@@ -28,14 +28,14 @@ export default {
     },
     refreshCapcha: function() {
       let self = this;
-      ajax.getStream('/api/user/get_captha', { "_": new Date().getTime() }).then(function(response, err) {
+      ajax.getStream('/login/get_captha', { "_": new Date().getTime() }).then(function(response, err) {
         self.capcha_img = self.transBufferToImageCode(response.data);
       })
     },
     login: function(e) {
       let self = this;
       let formdata = new FormData(e.target);
-      ajax.post('/api/user/login', formdata).then(function(response, err) {
+      ajax.post('/login', formdata).then(function(response, err) {
         if(response.data.code == 1){
           self.$router.push('room');
         }else{

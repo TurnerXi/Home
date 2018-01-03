@@ -1,3 +1,5 @@
+// import jwt from 'jsonwebtoken'
+// import config from '../../config/index.js'
 import logger from '../../lib/logger'
 import util from '../../lib/util'
 import Exception from '../../lib/exception'
@@ -29,7 +31,7 @@ export default [{
         await UserInfoService.save(dto.getEntity());
         ctx.session.user = dto;
         ctx.body.flag = 1;
-        ctx.body.msg = '登录成功!';
+        // ctx.body.msg = {'token':jwt.sign(dto, config.appkey, { expiresInMinutes: 60*5 }), 'msg':"登录成功！"};
       } else {
         throw Exception.ERROR_01_0005;
       }
