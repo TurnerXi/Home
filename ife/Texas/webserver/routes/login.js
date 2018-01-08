@@ -8,7 +8,7 @@ router.prefix('/login')
 
 router.post('/', async (ctx, next) => {
   let fields = ctx.request.body;
-  let {username,password,capcha} = fields;
+  let { username, password, capcha } = fields;
   let capcha_store = ctx.session['capcha_' + ctx.ip];
   if (capcha.toLowerCase() != capcha_store.toLowerCase()) {
     throw exception.ERROR_01_0002;
@@ -26,7 +26,7 @@ router.post('/', async (ctx, next) => {
     await userService.save(entity);
     ctx.session.user = entity;
     ctx.body.flag = 1;
-    ctx.body.msg = {'token':util.jwt.sign(entity.getInfo(),config.appkey), 'msg':"登录成功！"};
+    ctx.body.msg = { 'token': util.jwt.sign(entity.getInfo(), config.appkey), 'msg': "登录成功！" };
   } else {
     throw exception.ERROR_01_0005;
   }
@@ -40,11 +40,15 @@ router.get('/get_captha', async (ctx, next) => {
   await next();
 })
 
-router.get('/json', async (ctx, next) => {
-  ctx.body.flag = 1;
-  ctx.body.msg = {
-    title: 'koa2 json'
+router.get('/check_login', async (ctx, next) => {
+  if (ctx.session.user) {
+    ctx.body.flag = 1;
+    ctx.body.msg = '用户已登录!';
+  } else {
+    ctx.body.flag = 0;
+    ctx.body.msg = '用户未登录!';
   }
+  await next();
 })
 
 module.exports = router

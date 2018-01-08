@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    function doAjax(url, method, data, callback) {
+      $.ajax({
+        type: method,
+        url: url,
+        data: data,
+        xhrFields: {
+          withCredentials: true
+        },
+        success: function(rs, status) {
+          callback && typeof callback == "function" && callback(rs);
+        }
+      })
+    }
+
+    function reload() {
+      doAjax("http://localhost:3000/room/list", "get", {}, function(rs) {
+        if (rs.code == 1) {
+          $("#rooms").html("");
+          rs.msg.forEach((item) => {
+            $("#rooms").append("<li onclick='join_room(\""+item.room_num+"\")'>" + item.room_num + "</li>");
+          })
+        } else {
+          console.error(rs.msg);
+        }
+      })
+    }
+
+    function create_room() {
+      doAjax("http://localhost:3000/room/create", "get", {}, function(rs) {
+        if (rs.code == 1) {
+          window.location.href='D:\\coding\\Home\\ife\\grade02\\class004\\static\\room.html?room_num='+rs.msg.room_num;
+        } else {
+          console.error(rs.msg);
+        }
+      })
+    }
+
+    function join_room(num) {
+      doAjax("http://localhost:3000/room/join/" + num, "get", {}, function(rs) {
+        if (rs.code == 1) {
+          console.log(rs.msg);
+        } else {
+          console.error(rs.msg);
+        }
+      })
+    }
+
+    $(document).ready(function() {
+      reload();
+    })
+  </script>
+</head>
+
+<body>
+  <div>
+    <button type="button" name="button" onclick="create_room();">创建房间</button>
+  </div>
+  <ul id="rooms">
+
+  </ul>
+
+</body>
+
+</html>
