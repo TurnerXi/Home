@@ -9,7 +9,6 @@ export default function (app) {
 
     // Instantiate nuxt.js
     const nuxt = new Nuxt(config)
-
     // Build in development
     if (config.dev) {
       const builder = new Builder(nuxt)
