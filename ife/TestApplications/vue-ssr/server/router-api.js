@@ -1,7 +1,7 @@
 import Router from 'koa-router'
 
-import index from './routes/index'
-import users from './routes/users'
+import index from '../api/index'
+import users from '../api/users'
 
 const router = new Router({
   prefix: "/api"

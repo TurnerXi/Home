@@ -1,11 +1,12 @@
 import Koa from 'koa'
-import BuildNuxt from './nuxt'
+import BuildMobileNuxt from './nuxt-mobile'
+import BuildPCNuxt from './nuxt-pc'
 import StartServer from './server'
 async function start () {
   const app = new Koa()
-  BuildNuxt(app).then(function(nuxt){
-    StartServer(app, nuxt)
-  })
+  const mobile = BuildMobileNuxt(app)
+  const PC = BuildPCNuxt(app)
+  StartServer(app, mobile, PC)
 }
 
 start()

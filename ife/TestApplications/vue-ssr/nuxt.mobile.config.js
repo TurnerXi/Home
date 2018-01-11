@@ -1,9 +1,14 @@
 module.exports = {
+  srcDir: 'app/',
+  buildDir: '.nuxt/app/',
+  router: {
+    base: '/app/'
+  },
   /*
   ** Headers of the page
   */
   head: {
-    title: 'starter',
+    title: 'starter-app',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
