@@ -92,8 +92,8 @@ module.exports = require("nuxt");
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_nuxt__);
 
@@ -103,9 +103,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 
 /* harmony default export */ exports["a"] = (function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(app) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(app) {
     var config, nuxt;
-    return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+    return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -148,8 +148,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_nuxt__);
 
@@ -159,9 +159,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 
 /* harmony default export */ exports["a"] = (function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(app) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(app) {
     var config, nuxt;
-    return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+    return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -204,8 +204,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_http__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_http___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_http__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_koa_logger__ = __webpack_require__(14);
@@ -217,9 +217,12 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_koa_router__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_koa_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_koa_router__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__router_api__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_nuxt__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_nuxt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_nuxt__);
 
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
 
 
 
@@ -252,8 +255,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
   app.use(__WEBPACK_IMPORTED_MODULE_6__router_api__["a" /* default */].routes(), __WEBPACK_IMPORTED_MODULE_6__router_api__["a" /* default */].allowedMethods());
 
   app.use(function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
-      return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+    var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
+      return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
@@ -261,27 +264,16 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
               return next();
 
             case 2:
-              ctx.status = 200; // koa defaults to 404 when it sees that status is unset
-              return _context.abrupt('return', new Promise(function (resolve, reject) {
-                ctx.res.on('close', resolve);
-                ctx.res.on('finish', resolve);
-                Promise.all(nuxts.map(function (nuxt) {
-                  return new Promise(function (res, rej) {
-                    nuxt.render(ctx.req, ctx.res, function (promise) {
-                      console.log(promise);
-                      res(promise);
-                    });
-                  });
-                })).then(function (items) {
-                  console.log(items);
-                  if (promise) {
-                    // nuxt.render passes a rejected promise into callback on error.
-                    promise.then(resolve).catch(reject);
+              if (ctx.status == 404) {
+                new Vue({
+                  data: {
+                    statusCode: ctx.status,
+                    message: "Page Not Fount"
                   }
                 });
-              }));
+              }
 
-            case 4:
+            case 3:
             case 'end':
               return _context.stop();
           }
@@ -291,6 +283,48 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
     return function (_x, _x2) {
       return _ref.apply(this, arguments);
+    };
+  }());
+  app.use(function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2(ctx, next) {
+      return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return next();
+
+            case 2:
+              ctx.status = 200; // koa defaults to 404 when it sees that status is unset
+              return _context2.abrupt('return', new Promise(function (resolve, reject) {
+                ctx.res.on('close', resolve);
+                ctx.res.on('finish', resolve);
+                Promise.all(nuxts.map(function (nuxt) {
+                  return new Promise(function (res, rej) {
+                    nuxt.render(ctx.req, ctx.res, res);
+                  });
+                })).then(function (items) {
+                  items.forEach(function (promise) {
+                    if (promise) {
+                      // nuxt.render passes a rejected promise into callback on error.
+                      promise.then(resolve).catch(reject);
+                    }
+                  });
+                  ctx.status = 404;
+                  ctx.res.end();
+                });
+              }));
+
+            case 4:
+            case 'end':
+              return _context2.stop();
+          }
+        }
+      }, _callee2, _this);
+    }));
+
+    return function (_x3, _x4) {
+      return _ref2.apply(this, arguments);
     };
   }());
 
@@ -347,8 +381,8 @@ module.exports = require("koa");
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa_router__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_koa_router__);
 
@@ -358,8 +392,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_koa_router___default.a({ prefix: '/index' });
 router.get('/', function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
-    return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
+    return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -379,8 +413,8 @@ router.get('/', function () {
 }());
 
 router.get('/foo', function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2(ctx, next) {
-    return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2(ctx, next) {
+    return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
@@ -406,8 +440,8 @@ router.get('/foo', function () {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa_router__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_koa_router__);
 
@@ -418,8 +452,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 var router = new __WEBPACK_IMPORTED_MODULE_1_koa_router___default.a({ prefix: '/users' });
 
 router.get('/', function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
-    return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
+    return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -439,8 +473,8 @@ router.get('/', function () {
 }());
 
 router.get('/bar', function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2(ctx, next) {
-    return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2(ctx, next) {
+    return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
@@ -577,8 +611,8 @@ module.exports = require("regenerator-runtime");
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_koa__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__nuxt_mobile__ = __webpack_require__(3);
@@ -587,9 +621,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var start = function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee() {
     var app, mobile, PC;
-    return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+    return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_vue_ssr_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:

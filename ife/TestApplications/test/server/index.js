@@ -23,13 +23,20 @@ async function start () {
     await next()
     ctx.status = 200 // koa defaults to 404 when it sees that status is unset
     return new Promise((resolve, reject) => {
-      ctx.res.on('close', resolve)
-      ctx.res.on('finish', resolve)
+      ctx.res.on('close', (data)=>{
+        console.log(345)
+        resolve(data)
+      })
+      ctx.res.on('finish', (data)=>{
+        console.log(456)
+        resolve(data)
+      })
       console.log(123)
+      console.log(nuxt.render)
       nuxt.render(ctx.req, ctx.res, promise => {
         console.log(234)
         // nuxt.render passes a rejected promise into callback on error.
-        promise.then(resolve).catch(reject)
+        // promise.then(resolve).catch(reject)
       })
     })
   })

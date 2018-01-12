@@ -122,8 +122,8 @@ module.exports = require("regenerator-runtime");
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_koa__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_nuxt__ = __webpack_require__(3);
@@ -131,11 +131,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var start = function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
+  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
     var _this = this;
 
     var app, host, port, config, nuxt, builder;
-    return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+    return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
@@ -166,8 +166,8 @@ var start = function () {
           case 10:
 
             app.use(function () {
-              var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
-                return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+              var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
+                return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_TestApplications_test_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
                   while (1) {
                     switch (_context.prev = _context.next) {
                       case 0:
@@ -177,13 +177,20 @@ var start = function () {
                       case 2:
                         ctx.status = 200; // koa defaults to 404 when it sees that status is unset
                         return _context.abrupt('return', new Promise(function (resolve, reject) {
-                          ctx.res.on('close', resolve);
-                          ctx.res.on('finish', resolve);
+                          ctx.res.on('close', function (data) {
+                            console.log(345);
+                            resolve(data);
+                          });
+                          ctx.res.on('finish', function (data) {
+                            console.log(456);
+                            resolve(data);
+                          });
                           console.log(123);
+                          console.log(nuxt.render);
                           nuxt.render(ctx.req, ctx.res, function (promise) {
                             console.log(234);
                             // nuxt.render passes a rejected promise into callback on error.
-                            promise.then(resolve).catch(reject);
+                            // promise.then(resolve).catch(reject)
                           });
                         }));
 

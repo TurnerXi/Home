@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style scoped>
+    .title {
+      margin-top: 15px;
+      font-size: 5em;
+    }
+
+    .info {
+      font-weight: 300;
+      color: #9aabb1;
+      margin: 0;
+    }
+
+    .button {
+      margin-top: 50px;
+    }
+    </style>
+  </head>
+  <body>
+    <section class="container"> <img src="./assets/img/logo.png" alt="Nuxt.js Logo" />
+      <h1 class="title">
+          {{ statusCode }}
+        </h1>
+      <h2 class="info">
+          {{ message }}
+        </h2>
+      <nuxt-link class="button" to="/" v-if="error.statusCode === 404"> Homepage </nuxt-link>
+    </section>
+  </body>
+</html>

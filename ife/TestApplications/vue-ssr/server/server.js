@@ -4,6 +4,7 @@ import json from 'koa-json'
 import onerror from 'koa-onerror'
 import Router from 'koa-router'
 import router from './router-api'
+import {Nuxt} from 'nuxt'
 
 export default function (app, ...nuxts) {
   const host = process.env.HOST || '127.0.0.1'
@@ -22,6 +23,17 @@ export default function (app, ...nuxts) {
   app.use(baseRouter.routes())
   app.use(router.routes(), router.allowedMethods())
 
+  app.use(async (ctx, next)=>{
+    await next()
+    if(ctx.status == 404){
+      new Vue({
+        data:{
+          statusCode: ctx.status,
+          message: "Page Not Fount"
+        }
+      })
+    }
+  })
   app.use(async (ctx, next) => {
     await next()
     ctx.status = 200 // koa defaults to 404 when it sees that status is unset
@@ -30,18 +42,18 @@ export default function (app, ...nuxts) {
       ctx.res.on('finish', resolve)
       Promise.all(nuxts.map((nuxt)=>{
         return new Promise((res, rej)=>{
-            nuxt.render(ctx.req, ctx.res, promise => {
-              console.log(promise)
-              res(promise)
-            })
+            nuxt.render(ctx.req, ctx.res,res)
         })
       })).then((items) => {
-        console.log(items)
-        if (promise) {
-          // nuxt.render passes a rejected promise into callback on error.
-          promise.then(resolve).catch(reject)
-        }
-      });
+        items.forEach((promise)=>{
+          if (promise) {
+            // nuxt.render passes a rejected promise into callback on error.
+            promise.then(resolve).catch(reject)
+          }
+        });
+        ctx.status = 404
+        ctx.res.end()
+      })
     })
   })
 
