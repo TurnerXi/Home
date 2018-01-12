@@ -241,11 +241,12 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
   baseRouter.all('/', function (ctx) {
     var ua = ctx.headers['User-Agent'];
     console.log('user request by ' + ua);
-    if (ua.indexOf('mobile') > -1) {
-      baseRouter.redirect('/app');
+    if (ua && ua.indexOf('mobile') > -1) {
+      ctx.redirect('/app');
     } else {
-      baseRouter.redirect('/pc');
+      ctx.redirect('/pc');
     }
+    ctx.status = 301;
   });
   app.use(baseRouter.routes());
   app.use(__WEBPACK_IMPORTED_MODULE_6__router_api__["a" /* default */].routes(), __WEBPACK_IMPORTED_MODULE_6__router_api__["a" /* default */].allowedMethods());
@@ -264,15 +265,19 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
               return _context.abrupt('return', new Promise(function (resolve, reject) {
                 ctx.res.on('close', resolve);
                 ctx.res.on('finish', resolve);
-                nuxts.forEach(function (item) {
-                  item.then(function (nuxt) {
+                Promise.all(nuxts.map(function (nuxt) {
+                  return new Promise(function (res, rej) {
                     nuxt.render(ctx.req, ctx.res, function (promise) {
-                      // nuxt.render passes a rejected promise into callback on error.
-                      if (promise) {
-                        promise.then(resolve).catch(reject);
-                      }
+                      console.log(promise);
+                      res(promise);
                     });
                   });
+                })).then(function (items) {
+                  console.log(items);
+                  if (promise) {
+                    // nuxt.render passes a rejected promise into callback on error.
+                    promise.then(resolve).catch(reject);
+                  }
                 });
               }));
 
@@ -589,12 +594,20 @@ var start = function () {
         switch (_context.prev = _context.next) {
           case 0:
             app = new __WEBPACK_IMPORTED_MODULE_1_koa___default.a();
-            mobile = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__nuxt_mobile__["a" /* default */])(app);
-            PC = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__nuxt_pc__["a" /* default */])(app);
+            _context.next = 3;
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__nuxt_mobile__["a" /* default */])(app);
+
+          case 3:
+            mobile = _context.sent;
+            _context.next = 6;
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__nuxt_pc__["a" /* default */])(app);
+
+          case 6:
+            PC = _context.sent;
 
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__server__["a" /* default */])(app, mobile, PC);
 
-          case 4:
+          case 8:
           case 'end':
             return _context.stop();
         }

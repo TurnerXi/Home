@@ -12,11 +12,12 @@ export default function (app, ...nuxts) {
   baseRouter.all('/', function (ctx) {
     let ua = ctx.headers['User-Agent'];
     console.log(`user request by ${ua}`);
-    if (ua.indexOf('mobile') > -1) {
-      baseRouter.redirect('/app');
+    if (ua && ua.indexOf('mobile') > -1) {
+      ctx.redirect('/app');
     }else{
-      baseRouter.redirect('/pc');
+      ctx.redirect('/pc');
     }
+    ctx.status = 301;
   })
   app.use(baseRouter.routes())
   app.use(router.routes(), router.allowedMethods())
@@ -27,16 +28,20 @@ export default function (app, ...nuxts) {
     return new Promise((resolve, reject) => {
       ctx.res.on('close', resolve)
       ctx.res.on('finish', resolve)
-      nuxts.forEach(function (item) {
-        item.then((nuxt)=>{
-          nuxt.render(ctx.req, ctx.res, promise => {
-            // nuxt.render passes a rejected promise into callback on error.
-            if (promise) {
-              promise.then(resolve).catch(reject)
-            }
-          })
+      Promise.all(nuxts.map((nuxt)=>{
+        return new Promise((res, rej)=>{
+            nuxt.render(ctx.req, ctx.res, promise => {
+              console.log(promise)
+              res(promise)
+            })
         })
-      })
+      })).then((items) => {
+        console.log(items)
+        if (promise) {
+          // nuxt.render passes a rejected promise into callback on error.
+          promise.then(resolve).catch(reject)
+        }
+      });
     })
   })
 

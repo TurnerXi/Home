@@ -4,8 +4,8 @@ import BuildPCNuxt from './nuxt-pc'
 import StartServer from './server'
 async function start () {
   const app = new Koa()
-  const mobile = BuildMobileNuxt(app)
-  const PC = BuildPCNuxt(app)
+  const mobile = await BuildMobileNuxt(app)
+  const PC = await BuildPCNuxt(app)
   StartServer(app, mobile, PC)
 }
 
