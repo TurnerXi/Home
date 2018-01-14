@@ -1,7 +1,11 @@
+import fs from 'fs'
 module.exports = {
+  build: {
+    vendor: ['~/plugins/scanner.js'],
+  },
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: 'starter',
     meta: [
@@ -14,11 +18,11 @@ module.exports = {
     ]
   },
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: ['~assets/css/main.css'],
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: '#3B8070' }
 }

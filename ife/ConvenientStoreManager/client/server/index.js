@@ -1,7 +1,8 @@
 import Koa from 'koa'
 import { Nuxt, Builder } from 'nuxt'
-
-async function start () {
+import https from 'https'
+import fs from 'fs'
+async function start() {
   const app = new Koa()
   const host = process.env.HOST || '127.0.0.1'
   const port = process.env.PORT || 3000
@@ -31,6 +32,15 @@ async function start () {
       })
     })
   })
+  // SSL options
+  var options = {
+    key: fs.readFileSync('D:/keys/privatekey.pem'),
+    cert: fs.readFileSync('D:/keys/certification.pem')
+  };
+
+  // start the server
+  // http.createServer(app.callback()).listen(port, host);
+  https.createServer(options, app.callback()).listen(443, host);
 
   app.listen(port, host)
   console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console

@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Nuxt.js project",
   "author": "TurnerXi <290944015@qq.com>",
-  "private": true,
   "scripts": {
-    "dev": "backpack dev",
+    "dev": "cross-env NODE_ENV=development HOST=0.0.0.0 PORT=3000 backpack dev ",
     "build": "nuxt build && backpack build",
     "start": "cross-env NODE_ENV=production node build/main.js",
     "precommit": "npm run lint",
@@ -15,6 +14,7 @@
     "cross-env": "^5.0.1",
     "koa": "^2.4.1",
     "nuxt": "^1.0.0-rc11",
+    "quagga": "^0.12.1",
     "source-map-support": "^0.4.15"
   },
   "devDependencies": {
