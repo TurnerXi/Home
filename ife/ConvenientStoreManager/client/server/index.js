@@ -34,8 +34,8 @@ async function start() {
   })
   // SSL options
   var options = {
-    key: fs.readFileSync('D:/keys/privatekey.pem'),
-    cert: fs.readFileSync('D:/keys/certification.pem')
+    key: fs.readFileSync(__dirname+'/../META-INF/privatekey.pem'),
+    cert: fs.readFileSync(__dirname+'/../META-INF/certification.pem')
   };
 
   // start the server
