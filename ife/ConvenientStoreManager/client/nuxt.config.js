@@ -1,8 +1,9 @@
 import fs from 'fs'
 module.exports = {
   build: {
-    vendor: ['~/plugins/scanner.js'],
+    vendor: ['axios'],
   },
+  // plugins: ['~/plugins/scanner.js','~/plugins/axios.js'],
   /*
    ** Headers of the page
    */

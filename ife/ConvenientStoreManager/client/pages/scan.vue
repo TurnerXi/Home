@@ -28,6 +28,7 @@
 </style>
 <script>
 import scanner from '~/plugins/scanner.js'
+import axios from '~/plugins/axios.js'
 export default {
   data() {
     return {
@@ -35,6 +36,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.axios.defaults.baseURL);
     let viewportclass = 'view-port'
     let $viewport = document.getElementsByClassName(viewportclass)[0]
     let radio = 0.2
@@ -48,6 +50,7 @@ export default {
       quagga.start();
       quagga.onDetected((data) => {
         quagga.stop();
+
       })
       quagga.onProcessed(function(result) {
 
