@@ -1,10 +1,15 @@
+*{
+  height: 100%;
+  width: 100%;
+}
+
 html, body
 {
   background-color: #fff;
   color: #2e2f30;
   letter-spacing: 0.5px;
   font-family: "Source Sans Pro", Arial, sans-serif;
-  height: 100vh;
+  height: 100%;
   margin: 0;
 }
 

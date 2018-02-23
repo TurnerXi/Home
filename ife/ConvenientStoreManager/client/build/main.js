@@ -93,7 +93,7 @@ module.exports = {
    */
   head: {
     title: 'starter',
-    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: 'Nuxt.js project' }],
+    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui' }, { name: 'msapplication-tap-highlight', content: 'no' }, { name: 'apple-mobile-web-app-capable', content: 'yes' }, { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }, { name: 'format-detection', content: 'telephone=no' }, { hid: 'description', name: 'description', content: 'Nuxt.js project' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
