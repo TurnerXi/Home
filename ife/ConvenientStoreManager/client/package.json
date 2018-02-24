@@ -20,6 +20,8 @@
     "vue-axios": "^2.0.2"
   },
   "devDependencies": {
+    "@nuxtjs/axios": "^5.0.1",
+    "@nuxtjs/proxy": "^1.1.4",
     "babel-eslint": "^7.1.1",
     "backpack-core": "^0.3.0",
     "eslint": "^3.13.1",

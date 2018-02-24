@@ -1,5 +1,8 @@
 import fs from 'fs'
 module.exports = {
+  env: {
+   API_HOST: 'https://192.168.2.140:3004'
+  },
   build: {
     vendor: ['axios'],
   },

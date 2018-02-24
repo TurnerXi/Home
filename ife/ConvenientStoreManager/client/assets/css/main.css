@@ -1,16 +1,17 @@
-*{
-  height: 100%;
-  width: 100%;
-}
-
 html, body
 {
   background-color: #fff;
   color: #2e2f30;
   letter-spacing: 0.5px;
   font-family: "Source Sans Pro", Arial, sans-serif;
+  width:100%;
   height: 100%;
   margin: 0;
+}
+
+body div{
+  width:100%;
+  height: 100%;
 }
 
 footer
