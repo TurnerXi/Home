@@ -83,7 +83,8 @@ export default {
       hdistance: 0,
       vdistance: 0,
       maskOpacity: 0.75,
-      message: ""
+      message: "",
+      code: ""
     }
   },
   computed: {
@@ -123,11 +124,24 @@ export default {
       scanner.init(`.${viewportclass}`).then((quagga) => {
         quagga.start();
         quagga.onDetected((data) => {
-          alert(data.codeResult.format+','+data.codeResult.code);
-          self.$http.get(`/api/product/${data.codeResult.code}`).then((result)=>{
-              // alert(JSON.stringify(result.data));
-              // quagga.stop();
-          })
+          let hasProduct = false;
+          if(data.codeResult.code != self.code){
+            self.code = data.codeResult.code
+          }else{
+            if(!hasProduct){
+              hasProduct = true;
+              self.$http.get(`/api/product/${self.code}`).then((result)=>{
+                alert(result.data)
+                  if(result.data != null){
+                    this.$router.push('list');
+                    quagga.stop();
+                  }else{
+                    hasProduct = false;
+                  }
+              })
+            }
+          }
+
         })
         quagga.onProcessed(function(result) {});
       })
