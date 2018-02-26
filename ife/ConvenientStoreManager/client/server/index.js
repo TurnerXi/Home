@@ -42,7 +42,7 @@ async function start() {
   // http.createServer(app.callback()).listen(port, host);
   https.createServer(options, app.callback()).listen(443, host);
 
-  app.listen(port, host)
+  // app.listen(port, host)
   console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
 }
 

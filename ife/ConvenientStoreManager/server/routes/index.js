@@ -1,26 +1,20 @@
 const router = require('koa-router')()
 
+router.prefix('/product')
+
 router.get('/', async (ctx, next) => {
-  await ctx.render('index', {
-    title: 'Hello Koa 2!'
-  })
+  ctx.body = [
+    {name:'123222',code:'12323333',price:15},
+    {name:'123222',code:'12323333',price:15},
+    {name:'123222',code:'12323333',price:15},
+    {name:'123222',code:'12323333',price:15}
+  ]
 })
 
-router.get('/product/:id', async (ctx, next) => {
+router.get('/:id', async (ctx, next) => {
   ctx.body = {
     id: ctx.params['id'],
     name: 'product'
-  }
-
-})
-
-router.get('/string', async (ctx, next) => {
-  ctx.body = 'koa2 string'
-})
-
-router.get('/json', async (ctx, next) => {
-  ctx.body = {
-    title: 'koa2 json'
   }
 })
 

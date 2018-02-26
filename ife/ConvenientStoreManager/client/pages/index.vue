@@ -25,14 +25,7 @@
   <nuxt-link class="footer_btn fix_footer" to="/list"> Show List </nuxt-link>
 </section>
 </template>
-<style>
-.container {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-
+<style >
 .view-port {
   position: relative;
   display: block;
@@ -46,31 +39,6 @@
   width: 100%;
 }
 
-.footer_btn,
-.footer_btn:visited {
-  display: inline-block;
-  text-align: center;
-  color: #fff;
-  background-color: #3B8070;
-  letter-spacing: 1px;
-  border: 2px solid #3B8070;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 15px 45px;
-}
-
-.footer_btn:hover,
-.footer_btn:focus {
-  color: #3B8070;
-  background-color: #fff;
-}
-
-.fix_footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
 </style>
 <script>
 import scanner from '~/plugins/scanner.js'
@@ -131,7 +99,6 @@ export default {
             if(!hasProduct){
               hasProduct = true;
               self.$http.get(`/api/product/${self.code}`).then((result)=>{
-                alert(result.data)
                   if(result.data != null){
                     this.$router.push('list');
                     quagga.stop();
