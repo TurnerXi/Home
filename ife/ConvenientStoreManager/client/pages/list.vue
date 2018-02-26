@@ -2,15 +2,17 @@
 <section class="container">
   <h1 class="title">商品列表</h1>
   <ul class="case-list">
-    <li v-for="item in product">
+    <li v-for="item in product" @click.prevent>
       <div class="image"><img width="64" data-src="item.pic" src="/pdt_default.png"></div>
       <div class="description">
         <h6>{{item.name}}</h6>
         <p>单价：{{item.price}}</p>
       </div>
-      <div class="number"> <button @click="minus(item)">-</button> <input value=1 v-model="item.number" @keyup="numberChangeEvent(item)" @change="numberChangeEvent(item)" /> <button @click="plus(item)">+</button> </div>
+      <div class="number"> <button @click.prevent="minus(item)">-</button> <input value=1 v-model="item.number" @keyup="numberChangeEvent(item)" @change="numberChangeEvent(item)" /> <button @click.prevent="plus(item)">+</button> </div>
     </li>
-    <li><p class="total">总计：{{total_price}}</p></li>
+    <li>
+      <p class="total">总计：{{total_price}}</p>
+    </li>
   </ul>
   <nuxt-link class="footer_btn fix_footer" to="/"> 继续扫描 </nuxt-link>
 </section>
@@ -68,6 +70,9 @@ export default {
         self.product = data;
       })
     }
+    document.ondbclick=function(){
+      console.log(123);
+    }
   }
 }
 </script>
@@ -89,7 +94,7 @@ export default {
 .case-list {
   list-style: none;
   /* padding: 0; */
-  padding: 55px 0;
+  padding: 58px 0;
   margin: 0;
   background: #fff;
 }
@@ -109,7 +114,7 @@ export default {
   display: inline-block;
   vertical-align: top;
   margin-left: 5%;
-  width: 45%;
+  width: 35%;
   border-bottom: 1px dashed #ececec;
   padding-bottom: 10px;
   text-align: left;
@@ -142,39 +147,37 @@ export default {
   display: inline-block;
   vertical-align: top;
   margin-left: 2%;
-  width: 28%;
-  height: 36px;
-  border-bottom: 1px dashed #ececec;
-  text-align: center;
-  border-radius: 3px;
+  width: 38%;
+  height: 100%;
+  line-height: 64px;
 }
 
 .case-list>li>.number>button {
-  border: none;
+  display: inline-block;
   outline: 0;
-  line-height: 32px;
-  height: 34px;
-  width: 1.4rem;
+  height: 100%;
+  width: 2.5rem;
+  padding: 1rem 0;
   font-size: 1.25rem;
-  border: 1px solid #f5f5f5;
-  background-color: #f5f5f5;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
 }
 
 .case-list>li>.number>input {
-  line-height: 32px;
-  height: 34px;
-  width: 1.4rem;
+  border: none;
+  outline: 0;
+  height: 100%;
+  width: 2.5rem;
+  padding: 1rem 0;
   text-align: center;
   font-size: 1rem;
   font-weight: 700;
-  border: 1px solid #f5f5f5;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   box-sizing: border-box;
   appearance: none;
-  margin: 0 .2rem;
 }
 
-.case-list>li>.total{
+.case-list>li>.total {
   text-align: right;
   font-size: 1rem;
   font-weight: 700;
