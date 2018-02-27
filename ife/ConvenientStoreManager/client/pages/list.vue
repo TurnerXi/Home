@@ -2,16 +2,17 @@
 <section class="container">
   <h1 class="title">商品列表</h1>
   <ul class="case-list">
-    <li v-for="item in product" @click.prevent>
+    <li v-for="item in product_list" @click.prevent>
       <div class="image"><img width="64" data-src="item.pic" src="/pdt_default.png"></div>
       <div class="description">
-        <h6>{{item.name}}</h6>
+        <h6>{{item.code}}</h6>
         <p>单价：{{item.price}}</p>
       </div>
       <div class="number"> <button @click.prevent="minus(item)">-</button> <input value=1 v-model="item.number" @keyup="numberChangeEvent(item)" @change="numberChangeEvent(item)" /> <button @click.prevent="plus(item)">+</button> </div>
+      <div class="del_btn">删除</div>
     </li>
     <li>
-      <p class="total">总计：{{total_price}}</p>
+      <p class="total" v-if="total_price > 0">总计：{{total_price}}</p>
     </li>
   </ul>
   <nuxt-link class="footer_btn fix_footer" to="/"> 继续扫描 </nuxt-link>
@@ -19,60 +20,30 @@
 </template>
 <script>
 import axios from '~/plugins/axios.js'
+import { mapGetters } from 'vuex'
 export default {
-  data() {
-    return {
-      product: []
-    }
-  },
-  async asyncData() {
-    return axios.get('/api/product').then(res => {
-      return {
-        product: res.data.map(item => Object.assign(item, { number: 1 }))
-      }
-    }).catch(err => {})
-  },
   methods: {
-    query_list: function() {
-      return this.$http.get('/api/product').then(res => {
-        return res.data.map(item => Object.assign(item, { number: 1 }))
-      });
-    },
     plus: function(item) {
       if (item.number < 99) {
-        item.number++;
+        this.$store.commit('update', Object.assign({}, item, { number: item.number + 1 }))
       }
     },
     minus: function(item) {
       if (item.number > 1) {
-        item.number--;
+        this.$store.commit('update', Object.assign({}, item, { number: item.number - 1 }))
       }
     },
     numberChangeEvent: function(item) {
+      let number = item.number;
       if (item.number > 99) {
-        item.number = 99;
+        number = 99;
       } else if (item.number < 1) {
-        item.number = 1;
+        number = 1;
       }
+      this.$store.commit('update', Object.assign({}, item, { number }))
     }
   },
-  computed: {
-    total_price: function() {
-      return this.product.reduce((privous, current) => {
-        return current.number * current.price + privous
-      }, 0);
-    }
-  },
-  mounted: function() {
-    let self = this;
-    if (this.product <= 0) {
-      this.query_list().then(data => {
-        self.product = data;
-      })
-    }
-    document.ondbclick=function(){
-      console.log(123);
-    }
+  computed: { ...mapGetters(['product_list', 'total_price'])
   }
 }
 </script>
@@ -93,13 +64,14 @@ export default {
 
 .case-list {
   list-style: none;
-  /* padding: 0; */
+  overflow: hidden;
   padding: 58px 0;
   margin: 0;
   background: #fff;
 }
 
 .case-list>li {
+  position: relative;
   padding: 10px;
 }
 
@@ -149,7 +121,6 @@ export default {
   margin-left: 2%;
   width: 38%;
   height: 100%;
-  line-height: 64px;
 }
 
 .case-list>li>.number>button {
@@ -183,5 +154,15 @@ export default {
   font-weight: 700;
   padding-right: 1rem;
   color: #82ABBA;
+}
+
+.case-list>li>.del_btn {
+  position: absolute;
+  top: 0;
+  right: -80px;
+  text-align: center;
+  background: #ffcb20;
+  color: #fff;
+  width: 80px;
 }
 </style>

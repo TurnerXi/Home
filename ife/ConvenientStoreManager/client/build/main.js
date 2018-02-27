@@ -85,7 +85,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 module.exports = {
   env: {
-    API_HOST: 'https://192.168.199.105:3004'
+    API_HOST: 'https://192.168.2.140:3004'
   },
   build: {
     vendor: ['axios']
@@ -96,7 +96,38 @@ module.exports = {
    */
   head: {
     title: 'starter',
-    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui' }, { name: 'msapplication-tap-highlight', content: 'no' }, { name: 'apple-mobile-web-app-capable', content: 'yes' }, { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }, { name: 'format-detection', content: 'telephone=no' }, { hid: 'description', name: 'description', content: 'Nuxt.js project' }],
+    meta: [{ charset: 'utf-8' },
+    // <!-- 视图窗口，移动端特属的标签。 -->
+    // <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    // <!-- 是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。 -->
+    // <meta name="apple-mobile-web-app-capable" content="yes" />
+    // <!-- 这个主要是根据实际的页面设计的主体色为搭配来进行设置。 -->
+    // <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    // <!-- 忽略页面中的数字识别为电话号码,email识别 -->
+    // <meta name="format-detection"content="telephone=no, email=no" />
+    // <!-- 启用360浏览器的极速模式(webkit) -->
+    // <meta name="renderer" content="webkit">
+    // <!-- 避免IE使用兼容模式 -->
+    // <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    // <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    // <meta name="HandheldFriendly" content="true">
+    // <!-- 微软的老式浏览器 -->
+    // <meta name="MobileOptimized" content="320">
+    // <!-- uc强制竖屏 -->
+    // <meta name="screen-orientation" content="portrait">
+    // <!-- QQ强制竖屏 -->
+    // <meta name="x5-orientation" content="portrait">
+    // <!-- UC强制全屏 -->
+    // <meta name="full-screen" content="yes">
+    // <!-- QQ强制全屏 -->
+    // <meta name="x5-fullscreen" content="true">
+    // <!-- UC应用模式 -->
+    // <meta name="browsermode" content="application">
+    // <!-- QQ应用模式 -->
+    // <meta name="x5-page-mode" content="app">
+    // <!-- windows phone 点击无高光 -->
+    // <meta name="msapplication-tap-highlight" content="no">
+    { name: 'viewport', content: 'width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,minimal-ui' }, { name: 'msapplication-tap-highlight', content: 'no' }, { name: 'apple-mobile-web-app-capable', content: 'yes' }, { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }, { name: 'format-detection', content: 'telephone=no' }, { name: 'renderer', content: 'webkit' }, { name: 'HandheldFriendly', content: 'true' }, { hid: 'description', name: 'description', content: 'Nuxt.js project' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
@@ -146,8 +177,8 @@ module.exports = require("regenerator-runtime");
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(__dirname) {Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_koa__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_nuxt__ = __webpack_require__(5);
@@ -159,11 +190,11 @@ module.exports = require("regenerator-runtime");
 
 
 var start = function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
+  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
     var _this = this;
 
     var app, host, port, config, nuxt, builder, options;
-    return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+    return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
@@ -194,8 +225,8 @@ var start = function () {
           case 10:
 
             app.use(function () {
-              var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
-                return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+              var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
+                return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_client_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
                   while (1) {
                     switch (_context.prev = _context.next) {
                       case 0:

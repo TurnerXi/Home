@@ -1,6 +1,6 @@
 const router = require('koa-router')()
 
-router.prefix('/product')
+router.prefix('/products')
 
 router.get('/', async (ctx, next) => {
   ctx.body = [
@@ -12,10 +12,7 @@ router.get('/', async (ctx, next) => {
 })
 
 router.get('/:id', async (ctx, next) => {
-  ctx.body = {
-    id: ctx.params['id'],
-    name: 'product'
-  }
+  ctx.body = {name:'123222',code:ctx.params['id'],price:15}
 })
 
 module.exports = router

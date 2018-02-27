@@ -38,7 +38,6 @@
   height: 100%;
   width: 100%;
 }
-
 </style>
 <script>
 import scanner from '~/plugins/scanner.js'
@@ -52,7 +51,7 @@ export default {
       vdistance: 0,
       maskOpacity: 0.75,
       message: "",
-      code: ""
+      hasProduct: false
     }
   },
   computed: {
@@ -61,7 +60,7 @@ export default {
     }
   },
   methods: {
-    render: function(){
+    render: function() {
       if (this.screenWidth == 0) {
         this.screenWidth = document.body.clientWidth
       }
@@ -75,7 +74,7 @@ export default {
         this.vdistance = Math.abs(document.body.clientWidth - document.body.clientHeight) / 2
       }
     },
-    resizeEvent: function(){
+    resizeEvent: function() {
       this.screenWidth = document.body.clientWidth
       this.screenHeight = document.body.clientHeight
       if (document.body.clientWidth <= document.body.clientHeight) {
@@ -86,29 +85,42 @@ export default {
         this.vdistance = Math.abs(document.body.clientWidth - document.body.clientHeight) / 2
       }
     },
-    init_scanner: function(){
+    is_zh_code: function(num) {
+      var code = parseInt(num.substr(0, 3));
+      return code >= 690 && code <= 695
+    },
+    validate_code: function(num) {
+      num = num.split("").reverse()
+      var even_sum = 0, odd_sum = 0
+      num.forEach(function(item, idx) {
+        if (idx % 2 != 0) {
+          even_sum += parseInt(item)
+        } else if (idx != 0) {
+          odd_sum += parseInt(item)
+        }
+      })
+      return (10 - (even_sum * 3 + odd_sum) % 10)%10 == num[0]
+    },
+    init_scanner: function() {
       const self = this
       let viewportclass = 'view-port'
       scanner.init(`.${viewportclass}`).then((quagga) => {
         quagga.start();
         quagga.onDetected((data) => {
-          let hasProduct = false;
-          if(data.codeResult.code != self.code){
-            self.code = data.codeResult.code
-          }else{
-            if(!hasProduct){
-              hasProduct = true;
-              self.$http.get(`/api/product/${self.code}`).then((result)=>{
-                  if(result.data != null){
-                    this.$router.push('list');
-                    quagga.stop();
-                  }else{
-                    hasProduct = false;
-                  }
+          if (self.validate_code(data.codeResult.code) && self.is_zh_code(data.codeResult.code)) {
+            if (!self.hasProduct) {
+              self.hasProduct = true;
+              self.$http.get(`/api/products/${data.codeResult.code}`).then((result) => {
+                if (result.data != null) {
+                  this.$store.commit('add', Object.assign(result.data, { number: 1 }))
+                  this.$router.push('list');
+                  quagga.stop();
+                } else {
+                  self.hasProduct = false;
+                }
               })
             }
           }
-
         })
         quagga.onProcessed(function(result) {});
       })
