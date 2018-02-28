@@ -91,7 +91,8 @@ export default {
     },
     validate_code: function(num) {
       num = num.split("").reverse()
-      var even_sum = 0, odd_sum = 0
+      var even_sum = 0,
+        odd_sum = 0
       num.forEach(function(item, idx) {
         if (idx % 2 != 0) {
           even_sum += parseInt(item)
@@ -99,7 +100,7 @@ export default {
           odd_sum += parseInt(item)
         }
       })
-      return (10 - (even_sum * 3 + odd_sum) % 10)%10 == num[0]
+      return (10 - (even_sum * 3 + odd_sum) % 10) % 10 == num[0]
     },
     init_scanner: function() {
       const self = this

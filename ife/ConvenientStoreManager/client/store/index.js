@@ -5,8 +5,20 @@ Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
   state: {
-    products: [{name:'123222',code:"264564581354",price:15,number:1},
-              {name:'123222',code:"264564581354",price:15,number:1}]
+    products: [
+      { name: '123222', code: "264564581353", price: 15, number: 1 },
+      { name: '123222', code: "264564581354", price: 15, number: 1 },
+      { name: '123222', code: "264564581355", price: 15, number: 1 },
+      { name: '123222', code: "264564581356", price: 15, number: 1 },
+      { name: '123222', code: "264564581357", price: 15, number: 1 },
+      { name: '123222', code: "264564581358", price: 15, number: 1 },
+      { name: '123222', code: "264564581359", price: 15, number: 1 },
+      { name: '123222', code: "264564581360", price: 15, number: 1 },
+      { name: '123222', code: "264564581361", price: 15, number: 1 },
+      { name: '123222', code: "264564581362", price: 15, number: 1 },
+      { name: '123222', code: "264564581363", price: 15, number: 1 },
+      { name: '123222', code: "264564581364", price: 15, number: 1 }
+    ]
   },
   getters: {
     product_list: state => {
@@ -28,8 +40,8 @@ const store = () => new Vuex.Store({
       }
     },
     del(state, code) {
-      let index = this.getters.indexOf(code)
-      state.products.splice(index)
+      let index = this.getters.pdt_codes.indexOf(code)
+      state.products.splice(index, 1)
     },
     update(state, pdt) {
       let index = this.getters.pdt_codes.indexOf(pdt.code)

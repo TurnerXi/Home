@@ -2,14 +2,13 @@
 <section class="container">
   <h1 class="title">商品列表</h1>
   <ul class="case-list">
-    <li v-for="item in product_list" @click.prevent>
+    <li is="li-del-btn" v-for="item in product_list" :key="item.code" @click.prevent @delete="deleteItem(item.code)">
       <div class="image"><img width="64" data-src="item.pic" src="/pdt_default.png"></div>
       <div class="description">
         <h6>{{item.code}}</h6>
         <p>单价：{{item.price}}</p>
       </div>
       <div class="number"> <button @click.prevent="minus(item)">-</button> <input value=1 v-model="item.number" @keyup="numberChangeEvent(item)" @change="numberChangeEvent(item)" /> <button @click.prevent="plus(item)">+</button> </div>
-      <div class="del_btn">删除</div>
     </li>
     <li>
       <p class="total" v-if="total_price > 0">总计：{{total_price}}</p>
@@ -20,8 +19,12 @@
 </template>
 <script>
 import axios from '~/plugins/axios.js'
+import liDelBtn from '~/components/li_del_btn'
 import { mapGetters } from 'vuex'
 export default {
+  components: {
+    liDelBtn
+  },
   methods: {
     plus: function(item) {
       if (item.number < 99) {
@@ -32,6 +35,9 @@ export default {
       if (item.number > 1) {
         this.$store.commit('update', Object.assign({}, item, { number: item.number - 1 }))
       }
+    },
+    deleteItem: function(code) {
+      this.$store.commit('del', code)
     },
     numberChangeEvent: function(item) {
       let number = item.number;
@@ -60,6 +66,7 @@ export default {
   text-transform: uppercase;
   padding: 15px 0;
   font-size: 1.25rem;
+  z-index: 10;
 }
 
 .case-list {
@@ -73,6 +80,9 @@ export default {
 .case-list>li {
   position: relative;
   padding: 10px;
+  margin-top: 2px;
+  height: 64px;
+  background: #fff;
 }
 
 .case-list>li>.image {
@@ -80,6 +90,7 @@ export default {
   height: 64px;
   display: inline-block;
   text-align: right;
+  float: left;
 }
 
 .case-list>li>.description {
@@ -154,15 +165,5 @@ export default {
   font-weight: 700;
   padding-right: 1rem;
   color: #82ABBA;
-}
-
-.case-list>li>.del_btn {
-  position: absolute;
-  top: 0;
-  right: -80px;
-  text-align: center;
-  background: #ffcb20;
-  color: #fff;
-  width: 80px;
 }
 </style>
