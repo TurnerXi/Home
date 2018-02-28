@@ -1,7 +1,7 @@
 module.exports = {
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: 'starter',
     meta: [
@@ -14,11 +14,52 @@ module.exports = {
     ]
   },
   /*
-  ** Global CSS
-  */
-  css: ['~assets/css/main.css'],
+   ** Global CSS
+   */
+  css: ['~assets/css/main.css',
+    'element-ui/lib/theme-chalk/index.css'
+  ],
   /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#3B8070' }
+   ** Customize the progress-bar color
+   */
+  loading: { color: '#3B8070' },
+  /**
+   * plugins
+   */
+  plugins: [{ src: '~plugins/element-ui', ssr: true }],
+  /*
+   ** Build configuration
+   */
+  build: {
+    vendor: [
+      'axios',
+      'element-ui'
+    ],
+    babel: {
+      plugins: [
+        [
+          'component', [{
+              libraryName: 'element-ui',
+              styleLibraryName: 'theme-chalk'
+            },
+            'transform-async-to-generator',
+            'transform-runtime'
+          ]
+        ]
+      ]
+    },
+    /*
+     ** Run ESLINT on save
+     */
+    extend(config, ctx) {
+      if (ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  }
 }
