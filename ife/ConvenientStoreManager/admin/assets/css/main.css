@@ -1,22 +1,38 @@
-html, body
-{
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
   background-color: #fff;
   color: #2e2f30;
   letter-spacing: 0.5px;
   font-family: "Source Sans Pro", Arial, sans-serif;
-  height: 100vh;
+  height: 100%;
   margin: 0;
 }
 
-footer
-{
+header {
+    width: 100%;
+    padding: 0 20px;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+header:after {
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle;
+}
+
+footer {
   padding: 20px;
   text-align: center;
   border-top: 1px solid #ddd;
 }
 
-a, a:hover, a:focus, a:visited
-{
+a, a:hover, a:focus, a:visited {
   color: #41B883;
 }
 
@@ -25,11 +41,10 @@ a, a:hover, a:focus, a:visited
   height: 218px;
 }
 
-.page-enter-active, .page-leave-active
-{
+.page-enter-active {
   transition: opacity .5s
 }
-.page-enter, .page-leave-active
-{
+
+.page-enter, .page-leave-active {
   opacity: 0
 }

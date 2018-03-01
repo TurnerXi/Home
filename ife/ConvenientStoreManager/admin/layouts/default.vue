@@ -1,35 +1,33 @@
 <template>
 <el-container class="wrapper">
   <el-header height="80px" style="background-color: #3B8070;">
-    <!-- <img src="./assets/element-logo.svg" alt="element-logo" class="header-logo" /> -->
+    <img src="~assets/img/header-logo.svg" alt="element-logo" class="header-logo"/>
     <ul class="header-operations">
-      <!-- <li @click="showThemeDialog">{{ langConfig.header.switch[lang] }}</li> -->
-      <!-- <li class="header-download" :class="{ 'is-available': canDownload }" @click="downloadZip"> {{ langConfig.header.download[lang] }} </li> -->
-      <!-- <li @click="showHelpDialog">{{ langConfig.header.help[lang] }}</li> -->
-      <!-- <li> <span @click="switchLang('/zh-CN')" :class="{ 'is-active': lang === '/zh-CN' }" class="header-lang">
-            中文
-          </span> <span>/</span> <span @click="switchLang('/en-US')" :class="{ 'is-active': lang === '/en-US' }" class="header-lang">
-            En
-          </span> </li> -->
+      <li>仪表盘</li>
+      <li>项目</li>
+      <li>问题</li>
+      <li>Boards</li>
     </ul>
   </el-header>
   <el-container>
-    <el-aside class="menu" ·>
-      <el-menu default-active="1" >
-        <el-menu-item index="1">页面１</el-menu-item>
-        <el-menu-item index="/about">页面２</el-menu-item>
+    <el-aside class="menu" >
+      <el-menu default-active="1" :router="true">
+        <el-menu-item index="/products/">商品管理</el-menu-item>
+        <el-menu-item index="/">页面２</el-menu-item>
         <el-menu-item index="3">页面３</el-menu-item>
       </el-menu>
     </el-aside>
     <el-main class="content">
-      <nuxt /> </el-main>
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item :to="{ path: '/' }" :replace="true">首页</el-breadcrumb-item>
+        <el-breadcrumb-item>商品管理</el-breadcrumb-item>
+      </el-breadcrumb>
+      <nuxt />
+    </el-main>
   </el-container>
   <el-footer>
     <my-footer/> </el-footer>
 </el-container>
-<!-- <div>
-
-  <my-footer/> </div> -->
 </template>
 
 <script>
@@ -39,9 +37,8 @@ export default {
     MyFooter
   },
   methods: {
-    selectMenuEvent() {
-      this.$router.push('about')
-    }
+  },
+  mounted() {
   }
 }
 </script>
@@ -54,10 +51,47 @@ export default {
   text-align: center;
 }
 
+.header-logo {
+    display: inline-block;
+    vertical-align: middle;
+    max-height:100%;
+}
+
+.header-operations {
+    display: inline-block;
+    float: right;
+    padding-right: 30px;
+    height: 100%;
+}
+
+.header-operations:after {
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle;
+}
+
+.header-operations li {
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px;
+    margin: 0 10px;
+    line-height: 80px;
+    cursor: pointer;
+}
+
 .title {
   color: #505153;
   font-weight: 300;
   font-size: 2.5em;
   margin: 0;
 }
+
+.wrapper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 </style>

@@ -1,37 +1,46 @@
 <template>
-  <section class="container">
-    <img src="../assets/img/logo.png" alt="Nuxt.js Logo" />
+<transition name="page">
+  <section class="container" v-show="error"> <img src="../assets/img/logo.png" alt="Nuxt.js Logo" />
     <h1 class="title">
       {{ error.statusCode }}
     </h1>
     <h2 class="info">
       {{ error.message }}
     </h2>
-    <nuxt-link class="button" to="/" v-if="error.statusCode === 404">
-      Homepage
-    </nuxt-link>
+    <nuxt-link class="button" to="/" v-if="error.statusCode === 404"> Homepage </nuxt-link>
   </section>
+</transition>
 </template>
+
 <script>
 export default {
-  props: ['error']
+  asyncData() {
+    return {
+      error: ''
+    }
+  },
+  props: ['error'],
+  watch: {
+    error: () => {
+      console.log(this.error)
+    }
+  }
 }
 </script>
 
 <style scoped>
-.title
-{
+.title {
   margin-top: 15px;
   font-size: 5em;
 }
-.info
-{
+
+.info {
   font-weight: 300;
   color: #9aabb1;
   margin: 0;
 }
-.button
-{
+
+.button {
   margin-top: 50px;
 }
 </style>

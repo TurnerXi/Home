@@ -84,7 +84,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['~assets/css/main.css', 'element-ui/lib/theme-chalk/index.css'],
+  css: ['~assets/css/main.css', 'element-ui/lib/theme-chalk/index.css', 'element-ui/lib/theme-chalk/display.css'],
   /*
    ** Customize the progress-bar color
    */
@@ -93,6 +93,12 @@ module.exports = {
    * plugins
    */
   plugins: [{ src: '~plugins/element-ui', ssr: true }],
+  /**
+   * router
+   */
+  router: {
+    middleware: 'stats'
+  },
   /*
    ** Build configuration
    */
@@ -151,8 +157,8 @@ module.exports = require("regenerator-runtime");
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_koa__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_nuxt__ = __webpack_require__(3);
@@ -160,11 +166,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var start = function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
+  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
     var _this = this;
 
     var app, host, port, config, nuxt, builder;
-    return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+    return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
@@ -195,8 +201,8 @@ var start = function () {
           case 10:
 
             app.use(function () {
-              var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
-                return __WEBPACK_IMPORTED_MODULE_0_D_coding_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+              var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
+                return __WEBPACK_IMPORTED_MODULE_0_D_Projects_Home_ife_ConvenientStoreManager_admin_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
                   while (1) {
                     switch (_context.prev = _context.next) {
                       case 0:
