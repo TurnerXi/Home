@@ -1,19 +1,19 @@
 #!/usr/bin/env node
-
+process.env.NODE_ENV = process.env.NODE_ENV.trim()
 /**
  * Module dependencies.
  */
-
 var app = require('../app');
 var debug = require('debug')('demo:server');
 var http = require('http');
 var https = require('https');
 const fs = require('fs');
+const config = require('../config');
+
 /**
  * Get port from environment and store in Express.
  */
-
-var port = normalizePort(process.env.PORT || '3004');
+var port = normalizePort(config.port || '3004');
 // app.set('port', port);
 
 /**

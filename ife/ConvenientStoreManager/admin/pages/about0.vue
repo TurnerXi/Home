@@ -6,7 +6,7 @@
   <h2 class="info" v-if="name === 'client'">
       Please refresh the page
     </h2>
-  <nuxt-link class="button" to="/about0"> Home page </nuxt-link>
+  <nuxt-link class="button" to="/"> Home page </nuxt-link>
 </section>
 </template>
 <script>
@@ -18,7 +18,7 @@ export default {
   },
   head() {
     return {
-      title: `关于我们`
+      title: `关于我们1`
     }
   },
   created: function() {

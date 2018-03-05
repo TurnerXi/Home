@@ -73,13 +73,19 @@ module.exports =
 /***/ function(module, exports) {
 
 module.exports = {
+  env: {
+    API_HOST: 'https://192.168.2.140:3004'
+  },
   /*
    ** Headers of the page
    */
   head: {
     title: 'starter',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: 'Nuxt.js project' }],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    changed: function changed(head) {
+      this.$store.state.pageName = head.title;
+    }
   },
   /*
    ** Global CSS

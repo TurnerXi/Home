@@ -1,7 +1,5 @@
 <template>
-
-<section class="container">
-  <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
+<section class="container"> <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
   <h1 class="title">
       Universal Vue.js Application Framework
     </h1>
@@ -12,11 +10,10 @@
 export default {
   head() {
     return {
-      title: `About Page (${this.name}-side)`
+      title: `商品管理1`
     }
   },
   mounted() {
-    // console.log(this.$router)
   }
 }
 </script>

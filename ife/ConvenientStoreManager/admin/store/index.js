@@ -18,7 +18,9 @@ const store = () => new Vuex.Store({
       { name: '123222', code: '264564581362', price: 15, number: 1 },
       { name: '123222', code: '264564581363', price: 15, number: 1 },
       { name: '123222', code: '264564581364', price: 15, number: 1 }
-    ]
+    ],
+    baseRoute: null,
+    pageName: null
   },
   getters: {
     product_list: state => {
@@ -46,7 +48,13 @@ const store = () => new Vuex.Store({
     update(state, pdt) {
       let index = this.getters.pdt_codes.indexOf(pdt.code)
       Vue.set(state.products, index, pdt)
+    },
+    selectMenu(state, route) {
+      state.baseRoute = route
     }
+    // pageName(state, name) {
+    //   state.pageName = name
+    // }
   }
 })
 

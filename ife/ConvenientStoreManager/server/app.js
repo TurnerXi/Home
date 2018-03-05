@@ -7,7 +7,9 @@ const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const cors = require('koa-cors')
 
-const router = require('./router')
+const router = require('./routes/router.js')
+const api_router = router('/api')
+const admin_router = router('/admin')
 
 // error handler
 onerror(app)
@@ -36,7 +38,8 @@ app.use(async (ctx, next) => {
 app.use(cors());
 
 // routes
-app.use(router.routes(), router.allowedMethods())
+app.use(api_router.routes(), api_router.allowedMethods())
+app.use(admin_router.routes(), admin_router.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {

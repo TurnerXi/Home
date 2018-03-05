@@ -1,4 +1,7 @@
 module.exports = {
+  env: {
+   API_HOST: 'https://192.168.2.140:3004'
+  },
   /*
    ** Headers of the page
    */
@@ -11,7 +14,10 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    changed: function(head){
+      this.$store.state.pageName = head.title
+    }
   },
   /*
    ** Global CSS
