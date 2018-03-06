@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    API_HOST: 'https://192.168.2.140:3004'
+    API_HOST: 'https://localhost:3004'
   },
   /*
    ** Headers of the page
@@ -44,7 +44,7 @@ module.exports = {
    * router
    */
   router: {
-    middleware: 'stats'
+    middleware: ['stats', 'auth']
   },
   /*
    ** Build configuration

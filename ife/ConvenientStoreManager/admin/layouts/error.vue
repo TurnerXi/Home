@@ -20,9 +20,9 @@ export default {
     }
   },
   props: ['error'],
-  watch: {
-    error: () => {
-      console.log(this.error)
+  mounted() {
+    if (this.error.statusCode === 403) {
+      this.$router.push({ path: '/login' })
     }
   }
 }
