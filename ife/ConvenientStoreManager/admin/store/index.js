@@ -20,7 +20,8 @@ const store = () => new Vuex.Store({
       { name: '123222', code: '264564581364', price: 15, number: 1 }
     ],
     baseRoute: null,
-    pageName: null
+    pageName: null,
+    authUser: null
   },
   getters: {
     product_list: state => {
@@ -33,6 +34,16 @@ const store = () => new Vuex.Store({
       return state.products.reduce((privous, current) => {
         return current.number * current.price + privous
       }, 0)
+    }
+  },
+  actions: {
+    loginByUsername: function ({ commit }) {
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          commit('login', { name: 'Turner', pwd: '123456' })
+          resolve()
+        }, 2000)
+      })
     }
   },
   mutations: {
@@ -51,10 +62,10 @@ const store = () => new Vuex.Store({
     },
     selectMenu(state, route) {
       state.baseRoute = route
+    },
+    login(state, user) {
+      state.authUser = user
     }
-    // pageName(state, name) {
-    //   state.pageName = name
-    // }
   }
 })
 
