@@ -1,54 +1,75 @@
 <template>
-<el-container class="wrapper">
-  <el-header height="80px" style="background-color: #3B8070;"> <img src="~assets/img/header-logo.svg" alt="element-logo" class="header-logo" />
-    <ul class="header-operations">
-      <li>仪表盘</li>
-      <li>项目</li>
-      <li>问题</li>
-      <li>Boards</li>
-    </ul>
+<el-container class="wrapper" :class="{'sidebar-hidden':collapse}">
+  <!--Head-->
+  <el-header class="header" height="50px" style="background-color: #3B8070;">
+    <!--Logo-->
+    <div class="logo hidden-sm-and-down">
+      <span class="big">米彩科技-微服务管理</span>
+      <span class="min"><img src="@/assets/images/logo_mini.jpg"></img>
+      </span>
+    </div>
+    <span class="header-btn hidden-sm-and-up" @click="m_menu=!m_menu"> <i class="el-icon-menu "></i> </span>
+    <!--Logo End-->
+    <!--Head Right-->
+    <div class="right hidden-sm-and-down">
+      <span class="header-btn">
+        <el-badge :value="3" class="badge"> <i class="el-icon-message"></i> </el-badge>
+      </span>
+      <span class="header-btn"> <i class="el-icon-bell"></i> </span>
+      <el-dropdown>
+        <span class="header-btn"> {{display_name}}<i class="el-icon-arrow-down el-icon--right"></i> </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>个人中心</el-dropdown-item>
+          <el-dropdown-item @click.native="logout">退出系统</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </div>
+    <!--Head Right End-->
   </el-header>
-  <el-container>
-    <el-aside class="menu">
-      <transition name="fade">
-        <el-menu default-active="1" :router="true" @select="menuSelectEvent" :collapse="collapse">
-          <el-menu-item v-if="collapse==false" index="" @click="collapse=true"> <i class="el-icon-d-arrow-left"></i> <span slot="title">收起菜单</span> </el-menu-item>
-          <el-menu-item v-if="collapse==true" index="" @click="collapse=false"> <i class="el-icon-d-arrow-right"></i> <span slot="title">展开菜单</span> </el-menu-item>
-            <el-submenu index="2"> <template slot="title">
-                <i class="el-icon-location"></i>
-                <span slot="title">导航一</span>
-              </template>
-              <el-menu-item index="/products/">商品管理</el-menu-item>
-              <el-menu-item index="/about">页面2</el-menu-item>
-              <el-menu-item index="3">页面3</el-menu-item>
-            </el-submenu>
-        </el-menu>
-      </transition>
+  <!--Head End-->
+  <!--Main-->
+  <el-container class="main">
+    <!--Aside-->
+    <el-aside class="aside hidden-sm-and-down" :width="collapse?'auto':'300px'">
+      <m-menu :collapse="collapse" @toggleCollapse="toggleCollapse"></m-menu>
     </el-aside>
-    <el-main class="content">
-      <breadcrumb :currentRoute="currentPage"></breadcrumb>
+    <!--Aside End-->
+    <!--Content-->
+    <el-main>
+      <!--Mobile Menu-->
+      <m-mobile-menu class="hidden-sm-and-up" v-show="m_menu" @hideMobileMenu='m_menu=false' />
+      <!--Mobile Menu End-->
+      <breadcrumb class="hidden-sm-and-up" :currentRoute="currentPage" />
       <nuxt></nuxt>
+      <el-footer class="footer">
+        <m-footer></m-footer>
+      </el-footer>
     </el-main>
+    <!--Content End-->
+    <!--Main End-->
   </el-container>
-  <el-footer>
-    <cfooter></cfooter>
-  </el-footer>
 </el-container>
 </template>
 
 <script>
 import breadcrumb from '../components/breadcrumb'
-import cfooter from '../components/footer.vue'
+import mFooter from '../components/footer'
+import mMenu from '../components/menu'
+import mMobileMenu from '../components/mobile/menu'
 import { mapState } from 'Vuex'
 export default {
   data() {
     return {
-      collapse: false
+      collapse: false,
+      display_name: '',
+      m_menu: false
     }
   },
   components: {
-    cfooter,
-    breadcrumb
+    mFooter,
+    breadcrumb,
+    mMenu,
+    mMobileMenu
   },
   computed: {
     currentPage: function() {
@@ -59,77 +80,105 @@ export default {
     },
     ...mapState(['pageName'])
   },
+  watch: {
+    $route() {
+      this.m_menu = false
+    }
+  },
   methods: {
-    menuSelectEvent: function(path, arr, object) {
-      if (path) {
-        this.$store.commit('selectMenu', { path, name: object.$el.innerHTML })
-      }
+    toggleCollapse: function() {
+      this.collapse = !this.collapse
     }
   },
   mounted() {}
 }
 </script>
 
-<style>
-.container {
-  margin: 0;
-  width: 100%;
-  padding: 100px 0;
-  text-align: center;
-}
-
-.header-logo {
-  display: inline-block;
-  vertical-align: middle;
-  max-height: 100%;
-}
-
-.header-operations {
-  display: inline-block;
-  float: right;
-  padding-right: 30px;
-  height: 100%;
-}
-
-.header-operations:after {
-  display: inline-block;
-  content: "";
-  height: 100%;
-  vertical-align: middle;
-}
-
-.header-operations li {
-  color: #fff;
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0 10px;
-  margin: 0 10px;
-  line-height: 80px;
-  cursor: pointer;
-}
-
-.title {
-  color: #505153;
-  font-weight: 300;
-  font-size: 2.5em;
-  margin: 0;
-}
-
+<style lang="less">
 .wrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
-.content {
-  width: 100%;
+.sidebar-hidden {
+    .header {
+        .logo {
+            .big {
+                display: none;
+            }
+            .min {
+                display: block;
+            }
+            width: 64px;
+        }
+    }
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.main {
+    .aside {
+        margin-top: 50px;
+        min-height: calc(~'100vh - 50px');
+        background-color: #222d32;
+        overflow: auto;
+    }
+    .container {
+        margin: 0;
+        width: 100%;
+        padding-top: 100px;
+        text-align: center;
+        min-height: calc(~'100vh - 200px');
+    }
 }
 
-.fade-enter, .fade-leave-to {
-  opacity: 0;
+.header {
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    height: 50px;
+    z-index: 10;
+    .logo {
+        .min {
+            display: none;
+        }
+        width: 300px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: #fff;
+        -webkit-transition: width 0.35s;
+        transition: width 0.3s ease-in-out;
+    }
+    .right {
+        position: absolute;
+        right: 0;
+    }
+    .header-btn {
+        .el-badge__content {
+            top: 14px;
+            right: 7px;
+            text-align: center;
+            font-size: 9px;
+            padding: 0 3px;
+            background-color: #00a65a;
+            color: #fff;
+            border: none;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.25em;
+        }
+        overflow: hidden;
+        height: 50px;
+        display: inline-block;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        padding: 0 14px;
+        color: #fff;
+        &:hover {
+            background-color: #367fa9;
+        }
+    }
 }
 </style>

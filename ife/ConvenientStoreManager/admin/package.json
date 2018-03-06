@@ -24,6 +24,7 @@
     "babel-eslint": "^7.1.1",
     "babel-plugin-component": "^1.1.0",
     "backpack-core": "^0.3.0",
+    "css-loader": "^0.28.10",
     "eslint": "^3.13.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.9.0",
@@ -32,7 +33,10 @@
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
+    "node-sass": "^4.7.2",
     "nodemon": "^1.11.0",
-    "scmp": "^2.0.0"
+    "sass-loader": "^6.0.7",
+    "scmp": "^2.0.0",
+    "vue-style-loader": "^4.0.2"
   }
 }

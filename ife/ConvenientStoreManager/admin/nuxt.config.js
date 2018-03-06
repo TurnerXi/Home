@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-   API_HOST: 'https://192.168.2.140:3004'
+    API_HOST: 'https://192.168.2.140:3004'
   },
   /*
    ** Headers of the page
@@ -9,13 +9,19 @@ module.exports = {
     title: 'starter',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { name: 'viewport', content: 'width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,minimal-ui' },
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+      { name: 'msapplication-tap-highlight', content: 'no' },
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'renderer', content: 'webkit' },
+      { name: 'HandheldFriendly', content: 'true' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    changed: function(head){
+    changed: function (head) {
       this.$store.state.pageName = head.title
     }
   },
@@ -61,6 +67,33 @@ module.exports = {
         ]
       ]
     },
+    loaders:[
+      {
+        test: /\.css$/,
+        loader: 'vue-style-loader!css-loader'
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 1000, // 1KO
+          name: 'img/[name].[hash:7].[ext]'
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 1000, // 1 KO
+          name: 'fonts/[name].[hash:7].[ext]'
+        }
+      }
+    ],
+    postcss: [
+      require('autoprefixer')({
+        browsers: ['last 3 versions']
+      })
+    ],
     /*
      ** Run ESLINT on save
      */

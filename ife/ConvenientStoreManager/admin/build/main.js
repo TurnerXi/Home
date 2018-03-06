@@ -65,12 +65,12 @@ module.exports =
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 module.exports = {
   env: {
@@ -81,7 +81,7 @@ module.exports = {
    */
   head: {
     title: 'starter',
-    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: 'Nuxt.js project' }],
+    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,minimal-ui' }, { hid: 'description', name: 'description', content: 'Nuxt.js project' }, { name: 'msapplication-tap-highlight', content: 'no' }, { name: 'apple-mobile-web-app-capable', content: 'yes' }, { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }, { name: 'format-detection', content: 'telephone=no' }, { name: 'renderer', content: 'webkit' }, { name: 'HandheldFriendly', content: 'true' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     changed: function changed(head) {
       this.$store.state.pageName = head.title;
@@ -116,6 +116,27 @@ module.exports = {
         styleLibraryName: 'theme-chalk'
       }, 'transform-async-to-generator', 'transform-runtime']]]
     },
+    loaders: [{
+      test: /\.css$/,
+      loader: 'vue-style-loader!css-loader'
+    }, {
+      test: /\.(png|jpe?g|gif|svg)$/,
+      loader: 'url-loader',
+      query: {
+        limit: 1000, // 1KO
+        name: 'img/[name].[hash:7].[ext]'
+      }
+    }, {
+      test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+      loader: 'url-loader',
+      query: {
+        limit: 1000, // 1 KO
+        name: 'fonts/[name].[hash:7].[ext]'
+      }
+    }],
+    postcss: [__webpack_require__(4)({
+      browsers: ['last 3 versions']
+    })],
     /*
      ** Run ESLINT on save
      */
@@ -136,7 +157,7 @@ module.exports = {
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(4);
+module.exports = __webpack_require__(5);
 
 
 /***/ },
@@ -155,10 +176,16 @@ module.exports = require("nuxt");
 /* 4 */
 /***/ function(module, exports) {
 
-module.exports = require("regenerator-runtime");
+module.exports = require("autoprefixer");
 
 /***/ },
 /* 5 */
+/***/ function(module, exports) {
+
+module.exports = require("regenerator-runtime");
+
+/***/ },
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
