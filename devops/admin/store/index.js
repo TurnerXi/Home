@@ -9,6 +9,9 @@ const store = () => new Vuex.Store({
     token: null
   },
   actions: {
+    nuxtServerInit({ commit }, { req }) {
+      console.log(123)
+    },
     async login({ commit }, { username, password }) {
       try {
         const data = await this.$axios.$post('/admin/login', { username, password })

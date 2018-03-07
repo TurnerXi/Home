@@ -7,6 +7,7 @@ module.exports = function(prefix){
   });
 
   glob.getEntries(`${__dirname}${prefix}/*`).forEach((entry) => {
+    console.log(entry)
     var entry = require(`.${prefix}/${entry}`)
     router.use(entry.routes(), entry.allowedMethods())
   })

@@ -3,7 +3,7 @@ module.exports = {
     // API_URL: 'https://192.168.2.140:3004'
   },
   axios: {
-    baseURL: 'http://192.168.2.140:3004',
+    baseURL: 'http://192.168.199.105:3004',
     debug: true,
     https: true,
     // proxy: true,
