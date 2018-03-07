@@ -41,7 +41,7 @@
       <!--Mobile Menu End-->
       <breadcrumb class="hidden-sm-and-up" :currentRoute="currentPage" />
       <nuxt></nuxt>
-      <el-footer class="footer">
+      <el-footer class="footer hidden-sm-and-down">
         <m-footer></m-footer>
       </el-footer>
     </el-main>

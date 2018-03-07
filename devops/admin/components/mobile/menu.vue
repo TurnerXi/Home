@@ -44,7 +44,7 @@ export default {
 }
 </script>
 <style>
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
   .el-submenu__title {
     font-size: 0.5rem;
     color: rgba(255, 255, 255, 0.6);

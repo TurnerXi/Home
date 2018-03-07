@@ -6,7 +6,7 @@ module.exports = {
     baseURL: 'http://192.168.2.140:3004',
     debug: true,
     https: true,
-    proxy: true,
+    // proxy: true,
     retry: { retries: 3 }
   },
   // proxy: {
@@ -40,6 +40,7 @@ module.exports = {
    ** Global CSS
    */
   css: ['~assets/css/main.css',
+    '~assets/css/font-awesome.min.css',
     'element-ui/lib/theme-chalk/index.css',
     'element-ui/lib/theme-chalk/display.css'
   ],
@@ -51,7 +52,7 @@ module.exports = {
    * modules
    */
   modules: [
-    '@nuxtjs/axios',
+    '@nuxtjs/axios'
   ],
   /**
    * plugins

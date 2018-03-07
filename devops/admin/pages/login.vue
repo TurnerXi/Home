@@ -1,194 +1,169 @@
 <template>
-<div class="login-container">
-  <el-form class="login-form" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left">
-    <div class="title-container">
-      <h3 class="title">用户登录</h3>
-    </div>
-
-    <el-form-item prop="password">
-      <span class="svg-container">
-        <svg-icon icon-class="password" /> </span>
-      <el-input name="password" :type="passwordType" @keyup.enter.native="handleLogin" v-model="loginForm.password" placeholder="password" />
-      <span class="show-pwd" @click="showPwd">
-        <svg-icon icon-class="eye" />
-      </span>
-    </el-form-item>
-    
-    <el-form-item prop="password">
-      <span class="svg-container">
-        <svg-icon icon-class="password" /> </span>
-      <el-input name="password" :type="passwordType" @keyup.enter.native="handleLogin" v-model="loginForm.password" placeholder="password" />
-      <span class="show-pwd" @click="showPwd">
-        <svg-icon icon-class="eye" />
-      </span>
-    </el-form-item>
-
-    <el-button type="primary" style="width:100%;margin-bottom:30px;" :loading="loading" @click.native.prevent="handleLogin">登录</el-button>
-
-  </el-form>
+<div id='login' class='login'>
+  <el-row style='z-index: 1;height: 100%;'>
+    <el-card class='login-box' element-loading-background='rgba(0, 0, 0, 0.8)'>
+      <el-form ref='form' :model='form' :rules='rules' label-with='80px' @keyup.enter.native='handleSubmit'>
+        <h1 class='title'>后台管理系统</h1>
+        <el-form-item prop='username'>
+          <el-input v-model='form.username' :autofocus='true' placeholder='username'> <template slot='prepend'>
+                <i class='fa fa-user'></i>
+            </template> </el-input>
+        </el-form-item>
+        <el-form-item prop='password'>
+          <el-input type='password' v-model='form.password' placeholder='password'> <template slot='prepend'>
+              <i class='fa fa-lock'></i>
+            </template> </el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-alert v-if='error' :title='error' type='error' style='margin-top: -10px; margin-bottom: 10px' show-icon></el-alert>
+          <el-button type='primary' @click='handleSubmit' style='width: 100%' :disabled="loading" >
+            <span v-show="!loading">登 录</span>
+            <div v-show="loading" class="loading">
+                <div class="line"></div><div class="line"></div><div class="line"></div>
+            </div>
+          </el-button>
+        </el-form-item>
+      </el-form>
+    </el-card>
+  </el-row>
 </div>
 </template>
-
 <script>
-// import { isvalidUsername } from '@/utils/validate'
+import starcanvas from '../utils/starcanvas'
 export default {
   layout: 'auth',
   data() {
-    // const validateUsername = (rule, value, callback) => {
-    //   if (!isvalidUsername(value)) {
-    //     callback(new Error('Please enter the correct user name'))
-    //   } else {
-    //     callback()
-    //   }
-    // }
-    // const validatePassword = (rule, value, callback) => {
-    //   if (value.length < 6) {
-    //     callback(new Error('The password can not be less than 6 digits'))
-    //   } else {
-    //     callback()
-    //   }
-    // }
     return {
-      loginForm: {
+      loading: false,
+      error: '',
+      form: {
         username: '',
         password: ''
       },
-      loginRules: {
-        // username: [{ required: true, trigger: 'blur', validator: validateUsername }],
-        // password: [{ required: true, trigger: 'blur', validator: validatePassword }]
-      },
-      passwordType: 'password',
-      loading: false,
-      showDialog: false
+      rules: {
+        username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+      }
     }
   },
   methods: {
-    showPwd() {
-      if (this.passwordType === 'password') {
-        this.passwordType = ''
-      } else {
-        this.passwordType = 'password'
-      }
-    },
-    handleLogin() {
-      this.$refs.loginForm.validate(valid => {
-        if (valid) {
+    handleSubmit() {
+      this.error = ''
+      this.$refs['form'].validate(pass => {
+        if (pass) {
           this.loading = true
-          this.$store.dispatch('login', this.loginForm).then(() => {
-            this.loading = false
+          this.$store.dispatch('login', this.form).then(() => {
             this.$router.push({ path: '/' })
-          }).catch(() => {
+          }).catch((error) => {
+            this.error = error.message
+          }).finally(() => {
             this.loading = false
           })
-        } else {
-          console.error('error submit!!')
-          return false
         }
       })
     }
+  },
+  watch: {
+    form: {
+      handler: function() {
+        this.error = ''
+      },
+      deep: true
+    }
+  },
+  mounted() {
+    starcanvas({
+      context: 'login',
+      vx: 4, // 小球x轴速度,正为右，负为左
+      vy: 4, // 小球y轴速度
+      height: 2, // 小球高宽，其实为正方形，所以不宜太大
+      width: 2,
+      count: 100, // 点个数
+      color: '121, 162, 185', // 点颜色
+      stroke: '130,255,255', // 线条颜色
+      dist: 6000, // 点吸附距离
+      e_dist: 20000, // 鼠标吸附加速距离
+      max_conn: 10 // 点到点最大连接数
+    })
   }
 }
 </script>
-
-<style rel="stylesheet/scss" lang="scss">
-$bg: #2d3a4b;
-$light_gray: #eee;
-/* reset element-ui css */
-.login-container {
-    .el-input {
-        display: inline-block;
-        height: 47px;
-        width: 85%;
-        input {
-            background: transparent;
-            border: 0;
-            -webkit-appearance: none;
-            border-radius: 0;
-            padding: 12px 5px 12px 15px;
-            color: $light_gray;
-            height: 47px;
-            &:-webkit-autofill {
-                -webkit-box-shadow: 0 0 0 1000px $bg inset !important;
-                -webkit-text-fill-color: #fff !important;
-            }
-        }
-    }
-    .el-form-item {
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        color: #454545;
-    }
+<style scoped>
+.login {
+  background-color: #324057;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  position: fixed;
 }
-</style>
 
-<style rel="stylesheet/scss" lang="scss" scoped>
-$bg: #2d3a4b;
-$dark_gray: #889aa4;
-$light_gray: #eee;
-.login-container {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    background-color: $bg;
-    .login-form {
-        position: absolute;
-        left: 0;
-        right: 0;
-        width: 520px;
-        padding: 35px 35px 15px;
-        margin: 120px auto;
-    }
-    .tips {
-        font-size: 14px;
-        color: #fff;
-        margin-bottom: 10px;
-        span {
-            &:first-of-type {
-                margin-right: 16px;
-            }
-        }
-    }
-    .svg-container {
-        padding: 6px 5px 6px 15px;
-        color: $dark_gray;
-        vertical-align: middle;
-        width: 30px;
-        display: inline-block;
-        &_login {
-            font-size: 20px;
-        }
-    }
-    .title-container {
-        position: relative;
-        .title {
-            font-size: 26px;
-            font-weight: 400;
-            color: $light_gray;
-            margin: 0 auto 40px;
-            text-align: center;
-            font-weight: bold;
-        }
-        .set-language {
-            color: #fff;
-            position: absolute;
-            top: 5px;
-            right: 0;
-        }
-    }
-    .show-pwd {
-        position: absolute;
-        right: 10px;
-        top: 7px;
-        font-size: 16px;
-        color: $dark_gray;
-        cursor: pointer;
-        user-select: none;
-    }
-    .thirdparty-button {
-        position: absolute;
-        right: 35px;
-        bottom: 28px;
-    }
+.login-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 350px;
+  max-width: 80%;
+  padding: 20px 50px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.login-box-msg {
+  color: #ffffff;
+  text-align: center;
+}
+
+.login-box .title {
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0 40px;
+  font-weight: lighter;
+}
+
+.loading .line:nth-last-child(1) {
+    animation: loading 1s .2s linear infinite;
+}
+
+.loading .line:nth-last-child(2) {
+    animation: loading 1s .4s linear infinite;
+}
+
+.loading .line:nth-last-child(3) {
+    animation: loading 1s .6s linear infinite;
+}
+
+.line {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    margin: 0 5px;
+    background-color: #4b9cdb;
+}
+
+@keyframes loading {
+    0 {opacity: 0.2;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
+@media screen and (max-width: 700px) {
+  .login-box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 80%;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+  }
+  .login-box .title {
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: lighter;
+  }
 }
 </style>

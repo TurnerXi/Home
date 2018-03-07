@@ -14,11 +14,6 @@
 
 <script>
 export default {
-  asyncData() {
-    return {
-      error: ''
-    }
-  },
   props: ['error'],
   mounted() {
     // if (this.error.statusCode === 403) {
