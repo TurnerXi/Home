@@ -1,25 +1,30 @@
 <template>
 <div class="login-container">
-  <el-form class="login-form" autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left">
-
+  <el-form class="login-form" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left">
     <div class="title-container">
       <h3 class="title">用户登录</h3>
     </div>
 
-    <el-form-item prop="username">
-      <span class="svg-container svg-container_login">
-        <svg-icon icon-class="user" /> </span>
-      <el-input name="username" type="text" v-model="loginForm.username" autoComplete="on" placeholder="username" />
-    </el-form-item>
-
     <el-form-item prop="password">
       <span class="svg-container">
         <svg-icon icon-class="password" /> </span>
-      <el-input name="password" :type="passwordType" @keyup.enter.native="handleLogin" v-model="loginForm.password" autoComplete="on" placeholder="password" />
+      <el-input name="password" :type="passwordType" @keyup.enter.native="handleLogin" v-model="loginForm.password" placeholder="password" />
       <span class="show-pwd" @click="showPwd">
-        <svg-icon icon-class="eye" /> </span>
+        <svg-icon icon-class="eye" />
+      </span>
     </el-form-item>
+    
+    <el-form-item prop="password">
+      <span class="svg-container">
+        <svg-icon icon-class="password" /> </span>
+      <el-input name="password" :type="passwordType" @keyup.enter.native="handleLogin" v-model="loginForm.password" placeholder="password" />
+      <span class="show-pwd" @click="showPwd">
+        <svg-icon icon-class="eye" />
+      </span>
+    </el-form-item>
+
     <el-button type="primary" style="width:100%;margin-bottom:30px;" :loading="loading" @click.native.prevent="handleLogin">登录</el-button>
+
   </el-form>
 </div>
 </template>
@@ -45,8 +50,8 @@ export default {
     // }
     return {
       loginForm: {
-        username: 'admin',
-        password: '1111111'
+        username: '',
+        password: ''
       },
       loginRules: {
         // username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -69,7 +74,7 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
-          this.$store.dispatch('loginByUsername', this.loginForm).then(() => {
+          this.$store.dispatch('login', this.loginForm).then(() => {
             this.loading = false
             this.$router.push({ path: '/' })
           }).catch(() => {
