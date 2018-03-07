@@ -21,9 +21,9 @@ export default {
   },
   props: ['error'],
   mounted() {
-    if (this.error.statusCode === 403) {
-      this.$router.push({ path: '/login' })
-    }
+    // if (this.error.statusCode === 403) {
+    //   this.$router.push({ path: '/login' })
+    // }
   }
 }
 </script>

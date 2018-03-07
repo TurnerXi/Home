@@ -58,6 +58,7 @@ import mMenu from '../components/menu'
 import mMobileMenu from '../components/mobile/menu'
 import { mapState } from 'Vuex'
 export default {
+  middleware: 'auth',  // 定义页面中间件
   data() {
     return {
       collapse: false,

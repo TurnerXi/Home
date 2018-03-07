@@ -1,8 +1,5 @@
-export default function ({ store, route, error }) {
+export default function ({ store, error, route, redirect }) {
   if (!store.state.authUser && route.path !== '/login' && route.path !== '/registry') {
-    error({
-      message: 'You are not connected',
-      statusCode: 403
-    })
+    return redirect('/login')
   }
 }

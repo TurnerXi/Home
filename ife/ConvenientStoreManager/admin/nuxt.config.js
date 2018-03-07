@@ -1,7 +1,18 @@
 module.exports = {
   env: {
-    API_HOST: 'https://localhost:3004'
+    // API_URL: 'https://192.168.2.140:3004'
   },
+  axios: {
+    baseURL: 'http://192.168.2.140:3004',
+    debug: true,
+    https: true,
+    proxy: true,
+    retry: { retries: 3 }
+  },
+  // proxy: {
+  //   '/api/': 'http://api.example.com',
+  //   '/api2/': 'http://api.another-website.com'
+  // },
   /*
    ** Headers of the page
    */
@@ -37,14 +48,20 @@ module.exports = {
    */
   loading: { color: '#3B8070' },
   /**
+   * modules
+   */
+  modules: [
+    '@nuxtjs/axios',
+  ],
+  /**
    * plugins
    */
-  plugins: [{ src: '~plugins/element-ui', ssr: true }],
+  plugins: [{ src: '~plugins/element-ui', ssr: true }, { src: '~/plugins/axios', ssr: true }],
   /**
    * router
    */
   router: {
-    middleware: ['stats', 'auth']
+    middleware: 'stats'
   },
   /*
    ** Build configuration
@@ -67,8 +84,7 @@ module.exports = {
         ]
       ]
     },
-    loaders:[
-      {
+    loaders: [{
         test: /\.css$/,
         loader: 'vue-style-loader!css-loader'
       },

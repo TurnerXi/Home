@@ -1,8 +1,12 @@
-import Vue from 'vue'
-import axios from 'axios'
-import Vueaxios from 'vue-axios'
-var axio = axios.create({
-  baseURL: process.env.API_HOST || '/'
-})
-Vue.use(Vueaxios, axio)
-export default axio
+export default function ({ $axios, redirect }) {
+  $axios.onRequest(config => {
+    console.log('Making request to ' + config.url)
+  })
+
+  $axios.onError(error => {
+    const code = parseInt(error.response && error.response.status)
+    if (code === 403) {
+      redirect('/login')
+    }
+  })
+}

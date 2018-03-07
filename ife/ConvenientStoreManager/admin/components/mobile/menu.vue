@@ -36,7 +36,7 @@ export default {
   methods: {
     menuSelectEvent: function(path, arr, object) {
       if (path) {
-        this.$store.commit('selectMenu', { path, name: object.$el.innerHTML })
+        this.$store.commit('SELECT_MENU', { path, name: object.$el.innerHTML })
         this.$emit('hideMobileMenu')
       }
     }
