@@ -51,7 +51,12 @@ app.use(async (ctx, next) => {
 })
 
 // cross origin
-app.use(cors());
+// config to make cross origin cookies effect
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true,
+  headers: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'If-Modified-Since']
+}));
 
 // or if you prefer all default config, just use => app.use(session(app));
 app.use(session(CONFIG, app));

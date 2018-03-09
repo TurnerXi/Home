@@ -80,6 +80,7 @@ module.exports = {
     baseURL: 'http://192.168.199.105:3004',
     debug: true,
     https: true,
+    credentials: true,
     // proxy: true,
     retry: { retries: 3 }
   },
