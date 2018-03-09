@@ -1,12 +1,14 @@
 const router = require('koa-router')()
 
 router.post('/login', async (ctx, next) => {
-  if (ctx.path === '/favicon.ico') return;
+  ctx.session.user = {
+    username: 'TurnerXi'
+  };
+  ctx.body = { msg: 'success' };
+})
 
-  let n = ctx.session.views || 0;
-  ctx.session.views = ++n;
-  console.log(ctx.session.views);
-  ctx.body = {'sess':n + ' views'};
+router.post('/checklogin', async (ctx, next) => {
+  ctx.body = { flag: !!ctx.session.user };
 })
 
 module.exports = router

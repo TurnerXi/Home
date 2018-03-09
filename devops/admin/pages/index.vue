@@ -15,8 +15,7 @@
 <script type="text/javascript">
 export default {
   mounted() {
-    var data = this.$axios.$get('/admin/products')
-    console.log(data)
+    this.$axios.$get('/admin/products')
   }
 }
 </script>

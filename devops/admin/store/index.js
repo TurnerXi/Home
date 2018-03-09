@@ -5,22 +5,16 @@ Vue.use(Vuex)
 const store = () => new Vuex.Store({
   state: {
     baseRoute: null,
-    pageName: null,
-    token: null
+    pageName: null
   },
   actions: {
-    nuxtServerInit({ commit }, { req }) {
-      console.log(123)
-    },
-    async login({ commit }, { username, password }) {
+    nuxtServerInit({ commit }, { req }) {},
+    async login({ commit }, { username, password, token }) {
       try {
-        const data = await this.$axios.$post('/admin/login', { username, password })
-        // localStorage.setItem('token', data['token'])
-        // localStorage.setItem('is_supper', data['is_supper'])
-        // localStorage.setItem('permissions', data['permissions'])
-        // localStorage.setItem('nickname', data['nickname'])
-        commit('SET_USER', data['token'])
+        await this.$axios.$post('/admin/login', { username, password, token })
+        localStorage.setItem('isLogin', true)
       } catch (error) {
+        localStorage.setItem('isLogin', false)
         if (error.response && error.response.status === 401) {
           throw new Error('Bad credentials')
         }
@@ -29,15 +23,16 @@ const store = () => new Vuex.Store({
     },
     async logout({ commit }) {
       await this.$axios.$post('/api/logout')
-      commit('SET_USER', null)
+      localStorage.setItem('isLogin', false)
+    },
+    async islogin() {
+      let data = await this.$axios.$get('/admin/checklogin')
+      return data.flag === 1
     }
   },
   mutations: {
     SELECT_MENU(state, route) {
       state.baseRoute = route
-    },
-    SET_USER(state, token) {
-      state.token = token
     }
   }
 })

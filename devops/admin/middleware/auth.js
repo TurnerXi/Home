@@ -1,6 +1,11 @@
-export default function ({ store, error, route, redirect, isServer }) {
-  // let token = store.state.token
-  // if (!token && route.path !== '/login' && route.path !== '/registry') {
-  //   return redirect('/login')
-  // }
+export default function ({ store, route, redirect, isServer }) {
+  let islogin = false
+  if (process.server || !window) {
+    islogin = store.dispatch('check_login')
+  } else {
+    islogin = localStorage.getItem('isLogin')
+  }
+  if (!islogin) {
+    return redirect('/login')
+  }
 }
