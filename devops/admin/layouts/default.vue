@@ -91,7 +91,11 @@ export default {
       this.collapse = !this.collapse
     }
   },
-  mounted() {}
+  mounted() {
+    if (!localStorage.getItem('isLogin')) {
+      this.$router.push('/login')
+    }
+  }
 }
 </script>
 

@@ -1,7 +1,9 @@
 export default function ({ store, route, redirect, isServer }) {
-  let islogin = false
+  let islogin = true
   if (process.server || !window) {
-    islogin = store.dispatch('check_login')
+    // store.dispatch('check_login')
+    // console.log(store.islogin)
+    // islogin = store.islogin
   } else {
     islogin = localStorage.getItem('isLogin')
   }

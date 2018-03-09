@@ -5,7 +5,8 @@ Vue.use(Vuex)
 const store = () => new Vuex.Store({
   state: {
     baseRoute: null,
-    pageName: null
+    pageName: null,
+    islogin: false
   },
   actions: {
     nuxtServerInit({ commit }, { req }) {},
@@ -22,17 +23,21 @@ const store = () => new Vuex.Store({
       }
     },
     async logout({ commit }) {
-      await this.$axios.$post('/api/logout')
+      await this.$axios.$post('/admin/logout')
       localStorage.setItem('isLogin', false)
     },
-    async islogin() {
+    async check_login({ commit }) {
       let data = await this.$axios.$get('/admin/checklogin')
-      return data.flag === 1
+      console.log(data)
+      commit('CHECK_LOGIN', data.flag === 1)
     }
   },
   mutations: {
     SELECT_MENU(state, route) {
       state.baseRoute = route
+    },
+    CHECK_LOGIN(state, islogin) {
+      state.islogin = islogin
     }
   }
 })
