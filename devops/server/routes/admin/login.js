@@ -1,13 +1,12 @@
 const router = require('koa-router')()
 
 router.post('/login', async (ctx, next) => {
-  ctx.body = {
-                message: 'success',
-                token: '123456',
-                is_supper: 1,
-                permissions: [],
-                nickname: 'Turner'
-              }
+  if (ctx.path === '/favicon.ico') return;
+
+  let n = ctx.session.views || 0;
+  ctx.session.views = ++n;
+  console.log(ctx.session.views);
+  ctx.body = {'sess':n + ' views'};
 })
 
 module.exports = router

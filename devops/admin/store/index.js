@@ -12,10 +12,10 @@ const store = () => new Vuex.Store({
     async login({ commit }, { username, password }) {
       try {
         const data = await this.$axios.$post('/admin/login', { username, password })
-        localStorage.setItem('token', data['token'])
-        localStorage.setItem('is_supper', data['is_supper'])
-        localStorage.setItem('permissions', data['permissions'])
-        localStorage.setItem('nickname', data['nickname'])
+        // localStorage.setItem('token', data['token'])
+        // localStorage.setItem('is_supper', data['is_supper'])
+        // localStorage.setItem('permissions', data['permissions'])
+        // localStorage.setItem('nickname', data['nickname'])
         commit('SET_USER', data['token'])
       } catch (error) {
         if (error.response && error.response.status === 401) {
