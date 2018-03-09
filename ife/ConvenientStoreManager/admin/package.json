@@ -34,10 +34,15 @@
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
+    "less": "^3.0.1",
+    "less-loader": "^4.0.6",
     "node-sass": "^4.7.2",
     "nodemon": "^1.11.0",
     "sass-loader": "^6.0.7",
     "scmp": "^2.0.0",
+    "style-loader": "^0.20.2",
+    "stylus-loader": "^3.0.2",
+    "vue-loader": "^14.1.1",
     "vue-style-loader": "^4.0.2"
   }
 }
