@@ -48,9 +48,9 @@ module.exports = {
         include: [
           resolve('src'),
           resolve('test'),
-          resolve('/node_modules/.1.4.8@element-ui/src'),
-          resolve('/node_modules/.1.4.8@element-ui/packages'),
-          resolve('/node_modules/.4.3.0@vuex-router-sync')
+          resolve('/node_modules/.1.4.13@element-ui/src'),
+          resolve('/node_modules/.1.4.13@element-ui/packages'),
+          resolve('/node_modules/.4.3.2@vuex-router-sync')
         ]
       },
       {

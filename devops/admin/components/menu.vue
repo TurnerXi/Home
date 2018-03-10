@@ -6,11 +6,12 @@
       <el-submenu index="2">
           <template slot="title">
             <i class="el-icon-location"></i>
-            <span slot="title">导航一</span>
+            <span slot="title">系统管理</span>
           </template>
-        <el-menu-item index="/products">商品管理</el-menu-item>
-        <el-menu-item index="/about">页面2</el-menu-item>
-        <el-menu-item index="3">页面3</el-menu-item>
+        <el-menu-item index="/sys/admin/resource">资源管理</el-menu-item>
+        <el-menu-item index="/sys/admin/menu">菜单管理</el-menu-item>
+        <el-menu-item index="/sys/admin/role">角色管理</el-menu-item>
+        <el-menu-item index="/sys/admin/user">用户管理</el-menu-item>
       </el-submenu>
     </el-menu>
     </transition>
