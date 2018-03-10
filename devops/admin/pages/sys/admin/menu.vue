@@ -49,7 +49,7 @@
       </el-card>
     </el-col>
   </el-row>
-</imp-panel>
+</imp-panel>    
 </template>
 <script type="text/babel">
 import panel from "../../components/templates/panel.vue"
