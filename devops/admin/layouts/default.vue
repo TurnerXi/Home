@@ -8,7 +8,7 @@
       <span class="min"><img src="@/assets/images/logo_mini.jpg"></img>
       </span>
     </div>
-    <span class="header-btn hidden-sm-and-up" @click="m_menu=!m_menu"> <i class="el-icon-menu "></i> </span>
+    <span class="header-btn hidden-sm-and-up" @click="m_menu_show=!m_menu_show"> <i class="el-icon-menu "></i> </span>
     <!--Logo End-->
     <!--Head Right-->
     <div class="right hidden-sm-and-down">
@@ -31,13 +31,13 @@
   <el-container class="main">
     <!--Aside-->
     <el-aside class="aside hidden-sm-and-down" :width="collapse?'auto':'300px'">
-      <m-menu :collapse="collapse" @toggleCollapse="toggleCollapse"></m-menu>
+      <m-menu :collapse="collapse" @toggleCollapse="collapse = !collapse"></m-menu>
     </el-aside>
     <!--Aside End-->
     <!--Content-->
     <el-main>
       <!--Mobile Menu-->
-      <m-mobile-menu class="hidden-sm-and-up" v-show="m_menu" @hideMobileMenu='m_menu=false' />
+      <m-mobile-menu class="hidden-sm-and-up" v-show="m_menu_show" @hideMobileMenu='m_menu_show=false' />
       <!--Mobile Menu End-->
       <breadcrumb class="hidden-sm-and-up" :currentRoute="currentPage" />
       <nuxt></nuxt>
@@ -56,14 +56,13 @@ import breadcrumb from '../components/breadcrumb'
 import mFooter from '../components/footer'
 import mMenu from '../components/menu'
 import mMobileMenu from '../components/mobile/menu'
-import { mapState } from 'Vuex'
 export default {
-  middleware: 'auth',  // 定义页面中间件
+  middleware: 'auth', // 定义页面中间件
   data() {
     return {
       collapse: false,
       display_name: '',
-      m_menu: false
+      m_menu_show: false
     }
   },
   components: {
@@ -74,27 +73,31 @@ export default {
   },
   computed: {
     currentPage: function() {
-      if (this.pageName) {
-        var pagePath = this.$route.path
-        return { path: pagePath, name: this.pageName }
+      if (this.$store.state.pageName) {
+        return { path: this.$route.path, name: this.$store.state.pageName }
       }
-    },
-    ...mapState(['pageName'])
+    }
   },
   watch: {
     $route() {
-      this.m_menu = false
+      this.m_menu_show = false
     }
   },
   methods: {
-    toggleCollapse: function() {
-      this.collapse = !this.collapse
+    logout: function() {
+      this.$store.dispatch('logout')
+      this.$router.push('/login')
+    },
+    check_login: function() {
+      this.$store.dispatch('check_login').then(() => {
+        if (!this.$store.getters.is_login) {
+          this.$router.push('/login')
+        }
+      })
     }
   },
   mounted() {
-    if (!localStorage.getItem('isLogin')) {
-      this.$router.push('/login')
-    }
+    this.check_login()
   }
 }
 </script>

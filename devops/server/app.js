@@ -15,16 +15,22 @@ const admin_router = router('/admin')
 app.keys = ['some secret hurr'];
 
 const CONFIG = {
-  key: 'koa:sess', /** (string) cookie key (default is koa:sess) */
+  key: 'koa:sess',
+  /** (string) cookie key (default is koa:sess) */
   /** (number || 'session') maxAge in ms (default is 1 days) */
   /** 'session' will result in a cookie that expires when session/browser is closed */
   /** Warning: If a session cookie is stolen, this cookie will never expire */
   maxAge: 86400000,
-  overwrite: true, /** (boolean) can overwrite or not (default true) */
-  httpOnly: true, /** (boolean) httpOnly or not (default true) */
-  signed: true, /** (boolean) signed or not (default true) */
-  rolling: false, /** (boolean) Force a session identifier cookie to be set on every response. The expiration is reset to the original maxAge, resetting the expiration countdown. (default is false) */
-  renew: false, /** (boolean) renew session when session is nearly expired, so we can always keep user logged in. (default is false)*/
+  overwrite: true,
+  /** (boolean) can overwrite or not (default true) */
+  httpOnly: true,
+  /** (boolean) httpOnly or not (default true) */
+  signed: true,
+  /** (boolean) signed or not (default true) */
+  rolling: false,
+  /** (boolean) Force a session identifier cookie to be set on every response. The expiration is reset to the original maxAge, resetting the expiration countdown. (default is false) */
+  renew: false,
+  /** (boolean) renew session when session is nearly expired, so we can always keep user logged in. (default is false)*/
 };
 
 // error handler
@@ -32,7 +38,7 @@ onerror(app)
 
 // middlewares
 app.use(bodyparser({
-  enableTypes:['json', 'form', 'text']
+  enableTypes: ['json', 'form', 'text']
 }))
 app.use(json())
 app.use(logger())
@@ -53,7 +59,10 @@ app.use(async (ctx, next) => {
 // cross origin
 // config to make cross origin cookies effect
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: function (request) {
+    var whitelist = ["http://localhost:3000", "http://192.168.2.140:3000"]
+    return whitelist.indexOf(request.header.origin) !== -1 ? request.header.origin : false
+  },
   credentials: true,
   headers: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'If-Modified-Since']
 }));

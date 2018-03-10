@@ -4,18 +4,26 @@ const service = new ResourceService()
 
 router.prefix('/resource')
 
-router.get('/init', async (ctx, next) => {
-  service.init()
+router.post('/', async (ctx, next) => {
+  ctx.body = [
+    { name: '系统管理', path: '', folder: true, icon: '', children: [
+      {name: '管理员资源', path: '', folder: true, icon: '', children: [
+        {name: '管理员列表', path: '/system/admin/user', folder: false, icon: '', children: []},
+        {name: '管理员角色', path: '/system/admin/role', folder: false, icon: '', children: []},
+        {name: '后台链接树', path: '/system/admin/resource', folder: false, icon: '', children: []}
+      ]}
+    ]},
+    { name: '', path: '', folder: true, icon: '', children: []},
+    { name: '', path: '', folder: true, icon: '', children: []},
+    { name: '', path: '', folder: true, icon: '', children: []},
+    { name: '', path: '', folder: true, icon: '', children: []},
+    { name: '', path: '', folder: true, icon: '', children: []},
+    { name: '', path: '', folder: true, icon: '', children: []},
+  ]
 })
 
-router.post('/breadcrumb', async (ctx, next) => {
-  console.log(ctx.request.body.path)
-
-  ctx.body = [
-    { name: '123222', code: ctx.params['id'], price: 15 },
-    { name: '123222', code: ctx.params['id'], price: 15 },
-    { name: '123222', code: ctx.params['id'], price: 15 }
-  ]
+router.get('/init', async (ctx, next) => {
+  service.init()
 })
 
 module.exports = router

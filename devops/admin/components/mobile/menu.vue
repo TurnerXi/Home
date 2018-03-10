@@ -6,7 +6,7 @@
             <i class="el-icon-location"></i>
             <span slot="title">导航一</span>
           </template>
-        <el-menu-item index="/products/">商品管理</el-menu-item>
+        <el-menu-item index="/products">商品管理</el-menu-item>
         <el-menu-item index="/about">页面2</el-menu-item>
         <el-menu-item index="3">页面3</el-menu-item>
       </el-submenu>
@@ -14,7 +14,7 @@
             <i class="el-icon-location"></i>
             <span slot="title">导航一</span>
           </template>
-        <el-menu-item index="/products/">商品管理</el-menu-item>
+        <el-menu-item index="/products">商品管理</el-menu-item>
         <el-menu-item index="/about">页面2</el-menu-item>
         <el-menu-item index="3">页面3</el-menu-item>
       </el-submenu>
@@ -23,7 +23,7 @@
             <i class="el-icon-location"></i>
             <span slot="title">导航一</span>
           </template>
-        <el-menu-item index="/products/">商品管理</el-menu-item>
+        <el-menu-item index="/products">商品管理</el-menu-item>
         <el-menu-item index="/about">页面2</el-menu-item>
         <el-menu-item index="3">页面3</el-menu-item>
       </el-submenu>

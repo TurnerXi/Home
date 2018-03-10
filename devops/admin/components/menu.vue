@@ -3,11 +3,12 @@
   <transition name="fade">
     <el-menu  default-active="1" :router="true" @select="menuSelectEvent" :collapse="collapse" style="border-right:none;"  background-color="#222d32" text-color="#fff"
       active-text-color="#ffd04b">
-      <el-submenu index="2"> <template slot="title">
+      <el-submenu index="2">
+          <template slot="title">
             <i class="el-icon-location"></i>
             <span slot="title">导航一</span>
           </template>
-        <el-menu-item index="/products/">商品管理</el-menu-item>
+        <el-menu-item index="/products">商品管理</el-menu-item>
         <el-menu-item index="/about">页面2</el-menu-item>
         <el-menu-item index="3">页面3</el-menu-item>
       </el-submenu>

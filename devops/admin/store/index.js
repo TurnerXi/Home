@@ -5,17 +5,21 @@ Vue.use(Vuex)
 const store = () => new Vuex.Store({
   state: {
     baseRoute: null,
-    pageName: null,
-    islogin: false
+    pageName: null
+  },
+  getters: {
+    is_login: function () {
+      return localStorage.getItem('login')
+    }
   },
   actions: {
     nuxtServerInit({ commit }, { req }) {},
     async login({ commit }, { username, password, token }) {
       try {
         await this.$axios.$post('/admin/login', { username, password, token })
-        localStorage.setItem('isLogin', true)
+        localStorage.setItem('login', 1)
       } catch (error) {
-        localStorage.setItem('isLogin', false)
+        localStorage.removeItem('login')
         if (error.response && error.response.status === 401) {
           throw new Error('Bad credentials')
         }
@@ -23,21 +27,21 @@ const store = () => new Vuex.Store({
       }
     },
     async logout({ commit }) {
-      await this.$axios.$post('/admin/logout')
-      localStorage.setItem('isLogin', false)
+      await this.$axios.get('/admin/logout')
+      localStorage.removeItem('login')
     },
     async check_login({ commit }) {
       let data = await this.$axios.$get('/admin/checklogin')
-      console.log(data)
-      commit('CHECK_LOGIN', data.flag === 1)
+      if (data.flag === 1) {
+        localStorage.setItem('login', 1)
+      } else {
+        localStorage.removeItem('login')
+      }
     }
   },
   mutations: {
     SELECT_MENU(state, route) {
       state.baseRoute = route
-    },
-    CHECK_LOGIN(state, islogin) {
-      state.islogin = islogin
     }
   }
 })

@@ -7,8 +7,13 @@ router.post('/login', async (ctx, next) => {
   ctx.body = { msg: 'success' };
 })
 
-router.post('/checklogin', async (ctx, next) => {
-  ctx.body = { flag: !!ctx.session.user };
+router.get('/checklogin', async (ctx, next) => {
+  ctx.body = { flag: !!ctx.session.user?1:0 };
+})
+
+router.get('/logout', async (ctx, next) => {
+  ctx.session.user = null
+  ctx.body = 'success';
 })
 
 module.exports = router
