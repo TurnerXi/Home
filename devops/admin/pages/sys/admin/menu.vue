@@ -3,8 +3,7 @@
   <el-header class="content-header">
     <el-button-group>
       <el-button size="small" plain icon="el-icon-edit"></el-button>
-      <el-button size="small" plain >
-        <i class="el-icon-fa-bars"></i>
+      <el-button size="small" plain icon="el-icon-if-settings_light">
       </el-button>
       <el-button size="small" plain icon="el-icon-delete"></el-button>
     </el-button-group>
@@ -17,14 +16,5 @@ export default {}
 </script>
 
 <style>
-
-[class^="el-icon-fa"], [class*=" el-icon-fa"] {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome!important;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 
 </style>
