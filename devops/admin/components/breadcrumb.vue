@@ -24,6 +24,11 @@ export default {
       }
       return arr
     }
+  },
+  watch: {
+    $route() {
+      localStorage.setItem('currentPath', this.list)
+    }
   }
 }
 </script>

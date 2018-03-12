@@ -33,18 +33,16 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    changed: function (head) {
-      this.$store.state.pageName = head.title
-    }
+    ]
   },
   /*
    ** Global CSS
    */
-  css: ['~assets/css/main.css',
-    '~assets/css/font-awesome.min.css',
+  css: [
     'element-ui/lib/theme-chalk/index.css',
-    'element-ui/lib/theme-chalk/display.css'
+    'element-ui/lib/theme-chalk/display.css',
+    '~assets/css/font-awesome.min.css',
+    '~assets/css/main.css'
   ],
   /*
    ** Customize the progress-bar color

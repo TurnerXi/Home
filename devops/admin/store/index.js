@@ -42,6 +42,9 @@ const store = () => new Vuex.Store({
   mutations: {
     SELECT_MENU(state, route) {
       state.baseRoute = route
+    },
+    SET_PAGE_NAME(state, page) {
+      state.pageName = page
     }
   }
 })

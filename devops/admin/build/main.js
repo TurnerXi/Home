@@ -95,15 +95,12 @@ module.exports = {
   head: {
     title: 'starter',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,minimal-ui' }, { hid: 'description', name: 'description', content: 'Nuxt.js project' }, { name: 'msapplication-tap-highlight', content: 'no' }, { name: 'apple-mobile-web-app-capable', content: 'yes' }, { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }, { name: 'format-detection', content: 'telephone=no' }, { name: 'renderer', content: 'webkit' }, { name: 'HandheldFriendly', content: 'true' }],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    changed: function changed(head) {
-      this.$store.state.pageName = head.title;
-    }
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
    ** Global CSS
    */
-  css: ['~assets/css/main.css', '~assets/css/font-awesome.min.css', 'element-ui/lib/theme-chalk/index.css', 'element-ui/lib/theme-chalk/display.css'],
+  css: ['element-ui/lib/theme-chalk/index.css', 'element-ui/lib/theme-chalk/display.css', '~assets/css/font-awesome.min.css', '~assets/css/main.css'],
   /*
    ** Customize the progress-bar color
    */

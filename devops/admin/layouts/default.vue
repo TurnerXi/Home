@@ -35,15 +35,13 @@
     </el-aside>
     <!--Aside End-->
     <!--Content-->
-    <el-main>
+    <el-main class="container">
       <!--Mobile Menu-->
       <m-mobile-menu class="hidden-sm-and-up" v-show="m_menu_show" @hideMobileMenu='m_menu_show=false' />
       <!--Mobile Menu End-->
-      <breadcrumb class="hidden-sm-and-up" :currentRoute="currentPage" />
-      <nuxt></nuxt>
-      <el-footer class="footer hidden-sm-and-down">
-        <m-footer></m-footer>
-      </el-footer>
+      <!-- <breadcrumb class="breadcrumb hidden-sm-and-down" /> -->
+      <nuxt style="margin-top:20px"></nuxt>
+      <el-footer class="footer hidden-sm-and-down"> Visit our website for more documentation : <a href="https://nuxtjs.org" target="_blank">nuxtjs.org</a> </el-footer>
     </el-main>
     <!--Content End-->
     <!--Main End-->
@@ -52,8 +50,7 @@
 </template>
 
 <script>
-import breadcrumb from '../components/breadcrumb'
-import mFooter from '../components/footer'
+// import breadcrumb from '../components/breadcrumb'
 import mMenu from '../components/menu'
 import mMobileMenu from '../components/mobile/menu'
 export default {
@@ -66,17 +63,9 @@ export default {
     }
   },
   components: {
-    mFooter,
-    breadcrumb,
+    // breadcrumb,
     mMenu,
     mMobileMenu
-  },
-  computed: {
-    currentPage: function() {
-      if (this.$store.state.pageName) {
-        return { path: this.$route.path, name: this.$store.state.pageName }
-      }
-    }
   },
   watch: {
     $route() {
@@ -131,11 +120,20 @@ export default {
         overflow: auto;
     }
     .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         margin: 0;
         width: 100%;
-        padding-top: 100px;
+        padding-top: 50px;
         text-align: center;
         min-height: calc(~'100vh - 200px');
+        text-align: left;
+        .breadcrumb {
+            height: 30px;
+            margin: 5px 0 10px;
+            border-bottom: 1px solid #333;
+        }
     }
 }
 
