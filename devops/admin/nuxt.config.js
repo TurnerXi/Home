@@ -41,7 +41,6 @@ module.exports = {
   css: [
     'element-ui/lib/theme-chalk/index.css',
     'element-ui/lib/theme-chalk/display.css',
-    // '~assets/css/font-awesome.min.css',
     '~assets/fonts/iconfont.css',
     '~assets/css/main.css'
   ],
