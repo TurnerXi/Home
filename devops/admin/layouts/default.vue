@@ -39,7 +39,6 @@
       <!--Mobile Menu-->
       <m-mobile-menu class="hidden-sm-and-up" v-show="m_menu_show" @hideMobileMenu='m_menu_show=false' />
       <!--Mobile Menu End-->
-      <!-- <breadcrumb class="breadcrumb hidden-sm-and-down" /> -->
       <nuxt style="margin-top:20px"></nuxt>
       <el-footer class="footer hidden-sm-and-down"> Visit our website for more documentation : <a href="https://nuxtjs.org" target="_blank">nuxtjs.org</a> </el-footer>
     </el-main>
@@ -50,7 +49,6 @@
 </template>
 
 <script>
-// import breadcrumb from '../components/breadcrumb'
 import mMenu from '../components/menu'
 import mMobileMenu from '../components/mobile/menu'
 export default {
@@ -63,7 +61,6 @@ export default {
     }
   },
   components: {
-    // breadcrumb,
     mMenu,
     mMobileMenu
   },
@@ -129,11 +126,6 @@ export default {
         text-align: center;
         min-height: calc(~'100vh - 200px');
         text-align: left;
-        .breadcrumb {
-            height: 30px;
-            margin: 5px 0 10px;
-            border-bottom: 1px solid #333;
-        }
     }
 }
 
