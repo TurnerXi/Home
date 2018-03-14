@@ -5,11 +5,15 @@
 
 html, body {
   background-color: #fff;
-  color: #2e2f30;
+  /* color: #2e2f30; */
+  color: #888888;
+  /* background: #404040; */
   letter-spacing: 0.5px;
-  font-family: "Source Sans Pro", Arial, sans-serif;
+  /* font-family: "Source Sans Pro", Arial, sans-serif; */
   height: 100%;
   margin: 0;
+  font-family: 'Arial';
+  font-size: 13px;
 }
 
 footer {

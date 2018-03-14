@@ -3,12 +3,12 @@
   <h1 class='title'>后台管理系统</h1>
   <el-form-item prop='username'>
     <el-input v-model='form.username' :autofocus='true' placeholder='username'> <template slot='prepend'>
-            <i class='fa fa-user'></i>
+            <i class='el-icon-if-myfill'></i>
         </template> </el-input>
   </el-form-item>
   <el-form-item prop='password'>
     <el-input type='password' v-model='form.password' placeholder='password'> <template slot='prepend'>
-          <i class='fa fa-lock'></i>
+          <i class='el-icon-if-lock'></i>
         </template> </el-input>
   </el-form-item>
   <el-form-item>
