@@ -27,7 +27,7 @@
     </form>
   </body>
   <script type="text/javascript">
-      var socket = io("ws://127.0.0.1:7777/");
+      var socket = io("ws://127.0.0.1:7777/nw");
       document.forms[0].onsubmit = function(){
         var $msg = document.getElementById("m");
         socket.emit("chat message",$msg.value);

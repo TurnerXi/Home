@@ -5,7 +5,8 @@ app.get('/*',function(req,res){
     res.sendFile(__dirname+req.path);
 })
 var sockets = [];
-io.on('connection',function(socket){
+
+io.of('/admin').on('connection',function(socket){
   sockets.push(socket);
   socket.broadcast.emit("join room",socket.handshake.query.username +" 加入了聊天室");
   socket.on('send message',function(data){
