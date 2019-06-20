@@ -85,7 +85,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 module.exports = {
   env: {
-    API_HOST: 'https://192.168.2.140:3004'
+    API_HOST: 'http://192.168.50.31:3004'
   },
   build: {
     vendor: ['axios']
