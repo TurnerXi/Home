@@ -45,7 +45,7 @@ export default {
 
 <style scoped>
 .iconfont {
-    font-family: "myiconfont"
+    font-family: myico;
 }
 
 .wrapper {

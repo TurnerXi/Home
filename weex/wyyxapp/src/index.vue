@@ -18,10 +18,10 @@ export default {
       this.$router.push(target);
     }
   },
-  created() {
+  beforeCreate() {
     module.addRule('fontFace', {
-      'fontFamily': 'myiconfont',
-      'src': "url('//at.alicdn.com/t/font_588629_2r11va3psf8.woff')"
+      'fontFamily': 'myico',
+      'src': "url('https://at.alicdn.com/t/font_588629_2r11va3psf8.ttf')"
     })
   }
 }

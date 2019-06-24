@@ -3002,7 +3002,7 @@ module.exports = __vue_exports__
 
 module.exports = {
   "iconfont": {
-    "fontFamily": "\"myiconfont\""
+    "fontFamily": "myico"
   },
   "wrapper": {
     "position": "fixed",
@@ -3274,7 +3274,7 @@ module.exports = __vue_exports__
 
 module.exports = {
   "iconfont": {
-    "fontFamily": "\"myiconfont\""
+    "fontFamily": "myico"
   },
   "wrapper": {
     "position": "fixed",
@@ -4354,7 +4354,7 @@ module.exports = __vue_exports__
 
 module.exports = {
   "iconfont": {
-    "fontFamily": "'myiconfont'"
+    "fontFamily": "myico"
   },
   "wrapper": {
     "backgroundColor": "#ffffff"
@@ -5013,10 +5013,10 @@ exports.default = {
       this.$router.push(target);
     }
   },
-  created: function created() {
+  beforeCreate: function beforeCreate() {
     _module.addRule('fontFace', {
-      'fontFamily': 'myiconfont',
-      'src': "url('//at.alicdn.com/t/font_588629_2r11va3psf8.woff')"
+      'fontFamily': 'myico',
+      'src': "url('https://at.alicdn.com/t/font_588629_2r11va3psf8.ttf')"
     });
   }
 };
@@ -5070,7 +5070,7 @@ module.exports = __vue_exports__
 
 module.exports = {
   "iconfont": {
-    "fontFamily": "\"myiconfont\""
+    "fontFamily": "myico"
   },
   "wrapper": {
     "position": "fixed",

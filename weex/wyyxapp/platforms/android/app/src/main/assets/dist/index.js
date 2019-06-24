@@ -5013,10 +5013,10 @@ exports.default = {
       this.$router.push(target);
     }
   },
-  created: function created() {
+  mounted: function mounted() {
     _module.addRule('fontFace', {
       'fontFamily': 'myiconfont',
-      'src': "url('//at.alicdn.com/t/font_588629_2r11va3psf8.woff2')"
+      'src': "url('//at.alicdn.com/t/font_588629_2r11va3psf8.woff') format('woff')"
     });
   }
 };

@@ -43,7 +43,7 @@ export default {}
 
 <style scoped>
 .iconfont {
-    font-family: 'myiconfont';
+    font-family: myico;
 }
 
 .wrapper {
@@ -75,10 +75,10 @@ export default {}
     padding-right: 30px;
 }
 
-.items{
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.items {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .item-frame {
