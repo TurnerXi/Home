@@ -1,18 +1,20 @@
 import Vue from 'vue'
 /* global Vue */
 import Router from 'vue-router'
-import Home from '@/page/home'
-import Interest from '@/page/interest'
-import Community from '@/page/community'
-import My from '@/page/my'
+import Home from '@/page/Home'
+import Topic from '@/page/Topic'
+import Catalog from '@/page/Catalog'
+import Shopcart from '@/page/Shopcart'
+import My from '@/page/My'
 
 Vue.use(Router)
 
 export const router = new Router({
   routes: [
     { path: '/', name: 'home', component: Home },
-    { path: '/interest', name: 'interest', component: Interest },
-    { path: '/community', name: 'community', component: Community },
-    { path: '/my', name: 'my', component: My },
+    { path: '/topic', name: 'topic', component: Topic },
+    { path: '/catalog', name: 'catalog', component: Catalog },
+    { path: '/shopcart', name: 'shopcart', component: Shopcart },
+    { path: '/my', name: 'my', component: My }
   ]
 })

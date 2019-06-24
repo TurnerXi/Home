@@ -4,7 +4,7 @@
     <div class="scroll-line" ref="scrollLine"></div>
     <text class="i-c" v-for="(item,idx) in columns" ref="columns" :key="item.id" :class="{'c-act': item.id === chooseId}" @click="chooseItem(item.id,idx)">{{item.title}}</text>
     <text class="i-c"></text>
-  </scroller>
+  </scroller>;
   <div class="fix-nav" v-if="showFixNav">
     <text class="fix-nav-title">全部频道</text>
     <text class="f-c" v-for="(item,idx) in columns" :key="item.id" :class="{'f-act': item.id === chooseId}" @click="chooseItem(item.id,idx)">{{item.title}}</text>
@@ -66,7 +66,6 @@ export default {
 .scroller {
     height: 54px;
     flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: space-between;
 }
 
@@ -76,7 +75,7 @@ export default {
     padding-right: 45px;
     padding-bottom: 6px;
     font-size: 26px;
-    color: #333;
+    color: #333333;
 }
 
 .c-act {
@@ -98,7 +97,7 @@ export default {
 
 .fold {
     transition-property: transform;
-    transition-duration: .3s;
+    transition-duration: 300;
     transform: rotateX(180deg);
 }
 
@@ -108,9 +107,9 @@ export default {
     left: 30px;
     width: 82px;
     height: 4px;
-    background-color: #f40;
+    background-color: #ff4400;
     transition-property: left, width;
-    transition-duration: .3s;
+    transition-duration: 300;
 }
 
 .fix-nav {
@@ -121,7 +120,6 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     background-color: #fafafa;
-    overflow: scroll;
     border-bottom-width: 1px;
     border-bottom-color: #DADADA;
 }
@@ -131,19 +129,19 @@ export default {
     height: 52px;
     border-radius: 8px;
     border-width: 1px;
-    border-color: #ddd;
+    border-color: #dddddd;
     text-align: center;
     font-size: 26px;
     padding-top: 8px;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
-    color: #333;
+    color: #333333;
 }
 
 .f-act {
-    border-color: #f40;
-    color: #f40;
+    border-color: #ff4400;
+    color: #ff4400;
     box-shadow: 0px -4px 4px #fafafa;
 }
 
@@ -153,6 +151,6 @@ export default {
     line-height: 54px;
     padding-left: 20px;
     font-size: 26px;
-    color: #333;
+    color: #333333;
 }
 </style>

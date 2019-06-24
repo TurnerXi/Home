@@ -1,25 +1,25 @@
 <template>
 <div class="wrapper">
   <div class="bar-item">
-    <text class="bar-icon iconfont">&#xe7d5;</text>
-    <text class="bar-txt">首页</text>
+    <text class="bar-icon iconfont" :class="{'on':page=='home'}">&#xe7d5;</text>
+    <text class="bar-txt" :class="{'on':page=='home'}" @click="switchTab('/')">首页</text>
   </div>
   <div class="bar-item">
-    <text class="bar-icon iconfont">&#xe816;</text>
-    <text class="bar-txt">专题</text>
+    <text class="bar-icon iconfont" :class="{'on':page=='topic'}">&#xe816;</text>
+    <text class="bar-txt" :class="{'on':page=='topic'}" @click="switchTab('topic')">专题</text>
     <text class="notice-dot"></text>
   </div>
   <div class="bar-item">
-    <text class="bar-icon iconfont">&#xe729;</text>
-    <text class="bar-txt">分类</text>
+    <text class="bar-icon iconfont" :class="{'on':page=='catalog'}">&#xe729;</text>
+    <text class="bar-txt" :class="{'on':page=='catalog'}" @click="switchTab('catalog')">分类</text>
   </div>
   <div class="bar-item">
-    <text class="bar-icon iconfont">&#xe7d8;</text>
-    <text class="bar-txt">购物车</text>
+    <text class="bar-icon iconfont" :class="{'on':page=='shopcart'}">&#xe7d8;</text>
+    <text class="bar-txt" :class="{'on':page=='shopcart'}" @click="switchTab('shopcart')">购物车</text>
   </div>
   <div class="bar-item">
-    <text class="bar-icon iconfont">&#xe7d6;</text>
-    <text class="bar-txt">个人</text>
+    <text class="bar-icon iconfont" :class="{'on':page=='my'}">&#xe7d6;</text>
+    <text class="bar-txt" :class="{'on':page=='my'}" @click="switchTab('my')">个人</text>
     <text class="i-notice">2</text>
   </div>
 </div>
@@ -29,6 +29,16 @@
 export default {
   data() {
     return {}
+  },
+  computed: {
+    page() {
+      return this.$route.name;
+    }
+  },
+  methods: {
+    switchTab(target) {
+      this.$emit('routeTo', target);
+    }
   }
 }
 </script>
@@ -39,12 +49,12 @@ export default {
 }
 
 .wrapper {
-    width: 100%;
     position: fixed;
     bottom: 0;
     flex-direction: row;
     justify-content: space-between;
     height: 95px;
+    width: 750px;
     border-top-width: 1px;
     border-top-color: #d9d9d9;
     background-color: #fafafa;
@@ -56,7 +66,7 @@ export default {
 
 .bar-txt,
 .bar-icon {
-    color: #666;
+    color: #666666;
     text-align: center;
 }
 
@@ -77,14 +87,14 @@ export default {
     right: 30px;
     width: 30px;
     height: 30px;
-    border-radius: 100%;
+    border-radius: 30px;
     /*文字内容*/
-    color: #FFF;
+    color: #ffffff;
     font-size: 26px;
     text-align: center;
     line-height: 30px;
     /*背景颜色*/
-    background-color: #F00;
+    background-color: #ff0000;
 }
 
 .notice-dot {
@@ -93,7 +103,11 @@ export default {
     right: 40px;
     height: 15px;
     width: 15px;
-    border-radius: 100%;
-    background-color: #f00;
+    border-radius: 15px;
+    background-color: #ff0000;
+}
+
+.on {
+    color: #ff0000;
 }
 </style>

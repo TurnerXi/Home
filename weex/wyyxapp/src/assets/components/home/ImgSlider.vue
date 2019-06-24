@@ -36,10 +36,6 @@ export default {
     height: 370px;
 }
 
-.frame {
-    position: relative;
-}
-
 .indicator {
     position: absolute;
     left: 0;
@@ -55,7 +51,7 @@ export default {
     width: 30px;
     height: 4px;
     margin-left: 10px;
-    background-color: #fff;
+    background-color: #ffffff;
     opacity: .4;
 }
 

@@ -8975,7 +8975,7 @@ _weexVueRender2.default.init(_vue2.default);
 var _require = __webpack_require__(10),
     router = _require.router;
 
-var App = __webpack_require__(33);
+var App = __webpack_require__(73);
 /* eslint-disable no-new */
 new _vue2.default(_vue2.default.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -20195,28 +20195,33 @@ var _vueRouter = __webpack_require__(11);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _home = __webpack_require__(12);
+var _Home = __webpack_require__(12);
 
-var _home2 = _interopRequireDefault(_home);
+var _Home2 = _interopRequireDefault(_Home);
 
-var _interest = __webpack_require__(18);
+var _Topic = __webpack_require__(53);
 
-var _interest2 = _interopRequireDefault(_interest);
+var _Topic2 = _interopRequireDefault(_Topic);
 
-var _community = __webpack_require__(23);
+var _Catalog = __webpack_require__(58);
 
-var _community2 = _interopRequireDefault(_community);
+var _Catalog2 = _interopRequireDefault(_Catalog);
 
-var _my = __webpack_require__(28);
+var _Shopcart = __webpack_require__(63);
 
-var _my2 = _interopRequireDefault(_my);
+var _Shopcart2 = _interopRequireDefault(_Shopcart);
+
+var _My = __webpack_require__(68);
+
+var _My2 = _interopRequireDefault(_My);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_vue2.default.use(_vueRouter2.default);
 /* global Vue */
+_vue2.default.use(_vueRouter2.default);
+
 var router = exports.router = new _vueRouter2.default({
-  routes: [{ path: '/', name: 'home', component: _home2.default }, { path: '/interest', name: 'interest', component: _interest2.default }, { path: '/community', name: 'community', component: _community2.default }, { path: '/my', name: 'my', component: _my2.default }]
+  routes: [{ path: '/', name: 'home', component: _Home2.default }, { path: '/topic', name: 'topic', component: _Topic2.default }, { path: '/catalog', name: 'catalog', component: _Catalog2.default }, { path: '/shopcart', name: 'shopcart', component: _Shopcart2.default }, { path: '/my', name: 'my', component: _My2.default }]
 });
 
 /***/ }),
@@ -22909,11 +22914,11 @@ var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(16),
   /* template */
-  __webpack_require__(17),
+  __webpack_require__(52),
   /* styles */
   injectStyle,
   /* scopeId */
-  null,
+  "data-v-7b64bfb2",
   /* moduleIdentifier (server only) */
   null
 )
@@ -22932,7 +22937,7 @@ var content = __webpack_require__(14);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(1)("1c12d6e1", content, true, {});
+var update = __webpack_require__(1)("fce09224", content, true, {});
 
 /***/ }),
 /* 14 */
@@ -22943,7 +22948,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".iconfont[data-v-7b64bfb2]{font-family:myiconfont}.main-list[data-v-7b64bfb2]{position:fixed;top:2.24rem;bottom:1.2rem;left:0;right:0}.cell-btn[data-v-7b64bfb2]{padding-bottom:.24rem;margin-bottom:.26667rem}.slogen[data-v-7b64bfb2]{flex-direction:row;justify-content:space-between;background-color:#fff}.i-slg[data-v-7b64bfb2]{flex:1;height:.85333rem;padding-top:.21333rem;font-size:.32rem;color:red;text-align:center}", ""]);
 
 // exports
 
@@ -22991,42 +22996,81 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _Header = __webpack_require__(17);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _Nav = __webpack_require__(27);
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+var _ImgSlider = __webpack_require__(32);
+
+var _ImgSlider2 = _interopRequireDefault(_ImgSlider);
+
+var _Block = __webpack_require__(37);
+
+var _Block2 = _interopRequireDefault(_Block);
+
+var _Block3 = __webpack_require__(42);
+
+var _Block4 = _interopRequireDefault(_Block3);
+
+var _Block5 = __webpack_require__(47);
+
+var _Block6 = _interopRequireDefault(_Block5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
 //
 
-exports.default = {};
+exports.default = {
+  components: {
+    Header: _Header2.default,
+    Nav: _Nav2.default,
+    ImgSlider: _ImgSlider2.default,
+    Block1: _Block2.default,
+    Block2: _Block4.default,
+    Block3: _Block6.default
+  }
+};
 
 /***/ }),
 /* 17 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: " weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  })
-},staticRenderFns: []}
-
-/***/ }),
-/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 function injectStyle (ssrContext) {
-  __webpack_require__(19)
+  __webpack_require__(18)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(21),
+  __webpack_require__(20),
   /* template */
-  __webpack_require__(22),
+  __webpack_require__(26),
   /* styles */
   injectStyle,
   /* scopeId */
-  null,
+  "data-v-090728d0",
   /* moduleIdentifier (server only) */
   null
 )
@@ -23035,20 +23079,20 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(20);
+var content = __webpack_require__(19);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(1)("e64a4ec2", content, true, {});
+var update = __webpack_require__(1)("34fc0828", content, true, {});
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -23056,13 +23100,13 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".iconfont[data-v-090728d0]{font-family:myiconfont}.wrapper[data-v-090728d0]{position:fixed;top:0;left:0;right:0;height:1.52rem;padding-top:.58667rem;flex-direction:row;justify-content:space-between;background-color:#fafafa;opacity:.99}.header-msg[data-v-090728d0],.header-scanner[data-v-090728d0]{height:1.06667rem;width:1.28rem}.header-search[data-v-090728d0],.icon[data-v-090728d0],.txt[data-v-090728d0]{color:#9c9c9c;font-weight:300;text-align:center}.icon[data-v-090728d0]{font-size:.42667rem}.txt[data-v-090728d0]{font-size:.24rem}.header-search[data-v-090728d0]{flex:1;height:.8rem;padding-top:.17333rem;font-size:.34667rem;border-radius:.10667rem;background-color:#ededed}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23071,38 +23115,44 @@ exports.push([module.i, "", ""]);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
 
-exports.default = {};
+var _SearchForm = __webpack_require__(21);
+
+var _SearchForm2 = _interopRequireDefault(_SearchForm);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  components: {
+    SearchForm: _SearchForm2.default
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
-/* 22 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: " weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  })
-},staticRenderFns: []}
-
-/***/ }),
-/* 23 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 function injectStyle (ssrContext) {
-  __webpack_require__(24)
+  __webpack_require__(22)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(26),
+  __webpack_require__(24),
   /* template */
-  __webpack_require__(27),
+  __webpack_require__(25),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -23112,225 +23162,83 @@ var Component = __webpack_require__(2)(
 )
 
 module.exports = Component.exports
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(23);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("b3ec1fc2", content, true, {});
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".search-wrapper{width:10rem;padding:.02667rem;background-color:#666}.search-input,.search-input:focus{width:1rem;height:1.2rem;border-width:0;opacity:.1}.search-placeholder{position:absolute;height:1.2rem;text-align:center;line-height:1.2rem}", ""]);
+
+// exports
 
 
 /***/ }),
 /* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+"use strict";
 
-// load the styles
-var content = __webpack_require__(25);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(1)("c2adbc34", content, true, {});
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {};
 
 /***/ }),
 /* 25 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(0)(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "search-wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('input', {
+    staticClass: "search-input",
+    attrs: {
+      "type": "text",
+      "height": "100%"
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "search-placeholder weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_vm._t("default", null, {})], 2)])
+},staticRenderFns: []}
 
 /***/ }),
 /* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-
-exports.default = {};
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: " weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  })
-},staticRenderFns: []}
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-function injectStyle (ssrContext) {
-  __webpack_require__(29)
-}
-var Component = __webpack_require__(2)(
-  /* script */
-  __webpack_require__(31),
-  /* template */
-  __webpack_require__(32),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(30);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(1)("8cbf08d8", content, true, {});
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-
-exports.default = {};
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: " weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  })
-},staticRenderFns: []}
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-function injectStyle (ssrContext) {
-  __webpack_require__(34)
-}
-var Component = __webpack_require__(2)(
-  /* script */
-  __webpack_require__(36),
-  /* template */
-  __webpack_require__(37),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(35);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(1)("e660f654", content, true, {});
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-
-var _module = weex.requireModule('dom');
-exports.default = {
-  name: 'App',
-  created: function created() {
-    _module.addRule("fontFace", {
-      "fontFamily": 'myiconfont',
-      "src": "url('//at.alicdn.com/t/font_588629_2r11va3psf8.woff2')"
-    });
-  }
-};
-
-/***/ }),
-/* 37 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -23339,7 +23247,2014 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "div"
     }
-  }, [_c('router-view')], 1)
+  }, [_c('div', {
+    staticClass: "header-scanner weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "icon iconfont weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")]), _vm._v(" "), _c('p', {
+    staticClass: "txt weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("扫一扫")])]), _vm._v(" "), _c('p', {
+    staticClass: "header-search iconfont weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v(" 搜索商品，共8888款好物")]), _vm._v(" "), _c('div', {
+    staticClass: "header-msg weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "icon iconfont weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")]), _vm._v(" "), _c('p', {
+    staticClass: "txt weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("消息")])])])
+},staticRenderFns: []}
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function injectStyle (ssrContext) {
+  __webpack_require__(28)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(30),
+  /* template */
+  __webpack_require__(31),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-5fbe8a28",
+  /* moduleIdentifier (server only) */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(29);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("d571bdde", content, true, {});
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".iconfont[data-v-5fbe8a28]{font-family:myiconfont}.wrapper[data-v-5fbe8a28]{position:fixed;top:1.52rem;height:.72rem;left:0;right:0;background-color:#fafafa;border-bottom-width:1px;border-bottom-color:#dadada;z-index:100}.scroller[data-v-5fbe8a28]{height:.72rem;flex-direction:row;justify-content:space-between}.i-c[data-v-5fbe8a28]{padding:.13333rem .6rem .08rem;font-size:.34667rem;color:#333}.c-act[data-v-5fbe8a28]{color:#b4282d}.more[data-v-5fbe8a28]{position:absolute;top:0;right:0;height:.69333rem;width:1.33333rem;padding-top:.13333rem;text-align:center;background-color:#fafafa;opacity:.96}.fold[data-v-5fbe8a28]{transition-property:-webkit-transform;transition-property:transform;transition-property:transform,-webkit-transform;transition-duration:300;-webkit-transform:rotateX(180deg);transform:rotateX(180deg)}.scroll-line[data-v-5fbe8a28]{position:absolute;bottom:0;left:.4rem;width:1.09333rem;height:.05333rem;background-color:#f40;transition-property:left,width;transition-duration:300}.fix-nav[data-v-5fbe8a28]{position:absolute;height:3.86667rem;left:0;right:0;flex-direction:row;flex-wrap:wrap;background-color:#fafafa;border-bottom-width:1px;border-bottom-color:#dadada}.f-c[data-v-5fbe8a28]{width:2.8rem;height:.69333rem;border-radius:.10667rem;border-width:1px;border-color:#ddd;text-align:center;font-size:.34667rem;padding-top:.10667rem;margin-left:.26667rem;margin-right:.26667rem;margin-top:.26667rem;color:#333}.f-act[data-v-5fbe8a28]{border-color:#f40;color:#f40}.fix-nav-title[data-v-5fbe8a28]{width:10rem;height:.72rem;line-height:.72rem;padding-left:.26667rem;font-size:.34667rem;color:#333}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var dom = weex.requireModule('dom');
+exports.default = {
+  data: function data() {
+    return {
+      chooseId: 1,
+      showFixNav: false,
+      columns: [{ id: 1, title: '推荐' }, { id: 2, title: '限购品' }, { id: 3, title: '新品' }, { id: 4, title: '居家' }, { id: 5, title: '餐饮' }, { id: 6, title: '运动' }, { id: 7, title: '数码' }, { id: 8, title: '服装' }]
+    };
+  },
+
+  methods: {
+    chooseItem: function chooseItem(itemId, idx) {
+      this.showFixNav = false;
+      this.chooseId = itemId;
+      var l = this.$refs.columns[idx].offsetLeft;
+      var w = this.$refs.columns[idx].offsetWidth;
+      this.$refs.scrollLine.style.left = l + 15 + 'px';
+      this.$refs.scrollLine.style.width = w - 30 + 'px';
+      dom.scrollToElement(this.$refs.columns[idx], { offset: -100 });
+    }
+  }
+};
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('scroller', {
+    staticClass: "scroller",
+    attrs: {
+      "scroll-direction": "horizontal",
+      "show-scrollbar": "false"
+    }
+  }, [_c('div', {
+    ref: "scrollLine",
+    staticClass: "scroll-line weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }), _vm._v(" "), _vm._l((_vm.columns), function(item, idx) {
+    return _c('p', {
+      key: item.id,
+      ref: "columns",
+      refInFor: true,
+      staticClass: "i-c weex-el weex-text",
+      class: {
+        'c-act': item.id === _vm.chooseId
+      },
+      attrs: {
+        "weex-type": "text",
+        "data-evt-click": ""
+      },
+      on: {
+        "click": _vm.$stopOuterA,
+        "weex$tap": function($event) {
+          $event.stopPropagation();
+          return _vm.chooseItem(item.id, idx)
+        }
+      }
+    }, [_vm._v(_vm._s(item.title))])
+  }), _vm._v(" "), _c('p', {
+    staticClass: "i-c weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  })], 2), _vm._v(";\n  "), (_vm.showFixNav) ? _c('div', {
+    staticClass: "fix-nav weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "fix-nav-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("全部频道")]), _vm._v(" "), _vm._l((_vm.columns), function(item, idx) {
+    return _c('p', {
+      key: item.id,
+      staticClass: "f-c weex-el weex-text",
+      class: {
+        'f-act': item.id === _vm.chooseId
+      },
+      attrs: {
+        "weex-type": "text",
+        "data-evt-click": ""
+      },
+      on: {
+        "click": _vm.$stopOuterA,
+        "weex$tap": function($event) {
+          $event.stopPropagation();
+          return _vm.chooseItem(item.id, idx)
+        }
+      }
+    }, [_vm._v(_vm._s(item.title))])
+  })], 2) : _vm._e(), _vm._v(" "), _c('p', {
+    staticClass: "more iconfont weex-el weex-text",
+    class: {
+      'fold': _vm.showFixNav
+    },
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        _vm.showFixNav = !_vm.showFixNav
+      }
+    }
+  }, [_vm._v("")])], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function injectStyle (ssrContext) {
+  __webpack_require__(33)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(35),
+  /* template */
+  __webpack_require__(36),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-d28c7d6e",
+  /* moduleIdentifier (server only) */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(34);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("176f51bf", content, true, {});
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".frame[data-v-d28c7d6e],.image[data-v-d28c7d6e],.slider[data-v-d28c7d6e]{width:10rem;height:4.93333rem}.indicator[data-v-d28c7d6e]{position:absolute;left:0;right:0;bottom:0;width:10rem;height:.4rem;flex-direction:row;justify-content:center}.i-d[data-v-d28c7d6e]{width:.4rem;height:.05333rem;margin-left:.13333rem;background-color:#fff;opacity:.4}.i-d-act[data-v-d28c7d6e]{opacity:1}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  data: function data() {
+    return {
+      currentIdx: 0,
+      imageList: [{ src: 'https://yanxuan.nosdn.127.net/01de3a547f5448d31f8f45f5a012e1a1.jpg?imageView&quality=75&thumbnail=750x0' }, { src: 'https://yanxuan.nosdn.127.net/4a08abbe66fbb2969512269ebfdde19f.jpg?imageView&quality=75&thumbnail=750x0' }, { src: 'https://yanxuan.nosdn.127.net/31044e551b20e851c67b6deea3639430.jpg?imageView&quality=75&thumbnail=750x0' }, { src: 'https://yanxuan.nosdn.127.net/a2b4bcc5a668b35a2820061022904fa8.jpg?imageView&quality=75&thumbnail=750x0' }]
+    };
+  },
+
+  methods: {}
+};
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('slider', {
+    staticClass: "slider",
+    attrs: {
+      "auto-play": "true",
+      "show-indicators": "true",
+      "data-evt-change": ""
+    },
+    nativeOn: {
+      "change": function($event) {
+        $event.stopPropagation();
+        _vm.currentIdx = $event.index
+      }
+    }
+  }, _vm._l((_vm.imageList), function(img, idx) {
+    return _c('div', {
+      key: idx,
+      staticClass: "frame weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("contain"),
+        expression: "\"contain\""
+      }],
+      staticClass: "image weex-el weex-image",
+      attrs: {
+        "resize": "contain",
+        "src": img.src,
+        "data-img-src": img.src,
+        "weex-type": "image"
+      }
+    })])
+  }), 0), _vm._v(" "), _c('div', {
+    staticClass: "indicator weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, _vm._l((_vm.imageList), function(item, idx) {
+    return _c('div', {
+      key: idx,
+      staticClass: "i-d weex-ct weex-div",
+      class: {
+        'i-d-act': _vm.currentIdx == idx
+      },
+      attrs: {
+        "weex-type": "div"
+      }
+    })
+  }), 0)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function injectStyle (ssrContext) {
+  __webpack_require__(38)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(40),
+  /* template */
+  __webpack_require__(41),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-6093ba62",
+  /* moduleIdentifier (server only) */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(39);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("bbd470ee", content, true, {});
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".banner[data-v-6093ba62]{height:3.73333rem}.banner-items[data-v-6093ba62]{position:absolute;top:.74667rem;right:.94667rem;width:2.24rem;height:2.24rem}.banner-img[data-v-6093ba62],.frame[data-v-6093ba62],.slider[data-v-6093ba62]{width:2.24rem;height:2.24rem}.banner-txt[data-v-6093ba62]{position:absolute;bottom:0;left:.13333rem;right:.13333rem;height:.4rem;flex-direction:row;justify-content:center;text-align:center;background-color:#f49321;border-radius:.13333rem}.banner-money[data-v-6093ba62],.banner-omoney[data-v-6093ba62]{color:#fff;font-size:.26667rem;padding-left:.06667rem}.banner-omoney[data-v-6093ba62]{text-decoration:line-through;font-size:.16rem}.main-items[data-v-6093ba62]{flex-direction:row;justify-content:space-between;height:2.93333rem;margin-left:.26667rem;margin-right:.26667rem;margin-bottom:.13333rem}.main-frame[data-v-6093ba62]{align-items:center;width:3.06667rem;height:2.93333rem;padding-top:.13333rem;padding-bottom:.13333rem}.main-txt[data-v-6093ba62]{left:0;right:0}.main-title[data-v-6093ba62]{text-align:center;font-size:.32rem;color:#4c4c4c;line-height:.48rem;font-weight:700}.main-desc[data-v-6093ba62]{text-align:center;font-size:.26667rem;color:#d4080d;line-height:.4rem}.main-img[data-v-6093ba62]{flex:1;width:1.86667rem;height:1.86667rem}.title-img[data-v-6093ba62],.title[data-v-6093ba62]{height:1.06667rem;width:10rem}.list-items[data-v-6093ba62]{margin-left:.26667rem;margin-right:.26667rem;margin-bottom:.13333rem}.list-group[data-v-6093ba62]{margin-top:.13333rem;height:2.93333rem;flex-direction:row;justify-content:space-between}.list-frame[data-v-6093ba62]{align-items:center;width:2.26667rem;height:2.93333rem;padding-top:.13333rem;padding-bottom:.13333rem}.list-txt[data-v-6093ba62]{left:0;right:0}.list-title[data-v-6093ba62]{text-align:center;font-size:.32rem;color:#d95006;line-height:.48rem;font-weight:700}.list-desc[data-v-6093ba62]{text-align:center;font-size:.26667rem;color:#d95006;line-height:.4rem}.list-img[data-v-6093ba62]{flex:1;width:1.86667rem;height:1.86667rem}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  data: function data() {
+    return {
+      info: {
+        bkg: 'https://yanxuan.nosdn.127.net/fe5a4fe84fd7f58c588927cf54181981.jpg',
+        title_img: 'https://yanxuan.nosdn.127.net/2faa4315a4b09d7e8da6a8f451adf4b4.jpg?imageView&thumbnail=750x0&quality=75',
+        banner: {
+          bkg: 'https://yanxuan.nosdn.127.net/1f898fc569dc58a8b9a589a16ca83d20.gif',
+          items: [{ id: 1, href: '#', img: 'http://yanxuan.nosdn.127.net/7cd9f22c8ca9515d8e8e0861f57f19e9.png', money: '¥69', omoney: '¥78' }, { id: 2, href: '#', img: 'http://yanxuan.nosdn.127.net/b1f7d3096d12d0e4f9e0bbc7232e9295.png', money: '¥120', omoney: '¥180' }, { id: 3, href: '#', img: 'http://yanxuan.nosdn.127.net/9d581d4ec02cf86ff2a05cf81868f159.png', money: '¥88', omoney: '¥98' }, { id: 4, href: '#', img: 'http://yanxuan.nosdn.127.net/d2f5072ded8d01e65997638cff806277.png', money: '¥168', omoney: '¥258' }, { id: 5, href: '#', img: 'http://yanxuan.nosdn.127.net/37721979dfc82a0a2648f3b5b46e2161.png', money: '¥288', omoney: '¥328' }]
+        },
+        main: {
+          bkg: 'https://yanxuan.nosdn.127.net/ea460e6a4a55a84a3527c3ea675f2d9f.png?imageView&thumbnail=250x0&quality=75',
+          items: [{ id: 1, href: '#', img: 'http://yanxuan.nosdn.127.net/84f4cda372dfd703fe0eeb287fb185f4.png?imageView&thumbnail=160x160&quality=75', title: '特价返场', desc: '最高降1400' }, { id: 2, href: '#', img: 'http://yanxuan.nosdn.127.net/384c689de50380bbd5094d3c51e9a688.png?imageView&thumbnail=160x160&quality=75', title: '618爆卖榜', desc: '抢疯单品4折起' }, { id: 3, href: '#', img: 'http://yanxuan.nosdn.127.net/9b17bde0818b456f208257089ce9ed73.png?imageView&thumbnail=160x160&quality=75', title: '飙升新品榜', desc: '最in新品盘点' }]
+        },
+        list: {
+          bkg: 'https://yanxuan.nosdn.127.net/01c1103b24aa5349f5cf3342b02da313.png?imageView&thumbnail=188x0&quality=75',
+          groups: [[{ id: 1, href: '#', img: 'http://yanxuan.nosdn.127.net/4ae99cd4d76993ba384200c1c8d1b8db.png?imageView&thumbnail=160x160&quality=75', title: '净爽洗护', desc: '网红爆款6折起' }, { id: 2, href: '#', img: 'http://yanxuan.nosdn.127.net/bf3ec70b254348196e78259818a48cfc.png?imageView&thumbnail=160x160&quality=75', title: '夏凉服装', desc: '狂欢同价4折起' }, { id: 3, href: '#', img: 'http://yanxuan.nosdn.127.net/37f106da4d23985d3c251f3ba40f9d7e.png?imageView&thumbnail=160x160&quality=75', title: '鞋包配饰', desc: '家居拖9.9元起' }, { id: 4, href: '#', img: 'http://yanxuan.nosdn.127.net/47a8bf28e3e56b96a111546704074ed6.png?imageView&thumbnail=160x160&quality=75', title: '当季美食', desc: '美味低至3.9元' }], [{ id: 5, href: '#', img: 'http://yanxuan.nosdn.127.net/4ae99cd4d76993ba384200c1c8d1b8db.png?imageView&thumbnail=160x160&quality=75', title: '数码家电', desc: '风扇限时7.7折' }, { id: 6, href: '#', img: 'http://yanxuan.nosdn.127.net/77f711f2feeb8f24e2272400d372f41e.png?imageView&thumbnail=160x160&quality=75', title: '精致餐厨', desc: '夏日新品49元起' }, { id: 7, href: '#', img: 'http://yanxuan.nosdn.127.net/a7f3ad90d19c4e06c78f10b4202e5853.png?imageView&thumbnail=160x160&quality=75', title: '品质进口', desc: '最高满199减100' }, { id: 8, href: '#', img: 'http://yanxuan.nosdn.127.net/cd7a612c192a37bab964b41fbc83c4e6.png?imageView&thumbnail=160x160&quality=75', title: '缤纷周边', desc: '官方正版5折起' }], [{ id: 9, href: '#', img: 'http://yanxuan.nosdn.127.net/c442593e0cf25a42d37941554b587418.png?imageView&thumbnail=160x160&quality=75', title: '运动户外', desc: '运动T恤仅29元' }, { id: 10, href: '#', img: 'http://yanxuan.nosdn.127.net/4478ac57bf289b162e8f1837ba3355f7.png?imageView&thumbnail=160x160&quality=75', title: '春风情趣', desc: '特惠5折起' }, { id: 11, href: '#', img: 'http://yanxuan.nosdn.127.net/f444ac11115a8249a92dc95dccad6e07.png?imageView&thumbnail=160x160&quality=75', title: '婴童孕产', desc: '放心购5折起' }, { id: 12, href: '#', img: 'http://yanxuan.nosdn.127.net/146230f1e1c389fb309b38183d73d475.png?imageView&thumbnail=160x160&quality=75', title: '居家焕新', desc: '冰丝席159元起' }]]
+        }
+      }
+    };
+  }
+};
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "wrapper weex-ct weex-div",
+    style: ({
+      backgroundImage: ("url(" + (_vm.info.bkg) + ")")
+    }),
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "banner weex-ct weex-div",
+    style: ({
+      backgroundImage: ("url(" + (_vm.info.banner.bkg) + ")")
+    }),
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "banner-items weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('slider', {
+    staticClass: "slider",
+    attrs: {
+      "auto-play": "true"
+    }
+  }, _vm._l((_vm.info.banner.items), function(item, idx) {
+    return _c('a', {
+      key: idx,
+      staticClass: "frame weex-ct weex-a",
+      attrs: {
+        "href": item.href,
+        "weex-type": "a"
+      },
+      on: {
+        "weex$tap": _vm.$stopPropagation
+      }
+    }, [_c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("contain"),
+        expression: "\"contain\""
+      }],
+      staticClass: "banner-img weex-el weex-image",
+      attrs: {
+        "src": item.img,
+        "resize": "contain",
+        "data-img-src": item.img,
+        "weex-type": "image"
+      }
+    }), _vm._v(" "), _c('div', {
+      staticClass: "banner-txt weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('p', {
+      staticClass: "banner-money weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(item.money))]), _vm._v(" "), _c('p', {
+      staticClass: "banner-omoney weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(item.omoney))])])])
+  }), 0)], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "main-items weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, _vm._l((_vm.info.main.items), function(item, idx) {
+    return _c('div', {
+      key: idx,
+      staticClass: "main-frame weex-ct weex-div",
+      style: ({
+        backgroundImage: ("url(" + (_vm.info.main.bkg) + ")")
+      }),
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('div', {
+      staticClass: "main-txt weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('p', {
+      staticClass: "main-title weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(item.title))]), _vm._v(" "), _c('p', {
+      staticClass: "main-desc weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(item.desc))])]), _vm._v(" "), _c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("contain"),
+        expression: "\"contain\""
+      }],
+      staticClass: "main-img weex-el weex-image",
+      attrs: {
+        "resize": "contain",
+        "src": item.img,
+        "data-img-src": item.img,
+        "weex-type": "image"
+      }
+    })])
+  }), 0), _vm._v(" "), _c('div', {
+    staticClass: "title weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('figure', {
+    directives: [{
+      name: "weex-resize",
+      rawName: "v-weex-resize",
+      value: ("contain"),
+      expression: "\"contain\""
+    }],
+    staticClass: "title-img weex-el weex-image",
+    attrs: {
+      "resize": "contain",
+      "src": _vm.info.title_img,
+      "data-img-src": _vm.info.title_img,
+      "weex-type": "image"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "list-items weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, _vm._l((_vm.info.list.groups), function(group, gidx) {
+    return _c('div', {
+      key: gidx,
+      staticClass: "list-group weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, _vm._l((_vm.info.list.groups[gidx]), function(item, idx) {
+      return _c('div', {
+        key: idx,
+        staticClass: "list-frame weex-ct weex-div",
+        style: ({
+          backgroundImage: ("url(" + (_vm.info.list.bkg) + ")")
+        }),
+        attrs: {
+          "weex-type": "div"
+        }
+      }, [_c('div', {
+        staticClass: "list-txt weex-ct weex-div",
+        attrs: {
+          "weex-type": "div"
+        }
+      }, [_c('p', {
+        staticClass: "list-title weex-el weex-text",
+        attrs: {
+          "weex-type": "text"
+        }
+      }, [_vm._v(_vm._s(item.title))]), _vm._v(" "), _c('p', {
+        staticClass: "list-desc weex-el weex-text",
+        attrs: {
+          "weex-type": "text"
+        }
+      }, [_vm._v(_vm._s(item.desc))])]), _vm._v(" "), _c('figure', {
+        directives: [{
+          name: "weex-resize",
+          rawName: "v-weex-resize",
+          value: ("contain"),
+          expression: "\"contain\""
+        }],
+        staticClass: "list-img weex-el weex-image",
+        attrs: {
+          "resize": "contain",
+          "src": item.img,
+          "data-img-src": item.img,
+          "weex-type": "image"
+        }
+      })])
+    }), 0)
+  }), 0)])
+},staticRenderFns: []}
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function injectStyle (ssrContext) {
+  __webpack_require__(43)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(45),
+  /* template */
+  __webpack_require__(46),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-60778b60",
+  /* moduleIdentifier (server only) */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(44);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("59de087c", content, true, {});
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".wrapper[data-v-60778b60]{background-color:#fff}.title-wrapper[data-v-60778b60]{flex-direction:row;justify-content:center;align-items:center}.title[data-v-60778b60]{height:1.2rem;line-height:1.2rem;text-align:center;font-size:.42667rem;padding-left:.53333rem;padding-right:.53333rem}.title-line[data-v-60778b60]{height:.04rem;width:.32rem;background-color:#333}.items[data-v-60778b60]{flex-direction:row;align-items:flex-start;margin-left:.4rem;margin-right:.4rem}.main-frame[data-v-60778b60]{margin-right:.05333rem;width:4.57333rem;height:5.78667rem;border-radius:.05333rem;background-color:#f9e9cf}.main-title[data-v-60778b60]{font-size:.42667rem;padding-top:.4rem;padding-left:.4rem}.main-pic[data-v-60778b60]{margin:auto;width:3.44rem;height:3.44rem;margin-left:.56rem;margin-right:.56rem}.item-frame[data-v-60778b60]{width:4.57333rem;height:2.86667rem;margin-bottom:.05333rem;border-radius:.05333rem;flex-direction:row;justify-content:space-between}.txt-frame[data-v-60778b60]{padding-top:.26667rem;padding-left:.4rem}.item-title[data-v-60778b60]{font-size:.42667rem}.item-desc[data-v-60778b60]{font-size:.24rem;color:#7f7f7f}.item-tag[data-v-60778b60]{font-size:.21333rem;border-radius:.06667rem;height:.42667rem;line-height:.42667rem;padding-left:.13333rem;padding-right:.13333rem;color:#fff;background-color:#cbb693;text-align:center}.item-pic[data-v-60778b60]{width:2.66667rem;height:2.66667rem}.top[data-v-60778b60]{background-color:#fbe2d3}.bottom[data-v-60778b60]{background-color:#ffecc2}.discount[data-v-60778b60]{position:absolute;top:.13333rem;right:.4rem;width:1.06667rem;height:1.06667rem;background-color:#f59524;border-radius:.53333rem;opacity:.8;padding-top:.13333rem}.line1[data-v-60778b60],.line2[data-v-60778b60]{font-size:.32rem;color:#fff;text-align:center}.line2[data-v-60778b60]{font-size:.26667rem;text-decoration:line-through}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {};
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "title-wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "title-line weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }), _vm._v(" "), _c('p', {
+    staticClass: "title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("新人专享礼")]), _vm._v(" "), _c('div', {
+    staticClass: "title-line weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "items weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "main-frame weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "main-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("新人专享礼包")]), _vm._v(" "), _c('figure', {
+    directives: [{
+      name: "weex-resize",
+      rawName: "v-weex-resize",
+      value: ("contain"),
+      expression: "\"contain\""
+    }],
+    staticClass: "main-pic weex-el weex-image",
+    attrs: {
+      "resize": "contain",
+      "src": "http://yanxuan.nosdn.127.net/ba4d635ec94ad95b28bfab6500900659.png",
+      "data-img-src": "http://yanxuan.nosdn.127.net/ba4d635ec94ad95b28bfab6500900659.png",
+      "weex-type": "image"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "item-frame top weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "txt-frame weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "item-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("福利社")]), _vm._v(" "), _c('p', {
+    staticClass: "item-desc weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("今日特价")])]), _vm._v(" "), _c('figure', {
+    directives: [{
+      name: "weex-resize",
+      rawName: "v-weex-resize",
+      value: ("contain"),
+      expression: "\"contain\""
+    }],
+    staticClass: "item-pic weex-el weex-image",
+    attrs: {
+      "resize": "contain",
+      "src": "http://yanxuan.nosdn.127.net/13de83a532212f8f7e7723ac666bf191.png?imageView&thumbnail=200x200&quality=75",
+      "data-img-src": "http://yanxuan.nosdn.127.net/13de83a532212f8f7e7723ac666bf191.png?imageView&thumbnail=200x200&quality=75",
+      "weex-type": "image"
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "discount weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "line1 weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("¥9.9")]), _vm._v(" "), _c('p', {
+    staticClass: "line2 weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("¥19")])])]), _vm._v(" "), _c('div', {
+    staticClass: "item-frame bottom weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "txt-frame weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "item-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("新人拼团")]), _vm._v(" "), _c('p', {
+    staticClass: "item-desc weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }), _vm._v(" "), _c('p', {
+    staticClass: "item-tag weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("1元起包邮")])]), _vm._v(" "), _c('figure', {
+    directives: [{
+      name: "weex-resize",
+      rawName: "v-weex-resize",
+      value: ("contain"),
+      expression: "\"contain\""
+    }],
+    staticClass: "item-pic weex-el weex-image",
+    attrs: {
+      "resize": "contain",
+      "src": "http://yanxuan.nosdn.127.net/27e82b28bf11797b6c4a10b67d221867.png?imageView&thumbnail=200x200&quality=75",
+      "data-img-src": "http://yanxuan.nosdn.127.net/27e82b28bf11797b6c4a10b67d221867.png?imageView&thumbnail=200x200&quality=75",
+      "weex-type": "image"
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "discount weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "line1 weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("¥9.9")]), _vm._v(" "), _c('p', {
+    staticClass: "line2 weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("¥19")])])])])])])
+},staticRenderFns: []}
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function injectStyle (ssrContext) {
+  __webpack_require__(48)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(50),
+  /* template */
+  __webpack_require__(51),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-605b5c5e",
+  /* moduleIdentifier (server only) */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(49);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("1525d537", content, true, {});
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".iconfont[data-v-605b5c5e]{font-family:myiconfont}.wrapper[data-v-605b5c5e]{background-color:#fff}.header[data-v-605b5c5e]{height:1.33333rem;flex-direction:row;justify-content:space-between}.more[data-v-605b5c5e],.title[data-v-605b5c5e]{height:1.33333rem;line-height:1.33333rem;font-size:.42667rem;color:#333}.more[data-v-605b5c5e]{font-size:.37333rem;margin-right:0}.header[data-v-605b5c5e],.items[data-v-605b5c5e]{padding-left:.4rem;padding-right:.4rem}.items[data-v-605b5c5e]{flex-direction:row;justify-content:space-around;flex-wrap:wrap}.item-frame[data-v-605b5c5e]{width:4.57333rem;height:3.46667rem;align-items:center;padding-top:.30667rem;margin-bottom:.05333rem}.item-title[data-v-605b5c5e]{text-align:center;font-size:.37333rem;height:.44rem;line-height:.44rem;color:#333}.item-desc[data-v-605b5c5e]{flex-direction:row;justify-content:center;align-items:center;height:.48rem}.desc[data-v-605b5c5e]{font-size:.32rem;color:#7f7f7f;line-height:.48rem;height:.48rem}.tag[data-v-605b5c5e]{height:.42667rem;line-height:.42667rem;font-size:.32rem;color:#fff;background-color:#cbb693;border-radius:.06667rem;margin-left:.06667rem;padding-left:.06667rem;padding-right:.06667rem}.item1[data-v-605b5c5e]{background-image:url(\"http://yanxuan.nosdn.127.net/74e2ea8f81004d0a60f90fc8e4649058.png?imageView&thumbnail=343y260&enlarge=1\")}.item2[data-v-605b5c5e]{background-image:url(\"http://yanxuan.nosdn.127.net/c097be14110f769d58245cdad73e15c3.png?imageView&thumbnail=343y260&enlarge=1\")}.item3[data-v-605b5c5e]{background-image:url(\"http://yanxuan.nosdn.127.net/66a23d776f41cba70d00803a5231124b.png?imageView&thumbnail=343y260&enlarge=1\")}.item4[data-v-605b5c5e]{background-image:url(\"http://yanxuan.nosdn.127.net/3bf5a8a2f6eef284ecb40806ae9ce043.png?imageView&thumbnail=343y260&enlarge=1\")}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {};
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "header weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("品牌制造商直供")]), _vm._v(" "), _c('p', {
+    staticClass: "more iconfont weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("更多")])]), _vm._v(" "), _c('div', {
+    staticClass: "items weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "item-frame item1 weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "item-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("海外制造商")]), _vm._v(" "), _c('div', {
+    staticClass: "item-desc weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "desc weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("9.9元起")]), _vm._v(" "), _c('p', {
+    staticClass: "tag weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("上新")])])]), _vm._v(" "), _c('div', {
+    staticClass: "item-frame item2 weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "item-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("CK制造商")]), _vm._v(" "), _c('div', {
+    staticClass: "item-desc weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "desc weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("29.9元起")])])]), _vm._v(" "), _c('div', {
+    staticClass: "item-frame item3 weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "item-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("新秀丽制造商")]), _vm._v(" "), _c('div', {
+    staticClass: "item-desc weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "desc weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("169元起")])])]), _vm._v(" "), _c('div', {
+    staticClass: "item-frame item4 weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "item-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("Nine West制造商")]), _vm._v(" "), _c('div', {
+    staticClass: "item-desc weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "desc weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("269元起")])])])])])
+},staticRenderFns: []}
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('header'), _vm._v(" "), _c('nav'), _vm._v(" "), _c('scroller', {
+    staticClass: "main-list",
+    attrs: {
+      "loadmoreoffset": "300",
+      "offset-accuracy": "300"
+    }
+  }, [_c('div', {
+    staticClass: "cell-btn weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('img-slider'), _vm._v(" "), _c('div', {
+    staticClass: "slogen weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "i-slg iconfont weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v(" 网易自营品牌")]), _vm._v(" "), _c('p', {
+    staticClass: "i-slg iconfont weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v(" 30天无忧退货")]), _vm._v(" "), _c('p', {
+    staticClass: "i-slg iconfont weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v(" 48小时快速退款")])])], 1), _vm._v(" "), _c('block1', {
+    staticClass: "cell-btn",
+    attrs: {}
+  }), _vm._v(" "), _c('block2', {
+    staticClass: "cell-btn",
+    attrs: {}
+  }), _vm._v(" "), _c('block3', {
+    staticClass: "cell-btn",
+    attrs: {}
+  })], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function injectStyle (ssrContext) {
+  __webpack_require__(54)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(56),
+  /* template */
+  __webpack_require__(57),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-22ebd617",
+  /* moduleIdentifier (server only) */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(55);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("786c3cbc", content, true, {});
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".title[data-v-22ebd617]{height:.93333rem;padding-top:.26667rem;line-height:.66667rem;font-size:.42667rem;text-align:center;color:#333;background-color:#fafafa}.list[data-v-22ebd617]{position:fixed;top:.93333rem;bottom:1.26667rem}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {};
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("专题")]), _vm._v(" "), _c('list', {
+    staticClass: "list",
+    attrs: {}
+  }, [_c('scroller', {
+    staticClass: "topics",
+    attrs: {}
+  }, [_c('div', {
+    staticClass: "topic-item weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "list-item weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  })], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function injectStyle (ssrContext) {
+  __webpack_require__(59)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(61),
+  /* template */
+  __webpack_require__(62),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(60);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("ab78ba76", content, true, {});
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+
+exports.default = {};
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  })
+},staticRenderFns: []}
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function injectStyle (ssrContext) {
+  __webpack_require__(64)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(66),
+  /* template */
+  __webpack_require__(67),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(65);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("7c012b00", content, true, {});
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+
+exports.default = {};
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  })
+},staticRenderFns: []}
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function injectStyle (ssrContext) {
+  __webpack_require__(69)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(71),
+  /* template */
+  __webpack_require__(72),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(70);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("702fac4c", content, true, {});
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+
+exports.default = {};
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  })
+},staticRenderFns: []}
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function injectStyle (ssrContext) {
+  __webpack_require__(74)
+  __webpack_require__(76)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(78),
+  /* template */
+  __webpack_require__(84),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-ddeed20c",
+  /* moduleIdentifier (server only) */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(75);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("7a3b55bc", content, true, {});
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".app-wrapper[data-v-ddeed20c]{background-color:#f4f4f4}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(77);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("19a7a888", content, true, {});
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _TabBar = __webpack_require__(79);
+
+var _TabBar2 = _interopRequireDefault(_TabBar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _module = weex.requireModule('dom'); //
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'App',
+  components: {
+    tabBar: _TabBar2.default
+  },
+  methods: {
+    routeTo: function routeTo(target) {
+      this.$router.push(target);
+    }
+  },
+  created: function created() {
+    _module.addRule('fontFace', {
+      'fontFamily': 'myiconfont',
+      'src': "url('//at.alicdn.com/t/font_588629_2r11va3psf8.woff2')"
+    });
+  }
+};
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function injectStyle (ssrContext) {
+  __webpack_require__(80)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(82),
+  /* template */
+  __webpack_require__(83),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-676d0873",
+  /* moduleIdentifier (server only) */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(81);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("0bfbe15d", content, true, {});
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".iconfont[data-v-676d0873]{font-family:myiconfont}.wrapper[data-v-676d0873]{position:fixed;bottom:0;flex-direction:row;justify-content:space-between;height:1.26667rem;width:10rem;border-top-width:1px;border-top-color:#d9d9d9;background-color:#fafafa}.bar-item[data-v-676d0873]{flex:1}.bar-icon[data-v-676d0873],.bar-txt[data-v-676d0873]{color:#666;text-align:center}.bar-icon[data-v-676d0873]{font-size:.50667rem;padding-top:.18667rem}.bar-txt[data-v-676d0873]{font-size:.29333rem;padding-top:.02667rem}.i-notice[data-v-676d0873]{position:absolute;top:.13333rem;right:.4rem;width:.4rem;height:.4rem;border-radius:.4rem;color:#fff;font-size:.34667rem;text-align:center;line-height:.4rem;background-color:red}.notice-dot[data-v-676d0873]{position:absolute;top:.2rem;right:.53333rem;height:.2rem;width:.2rem;border-radius:.2rem;background-color:red}.on[data-v-676d0873]{color:red}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  data: function data() {
+    return {};
+  },
+
+  computed: {
+    page: function page() {
+      return this.$route.name;
+    }
+  },
+  methods: {
+    switchTab: function switchTab(target) {
+      this.$emit('routeTo', target);
+    }
+  }
+};
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "bar-item weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "bar-icon iconfont weex-el weex-text",
+    class: {
+      'on': _vm.page == 'home'
+    },
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")]), _vm._v(" "), _c('p', {
+    staticClass: "bar-txt weex-el weex-text",
+    class: {
+      'on': _vm.page == 'home'
+    },
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.switchTab('home')
+      }
+    }
+  }, [_vm._v("首页")])]), _vm._v(" "), _c('div', {
+    staticClass: "bar-item weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "bar-icon iconfont weex-el weex-text",
+    class: {
+      'on': _vm.page == 'topic'
+    },
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")]), _vm._v(" "), _c('p', {
+    staticClass: "bar-txt weex-el weex-text",
+    class: {
+      'on': _vm.page == 'topic'
+    },
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.switchTab('topic')
+      }
+    }
+  }, [_vm._v("专题")]), _vm._v(" "), _c('p', {
+    staticClass: "notice-dot weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "bar-item weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "bar-icon iconfont weex-el weex-text",
+    class: {
+      'on': _vm.page == 'catalog'
+    },
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")]), _vm._v(" "), _c('p', {
+    staticClass: "bar-txt weex-el weex-text",
+    class: {
+      'on': _vm.page == 'catalog'
+    },
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.switchTab('catalog')
+      }
+    }
+  }, [_vm._v("分类")])]), _vm._v(" "), _c('div', {
+    staticClass: "bar-item weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "bar-icon iconfont weex-el weex-text",
+    class: {
+      'on': _vm.page == 'shopcart'
+    },
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")]), _vm._v(" "), _c('p', {
+    staticClass: "bar-txt weex-el weex-text",
+    class: {
+      'on': _vm.page == 'shopcart'
+    },
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.switchTab('shopcart')
+      }
+    }
+  }, [_vm._v("购物车")])]), _vm._v(" "), _c('div', {
+    staticClass: "bar-item weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "bar-icon iconfont weex-el weex-text",
+    class: {
+      'on': _vm.page == 'my'
+    },
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")]), _vm._v(" "), _c('p', {
+    staticClass: "bar-txt weex-el weex-text",
+    class: {
+      'on': _vm.page == 'my'
+    },
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.switchTab('my')
+      }
+    }
+  }, [_vm._v("个人")]), _vm._v(" "), _c('p', {
+    staticClass: "i-notice weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("2")])])])
+},staticRenderFns: []}
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "app-wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('router-view'), _vm._v(" "), _c('tab-bar', {
+    attrs: {
+      "data-evt-routeTo": ""
+    },
+    on: {
+      "routeTo": _vm.routeTo
+    }
+  })], 1)
 },staticRenderFns: []}
 
 /***/ })

@@ -1,7 +1,7 @@
 <template>
 <div class="app-wrapper">
   <router-view />
-  <tab-bar />
+  <tab-bar @routeTo="routeTo" />
 </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   name: 'App',
   components: {
     tabBar
+  },
+  methods: {
+    routeTo(target) {
+      this.$router.push(target);
+    }
   },
   created() {
     module.addRule('fontFace', {

@@ -13,12 +13,12 @@ export default {}
 
 <style lang="css">
 .search-wrapper{
-  width: 100%;
+  width: 750px;
   padding: 2px;
-  background-color: #666;
+  background-color: #666666;
 }
 .search-input,.search-input:focus{
-  width: 100%;
+  width: 75px;
   height: 90px;
   border-width: 0px;
   opacity: 0.1;
@@ -26,7 +26,7 @@ export default {}
 
 .search-placeholder{
   position: absolute;
-  height: 100%;
+  height: 90px;
   text-align: center;
   line-height: 90px;
 }

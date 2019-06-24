@@ -31,11 +31,9 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    width: 100%;
     height: 114px;
     padding-top: 44px;
     flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: space-between;
     background-color: #FAFAFA;
     opacity: .99;
