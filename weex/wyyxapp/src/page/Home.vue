@@ -1,8 +1,8 @@
 <template>
 <div class="wrapper">
-  <header></header>
-  <nav></nav>
-  <scroller class="main-list" loadmoreoffset='300' offset-accuracy='300'>
+  <m-header></m-header>
+  <nav @toggleNav="toggleNav"></nav>
+  <scroller class="main-list" :class="{'down':isShowNav}" loadmoreoffset='300' offset-accuracy='300'>
     <div class="cell-btn">
       <img-slider></img-slider>
       <div class="slogen">
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Header from '@/assets/components/home/Header'
+import MHeader from '@/assets/components/home/Header'
 import Nav from '@/assets/components/home/Nav'
 import ImgSlider from '@/assets/components/home/ImgSlider'
 import Block1 from '@/assets/components/home/Block1'
@@ -27,12 +27,22 @@ import Block2 from '@/assets/components/home/Block2'
 import Block3 from '@/assets/components/home/Block3'
 export default {
   components: {
-    Header,
+    MHeader,
     Nav,
     ImgSlider,
     Block1,
     Block2,
     Block3
+  },
+  data() {
+    return {
+      isShowNav: false
+    }
+  },
+  methods: {
+    toggleNav(isShow) {
+      this.isShowNav = isShow;
+    }
   }
 }
 </script>
@@ -50,6 +60,10 @@ export default {
     right: 0;
 }
 
+.down {
+    top: 290px;
+}
+
 .cell-btn {
     padding-bottom: 18px;
     margin-bottom: 20px;
@@ -64,7 +78,7 @@ export default {
 .i-slg {
     flex: 1;
     height: 64px;
-    padding-top: 16px;
+    padding-top: 16px; 
     font-size: 24px;
     color: #FF0000;
     text-align: center;

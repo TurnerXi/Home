@@ -2865,6 +2865,9 @@ module.exports = {
     "left": 0,
     "right": 0
   },
+  "down": {
+    "top": "290"
+  },
   "cell-btn": {
     "paddingBottom": "18",
     "marginBottom": "20"
@@ -2944,12 +2947,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    Header: _Header2.default,
+    MHeader: _Header2.default,
     Nav: _Nav2.default,
     ImgSlider: _ImgSlider2.default,
     Block1: _Block2.default,
     Block2: _Block4.default,
     Block3: _Block6.default
+  },
+  data: function data() {
+    return {
+      isShowNav: false
+    };
+  },
+
+  methods: {
+    toggleNav: function toggleNav(isShow) {
+      this.isShowNav = isShow;
+    }
   }
 };
 
@@ -3002,7 +3016,7 @@ module.exports = __vue_exports__
 
 module.exports = {
   "iconfont": {
-    "fontFamily": "\"myiconfont\""
+    "fontFamily": "myico"
   },
   "wrapper": {
     "position": "fixed",
@@ -3274,7 +3288,7 @@ module.exports = __vue_exports__
 
 module.exports = {
   "iconfont": {
-    "fontFamily": "\"myiconfont\""
+    "fontFamily": "myico"
   },
   "wrapper": {
     "position": "fixed",
@@ -3425,6 +3439,10 @@ exports.default = {
       this.$refs.scrollLine.style.left = l + 15 + 'px';
       this.$refs.scrollLine.style.width = w - 30 + 'px';
       dom.scrollToElement(this.$refs.columns[idx], { offset: -100 });
+    },
+    toggleFixNav: function toggleFixNav() {
+      this.showFixNav = !this.showFixNav;
+      this.$emit('toggleNav', this.showFixNav);
     }
   }
 };
@@ -3485,9 +3503,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'fold': _vm.showFixNav
     },
     on: {
-      "click": function($event) {
-        _vm.showFixNav = !_vm.showFixNav
-      }
+      "click": _vm.toggleFixNav
     }
   }, [_vm._v("")])])
 },staticRenderFns: []}
@@ -4354,7 +4370,7 @@ module.exports = __vue_exports__
 
 module.exports = {
   "iconfont": {
-    "fontFamily": "'myiconfont'"
+    "fontFamily": "myico"
   },
   "wrapper": {
     "backgroundColor": "#ffffff"
@@ -4552,13 +4568,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["wrapper"]
-  }, [_c('header', {
-    appendAsTree: true,
-    attrs: {
-      "append": "tree"
+  }, [_c('m-header'), _c('nav', {
+    on: {
+      "toggleNav": _vm.toggleNav
     }
-  }), _c('nav'), _c('scroller', {
+  }), _c('scroller', {
     staticClass: ["main-list"],
+    class: {
+      'down': _vm.isShowNav
+    },
     attrs: {
       "loadmoreoffset": "300",
       "offsetAccuracy": "300"
@@ -5013,10 +5031,10 @@ exports.default = {
       this.$router.push(target);
     }
   },
-  mounted: function mounted() {
+  beforeCreate: function beforeCreate() {
     _module.addRule('fontFace', {
-      'fontFamily': 'myiconfont',
-      'src': "url('//at.alicdn.com/t/font_588629_2r11va3psf8.woff') format('woff')"
+      'fontFamily': 'myico',
+      'src': "url('https://at.alicdn.com/t/font_588629_2r11va3psf8.ttf')"
     });
   }
 };
@@ -5070,7 +5088,7 @@ module.exports = __vue_exports__
 
 module.exports = {
   "iconfont": {
-    "fontFamily": "\"myiconfont\""
+    "fontFamily": "myico"
   },
   "wrapper": {
     "position": "fixed",

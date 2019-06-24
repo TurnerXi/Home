@@ -9,7 +9,7 @@
     <text class="fix-nav-title">全部频道</text>
     <text class="f-c" v-for="(item,idx) in columns" :key="item.id" :class="{'f-act': item.id === chooseId}" @click="chooseItem(item.id,idx)">{{item.title}}</text>
   </div>
-  <text class="more iconfont" :class="{'fold':showFixNav}" @click="showFixNav=!showFixNav">&#xe661;</text>
+  <text class="more iconfont" :class="{'fold':showFixNav}" @click="toggleFixNav">&#xe661;</text>
 </div>
 </template>
 
@@ -41,6 +41,10 @@ export default {
       this.$refs.scrollLine.style.left = `${l + 15}px`;
       this.$refs.scrollLine.style.width = `${w - 30}px`;
       dom.scrollToElement(this.$refs.columns[idx], { offset: -100 });
+    },
+    toggleFixNav() {
+      this.showFixNav = !this.showFixNav;
+      this.$emit('toggleNav', this.showFixNav);
     }
   }
 }
