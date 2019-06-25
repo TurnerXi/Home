@@ -2856,7 +2856,7 @@ module.exports = __vue_exports__
 
 module.exports = {
   "iconfont": {
-    "fontFamily": "\"myiconfont\""
+    "fontFamily": "myico"
   },
   "main-list": {
     "position": "fixed",
@@ -2865,8 +2865,12 @@ module.exports = {
     "left": 0,
     "right": 0
   },
-  "down": {
-    "top": "290"
+  "main-nav": {
+    "position": "fixed",
+    "top": "114",
+    "left": 0,
+    "right": 0,
+    "zIndex": 100
   },
   "cell-btn": {
     "paddingBottom": "18",
@@ -2958,12 +2962,6 @@ exports.default = {
     return {
       isShowNav: false
     };
-  },
-
-  methods: {
-    toggleNav: function toggleNav(isShow) {
-      this.isShowNav = isShow;
-    }
   }
 };
 
@@ -3291,15 +3289,9 @@ module.exports = {
     "fontFamily": "myico"
   },
   "wrapper": {
-    "position": "fixed",
-    "top": "114",
-    "height": "54",
-    "left": 0,
-    "right": 0,
     "backgroundColor": "#FAFAFA",
     "borderBottomWidth": "1",
-    "borderBottomColor": "#DADADA",
-    "zIndex": 100
+    "borderBottomColor": "#DADADA"
   },
   "scroller": {
     "height": "54",
@@ -3327,31 +3319,26 @@ module.exports = {
     "textAlign": "center",
     "backgroundColor": "#fafafa",
     "opacity": 0.96,
-    "boxShadow": "-6px -4px 4px #fafafa"
+    "boxShadow": "-6px -4px 4px #fafafa",
+    "transitionProperty": "transform",
+    "transitionDuration": 300
   },
   "@TRANSITION": {
-    "fold": {
+    "more": {
       "property": "transform",
       "duration": 300
     },
     "scroll-line": {
-      "property": "left,width",
+      "property": "transform,width",
       "duration": 300
     }
-  },
-  "fold": {
-    "transitionProperty": "transform",
-    "transitionDuration": 300,
-    "transform": "rotateX(180deg)"
   },
   "scroll-line": {
     "position": "absolute",
     "bottom": 0,
-    "left": "30",
-    "width": "82",
     "height": "4",
     "backgroundColor": "#ff4400",
-    "transitionProperty": "left,width",
+    "transitionProperty": "transform,width",
     "transitionDuration": 300
   },
   "fix-nav": {
@@ -3426,23 +3413,29 @@ exports.default = {
     return {
       chooseId: 1,
       showFixNav: false,
+      offsetX: 0,
+      scrollLine: {
+        left: 30,
+        width: 82
+      },
       columns: [{ id: 1, title: '推荐' }, { id: 2, title: '限购品' }, { id: 3, title: '新品' }, { id: 4, title: '居家' }, { id: 5, title: '餐饮' }, { id: 6, title: '运动' }, { id: 7, title: '数码' }, { id: 8, title: '服装' }]
     };
   },
 
   methods: {
     chooseItem: function chooseItem(itemId, idx) {
+      var _this = this;
+
       this.showFixNav = false;
       this.chooseId = itemId;
-      var l = this.$refs.columns[idx].offsetLeft;
-      var w = this.$refs.columns[idx].offsetWidth;
-      this.$refs.scrollLine.style.left = l + 15 + 'px';
-      this.$refs.scrollLine.style.width = w - 30 + 'px';
+      dom.getComponentRect(this.$refs.columns[idx], function (data) {
+        _this.scrollLine.left = (data.size.left || 0) + _this.offsetX * 2 + 15;
+        _this.scrollLine.width = data.size.width - 30;
+      });
       dom.scrollToElement(this.$refs.columns[idx], { offset: -100 });
     },
-    toggleFixNav: function toggleFixNav() {
-      this.showFixNav = !this.showFixNav;
-      this.$emit('toggleNav', this.showFixNav);
+    onScrollEvent: function onScrollEvent(e) {
+      this.offsetX = e.contentOffset.x;
     }
   }
 };
@@ -3459,19 +3452,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "scrollDirection": "horizontal",
       "showScrollbar": "false"
+    },
+    on: {
+      "scroll": _vm.onScrollEvent
     }
   }, [_c('div', {
     ref: "scrollLine",
-    staticClass: ["scroll-line"]
+    staticClass: ["scroll-line"],
+    style: {
+      'transform': ("translateX(" + (_vm.scrollLine.left) + "px)"),
+      'width': ((_vm.scrollLine.width) + "px")
+    }
   }), _vm._l((_vm.columns), function(item, idx) {
     return _c('text', {
       key: item.id,
       ref: "columns",
       refInFor: true,
-      staticClass: ["i-c"],
-      class: {
-        'c-act': item.id === _vm.chooseId
-      },
+      class: ['i-c', item.id === _vm.chooseId ? 'c-act' : ''],
       on: {
         "click": function($event) {
           _vm.chooseItem(item.id, idx)
@@ -3480,17 +3477,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(item.title))])
   }), _c('text', {
     staticClass: ["i-c"]
-  })], 2), _vm._v(";\n  "), (_vm.showFixNav) ? _c('div', {
+  })], 2), (_vm.showFixNav) ? _c('div', {
     staticClass: ["fix-nav"]
   }, [_c('text', {
     staticClass: ["fix-nav-title"]
   }, [_vm._v("全部频道")]), _vm._l((_vm.columns), function(item, idx) {
     return _c('text', {
       key: item.id,
-      staticClass: ["f-c"],
-      class: {
-        'f-act': item.id === _vm.chooseId
-      },
+      class: ['f-c', item.id === _vm.chooseId ? 'f-act' : ''],
       on: {
         "click": function($event) {
           _vm.chooseItem(item.id, idx)
@@ -3499,13 +3493,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(item.title))])
   })], 2) : _vm._e(), _c('text', {
     staticClass: ["more", "iconfont"],
-    class: {
-      'fold': _vm.showFixNav
-    },
     on: {
-      "click": _vm.toggleFixNav
+      "click": function($event) {
+        _vm.showFixNav = !_vm.showFixNav
+      }
     }
-  }, [_vm._v("")])])
+  }, [_vm._v(_vm._s(_vm.showFixNav ? '' : ''))])])
 },staticRenderFns: []}
 
 /***/ }),
@@ -3659,10 +3652,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.imageList), function(item, idx) {
     return _c('div', {
       key: idx,
-      staticClass: ["i-d"],
-      class: {
-        'i-d-act': _vm.currentIdx == idx
-      }
+      class: ['i-d', _vm.currentIdx == idx ? 'i-d-act' : '']
     })
   }))])
 },staticRenderFns: []}
@@ -4568,15 +4558,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["wrapper"]
-  }, [_c('m-header'), _c('nav', {
-    on: {
-      "toggleNav": _vm.toggleNav
-    }
-  }), _c('scroller', {
+  }, [_c('m-header'), _c('scroller', {
     staticClass: ["main-list"],
-    class: {
-      'down': _vm.isShowNav
-    },
     attrs: {
       "loadmoreoffset": "300",
       "offsetAccuracy": "300"
@@ -4589,7 +4572,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["cell-btn"]
   }), _c('block3', {
     staticClass: ["cell-btn"]
-  })], 1)], 1)
+  })], 1), _c('nav', {
+    staticClass: ["main-nav"]
+  })], 1)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["slogen"]
@@ -5208,15 +5193,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: ["bar-item"]
   }, [_c('text', {
-    staticClass: ["bar-icon", "iconfont"],
-    class: {
-      'on': _vm.page == 'home'
-    }
+    class: ['bar-icon', 'iconfont', _vm.page == 'home' ? 'on' : '']
   }, [_vm._v("")]), _c('text', {
-    staticClass: ["bar-txt"],
-    class: {
-      'on': _vm.page == 'home'
-    },
+    class: ['bar-txt', _vm.page == 'home' ? 'on' : ''],
     on: {
       "click": function($event) {
         _vm.switchTab('/')
@@ -5225,15 +5204,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("首页")])]), _c('div', {
     staticClass: ["bar-item"]
   }, [_c('text', {
-    staticClass: ["bar-icon", "iconfont"],
-    class: {
-      'on': _vm.page == 'topic'
-    }
+    class: ['bar-icon', 'iconfont', _vm.page == 'topic' ? 'on' : '']
   }, [_vm._v("")]), _c('text', {
-    staticClass: ["bar-txt"],
-    class: {
-      'on': _vm.page == 'topic'
-    },
+    class: ['bar-txt', _vm.page == 'topic' ? 'on' : ''],
     on: {
       "click": function($event) {
         _vm.switchTab('topic')
@@ -5244,15 +5217,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _c('div', {
     staticClass: ["bar-item"]
   }, [_c('text', {
-    staticClass: ["bar-icon", "iconfont"],
-    class: {
-      'on': _vm.page == 'catalog'
-    }
+    class: ['bar-icon', 'iconfont', _vm.page == 'catalog' ? 'on' : '']
   }, [_vm._v("")]), _c('text', {
-    staticClass: ["bar-txt"],
-    class: {
-      'on': _vm.page == 'catalog'
-    },
+    class: ['bar-txt', _vm.page == 'catalog' ? 'on' : ''],
     on: {
       "click": function($event) {
         _vm.switchTab('catalog')
@@ -5261,15 +5228,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("分类")])]), _c('div', {
     staticClass: ["bar-item"]
   }, [_c('text', {
-    staticClass: ["bar-icon", "iconfont"],
-    class: {
-      'on': _vm.page == 'shopcart'
-    }
+    class: ['bar-icon', 'iconfont', _vm.page == 'shopcart' ? 'on' : '']
   }, [_vm._v("")]), _c('text', {
-    staticClass: ["bar-txt"],
-    class: {
-      'on': _vm.page == 'shopcart'
-    },
+    class: ['bar-txt', _vm.page == 'shopcart' ? 'on' : ''],
     on: {
       "click": function($event) {
         _vm.switchTab('shopcart')
@@ -5278,15 +5239,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("购物车")])]), _c('div', {
     staticClass: ["bar-item"]
   }, [_c('text', {
-    staticClass: ["bar-icon", "iconfont"],
-    class: {
-      'on': _vm.page == 'my'
-    }
+    class: ['bar-icon', 'iconfont', _vm.page == 'my' ? 'on' : '']
   }, [_vm._v("")]), _c('text', {
-    staticClass: ["bar-txt"],
-    class: {
-      'on': _vm.page == 'my'
-    },
+    class: ['bar-txt', _vm.page == 'my' ? 'on' : ''],
     on: {
       "click": function($event) {
         _vm.switchTab('my')

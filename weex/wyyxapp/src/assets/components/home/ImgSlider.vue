@@ -6,7 +6,7 @@
     </div>
   </slider>
   <div class="indicator">
-    <div class="i-d" :class="{'i-d-act':currentIdx==idx}" v-for="(item,idx) in imageList" :key="idx"></div>
+    <div :class="['i-d',currentIdx==idx?'i-d-act':'']" v-for="(item,idx) in imageList" :key="idx"></div>
   </div>
 </div>
 </template>

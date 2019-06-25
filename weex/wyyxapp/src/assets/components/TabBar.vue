@@ -1,25 +1,25 @@
 <template>
 <div class="wrapper">
   <div class="bar-item">
-    <text class="bar-icon iconfont" :class="{'on':page=='home'}">&#xe7d5;</text>
-    <text class="bar-txt" :class="{'on':page=='home'}" @click="switchTab('/')">首页</text>
+    <text :class="['bar-icon','iconfont', page=='home'?'on':'']">&#xe7d5;</text>
+    <text :class="['bar-txt', page=='home'?'on':'']" @click="switchTab('/')">首页</text>
   </div>
   <div class="bar-item">
-    <text class="bar-icon iconfont" :class="{'on':page=='topic'}">&#xe816;</text>
-    <text class="bar-txt" :class="{'on':page=='topic'}" @click="switchTab('topic')">专题</text>
+    <text :class="['bar-icon','iconfont', page=='topic'?'on':'']">&#xe816;</text>
+    <text :class="['bar-txt', page=='topic'?'on':'']" @click="switchTab('topic')">专题</text>
     <text class="notice-dot"></text>
   </div>
   <div class="bar-item">
-    <text class="bar-icon iconfont" :class="{'on':page=='catalog'}">&#xe729;</text>
-    <text class="bar-txt" :class="{'on':page=='catalog'}" @click="switchTab('catalog')">分类</text>
+    <text :class="['bar-icon','iconfont', page=='catalog'?'on':'']">&#xe729;</text>
+    <text :class="['bar-txt', page=='catalog'?'on':'']" @click="switchTab('catalog')">分类</text>
   </div>
   <div class="bar-item">
-    <text class="bar-icon iconfont" :class="{'on':page=='shopcart'}">&#xe7d8;</text>
-    <text class="bar-txt" :class="{'on':page=='shopcart'}" @click="switchTab('shopcart')">购物车</text>
+    <text :class="['bar-icon','iconfont', page=='shopcart'?'on':'']">&#xe7d8;</text>
+    <text :class="['bar-txt', page=='shopcart'?'on':'']" @click="switchTab('shopcart')">购物车</text>
   </div>
   <div class="bar-item">
-    <text class="bar-icon iconfont" :class="{'on':page=='my'}">&#xe7d6;</text>
-    <text class="bar-txt" :class="{'on':page=='my'}" @click="switchTab('my')">个人</text>
+    <text :class="['bar-icon','iconfont', page=='my'?'on':'']">&#xe7d6;</text>
+    <text :class="['bar-txt', page=='my'?'on':'']" @click="switchTab('my')">个人</text>
     <text class="i-notice">2</text>
   </div>
 </div>

@@ -1,8 +1,7 @@
 <template>
 <div class="wrapper">
   <m-header></m-header>
-  <nav @toggleNav="toggleNav"></nav>
-  <scroller class="main-list" :class="{'down':isShowNav}" loadmoreoffset='300' offset-accuracy='300'>
+  <scroller class="main-list" loadmoreoffset='300' offset-accuracy='300'>
     <div class="cell-btn">
       <img-slider></img-slider>
       <div class="slogen">
@@ -15,6 +14,7 @@
     <block2 class="cell-btn"></block2>
     <block3 class="cell-btn"></block3>
   </scroller>
+  <nav class="main-nav"></nav>
 </div>
 </template>
 
@@ -38,18 +38,13 @@ export default {
     return {
       isShowNav: false
     }
-  },
-  methods: {
-    toggleNav(isShow) {
-      this.isShowNav = isShow;
-    }
   }
 }
 </script>
 
 <style scoped>
 .iconfont {
-    font-family: "myiconfont";
+    font-family: myico;
 }
 
 .main-list {
@@ -60,8 +55,12 @@ export default {
     right: 0;
 }
 
-.down {
-    top: 290px;
+.main-nav {
+    position: fixed;
+    top: 114px;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
 .cell-btn {
@@ -78,7 +77,7 @@ export default {
 .i-slg {
     flex: 1;
     height: 64px;
-    padding-top: 16px; 
+    padding-top: 16px;
     font-size: 24px;
     color: #FF0000;
     text-align: center;

@@ -1,15 +1,15 @@
 <template >
 <div class="wrapper">
   <scroller class="scroller" scroll-direction="horizontal" show-scrollbar="false">
-    <div class="scroll-line" ref="scrollLine"></div>
-    <text class="i-c" v-for="(item,idx) in columns" ref="columns" :key="item.id" :class="{'c-act': item.id === chooseId}" @click="chooseItem(item.id,idx)">{{item.title}}</text>
+    <div class="scroll-line" ref="scrollLine" :style="{'transform':`translateX(${scrollLine.left}px)`,'width':`${scrollLine.width}px`}"></div>
+    <text v-for="(item,idx) in columns" ref="columns" :key="item.id" :class="['i-c', item.id === chooseId?'c-act':'']" @click="chooseItem(item.id,idx)">{{item.title}}</text>
     <text class="i-c"></text>
-  </scroller>;
+  </scroller>
   <div class="fix-nav" v-if="showFixNav">
     <text class="fix-nav-title">全部频道</text>
-    <text class="f-c" v-for="(item,idx) in columns" :key="item.id" :class="{'f-act': item.id === chooseId}" @click="chooseItem(item.id,idx)">{{item.title}}</text>
+    <text v-for="(item,idx) in columns" :key="item.id" :class="['f-c', item.id === chooseId?'f-act':'']" @click="chooseItem(item.id,idx)">{{item.title}}</text>
   </div>
-  <text class="more iconfont" :class="{'fold':showFixNav}" @click="toggleFixNav">&#xe661;</text>
+  <text class="more iconfont" @click="showFixNav = !showFixNav">{{showFixNav?'&#xe6de;':'&#xe661;'}}</text>
 </div>
 </template>
 
@@ -20,6 +20,10 @@ export default {
     return {
       chooseId: 1,
       showFixNav: false,
+      scrollLine: {
+        left: 30,
+        width: 82
+      },
       columns: [
         { id: 1, title: '推荐' },
         { id: 2, title: '限购品' },
@@ -36,15 +40,20 @@ export default {
     chooseItem(itemId, idx) {
       this.showFixNav = false;
       this.chooseId = itemId;
-      let l = this.$refs.columns[idx].offsetLeft;
-      let w = this.$refs.columns[idx].offsetWidth;
-      this.$refs.scrollLine.style.left = `${l + 15}px`;
-      this.$refs.scrollLine.style.width = `${w - 30}px`;
+      this.scrollLineTo(idx);
       dom.scrollToElement(this.$refs.columns[idx], { offset: -100 });
-    },
-    toggleFixNav() {
-      this.showFixNav = !this.showFixNav;
-      this.$emit('toggleNav', this.showFixNav);
+    }, 
+    scrollLineTo(idx) {
+      let left = 0;
+      for (let i = 0; i < idx; i++) {
+        dom.getComponentRect(this.$refs.columns[i], (data) => {
+          left += Number(data.size.width);
+        })
+      }
+      dom.getComponentRect(this.$refs.columns[idx], (data) => {
+        this.scrollLine.left = left + 15;
+        this.scrollLine.width = data.size.width - 30;
+      })
     }
   }
 }
@@ -56,15 +65,9 @@ export default {
 }
 
 .wrapper {
-    position: fixed;
-    top: 114px;
-    height: 54px;
-    left: 0;
-    right: 0;
     background-color: #FAFAFA;
     border-bottom-width: 1px;
     border-bottom-color: #DADADA;
-    z-index: 100;
 }
 
 .scroller {
@@ -97,23 +100,19 @@ export default {
     background-color: #fafafa;
     opacity: 0.96;
     box-shadow: -6px -4px 4px #fafafa;
-}
-
-.fold {
     transition-property: transform;
-    transition-duration: 300;
-    transform: rotateX(180deg);
+    transition-duration: 300ms;
 }
 
 .scroll-line {
     position: absolute;
     bottom: 0;
-    left: 30px;
-    width: 82px;
+    /* transform: translateX(30px);
+    width: 82px; */
     height: 4px;
     background-color: #ff4400;
-    transition-property: left, width;
-    transition-duration: 300;
+    transition-property: transform, width;
+    transition-duration: 300ms;
 }
 
 .fix-nav {
