@@ -31,4 +31,3 @@ export default {
     background-color: #f4f4f4;
 }
 </style>
-<style src="@/assets/css/application.css"></style>

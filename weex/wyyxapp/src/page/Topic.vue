@@ -2,24 +2,28 @@
 <div class="wrapper">
   <text class="title">专题</text>
   <list class="list">
-    <scroller class="topics">
-      <div class="topic-item"></div>
-    </scroller>
+    <nav></nav>
     <div class="list-item"></div>
   </list>
 </div>
 </template>
 
 <script>
-export default {}
+import Nav from '@/assets/components/topic/Nav'
+export default {
+  components: {
+    Nav
+  }
+}
 </script>
 
 <style scoped>
 .title {
-    height: 70px;
-    padding-top: 20px;
-    line-height: 50px;
-    font-size: 32px;
+    height: 114px;
+    padding-top: 44px;
+    padding-bottom: 1px;
+    font-size: 36px;
+    line-height: 52px;
     text-align: center;
     color: #333333;
     background-color: #fafafa;

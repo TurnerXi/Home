@@ -5,28 +5,32 @@
     <text class="more iconfont">更多&#xe6a3;</text>
   </div>
   <div class="items">
-    <div class="item-frame item1">
+    <div class="item-frame">
+      <image class="bkg" resize="cover" src="http://yanxuan.nosdn.127.net/74e2ea8f81004d0a60f90fc8e4649058.png?imageView&thumbnail=343y260&enlarge=1"></image>
       <text class="item-title">海外制造商</text>
       <div class="item-desc">
         <text class="desc">9.9元起</text>
         <text class="tag">上新</text>
       </div>
     </div>
-    <div class="item-frame item2">
+    <div class="item-frame">
+      <image class="bkg" resize="cover" src="http://yanxuan.nosdn.127.net/c097be14110f769d58245cdad73e15c3.png?imageView&thumbnail=343y260&enlarge=1"></image>
       <text class="item-title">CK制造商</text>
       <div class="item-desc">
         <text class="desc">29.9元起</text>
         <!-- <text class="tag"></text> -->
       </div>
     </div>
-    <div class="item-frame item3">
+    <div class="item-frame">
+      <image class="bkg" resize="cover" src="http://yanxuan.nosdn.127.net/66a23d776f41cba70d00803a5231124b.png?imageView&thumbnail=343y260&enlarge=1"></image>
       <text class="item-title">新秀丽制造商</text>
       <div class="item-desc">
         <text class="desc">169元起</text>
         <!-- <text class="tag"></text> -->
       </div>
     </div>
-    <div class="item-frame item4">
+    <div class="item-frame">
+      <image class="bkg" resize="cover" src="http://yanxuan.nosdn.127.net/3bf5a8a2f6eef284ecb40806ae9ce043.png?imageView&thumbnail=343y260&enlarge=1"></image>
       <text class="item-title">Nine West制造商</text>
       <div class="item-desc">
         <text class="desc">269元起</text>
@@ -44,6 +48,14 @@ export default {}
 <style scoped>
 .iconfont {
     font-family: myico;
+}
+
+.bkg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .wrapper {
@@ -123,21 +135,5 @@ export default {}
     margin-left: 5px;
     padding-left: 5px;
     padding-right: 5px;
-}
-
-.item1 {
-    background-image: url('http://yanxuan.nosdn.127.net/74e2ea8f81004d0a60f90fc8e4649058.png?imageView&thumbnail=343y260&enlarge=1');
-}
-
-.item2 {
-    background-image: url('http://yanxuan.nosdn.127.net/c097be14110f769d58245cdad73e15c3.png?imageView&thumbnail=343y260&enlarge=1');
-}
-
-.item3 {
-    background-image: url('http://yanxuan.nosdn.127.net/66a23d776f41cba70d00803a5231124b.png?imageView&thumbnail=343y260&enlarge=1');
-}
-
-.item4 {
-    background-image: url('http://yanxuan.nosdn.127.net/3bf5a8a2f6eef284ecb40806ae9ce043.png?imageView&thumbnail=343y260&enlarge=1');
 }
 </style>

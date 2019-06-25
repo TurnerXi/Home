@@ -1,6 +1,8 @@
 <template>
-<div class="wrapper" :style="{backgroundImage:`url(${info.bkg})`}">
-  <div class="banner" :style="{backgroundImage:`url(${info.banner.bkg})`}">
+<div class="wrapper">
+  <image class="wrapper-bkg bkg" resize="cover" :src="info.bkg"></image>
+  <div class="banner">
+    <image class="bkg" resize="cover" :src="info.banner.bkg"></image>
     <div class="banner-items">
       <slider class="slider" auto-play="true">
         <a class="frame" :href="item.href" v-for="(item,idx) in info.banner.items" :key="idx">
@@ -14,7 +16,8 @@
     </div>
   </div>
   <div class="main-items">
-    <div class="main-frame" v-for="(item,idx) in info.main.items" :key="idx" :style="{backgroundImage:`url(${info.main.bkg})`}">
+    <div class="main-frame" v-for="(item,idx) in info.main.items" :key="idx">
+      <image class="bkg" resize="cover" :src="info.main.bkg"></image>
       <div class="main-txt">
         <text class="main-title">{{item.title}}</text>
         <text class="main-desc">{{item.desc}}</text>
@@ -27,7 +30,8 @@
   </div>
   <div class="list-items">
     <div class="list-group" v-for="(group,gidx) in info.list.groups" :key="gidx">
-      <div class="list-frame" v-for="(item,idx) in info.list.groups[gidx]" :key="idx" :style="{backgroundImage:`url(${info.list.bkg})`}">
+      <div class="list-frame" v-for="(item,idx) in info.list.groups[gidx]" :key="idx">
+        <image class="bkg" resize="cover" :src="info.list.bkg"></image>
         <div class="list-txt">
           <text class="list-title">{{item.title}}</text>
           <text class="list-desc">{{item.desc}}</text>
@@ -98,9 +102,16 @@ export default {
     background-size: contain;
 }
 
+.bkg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
 .banner {
     height: 280px;
-    background-size: contain;
 }
 
 .banner-items {
@@ -128,7 +139,7 @@ export default {
     justify-content: center;
     text-align: center;
     background-color: #F49321;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .banner-money,
@@ -136,11 +147,12 @@ export default {
     color: #ffffff;
     font-size: 20px;
     padding-left: 5px;
+    line-height: 30px;
 }
 
 .banner-omoney {
     text-decoration: line-through;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 .main-items {

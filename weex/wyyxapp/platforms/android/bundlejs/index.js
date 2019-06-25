@@ -2869,8 +2869,7 @@ module.exports = {
     "position": "fixed",
     "top": "114",
     "left": 0,
-    "right": 0,
-    "zIndex": 100
+    "right": 0
   },
   "cell-btn": {
     "paddingBottom": "18",
@@ -3413,7 +3412,6 @@ exports.default = {
     return {
       chooseId: 1,
       showFixNav: false,
-      offsetX: 0,
       scrollLine: {
         left: 30,
         width: 82
@@ -3424,18 +3422,24 @@ exports.default = {
 
   methods: {
     chooseItem: function chooseItem(itemId, idx) {
-      var _this = this;
-
       this.showFixNav = false;
       this.chooseId = itemId;
-      dom.getComponentRect(this.$refs.columns[idx], function (data) {
-        _this.scrollLine.left = (data.size.left || 0) + _this.offsetX * 2 + 15;
-        _this.scrollLine.width = data.size.width - 30;
-      });
+      this.scrollLineTo(idx);
       dom.scrollToElement(this.$refs.columns[idx], { offset: -100 });
     },
-    onScrollEvent: function onScrollEvent(e) {
-      this.offsetX = e.contentOffset.x;
+    scrollLineTo: function scrollLineTo(idx) {
+      var _this = this;
+
+      var left = 0;
+      for (var i = 0; i < idx; i++) {
+        dom.getComponentRect(this.$refs.columns[i], function (data) {
+          left += Number(data.size.width);
+        });
+      }
+      dom.getComponentRect(this.$refs.columns[idx], function (data) {
+        _this.scrollLine.left = left + 15;
+        _this.scrollLine.width = data.size.width - 30;
+      });
     }
   }
 };
@@ -3446,15 +3450,15 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["wrapper"]
+    staticClass: ["wrapper"],
+    style: {
+      'height': _vm.showFixNav ? '290px' : ''
+    }
   }, [_c('scroller', {
     staticClass: ["scroller"],
     attrs: {
       "scrollDirection": "horizontal",
       "showScrollbar": "false"
-    },
-    on: {
-      "scroll": _vm.onScrollEvent
     }
   }, [_c('div', {
     ref: "scrollLine",
@@ -3708,9 +3712,15 @@ module.exports = {
   "wrapper": {
     "backgroundSize": "contain"
   },
+  "bkg": {
+    "position": "absolute",
+    "left": 0,
+    "right": 0,
+    "top": 0,
+    "bottom": 0
+  },
   "banner": {
-    "height": "280",
-    "backgroundSize": "contain"
+    "height": "280"
   },
   "banner-items": {
     "position": "absolute",
@@ -3896,6 +3906,10 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
 
 exports.default = {
   data: function data() {
@@ -3926,16 +3940,22 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["wrapper"],
-    style: {
-      backgroundImage: ("url(" + (_vm.info.bkg) + ")")
+    staticClass: ["wrapper"]
+  }, [_c('image', {
+    staticClass: ["wrapper-bkg", "bkg"],
+    attrs: {
+      "resize": "cover",
+      "src": _vm.info.bkg
     }
-  }, [_c('div', {
-    staticClass: ["banner"],
-    style: {
-      backgroundImage: ("url(" + (_vm.info.banner.bkg) + ")")
+  }), _c('div', {
+    staticClass: ["banner"]
+  }, [_c('image', {
+    staticClass: ["bkg"],
+    attrs: {
+      "resize": "cover",
+      "src": _vm.info.banner.bkg
     }
-  }, [_c('div', {
+  }), _c('div', {
     staticClass: ["banner-items"]
   }, [_c('slider', {
     staticClass: ["slider"],
@@ -3967,11 +3987,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.info.main.items), function(item, idx) {
     return _c('div', {
       key: idx,
-      staticClass: ["main-frame"],
-      style: {
-        backgroundImage: ("url(" + (_vm.info.main.bkg) + ")")
+      staticClass: ["main-frame"]
+    }, [_c('image', {
+      staticClass: ["bkg"],
+      attrs: {
+        "resize": "cover",
+        "src": _vm.info.main.bkg
       }
-    }, [_c('div', {
+    }), _c('div', {
       staticClass: ["main-txt"]
     }, [_c('text', {
       staticClass: ["main-title"]
@@ -4001,11 +4024,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, _vm._l((_vm.info.list.groups[gidx]), function(item, idx) {
       return _c('div', {
         key: idx,
-        staticClass: ["list-frame"],
-        style: {
-          backgroundImage: ("url(" + (_vm.info.list.bkg) + ")")
+        staticClass: ["list-frame"]
+      }, [_c('image', {
+        staticClass: ["bkg"],
+        attrs: {
+          "resize": "cover",
+          "src": _vm.info.list.bkg
         }
-      }, [_c('div', {
+      }), _c('div', {
         staticClass: ["list-txt"]
       }, [_c('text', {
         staticClass: ["list-title"]
@@ -4930,14 +4956,12 @@ var __vue_styles__ = []
 /* styles */
 __vue_styles__.push(__webpack_require__(52)
 )
-__vue_styles__.push(__webpack_require__(53)
-)
 
 /* script */
-__vue_exports__ = __webpack_require__(54)
+__vue_exports__ = __webpack_require__(53)
 
 /* template */
-var __vue_template__ = __webpack_require__(59)
+var __vue_template__ = __webpack_require__(58)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -4977,12 +5001,6 @@ module.exports = {
 
 /***/ }),
 /* 53 */
-/***/ (function(module, exports) {
-
-module.exports = {}
-
-/***/ }),
-/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4992,7 +5010,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _TabBar = __webpack_require__(55);
+var _TabBar = __webpack_require__(54);
 
 var _TabBar2 = _interopRequireDefault(_TabBar);
 
@@ -5025,21 +5043,21 @@ exports.default = {
 };
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(56)
+__vue_styles__.push(__webpack_require__(55)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(57)
+__vue_exports__ = __webpack_require__(56)
 
 /* template */
-var __vue_template__ = __webpack_require__(58)
+var __vue_template__ = __webpack_require__(57)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -5068,7 +5086,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -5129,7 +5147,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5184,7 +5202,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -5253,7 +5271,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

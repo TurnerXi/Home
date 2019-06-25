@@ -92,9 +92,9 @@ export default {}
 }
 
 .main-pic {
-    margin: auto;
     width: 258px;
     height: 258px;
+    margin-top: 57px;
     margin-left: 42px;
     margin-right: 42px;
 }
@@ -166,10 +166,12 @@ export default {}
   font-size: 24px;
   color: #ffffff;
   text-align: center;
+  line-height: 40px;
 }
 
 .line2{
   font-size: 20px;
+  line-height: 25px;
   text-decoration: line-through;
 }
 </style>
