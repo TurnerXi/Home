@@ -42,7 +42,7 @@ export default {
       this.chooseId = itemId;
       this.scrollLineTo(idx);
       dom.scrollToElement(this.$refs.columns[idx], { offset: -100 });
-    }, 
+    },
     scrollLineTo(idx) {
       let left = 0;
       for (let i = 0; i < idx; i++) {
