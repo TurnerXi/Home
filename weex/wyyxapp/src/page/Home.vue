@@ -60,7 +60,6 @@ export default {
     top: 114px;
     left: 0;
     right: 0;
-    z-index: 100;
 }
 
 .cell-btn {

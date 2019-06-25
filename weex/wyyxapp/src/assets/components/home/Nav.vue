@@ -1,5 +1,5 @@
 <template >
-<div class="wrapper">
+<div class="wrapper" :style="{'height':showFixNav?'290px':''}">
   <scroller class="scroller" scroll-direction="horizontal" show-scrollbar="false">
     <div class="scroll-line" ref="scrollLine" :style="{'transform':`translateX(${scrollLine.left}px)`,'width':`${scrollLine.width}px`}"></div>
     <text v-for="(item,idx) in columns" ref="columns" :key="item.id" :class="['i-c', item.id === chooseId?'c-act':'']" @click="chooseItem(item.id,idx)">{{item.title}}</text>
@@ -107,8 +107,6 @@ export default {
 .scroll-line {
     position: absolute;
     bottom: 0;
-    /* transform: translateX(30px);
-    width: 82px; */
     height: 4px;
     background-color: #ff4400;
     transition-property: transform, width;
