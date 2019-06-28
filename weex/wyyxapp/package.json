@@ -18,6 +18,7 @@
     "serve": "webpack-dev-server --env.NODE_ENV=development --progress",
     "ios": "weex run ios",
     "web": "npm run serve",
+    "debug": "weex debug src",
     "android": "weex run android",
     "pack:ios": "npm run clean:ios && weex build ios",
     "pack:android": "npm run clean:android && weex build android",

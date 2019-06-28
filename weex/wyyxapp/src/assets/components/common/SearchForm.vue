@@ -11,9 +11,8 @@
 export default {}
 </script>
 
-<style lang="css">
+<style scoped>
 .search-wrapper{
-  width: 750px;
   padding: 2px;
   background-color: #666666;
 }

@@ -21,12 +21,12 @@ export default {
   beforeCreate() {
     module.addRule('fontFace', {
       'fontFamily': 'myico',
-      'src': "url('https://at.alicdn.com/t/font_588629_2r11va3psf8.ttf')"
+      'src': "url('https://at.alicdn.com/t/font_1266237_1orvzrmxzqa.ttf')"
     })
   }
 }
 </script>
-<style scoped>
+<style>
 .app-wrapper {
     background-color: #f4f4f4;
 }
