@@ -1,11 +1,11 @@
-package com.weex.app;
+package com.turner.wyyx;
 
 import android.app.Application;
 
-import com.weex.app.extend.ImageAdapter;
-import com.weex.app.extend.WXEventModule;
+import com.turner.wyyx.extend.ImageAdapter;
+import com.turner.wyyx.extend.WXEventModule;
 import com.alibaba.weex.plugin.loader.WeexPluginContainer;
-import com.weex.app.util.AppConfig;
+import com.turner.wyyx.util.AppConfig;
 import com.taobao.weex.InitConfig;
 import com.taobao.weex.WXSDKEngine;
 import com.taobao.weex.common.WXException;

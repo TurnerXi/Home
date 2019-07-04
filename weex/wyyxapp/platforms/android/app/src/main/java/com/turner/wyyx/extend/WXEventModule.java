@@ -1,10 +1,10 @@
-package com.weex.app.extend;
+package com.turner.wyyx.extend;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.weex.app.WXPageActivity;
+import com.turner.wyyx.WXPageActivity;
 import com.taobao.weex.annotation.JSMethod;
 import com.taobao.weex.common.WXModule;
 

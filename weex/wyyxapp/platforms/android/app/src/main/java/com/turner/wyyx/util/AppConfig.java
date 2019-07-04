@@ -1,4 +1,4 @@
-package com.weex.app.util;
+package com.turner.wyyx.util;
 
 import android.content.Context;
 

@@ -17,7 +17,7 @@
        under the License.
 */
 
-package com.weex.app.util;
+package com.turner.wyyx.util;
 
 import android.os.Bundle;
 

@@ -3,7 +3,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:id="@+id/container"
-             android:background="#0099cc"
+             android:background="@drawable/loading"
              tools:context="com.alibaba.weex.com.alibaba.app.SplashActivity">
 
     <TextView android:id="@+id/fullscreen_content"

@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.weex.app.extend;
+package com.turner.wyyx.extend;
 
 import android.graphics.Bitmap;
 

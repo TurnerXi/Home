@@ -1,4 +1,4 @@
-package com.weex.app;
+package com.turner.wyyx;
 
 import android.content.Intent;
 import android.net.Uri;

@@ -6,7 +6,7 @@ android {
     buildToolsVersion project.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.weex.app"
+        applicationId "com.turner.wyyx"
         minSdkVersion project.appMinSdkVersion
         targetSdkVersion project.targetSdkVersion
         versionCode 1

@@ -78,7 +78,9 @@
 var _require = __webpack_require__(1),
     router = _require.router;
 
-var App = __webpack_require__(55);
+var App = __webpack_require__(87);
+var mixins = __webpack_require__(95);
+Vue.mixin(mixins);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -107,15 +109,15 @@ var _Topic = __webpack_require__(35);
 
 var _Topic2 = _interopRequireDefault(_Topic);
 
-var _Catalog = __webpack_require__(43);
+var _Catalog = __webpack_require__(51);
 
 var _Catalog2 = _interopRequireDefault(_Catalog);
 
-var _Shopcart = __webpack_require__(47);
+var _Shopcart = __webpack_require__(63);
 
 var _Shopcart2 = _interopRequireDefault(_Shopcart);
 
-var _My = __webpack_require__(51);
+var _My = __webpack_require__(71);
 
 var _My2 = _interopRequireDefault(_My);
 
@@ -2828,12 +2830,13 @@ if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\page\\Home.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-942eacd4"
@@ -2855,6 +2858,9 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
+  "iconfont": {
+    "fontFamily": "myico"
+  },
   "main-list": {
     "position": "fixed",
     "top": "168",
@@ -2982,12 +2988,13 @@ if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\home\\Header.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-e4d0ca32"
@@ -3009,6 +3016,9 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
+  "iconfont": {
+    "fontFamily": "myico"
+  },
   "wrapper": {
     "position": "fixed",
     "top": 0,
@@ -3111,12 +3121,13 @@ if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\common\\SearchForm.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-359cf2cc"
@@ -3202,6 +3213,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["search-placeholder"]
   }, [_vm._t("default")], 2)])
 },staticRenderFns: []}
+module.exports.render._withStripped = true
 
 /***/ }),
 /* 13 */
@@ -3228,6 +3240,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["txt"]
   }, [_vm._v("消息")])])])
 }]}
+module.exports.render._withStripped = true
 
 /***/ }),
 /* 14 */
@@ -3250,12 +3263,13 @@ if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\home\\Nav.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-3a673539"
@@ -3277,6 +3291,9 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
+  "iconfont": {
+    "fontFamily": "myico"
+  },
   "wrapper": {
     "backgroundColor": "#FAFAFA",
     "borderBottomWidth": "1",
@@ -3494,6 +3511,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v(_vm._s(_vm.showFixNav ? '' : ''))])])
 },staticRenderFns: []}
+module.exports.render._withStripped = true
 
 /***/ }),
 /* 18 */
@@ -3516,12 +3534,13 @@ if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\home\\ImgSlider.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-20401b9a"
@@ -3650,6 +3669,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })
   }))])
 },staticRenderFns: []}
+module.exports.render._withStripped = true
 
 /***/ }),
 /* 22 */
@@ -3672,12 +3692,13 @@ if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\home\\Block1.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-61d1521e"
@@ -4039,6 +4060,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }))
   }))])
 },staticRenderFns: []}
+module.exports.render._withStripped = true
 
 /***/ }),
 /* 26 */
@@ -4061,12 +4083,13 @@ if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\home\\Block2.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-61df699f"
@@ -4331,6 +4354,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["line2"]
   }, [_vm._v("¥19")])])])])])])
 }]}
+module.exports.render._withStripped = true
 
 /***/ }),
 /* 30 */
@@ -4353,12 +4377,13 @@ if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\home\\Block3.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-61ed8120"
@@ -4380,6 +4405,9 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
+  "iconfont": {
+    "fontFamily": "myico"
+  },
   "bkg": {
     "position": "absolute",
     "left": 0,
@@ -4591,6 +4619,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["desc"]
   }, [_vm._v("269元起")])])])])])
 }]}
+module.exports.render._withStripped = true
 
 /***/ }),
 /* 34 */
@@ -4627,6 +4656,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["i-slg", "iconfont"]
   }, [_vm._v(" 48小时快速退款")])])
 }]}
+module.exports.render._withStripped = true
 
 /***/ }),
 /* 35 */
@@ -4643,18 +4673,19 @@ __vue_styles__.push(__webpack_require__(36)
 __vue_exports__ = __webpack_require__(37)
 
 /* template */
-var __vue_template__ = __webpack_require__(42)
+var __vue_template__ = __webpack_require__(50)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\page\\Topic.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-ba9c0af0"
@@ -4729,11 +4760,11 @@ var _Nav = __webpack_require__(38);
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
-var _Block = __webpack_require__(63);
+var _Block = __webpack_require__(42);
 
 var _Block2 = _interopRequireDefault(_Block);
 
-var _MLoading = __webpack_require__(67);
+var _MLoading = __webpack_require__(46);
 
 var _MLoading2 = _interopRequireDefault(_MLoading);
 
@@ -4806,12 +4837,13 @@ if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\topic\\Nav.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-7f90d6b3"
@@ -4923,892 +4955,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(item.title))])])
   }))
 },staticRenderFns: []}
+module.exports.render._withStripped = true
 
 /***/ }),
 /* 42 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["wrapper"]
-  }, [_vm._m(0), _c('list', {
-    staticClass: ["list"],
-    attrs: {
-      "loadmoreoffset": "500"
-    },
-    on: {
-      "loadmore": _vm.onloading
-    }
-  }, [_c('cell', {
-    appendAsTree: true,
-    attrs: {
-      "append": "tree"
-    }
-  }, [_c('nav')], 1), _vm._l((_vm.list), function(item, idx) {
-    return _c('cell', {
-      key: idx,
-      staticClass: ["cell-top"],
-      appendAsTree: true,
-      attrs: {
-        "append": "tree"
-      }
-    }, [_c('block', {
-      attrs: {
-        "article": item
-      }
-    })], 1)
-  }), _c('cell', {
-    appendAsTree: true,
-    attrs: {
-      "append": "tree"
-    }
-  }, [(_vm.loading) ? _c('m-loading') : _vm._e()], 1)], 2)])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["title-frame"]
-  }, [_c('text', {
-    staticClass: ["title"]
-  }, [_vm._v("专题")])])
-}]}
-
-/***/ }),
-/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(44)
+__vue_styles__.push(__webpack_require__(43)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(45)
+__vue_exports__ = __webpack_require__(44)
 
 /* template */
-var __vue_template__ = __webpack_require__(46)
+var __vue_template__ = __webpack_require__(45)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-49fd079c"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 44 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  "wrapper": {
-    "backgroundColor": "#FFFFFF"
-  },
-  "header": {
-    "height": "90",
-    "paddingLeft": "30",
-    "paddingRight": "30",
-    "borderBottomWidth": "2",
-    "borderBottomColor": "#ededed",
-    "flexDirection": "row",
-    "alignItems": "center"
-  },
-  "header-search": {
-    "flex": 1,
-    "height": "56",
-    "lineHeight": "56",
-    "textAlign": "center",
-    "borderRadius": "10",
-    "backgroundColor": "#ededed",
-    "fontSize": "26",
-    "color": "#666666"
-  },
-  "main": {
-    "position": "fixed",
-    "left": 0,
-    "right": 0,
-    "top": "90",
-    "bottom": "90",
-    "flexDirection": "row",
-    "flexWrap": "nowrap"
-  },
-  "sidebar": {
-    "width": "162"
-  },
-  "content": {
-    "flex": 1
-  }
-}
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _MContent = __webpack_require__(71);
-
-var _MContent2 = _interopRequireDefault(_MContent);
-
-var _MSidebar = __webpack_require__(72);
-
-var _MSidebar2 = _interopRequireDefault(_MSidebar);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  components: {
-    MContent: _MContent2.default,
-    MSidebar: _MSidebar2.default
-  },
-  data: function data() {
-    return {
-      cataId: '0'
-    };
-  }
-};
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["wrapper"]
-  }, [_vm._m(0), _c('div', {
-    staticClass: ["main"]
-  }, [_c('m-sidebar', {
-    staticClass: ["sidebar"],
-    model: {
-      value: (_vm.cataId),
-      callback: function($$v) {
-        _vm.cataId = $$v
-      },
-      expression: "cataId"
-    }
-  }), _c('m-content', {
-    staticClass: ["content"],
-    attrs: {
-      "cataId": _vm.cataId
-    }
-  })], 1)])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["header"]
-  }, [_c('text', {
-    staticClass: ["header-search", "iconfont"]
-  }, [_vm._v(" 搜索商品，共8888款好物")])])
-}]}
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(48)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(49)
-
-/* template */
-var __vue_template__ = __webpack_require__(50)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-efcc7666"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  "header": {
-    "height": "88",
-    "paddingLeft": "30",
-    "paddingRight": "30",
-    "backgroundColor": "#FFFFFF",
-    "flexDirection": "row",
-    "flexWrap": "nowrap",
-    "alignItems": "center"
-  },
-  "header-txt": {
-    "flex": 1,
-    "fontSize": "36",
-    "color": "#333333"
-  },
-  "header-right": {
-    "marginRight": 0,
-    "fontSize": "30",
-    "color": "#FF4400"
-  },
-  "service": {
-    "height": "70",
-    "paddingLeft": "30",
-    "paddingRight": "30",
-    "flexDirection": "row",
-    "flexWrap": "nowrap",
-    "justifyContent": "space-between",
-    "alignItems": "center"
-  },
-  "service-frame": {
-    "flexDirection": "row",
-    "flexWrap": "nowrap",
-    "alignItems": "center"
-  },
-  "dot": {
-    "width": "10",
-    "height": "10",
-    "borderRadius": "5",
-    "borderWidth": ".5",
-    "borderColor": "#666666",
-    "marginRight": "5",
-    "opacity": 0.5
-  },
-  "service-txt": {
-    "fontSize": "24",
-    "color": "#666666"
-  },
-  "cart": {
-    "position": "fixed",
-    "left": 0,
-    "right": 0,
-    "top": "158",
-    "bottom": "90"
-  }
-}
-
-/***/ }),
-/* 49 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _CartList = __webpack_require__(79);
-
-var _CartList2 = _interopRequireDefault(_CartList);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  components: {
-    CartList: _CartList2.default
-  }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-/* 50 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["wrapper"]
-  }, [_vm._m(0), _vm._m(1), _c('cart-list', {
-    staticClass: ["cart"]
-  })], 1)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["header"]
-  }, [_c('text', {
-    staticClass: ["header-txt"]
-  }, [_vm._v("购物车")]), _c('text', {
-    staticClass: ["header-right"]
-  }, [_vm._v("领券")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["service"]
-  }, [_c('div', {
-    staticClass: ["service-frame"]
-  }, [_c('div', {
-    staticClass: ["dot"]
-  }), _c('text', {
-    staticClass: ["service-txt"]
-  }, [_vm._v("30天无忧退货")])]), _c('div', {
-    staticClass: ["service-frame"]
-  }, [_c('div', {
-    staticClass: ["dot"]
-  }), _c('text', {
-    staticClass: ["service-txt"]
-  }, [_vm._v("48小时快速退款")])]), _c('div', {
-    staticClass: ["service-frame"]
-  }, [_c('div', {
-    staticClass: ["dot"]
-  }), _c('text', {
-    staticClass: ["service-txt"]
-  }, [_vm._v("满88元免邮费")])])])
-}]}
-
-/***/ }),
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(52)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(53)
-
-/* template */
-var __vue_template__ = __webpack_require__(54)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-df8f20ba"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 52 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  "main-wrapper": {
-    "paddingBottom": "120"
-  },
-  "cell-btn": {
-    "marginBottom": "18"
-  },
-  "logout": {
-    "height": "94",
-    "backgroundColor": "#ffffff"
-  }
-}
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _MHeader = __webpack_require__(87);
-
-var _MHeader2 = _interopRequireDefault(_MHeader);
-
-var _MOrder = __webpack_require__(91);
-
-var _MOrder2 = _interopRequireDefault(_MOrder);
-
-var _MService = __webpack_require__(95);
-
-var _MService2 = _interopRequireDefault(_MService);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  components: {
-    MHeader: _MHeader2.default,
-    MOrder: _MOrder2.default,
-    MService: _MService2.default
-  }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["main-wrapper"]
-  }, [_c('m-header'), _c('m-order', {
-    staticClass: ["cell-btn"]
-  }), _c('m-service', {
-    staticClass: ["cell-btn"]
-  }), _c('div', {
-    staticClass: ["logout"]
-  })], 1)
-},staticRenderFns: []}
-
-/***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(56)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(57)
-
-/* template */
-var __vue_template__ = __webpack_require__(62)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-1a4d8e3c"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 56 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  "iconfont": {
-    "fontFamily": "myico"
-  },
-  "app-wrapper": {
-    "backgroundColor": "#f4f4f4"
-  }
-}
-
-/***/ }),
-/* 57 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _TabBar = __webpack_require__(58);
-
-var _TabBar2 = _interopRequireDefault(_TabBar);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _module = weex.requireModule('dom'); //
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  name: 'App',
-  components: {
-    tabBar: _TabBar2.default
-  },
-  methods: {
-    routeTo: function routeTo(target) {
-      this.$router.push(target);
-    }
-  },
-  beforeCreate: function beforeCreate() {
-    _module.addRule('fontFace', {
-      'fontFamily': 'myico',
-      'src': "url('https://at.alicdn.com/t/font_1266237_9tgepmwm13p.ttf')"
-    });
-  }
-};
-
-/***/ }),
-/* 58 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(59)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(60)
-
-/* template */
-var __vue_template__ = __webpack_require__(61)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-4225a05e"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 59 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  "wrapper": {
-    "position": "fixed",
-    "bottom": 0,
-    "flexDirection": "row",
-    "justifyContent": "space-between",
-    "height": "95",
-    "width": "750",
-    "borderTopWidth": "1",
-    "borderTopColor": "#d9d9d9",
-    "backgroundColor": "#fafafa"
-  },
-  "bar-item": {
-    "flex": 1
-  },
-  "bar-txt": {
-    "color": "#666666",
-    "textAlign": "center",
-    "fontSize": "22",
-    "paddingTop": "2"
-  },
-  "bar-icon": {
-    "color": "#666666",
-    "textAlign": "center",
-    "fontSize": "38",
-    "paddingTop": "14"
-  },
-  "i-notice": {
-    "position": "absolute",
-    "top": "10",
-    "right": "30",
-    "width": "30",
-    "height": "30",
-    "borderRadius": "30",
-    "color": "#ffffff",
-    "fontSize": "26",
-    "textAlign": "center",
-    "lineHeight": "30",
-    "backgroundColor": "#ff0000"
-  },
-  "notice-dot": {
-    "position": "absolute",
-    "top": "15",
-    "right": "40",
-    "height": "15",
-    "width": "15",
-    "borderRadius": "15",
-    "backgroundColor": "#ff0000"
-  },
-  "on": {
-    "color": "#ff0000"
-  }
-}
-
-/***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  data: function data() {
-    return {};
-  },
-
-  computed: {
-    page: function page() {
-      return this.$route.name;
-    }
-  },
-  methods: {
-    switchTab: function switchTab(target) {
-      this.$emit('routeTo', target);
-    }
-  }
-};
-
-/***/ }),
-/* 61 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["wrapper"]
-  }, [_c('div', {
-    staticClass: ["bar-item"],
-    on: {
-      "click": function($event) {
-        _vm.switchTab('/')
-      }
-    }
-  }, [_c('text', {
-    class: ['bar-icon', 'iconfont', _vm.page == 'home' ? 'on' : '']
-  }, [_vm._v("")]), _c('text', {
-    class: ['bar-txt', _vm.page == 'home' ? 'on' : '']
-  }, [_vm._v("首页")])]), _c('div', {
-    staticClass: ["bar-item"],
-    on: {
-      "click": function($event) {
-        _vm.switchTab('topic')
-      }
-    }
-  }, [_c('text', {
-    class: ['bar-icon', 'iconfont', _vm.page == 'topic' ? 'on' : '']
-  }, [_vm._v("")]), _c('text', {
-    class: ['bar-txt', _vm.page == 'topic' ? 'on' : '']
-  }, [_vm._v("专题")]), _c('text', {
-    staticClass: ["notice-dot"]
-  })]), _c('div', {
-    staticClass: ["bar-item"],
-    on: {
-      "click": function($event) {
-        _vm.switchTab('catalog')
-      }
-    }
-  }, [_c('text', {
-    class: ['bar-icon', 'iconfont', _vm.page == 'catalog' ? 'on' : '']
-  }, [_vm._v("")]), _c('text', {
-    class: ['bar-txt', _vm.page == 'catalog' ? 'on' : '']
-  }, [_vm._v("分类")])]), _c('div', {
-    staticClass: ["bar-item"],
-    on: {
-      "click": function($event) {
-        _vm.switchTab('shopcart')
-      }
-    }
-  }, [_c('text', {
-    class: ['bar-icon', 'iconfont', _vm.page == 'shopcart' ? 'on' : '']
-  }, [_vm._v("")]), _c('text', {
-    class: ['bar-txt', _vm.page == 'shopcart' ? 'on' : '']
-  }, [_vm._v("购物车")])]), _c('div', {
-    staticClass: ["bar-item"],
-    on: {
-      "click": function($event) {
-        _vm.switchTab('my')
-      }
-    }
-  }, [_c('text', {
-    class: ['bar-icon', 'iconfont', _vm.page == 'my' ? 'on' : '']
-  }, [_vm._v("")]), _c('text', {
-    class: ['bar-txt', _vm.page == 'my' ? 'on' : '']
-  }, [_vm._v("个人")]), _c('text', {
-    staticClass: ["i-notice"]
-  }, [_vm._v("2")])])])
-},staticRenderFns: []}
-
-/***/ }),
-/* 62 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["app-wrapper"]
-  }, [_c('router-view'), _c('tab-bar', {
-    on: {
-      "routeTo": _vm.routeTo
-    }
-  })], 1)
-},staticRenderFns: []}
-
-/***/ }),
-/* 63 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(64)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(65)
-
-/* template */
-var __vue_template__ = __webpack_require__(66)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\topic\\Block.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-4997ef1d"
@@ -5826,7 +5002,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 64 */
+/* 43 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -5905,7 +5081,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 65 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5943,7 +5119,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 66 */
+/* 45 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -5991,34 +5167,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["desc"]
   }, [_vm._v(_vm._s(_vm.article.desc))])])
 },staticRenderFns: []}
+module.exports.render._withStripped = true
 
 /***/ }),
-/* 67 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(68)
+__vue_styles__.push(__webpack_require__(47)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(69)
+__vue_exports__ = __webpack_require__(48)
 
 /* template */
-var __vue_template__ = __webpack_require__(70)
+var __vue_template__ = __webpack_require__(49)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\common\\MLoading.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-cc5197c6"
@@ -6036,7 +5214,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 68 */
+/* 47 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -6073,7 +5251,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 69 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6110,7 +5288,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 70 */
+/* 49 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -6123,34 +5301,221 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })
   }))
 },staticRenderFns: []}
+module.exports.render._withStripped = true
 
 /***/ }),
-/* 71 */
+/* 50 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["wrapper"]
+  }, [_vm._m(0), _c('list', {
+    staticClass: ["list"],
+    attrs: {
+      "loadmoreoffset": "500"
+    },
+    on: {
+      "loadmore": _vm.onloading
+    }
+  }, [_c('cell', {
+    appendAsTree: true,
+    attrs: {
+      "append": "tree"
+    }
+  }, [_c('nav')], 1), _vm._l((_vm.list), function(item, idx) {
+    return _c('cell', {
+      key: idx,
+      staticClass: ["cell-top"],
+      appendAsTree: true,
+      attrs: {
+        "append": "tree"
+      }
+    }, [_c('block', {
+      attrs: {
+        "article": item
+      }
+    })], 1)
+  }), _c('cell', {
+    appendAsTree: true,
+    attrs: {
+      "append": "tree"
+    }
+  }, [(_vm.loading) ? _c('m-loading') : _vm._e()], 1)], 2)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["title-frame"]
+  }, [_c('text', {
+    staticClass: ["title"]
+  }, [_vm._v("专题")])])
+}]}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(73)
+__vue_styles__.push(__webpack_require__(52)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(74)
+__vue_exports__ = __webpack_require__(53)
 
 /* template */
-var __vue_template__ = __webpack_require__(75)
+var __vue_template__ = __webpack_require__(62)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\page\\Catalog.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-49fd079c"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
 
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "iconfont": {
+    "fontFamily": "myico"
+  },
+  "wrapper": {
+    "backgroundColor": "#FFFFFF"
+  },
+  "header": {
+    "height": "90",
+    "paddingLeft": "30",
+    "paddingRight": "30",
+    "borderBottomWidth": "2",
+    "borderBottomColor": "#ededed",
+    "flexDirection": "row",
+    "alignItems": "center"
+  },
+  "header-search": {
+    "flex": 1,
+    "height": "56",
+    "lineHeight": "56",
+    "textAlign": "center",
+    "borderRadius": "10",
+    "backgroundColor": "#ededed",
+    "fontSize": "26",
+    "color": "#666666"
+  },
+  "main": {
+    "position": "fixed",
+    "left": 0,
+    "right": 0,
+    "top": "90",
+    "bottom": "90",
+    "flexDirection": "row",
+    "flexWrap": "nowrap"
+  },
+  "sidebar": {
+    "width": "162"
+  },
+  "content": {
+    "flex": 1
+  }
+}
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _MContent = __webpack_require__(54);
+
+var _MContent2 = _interopRequireDefault(_MContent);
+
+var _MSidebar = __webpack_require__(58);
+
+var _MSidebar2 = _interopRequireDefault(_MSidebar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  components: {
+    MContent: _MContent2.default,
+    MSidebar: _MSidebar2.default
+  },
+  data: function data() {
+    return {
+      cataId: '0'
+    };
+  }
+};
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(55)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(56)
+
+/* template */
+var __vue_template__ = __webpack_require__(57)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\catalog\\MContent.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-c318edfc"
@@ -6168,50 +5533,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 72 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(76)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(77)
-
-/* template */
-var __vue_template__ = __webpack_require__(78)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-c5ab9336"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 73 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -6248,7 +5570,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 74 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6281,7 +5603,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 75 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -6313,9 +5635,54 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })])
 }]}
+module.exports.render._withStripped = true
 
 /***/ }),
-/* 76 */
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(59)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(60)
+
+/* template */
+var __vue_template__ = __webpack_require__(61)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\catalog\\MSidebar.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-c5ab9336"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 59 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -6345,7 +5712,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 77 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6390,7 +5757,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 78 */
+/* 61 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -6412,34 +5779,219 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(item.title))])])
   }))])
 },staticRenderFns: []}
+module.exports.render._withStripped = true
 
 /***/ }),
-/* 79 */
+/* 62 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["wrapper"]
+  }, [_vm._m(0), _c('div', {
+    staticClass: ["main"]
+  }, [_c('m-sidebar', {
+    staticClass: ["sidebar"],
+    model: {
+      value: (_vm.cataId),
+      callback: function($$v) {
+        _vm.cataId = $$v
+      },
+      expression: "cataId"
+    }
+  }), _c('m-content', {
+    staticClass: ["content"],
+    attrs: {
+      "cataId": _vm.cataId
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["header"]
+  }, [_c('text', {
+    staticClass: ["header-search", "iconfont"]
+  }, [_vm._v(" 搜索商品，共8888款好物")])])
+}]}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(80)
+__vue_styles__.push(__webpack_require__(64)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(81)
+__vue_exports__ = __webpack_require__(65)
 
 /* template */
-var __vue_template__ = __webpack_require__(82)
+var __vue_template__ = __webpack_require__(70)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\page\\Shopcart.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-efcc7666"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
 
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "header": {
+    "height": "88",
+    "paddingLeft": "30",
+    "paddingRight": "30",
+    "backgroundColor": "#FFFFFF",
+    "flexDirection": "row",
+    "flexWrap": "nowrap",
+    "alignItems": "center"
+  },
+  "header-txt": {
+    "flex": 1,
+    "fontSize": "36",
+    "color": "#333333"
+  },
+  "header-right": {
+    "marginRight": 0,
+    "fontSize": "30",
+    "color": "#FF4400"
+  },
+  "service": {
+    "height": "70",
+    "paddingLeft": "30",
+    "paddingRight": "30",
+    "flexDirection": "row",
+    "flexWrap": "nowrap",
+    "justifyContent": "space-between",
+    "alignItems": "center"
+  },
+  "service-frame": {
+    "flexDirection": "row",
+    "flexWrap": "nowrap",
+    "alignItems": "center"
+  },
+  "dot": {
+    "width": "10",
+    "height": "10",
+    "borderRadius": "5",
+    "borderWidth": ".5",
+    "borderColor": "#666666",
+    "marginRight": "5",
+    "opacity": 0.5
+  },
+  "service-txt": {
+    "fontSize": "24",
+    "color": "#666666"
+  },
+  "cart": {
+    "position": "fixed",
+    "left": 0,
+    "right": 0,
+    "top": "158",
+    "bottom": "90"
+  }
+}
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _CartList = __webpack_require__(66);
+
+var _CartList2 = _interopRequireDefault(_CartList);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  components: {
+    CartList: _CartList2.default
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(67)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(68)
+
+/* template */
+var __vue_template__ = __webpack_require__(69)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\shopcart\\CartList.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-27515fe1"
@@ -6457,7 +6009,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 80 */
+/* 67 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -6489,7 +6041,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 81 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6520,7 +6072,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 82 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -6540,38 +6092,187 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["empty-txt"]
   }, [_vm._v("去添加点什么吧")])])])
 },staticRenderFns: []}
+module.exports.render._withStripped = true
 
 /***/ }),
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */
+/* 70 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["wrapper"]
+  }, [_vm._m(0), _vm._m(1), _c('cart-list', {
+    staticClass: ["cart"]
+  })], 1)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["header"]
+  }, [_c('text', {
+    staticClass: ["header-txt"]
+  }, [_vm._v("购物车")]), _c('text', {
+    staticClass: ["header-right"]
+  }, [_vm._v("领券")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["service"]
+  }, [_c('div', {
+    staticClass: ["service-frame"]
+  }, [_c('div', {
+    staticClass: ["dot"]
+  }), _c('text', {
+    staticClass: ["service-txt"]
+  }, [_vm._v("30天无忧退货")])]), _c('div', {
+    staticClass: ["service-frame"]
+  }, [_c('div', {
+    staticClass: ["dot"]
+  }), _c('text', {
+    staticClass: ["service-txt"]
+  }, [_vm._v("48小时快速退款")])]), _c('div', {
+    staticClass: ["service-frame"]
+  }, [_c('div', {
+    staticClass: ["dot"]
+  }), _c('text', {
+    staticClass: ["service-txt"]
+  }, [_vm._v("满88元免邮费")])])])
+}]}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(88)
+__vue_styles__.push(__webpack_require__(72)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(89)
+__vue_exports__ = __webpack_require__(73)
 
 /* template */
-var __vue_template__ = __webpack_require__(90)
+var __vue_template__ = __webpack_require__(86)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\page\\My.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-df8f20ba"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
 
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "main-wrapper": {
+    "paddingBottom": "150"
+  },
+  "order-btn": {
+    "marginBottom": "18"
+  },
+  "service-btn": {
+    "marginBottom": "80"
+  },
+  "logout": {
+    "height": "94",
+    "backgroundColor": "#ffffff",
+    "fontSize": "28",
+    "textAlign": "center",
+    "lineHeight": "94"
+  }
+}
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _MHeader = __webpack_require__(74);
+
+var _MHeader2 = _interopRequireDefault(_MHeader);
+
+var _MOrder = __webpack_require__(78);
+
+var _MOrder2 = _interopRequireDefault(_MOrder);
+
+var _MService = __webpack_require__(82);
+
+var _MService2 = _interopRequireDefault(_MService);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  components: {
+    MHeader: _MHeader2.default,
+    MOrder: _MOrder2.default,
+    MService: _MService2.default
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(75)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(76)
+
+/* template */
+var __vue_template__ = __webpack_require__(77)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\my\\MHeader.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-61606afd"
@@ -6589,10 +6290,13 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 88 */
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports = {
+  "iconfont": {
+    "fontFamily": "myico"
+  },
   "vip-icon": {
     "backgroundColor": "#b29e75",
     "color": "#ffffff"
@@ -6662,7 +6366,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 89 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6696,7 +6400,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 90 */
+/* 77 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -6732,34 +6436,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["qrcode", "iconfont"]
   }, [_vm._v("")])])
 }]}
+module.exports.render._withStripped = true
 
 /***/ }),
-/* 91 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(92)
+__vue_styles__.push(__webpack_require__(79)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(93)
+__vue_exports__ = __webpack_require__(80)
 
 /* template */
-var __vue_template__ = __webpack_require__(94)
+var __vue_template__ = __webpack_require__(81)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\my\\MOrder.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5129d8e4"
@@ -6777,10 +6483,13 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 92 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = {
+  "iconfont": {
+    "fontFamily": "myico"
+  },
   "wrapper": {
     "height": "226",
     "paddingLeft": "26",
@@ -6830,7 +6539,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 93 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6878,7 +6587,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 94 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -6926,34 +6635,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["item-name"]
   }, [_vm._v("退换/售后")])])])])
 }]}
+module.exports.render._withStripped = true
 
 /***/ }),
-/* 95 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(96)
+__vue_styles__.push(__webpack_require__(83)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(97)
+__vue_exports__ = __webpack_require__(84)
 
 /* template */
-var __vue_template__ = __webpack_require__(98)
+var __vue_template__ = __webpack_require__(85)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
   typeof __vue_exports__.default === "function"
 ) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\my\\MService.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-13c7bd75"
@@ -6971,10 +6682,13 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 96 */
+/* 83 */
 /***/ (function(module, exports) {
 
 module.exports = {
+  "iconfont": {
+    "fontFamily": "myico"
+  },
   "wrapper": {
     "backgroundColor": "#FFFFFF",
     "paddingLeft": "30"
@@ -7038,7 +6752,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 97 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7071,7 +6785,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 98 */
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -7105,6 +6819,380 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["header-title"]
   }, [_vm._v("我的服务")])])
 }]}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["main-wrapper"]
+  }, [_c('m-header'), _c('m-order', {
+    staticClass: ["order-btn"]
+  }), _c('m-service', {
+    staticClass: ["service-btn"]
+  }), _c('text', {
+    staticClass: ["logout"]
+  }, [_vm._v("退出登录")])], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(88)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(89)
+
+/* template */
+var __vue_template__ = __webpack_require__(94)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\index.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-1a4d8e3c"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "app-wrapper": {
+    "backgroundColor": "#f4f4f4"
+  }
+}
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _TabBar = __webpack_require__(90);
+
+var _TabBar2 = _interopRequireDefault(_TabBar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _module = weex.requireModule('dom'); //
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'App',
+  components: {
+    tabBar: _TabBar2.default
+  },
+  methods: {
+    routeTo: function routeTo(target) {
+      this.$router.push(target);
+    }
+  },
+  beforeCreate: function beforeCreate() {
+    _module.addRule('fontFace', {
+      'fontFamily': 'myico',
+      'src': "url('https://at.alicdn.com/t/font_1266237_1orvzrmxzqa.ttf')"
+    });
+  }
+};
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(91)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(92)
+
+/* template */
+var __vue_template__ = __webpack_require__(93)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "D:\\Projects\\Home\\weex\\wyyxapp\\src\\assets\\components\\TabBar.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-4225a05e"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "iconfont": {
+    "fontFamily": "myico"
+  },
+  "wrapper": {
+    "position": "fixed",
+    "bottom": 0,
+    "flexDirection": "row",
+    "justifyContent": "space-between",
+    "height": "95",
+    "width": "750",
+    "borderTopWidth": "1",
+    "borderTopColor": "#d9d9d9",
+    "backgroundColor": "#fafafa"
+  },
+  "bar-item": {
+    "flex": 1
+  },
+  "bar-txt": {
+    "color": "#666666",
+    "textAlign": "center",
+    "fontSize": "22",
+    "paddingTop": "2"
+  },
+  "bar-icon": {
+    "color": "#666666",
+    "textAlign": "center",
+    "fontSize": "38",
+    "paddingTop": "14"
+  },
+  "i-notice": {
+    "position": "absolute",
+    "top": "10",
+    "right": "30",
+    "width": "30",
+    "height": "30",
+    "borderRadius": "30",
+    "color": "#ffffff",
+    "fontSize": "26",
+    "textAlign": "center",
+    "lineHeight": "30",
+    "backgroundColor": "#ff0000"
+  },
+  "notice-dot": {
+    "position": "absolute",
+    "top": "15",
+    "right": "40",
+    "height": "15",
+    "width": "15",
+    "borderRadius": "15",
+    "backgroundColor": "#ff0000"
+  },
+  "on": {
+    "color": "#ff0000"
+  }
+}
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  data: function data() {
+    return {};
+  },
+
+  computed: {
+    page: function page() {
+      return this.$route.name;
+    }
+  },
+  methods: {
+    switchTab: function switchTab(target) {
+      this.$emit('routeTo', target);
+    }
+  }
+};
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["wrapper"]
+  }, [_c('div', {
+    staticClass: ["bar-item"],
+    on: {
+      "click": function($event) {
+        _vm.switchTab('/')
+      }
+    }
+  }, [_c('text', {
+    class: ['bar-icon', 'iconfont', _vm.page == 'home' ? 'on' : '']
+  }, [_vm._v("")]), _c('text', {
+    class: ['bar-txt', _vm.page == 'home' ? 'on' : '']
+  }, [_vm._v("首页")])]), _c('div', {
+    staticClass: ["bar-item"],
+    on: {
+      "click": function($event) {
+        _vm.switchTab('topic')
+      }
+    }
+  }, [_c('text', {
+    class: ['bar-icon', 'iconfont', _vm.page == 'topic' ? 'on' : '']
+  }, [_vm._v("")]), _c('text', {
+    class: ['bar-txt', _vm.page == 'topic' ? 'on' : '']
+  }, [_vm._v("专题")]), _c('text', {
+    staticClass: ["notice-dot"]
+  })]), _c('div', {
+    staticClass: ["bar-item"],
+    on: {
+      "click": function($event) {
+        _vm.switchTab('catalog')
+      }
+    }
+  }, [_c('text', {
+    class: ['bar-icon', 'iconfont', _vm.page == 'catalog' ? 'on' : '']
+  }, [_vm._v("")]), _c('text', {
+    class: ['bar-txt', _vm.page == 'catalog' ? 'on' : '']
+  }, [_vm._v("分类")])]), _c('div', {
+    staticClass: ["bar-item"],
+    on: {
+      "click": function($event) {
+        _vm.switchTab('shopcart')
+      }
+    }
+  }, [_c('text', {
+    class: ['bar-icon', 'iconfont', _vm.page == 'shopcart' ? 'on' : '']
+  }, [_vm._v("")]), _c('text', {
+    class: ['bar-txt', _vm.page == 'shopcart' ? 'on' : '']
+  }, [_vm._v("购物车")])]), _c('div', {
+    staticClass: ["bar-item"],
+    on: {
+      "click": function($event) {
+        _vm.switchTab('my')
+      }
+    }
+  }, [_c('text', {
+    class: ['bar-icon', 'iconfont', _vm.page == 'my' ? 'on' : '']
+  }, [_vm._v("")]), _c('text', {
+    class: ['bar-txt', _vm.page == 'my' ? 'on' : '']
+  }, [_vm._v("个人")]), _c('text', {
+    staticClass: ["i-notice"]
+  }, [_vm._v("2")])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["app-wrapper"]
+  }, [_c('router-view'), _c('tab-bar', {
+    on: {
+      "routeTo": _vm.routeTo
+    }
+  })], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  mounted: function mounted() {}
+};
 
 /***/ })
 /******/ ]);

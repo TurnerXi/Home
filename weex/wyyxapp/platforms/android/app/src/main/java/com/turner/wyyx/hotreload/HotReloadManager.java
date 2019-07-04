@@ -1,4 +1,4 @@
-package com.weex.app.hotreload;
+package com.turner.wyyx.hotreload;
 
 import android.text.TextUtils;
 

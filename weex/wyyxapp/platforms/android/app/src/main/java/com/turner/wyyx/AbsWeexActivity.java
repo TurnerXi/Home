@@ -201,7 +201,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.weex.app;
+package com.turner.wyyx;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -224,7 +224,7 @@ import com.taobao.weex.IWXRenderListener;
 import com.taobao.weex.WXSDKEngine;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.common.WXRenderStrategy;
-import com.weex.app.util.CommonUtils;
+import com.turner.wyyx.util.CommonUtils;
 
 import java.util.HashMap;
 import java.util.Map;

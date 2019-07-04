@@ -1,6 +1,6 @@
 {
-  "AppName":"WeexApp",
-  "AppId":"com.weex.app",
-  "SplashText":"Hello\nWeex",
+  "AppName":"严选",
+  "AppId":"com.turner.wyyx",
+  "SplashText":"",
   "WeexBundle":"index.js"
 }
