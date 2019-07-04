@@ -4,7 +4,6 @@
   <tab-bar @routeTo="routeTo" />
 </div>
 </template>
-
 <script>
 import tabBar from './assets/components/TabBar'
 const module = weex.requireModule('dom')
@@ -21,7 +20,7 @@ export default {
   beforeCreate() {
     module.addRule('fontFace', {
       'fontFamily': 'myico',
-      'src': "url('https://at.alicdn.com/t/font_1266237_1orvzrmxzqa.ttf')"
+      'src': "url('https://at.alicdn.com/t/font_1266237_lhiv1ounase.ttf')"
     })
   }
 }

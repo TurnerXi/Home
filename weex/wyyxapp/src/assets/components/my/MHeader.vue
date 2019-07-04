@@ -6,7 +6,7 @@
       <text class="user-name">Turner</text>
       <div class="title">
         <image class="title-icon" resize="cover" src="http://yanxuan.nosdn.127.net/3dc6e876620bb84a5dac3deb6ecd4916.png"></image>
-        <div class="title-icon iconfont vip-icon">&#xe6a3;</div>
+        <text class="title-icon iconfont vip-icon">&#xe6c6;</text>
         <text class="title-txt vip-txt">品质生活家</text>
       </div>
     </div>

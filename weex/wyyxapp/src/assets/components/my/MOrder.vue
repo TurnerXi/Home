@@ -6,24 +6,24 @@
   </div>
   <div class="list">
     <div class="list-item">
-      <div class="item-icon iconfont">&#xe673;</div>
-      <div class="item-name">待付款</div>
+      <text class="item-icon iconfont">&#xe673;</text>
+      <text class="item-name">待付款</text>
     </div>
     <div class="list-item">
-      <div class="item-icon iconfont">&#xe675;</div>
-      <div class="item-name">待发货</div>
+      <text class="item-icon iconfont">&#xe675;</text>
+      <text class="item-name">待发货</text>
     </div>
     <div class="list-item">
-      <div class="item-icon iconfont">&#xe671;</div>
-      <div class="item-name">已发货</div>
+      <text class="item-icon iconfont">&#xe671;</text>
+      <text class="item-name">已发货</text>
     </div>
     <div class="list-item">
-      <div class="item-icon iconfont">&#xe672;</div>
-      <div class="item-name">待评价</div>
+      <text class="item-icon iconfont">&#xe672;</text>
+      <text class="item-name">待评价</text>
     </div>
     <div class="list-item">
-      <div class="item-icon iconfont">&#xe6ac;</div>
-      <div class="item-name">退换/售后</div>
+      <text class="item-icon iconfont">&#xe6ac;</text>
+      <text class="item-name">退换/售后</text>
     </div>
   </div>
 </div>

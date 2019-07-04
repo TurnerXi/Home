@@ -6430,7 +6430,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _c('div', {
     staticClass: ["title-icon", "iconfont", "vip-icon"]
-  }, [_vm._v("")]), _c('text', {
+  }, [_vm._v("")]), _c('text', {
     staticClass: ["title-txt", "vip-txt"]
   }, [_vm._v("品质生活家")])])])]), _c('text', {
     staticClass: ["qrcode", "iconfont"]
@@ -6930,7 +6930,7 @@ exports.default = {
   beforeCreate: function beforeCreate() {
     _module.addRule('fontFace', {
       'fontFamily': 'myico',
-      'src': "url('https://at.alicdn.com/t/font_1266237_1orvzrmxzqa.ttf')"
+      'src': "url('https://at.alicdn.com/t/font_1266237_lhiv1ounase.ttf')"
     });
   }
 };

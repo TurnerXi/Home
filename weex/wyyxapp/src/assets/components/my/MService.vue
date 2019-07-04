@@ -5,7 +5,7 @@
   </div>
   <div :class="['service-list',g_idx!=services.length-1?'border':'']" v-for="(group,g_idx) in services" :key="g_idx">
     <div class="service-item" v-for="(item,idx) in group" :key="idx">
-      <text :class="['item-icon','iconfont',item.color]" v-html="item.icon"></text>
+      <text :class="['item-icon','iconfont',item.color]">{{item.icon}}</text>
       <text class="item-name">{{item.name}}</text>
     </div>
   </div>
@@ -18,22 +18,22 @@ export default {
     return {
       services: [
         [
-          { 'name': '拼团订单', 'icon': '&#xe619;', 'color': 'i-c-orange' },
-          { 'name': '邀请好友', 'icon': '&#xe600;', 'color': 'i-c-yellow' },
-          { 'name': '优惠券', 'icon': '&#xe609;', 'color': 'i-c-orange' },
-          { 'name': '优先购', 'icon': '&#xe7fb;', 'color': 'i-c-yellow' }
+          { 'name': '拼团订单', 'icon': '\ue619', 'color': 'i-c-orange' },
+          { 'name': '邀请好友', 'icon': '\ue600', 'color': 'i-c-yellow' },
+          { 'name': '优惠券', 'icon': '\ue609', 'color': 'i-c-orange' },
+          { 'name': '优先购', 'icon': '\ue7fb', 'color': 'i-c-yellow' }
         ],
         [
-          { 'name': '礼品卡', 'icon': '&#xe660;', 'color': 'i-c-orange' },
-          { 'name': '会员', 'icon': '&#xe701;', 'color': 'i-c-yellow' },
-          { 'name': '足迹', 'icon': '&#xe602;', 'color': 'i-c-orange' },
-          { 'name': '收藏', 'icon': '&#xe7f1;', 'color': 'i-c-yellow' }
+          { 'name': '礼品卡', 'icon': '\ue660', 'color': 'i-c-orange' },
+          { 'name': '会员', 'icon': '\ue701', 'color': 'i-c-yellow' },
+          { 'name': '足迹', 'icon': '\ue602', 'color': 'i-c-orange' },
+          { 'name': '收藏', 'icon': '\ue7f1', 'color': 'i-c-yellow' }
         ],
         [
-          { 'name': '地址', 'icon': '&#xe62c;', 'color': 'i-c-blue' },
-          { 'name': '客服', 'icon': '&#xe62d;', 'color': 'i-c-blue' },
-          { 'name': '帮助', 'icon': '&#xe6b5;', 'color': 'i-c-blue' },
-          { 'name': '设置', 'icon': '&#xe68a;', 'color': 'i-c-blue' }
+          { 'name': '地址', 'icon': '\ue62c', 'color': 'i-c-blue' },
+          { 'name': '客服', 'icon': '\ue62d', 'color': 'i-c-blue' },
+          { 'name': '帮助', 'icon': '\ue6b5', 'color': 'i-c-blue' },
+          { 'name': '设置', 'icon': '\ue68a', 'color': 'i-c-blue' }
         ]
       ]
     }
