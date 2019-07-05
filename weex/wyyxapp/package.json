@@ -21,7 +21,7 @@
     "debug": "weex debug src",
     "android": "weex run android",
     "pack:ios": "npm run clean:ios && weex build ios",
-    "pack:android": "npm run clean:android && weex build android",
+    "pack:android": "npm run clean:android && weexpack build android",
     "pack:web": "npm run clean:web && npm run build:prod:web"
   },
   "keywords": [

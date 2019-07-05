@@ -6428,7 +6428,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "resize": "cover",
       "src": "http://yanxuan.nosdn.127.net/3dc6e876620bb84a5dac3deb6ecd4916.png"
     }
-  }), _c('div', {
+  }), _c('text', {
     staticClass: ["title-icon", "iconfont", "vip-icon"]
   }, [_vm._v("")]), _c('text', {
     staticClass: ["title-txt", "vip-txt"]
@@ -6605,33 +6605,33 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["list"]
   }, [_c('div', {
     staticClass: ["list-item"]
-  }, [_c('div', {
+  }, [_c('text', {
     staticClass: ["item-icon", "iconfont"]
-  }, [_vm._v("")]), _c('div', {
+  }, [_vm._v("")]), _c('text', {
     staticClass: ["item-name"]
   }, [_vm._v("待付款")])]), _c('div', {
     staticClass: ["list-item"]
-  }, [_c('div', {
+  }, [_c('text', {
     staticClass: ["item-icon", "iconfont"]
-  }, [_vm._v("")]), _c('div', {
+  }, [_vm._v("")]), _c('text', {
     staticClass: ["item-name"]
   }, [_vm._v("待发货")])]), _c('div', {
     staticClass: ["list-item"]
-  }, [_c('div', {
+  }, [_c('text', {
     staticClass: ["item-icon", "iconfont"]
-  }, [_vm._v("")]), _c('div', {
+  }, [_vm._v("")]), _c('text', {
     staticClass: ["item-name"]
   }, [_vm._v("已发货")])]), _c('div', {
     staticClass: ["list-item"]
-  }, [_c('div', {
+  }, [_c('text', {
     staticClass: ["item-icon", "iconfont"]
-  }, [_vm._v("")]), _c('div', {
+  }, [_vm._v("")]), _c('text', {
     staticClass: ["item-name"]
   }, [_vm._v("待评价")])]), _c('div', {
     staticClass: ["list-item"]
-  }, [_c('div', {
+  }, [_c('text', {
     staticClass: ["item-icon", "iconfont"]
-  }, [_vm._v("")]), _c('div', {
+  }, [_vm._v("")]), _c('text', {
     staticClass: ["item-name"]
   }, [_vm._v("退换/售后")])])])])
 }]}
@@ -6779,7 +6779,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   data: function data() {
     return {
-      services: [[{ 'name': '拼团订单', 'icon': '&#xe619;', 'color': 'i-c-orange' }, { 'name': '邀请好友', 'icon': '&#xe600;', 'color': 'i-c-yellow' }, { 'name': '优惠券', 'icon': '&#xe609;', 'color': 'i-c-orange' }, { 'name': '优先购', 'icon': '&#xe7fb;', 'color': 'i-c-yellow' }], [{ 'name': '礼品卡', 'icon': '&#xe660;', 'color': 'i-c-orange' }, { 'name': '会员', 'icon': '&#xe701;', 'color': 'i-c-yellow' }, { 'name': '足迹', 'icon': '&#xe602;', 'color': 'i-c-orange' }, { 'name': '收藏', 'icon': '&#xe7f1;', 'color': 'i-c-yellow' }], [{ 'name': '地址', 'icon': '&#xe62c;', 'color': 'i-c-blue' }, { 'name': '客服', 'icon': '&#xe62d;', 'color': 'i-c-blue' }, { 'name': '帮助', 'icon': '&#xe6b5;', 'color': 'i-c-blue' }, { 'name': '设置', 'icon': '&#xe68a;', 'color': 'i-c-blue' }]]
+      services: [[{ 'name': '拼团订单', 'icon': '\uE619', 'color': 'i-c-orange' }, { 'name': '邀请好友', 'icon': '\uE600', 'color': 'i-c-yellow' }, { 'name': '优惠券', 'icon': '\uE609', 'color': 'i-c-orange' }, { 'name': '优先购', 'icon': '\uE7FB', 'color': 'i-c-yellow' }], [{ 'name': '礼品卡', 'icon': '\uE660', 'color': 'i-c-orange' }, { 'name': '会员', 'icon': '\uE701', 'color': 'i-c-yellow' }, { 'name': '足迹', 'icon': '\uE602', 'color': 'i-c-orange' }, { 'name': '收藏', 'icon': '\uE7F1', 'color': 'i-c-yellow' }], [{ 'name': '地址', 'icon': '\uE62C', 'color': 'i-c-blue' }, { 'name': '客服', 'icon': '\uE62D', 'color': 'i-c-blue' }, { 'name': '帮助', 'icon': '\uE6B5', 'color': 'i-c-blue' }, { 'name': '设置', 'icon': '\uE68A', 'color': 'i-c-blue' }]]
     };
   }
 };
@@ -6800,14 +6800,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         key: idx,
         staticClass: ["service-item"]
       }, [_c('text', {
-        directives: [{
-          name: "html",
-          rawName: "v-html",
-          value: (item.icon),
-          expression: "item.icon"
-        }],
         class: ['item-icon', 'iconfont', item.color]
-      }), _c('text', {
+      }, [_vm._v(_vm._s(item.icon))]), _c('text', {
         staticClass: ["item-name"]
       }, [_vm._v(_vm._s(item.name))])])
     }))
@@ -6910,7 +6904,6 @@ var _TabBar2 = _interopRequireDefault(_TabBar);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _module = weex.requireModule('dom'); //
-//
 //
 //
 //
