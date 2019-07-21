@@ -6,7 +6,6 @@ export default class Tux {
     this.root = new TuxVNode(this.ctx, 'template');
     this.container = container;
   }
-
   createElement(tag, parent, nextSibling) {
     if (parent instanceof HTMLElement) {
       let pid = parent.getAttribute('tuxid');
@@ -29,20 +28,17 @@ export default class Tux {
         pNode.child.push(vnode);
       }
     }
-    console.log(this.root);
   }
-
   render() {
     let vnode = this.createRealElement(this.root);
+    console.log(vnode);
     this.container.appendChild(this.ctx.__patch__(this.container.firstChild, vnode, true, true));
   }
-
   createRealElement(tuxvnode) {
     if (!tuxvnode) {
       return;
     }
     if (tuxvnode.child.length === 0) {
-      console.log(components[tuxvnode.tag].render);
       return this.ctx.$createElement(components[tuxvnode.tag] || tuxvnode.tag, { attrs: { tuxid: tuxvnode.tuxid } });
     }
     let children = [];
@@ -50,10 +46,8 @@ export default class Tux {
       let child = tuxvnode.child[i];
       children.push(this.createRealElement(child));
     }
-
     return this.ctx.$createElement(components[tuxvnode.tag] || tuxvnode.tag, { attrs: { tuxid: tuxvnode.tuxid } }, children);
   }
-
   findNode(node, pid) {
     pid = Number(pid);
     if (isNaN(pid)) {
@@ -62,7 +56,6 @@ export default class Tux {
     if (node.tuxid === pid) {
       return node;
     }
-
     for (let i = 0; i < node.child.length; i++) {
       let child = this.findNode(node.child[i], pid);
       if (child) {

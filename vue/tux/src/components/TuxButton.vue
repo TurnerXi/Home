@@ -1,6 +1,5 @@
 <template lang="html">
-  <div class="tux-button"><div class="dropzone"><slot>
-  </slot></div></div>
+  <div class="tux-button"><div class="dropzone"><slot> </slot></div></div>
 </template>
 
 <script>

@@ -6,7 +6,7 @@
         <th class="dropzone">title 2</th>
         <th class="dropzone">title 3</th>
         <th class="dropzone">title 4</th>
-        <th class="dropzone">title 5</th>
+        <th class="dropzone"><TuxButton></TuxButton></th>
       </tr>
     </thead>
     <tbody>
@@ -57,7 +57,12 @@
 </template>
 
 <script>
-export default {}
+import TuxButton from './TuxButton'
+export default {
+  components: {
+    TuxButton
+  }
+}
 </script>
 
 <style lang="css" scoped>
