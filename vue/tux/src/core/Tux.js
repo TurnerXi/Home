@@ -10,6 +10,10 @@ export default class Tux {
   createElement(tag, parent, nextSibling) {
     if (parent instanceof HTMLElement) {
       let pid = parent.getAttribute('tuxid');
+      while (!pid && parent !== this.container) {
+        parent = parent.parentNode;
+        pid = parent.getAttribute('tuxid');
+      }
       let pNode = pid ? this.findNode(this.root, pid) : this.root;
       if (!pNode) return;
       let sibling;
@@ -25,36 +29,42 @@ export default class Tux {
         pNode.child.push(vnode);
       }
     }
+    console.log(this.root);
   }
+
+  render() {
+    let vnode = this.createRealElement(this.root);
+    this.container.appendChild(this.ctx.__patch__(this.container.firstChild, vnode, true, true));
+  }
+
   createRealElement(tuxvnode) {
     if (!tuxvnode) {
       return;
     }
     if (tuxvnode.child.length === 0) {
-      return this.ctx.$createElement(components[tuxvnode.tag] || tuxvnode.tag);
+      console.log(components[tuxvnode.tag].render);
+      return this.ctx.$createElement(components[tuxvnode.tag] || tuxvnode.tag, { attrs: { tuxid: tuxvnode.tuxid } });
     }
     let children = [];
     for (let i = 0; i < tuxvnode.child.length; i++) {
       let child = tuxvnode.child[i];
       children.push(this.createRealElement(child));
     }
-    return this.ctx.$createElement(components[tuxvnode.tag] || tuxvnode.tag, {}, children);
-  }
-  render() {
-    let vnode = this.createRealElement(this.root);
-    this.container.appendChild(this.ctx.__patch__(this.container.firstChild, vnode, true, true));
+
+    return this.ctx.$createElement(components[tuxvnode.tag] || tuxvnode.tag, { attrs: { tuxid: tuxvnode.tuxid } }, children);
   }
 
   findNode(node, pid) {
+    pid = Number(pid);
     if (isNaN(pid)) {
       return;
     }
-    if (node.tuxid === Number(pid)) {
+    if (node.tuxid === pid) {
       return node;
     }
 
-    for (let i = 0; i < node.child.lenght; i++) {
-      let child = this.findNode(node.child[i]);
+    for (let i = 0; i < node.child.length; i++) {
+      let child = this.findNode(node.child[i], pid);
       if (child) {
         return child;
       }

@@ -3,6 +3,11 @@
   <div class="list-wrapper">
     <div draggable data-name="TuxButton"> TuxButton</div>
     <div draggable data-name="TuxTable">TuxTable</div>
+    <tux-button>
+      <div>
+        btn
+      </div>
+    </tux-button>
   </div>
   <div class="design-wrapper dropzone" ref="container" @dragenter.prevent="dragEnterEvent" @dragover.prevent @dragleave="dragLeaveEvent" @drop="dropEvent">
   </div>
@@ -10,9 +15,13 @@
 </template>
 
 <script>
+import TuxButton from './components/TuxButton.vue'
 import Tux from './core/Tux'
 export default {
   name: 'app',
+  components: {
+    TuxButton
+  },
   data() {
     return {
       tux: null
@@ -36,12 +45,14 @@ export default {
         event.target.style.backgroundColor = '';
         event.target.style.opacity = '1';
         let compname = event.dataTransfer.getData('name');
+        console.log(compname);
         this.tux.createElement(compname, event.target, event.target.nextSibling);
         this.tux.render();
       }
     }
   },
   mounted() {
+    console.log(this);
     this.tux = new Tux(this, this.$refs.container);
     document.addEventListener('dragstart', (event) => {
       event.dataTransfer.setData('name', event.target.getAttribute('data-name'));
