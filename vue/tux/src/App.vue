@@ -3,16 +3,8 @@
   <div class="list-wrapper">
     <div draggable data-name="TuxButton"> TuxButton</div>
     <div draggable data-name="TuxTable">TuxTable</div>
-    <tux-button>
-      <template>
-        btn
-      </template>
-    </tux-button>
-    <tux-table>
-      <template>
-        btn
-      </template>
-    </tux-table>
+    <tux-button></tux-button>
+    <tux-table></tux-table>
   </div>
   <div class="design-wrapper dropzone" ref="container" @dragenter.prevent="dragEnterEvent" @dragover.prevent @dragleave="dragLeaveEvent" @drop="dropEvent">
   </div>
@@ -58,45 +50,28 @@ export default {
     }
   },
   mounted() {
-    decompile(this);
+    // let parentDom = decompile(this);
+    // console.log(parentDom);
     this.tux = new Tux(this, this.$refs.container);
     document.addEventListener('dragstart', (event) => {
       event.dataTransfer.setData('name', event.target.getAttribute('data-name'));
     }, false);
   }
 }
-
-function decompile(componentInstance) {
-  let vnode = componentInstance._vnode;
-  resolveVNode(vnode);
-}
-
-function resolveVNode(vnode) {
-  if (!vnode) return;
-  console.log(vnode.tag);
-  if (vnode.children) {
-    for (let i = 0; i < vnode.children.length; i++) {
-      resolveVNode(vnode.children[i]);
-    }
-  } else if (vnode.componentInstance) {
-    console.log(vnode.componentInstance)
-    // decompile(vnode.componentInstance);
-  }
-}
 </script>
 
 <style scoped>
 template {
-  display: block;
+    display: block;
 }
 
 .list-wrapper>*:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .design-wrapper {
-  width: 100%;
-  height: 800px;
-  padding: 10px;
+    width: 100%;
+    height: 800px;
+    padding: 10px;
 }
 </style>

@@ -1,29 +1,13 @@
 <template lang="html">
-  <div class="tux-button"><div class="dropzone"><slot> </slot></div></div>
+   <el-button>
+     <template v-slot:default>默认按钮</template>
+   </el-button>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      button: 'button'
-    }
+  mounted() {
+    this._isTux = true;
   }
-
 }
 </script>
-
-<style lang="css" scoped>
-.tux-button{
-  width: 120px;
-  height: 50px;
-  line-height: 50px;
-  border: 1px solid #666;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.dropzone{
-  height: 100%;
-}
-</style>
