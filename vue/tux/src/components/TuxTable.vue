@@ -3,6 +3,11 @@
   <el-table-column prop="date" label="日期" width="180"> </el-table-column>
   <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
   <el-table-column prop="address" label="地址"> </el-table-column>
+  <el-table-column label="操作">
+    <dropzone>
+
+    </dropzone>
+  </el-table-column>
 </el-table>
 </template>
 
@@ -39,9 +44,6 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
-.dropzone{
-  min-width: 20px;
-  min-height: 10px;
-}
+<style lang="css">
+
 </style>

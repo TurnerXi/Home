@@ -1,10 +1,12 @@
 import components from '../components'
+import CodeGenerator from './CodeGenerator'
 import TuxVNode from './TuxVNode'
 export default class Tux {
   constructor(context, container) {
     this.ctx = context;
     this.root = new TuxVNode('template');
     this.container = container;
+    this.codes = '';
   }
   createElement(tag, parent, nextSibling) {
     if (parent instanceof HTMLElement) {
@@ -24,22 +26,25 @@ export default class Tux {
       if (components[tag]) {
         let vnode = this.ctx.$createElement(components[tag]);
         vnode.data.hook.init(vnode, true);
-        tuxVNode = this.decompile(vnode.componentInstance);
+        let parent = this.decompile(vnode.componentInstance);
+        tuxVNode = parent.child;
       } else {
-        tuxVNode = new TuxVNode(tag);
+        tuxVNode = [new TuxVNode(tag)];
       }
 
       let idx = (sibling && pNode.child.indexOf(sibling)) || -1;
       if (idx > -1) {
-        pNode.child.splice(idx, 0, tuxVNode);
+        pNode.child.splice(idx, 0, ...tuxVNode);
       } else {
-        pNode.child.push(tuxVNode);
+        pNode.child.push(...tuxVNode);
       }
     }
   }
   render() {
     let vnode = this.createVNodes(this.root);
-    this.container.appendChild(this.ctx.__patch__(this.container.firstChild, vnode, true, true));
+    console.log(vnode);
+    this.container.innerHTML = '';
+    this.container.appendChild(this.ctx.__patch__(null, vnode, true, false));
   }
   createVNodes(tuxvnode) {
     if (!tuxvnode) {
@@ -73,7 +78,6 @@ export default class Tux {
   decompile(componentInstance, parent) {
     if (!parent) { parent = new TuxVNode('template'); }
     let vnode = componentInstance._vnode;
-    console.log(componentInstance);
     this.resolveVNode(vnode, parent);
     return parent;
   }
@@ -118,6 +122,12 @@ export default class Tux {
         this.resolveVNode(slots[key][i], temp);
       }
     }
+  }
+  genCode() {
+    let gen = new CodeGenerator(this.root);
+    gen.start();
+    this.codes = gen.codes;
+    return this.codes;
   }
 }
 
