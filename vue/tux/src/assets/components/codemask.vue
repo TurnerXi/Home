@@ -35,6 +35,7 @@ export default {
     left: 0;
     border-radius: 10px;
     opacity: .8;
+    z-index: 99;
 }
 
 .mask-closer {

@@ -1,5 +1,5 @@
 <template lang="html">
-  <layout @gencode="isShowCodes=true">
+  <layout @gencode="genCode">
       <dropzone ref="container" @dragenter.prevent="dragEnterEvent" @dragover.prevent @dragleave="dragLeaveEvent" @drop="dropEvent">
       </dropzone>
       <props :vnode="choosedVnode" @change="tux.render()"></props>
@@ -48,6 +48,10 @@ export default {
         this.tux.createElement(compname, event.target, event.target.nextSibling);
         this.tux.render();
       }
+    },
+    genCode() {
+      this.tux.genCode();
+      this.isShowCodes = true;
     }
   },
   mounted() {

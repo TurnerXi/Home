@@ -3,7 +3,7 @@
   <div class="prop-wrapper" v-show="vnode">
     <section class="prop-header">props</section>
     <section class="prop-content">
-      <div class="prop-cell" v-for="(item,key) in prop">
+      <div class="prop-cell" v-for="(item,key) in prop" :key="key">
         <div class="label">{{key}}</div>
         <template v-if="item.type && item.type.name === 'Boolean'">
           <input type="checkbox" value="true" v-model="item.value" @change="onChangeEvent(key)" />
@@ -29,10 +29,11 @@ export default {
     return {}
   },
   computed: {
-    prop: function () {
+    prop() {
       if (this.vnode) {
         return this.mergeProps(this.vnode.vnode.componentOptions.Ctor.options.props, this.vnode.data.attrs || {});
       }
+      return {};
     }
   },
   methods: {

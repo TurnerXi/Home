@@ -10,7 +10,8 @@ export default class CodeGenerator {
     this.stack.push(this.parse(this.root, true));
     this.next(this.root);
     this.stack.push(this.parse(this.root, false));
-    this.genCodes();
+    this.joinCode();
+    return this.codes;
   }
   next(node) {
     for (const child of node.child) {
@@ -66,7 +67,7 @@ export default class CodeGenerator {
     }
     return str;
   }
-  genCodes() {
+  joinCode() {
     this.codes = '';
     let code;
     while (this.stack.length) {

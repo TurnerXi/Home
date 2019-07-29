@@ -1,9 +1,8 @@
 import Packages from '../packages'
 import CodeGenerator from './CodeGenerator'
 import { decompile } from './decompiler'
-import TuxVNode, { createTextVNode, flatternNodes } from './TuxVNode'
+import TuxVNode, { flatternNodes } from './TuxVNode'
 import JsBeautify from 'js-beautify'
-import { clone } from '../utils/object'
 export default class Tux {
   constructor(context, container) {
     this.ctx = context;
@@ -11,6 +10,7 @@ export default class Tux {
     this.container = container;
     this.codes = '';
     this.nodes = {};
+    this.generator = new CodeGenerator(this.root);
   }
   createElement(tag, parent, nextSibling) {
     if (parent instanceof HTMLElement) {
@@ -49,11 +49,8 @@ export default class Tux {
     let vnode = this.root.createVNodes(this.ctx);
     this.container.innerHTML = '';
     this.container.appendChild(this.ctx.__patch__(null, vnode, true, false));
-    this.genCode();
   }
   genCode() {
-    let gen = new CodeGenerator(this.root);
-    gen.start();
-    this.codes = JsBeautify.html(gen.codes);
+    this.codes = JsBeautify.html(this.generator.start());
   }
 }
