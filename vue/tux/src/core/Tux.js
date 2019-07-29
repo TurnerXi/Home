@@ -1,12 +1,16 @@
-import components from '../components'
+import Packages from '../packages'
 import CodeGenerator from './CodeGenerator'
-import TuxVNode from './TuxVNode'
+import { decompile } from './decompiler'
+import TuxVNode, { createTextVNode, flatternNodes } from './TuxVNode'
+import JsBeautify from 'js-beautify'
+import { clone } from '../utils/object'
 export default class Tux {
   constructor(context, container) {
     this.ctx = context;
     this.root = new TuxVNode('template');
     this.container = container;
     this.codes = '';
+    this.nodes = {};
   }
   createElement(tag, parent, nextSibling) {
     if (parent instanceof HTMLElement) {
@@ -15,18 +19,18 @@ export default class Tux {
         parent = parent.parentNode;
         pid = parent.getAttribute('tuxid');
       }
-      let pNode = pid ? this.findNode(this.root, pid) : this.root;
+      let pNode = this.nodes[pid] || this.root;
       if (!pNode) return;
       let sibling;
-      if (nextSibling) {
+      if (nextSibling && nextSibling.getAttribute) {
         let sid = nextSibling.getAttribute('tuxid');
-        sibling = this.findNode(pNode, sid);
+        sibling = this.nodes[sid];
       }
       let tuxVNode;
-      if (components[tag]) {
-        let vnode = this.ctx.$createElement(components[tag]);
+      if (Packages[tag]) {
+        let vnode = this.ctx.$createElement(Packages[tag]);
         vnode.data.hook.init(vnode, true);
-        let parent = this.decompile(vnode.componentInstance);
+        let parent = decompile(vnode.componentInstance);
         tuxVNode = parent.child;
       } else {
         tuxVNode = [new TuxVNode(tag)];
@@ -38,122 +42,18 @@ export default class Tux {
       } else {
         pNode.child.push(...tuxVNode);
       }
+      this.nodes = flatternNodes(this.root, {});
     }
   }
   render() {
-    let vnode = this.createVNodes(this.root);
-    console.log(vnode);
+    let vnode = this.root.createVNodes(this.ctx);
     this.container.innerHTML = '';
     this.container.appendChild(this.ctx.__patch__(null, vnode, true, false));
-  }
-  createVNodes(tuxvnode) {
-    if (!tuxvnode) {
-      return;
-    }
-    if (tuxvnode.text) {
-      return createTextVNode(tuxvnode.text);
-    }
-    let children = [];
-    for (let i = 0; i < tuxvnode.child.length; i++) {
-      let child = tuxvnode.child[i];
-      children.push(this.createVNodes(child));
-    }
-    return this.ctx.$createElement(components[tuxvnode.tag] || tuxvnode.tag, clone(tuxvnode.data), children);
-  }
-  findNode(node, pid) {
-    pid = Number(pid);
-    if (isNaN(pid)) {
-      return;
-    }
-    if (node.tuxid === pid) {
-      return node;
-    }
-    for (let i = 0; i < node.child.length; i++) {
-      let child = this.findNode(node.child[i], pid);
-      if (child) {
-        return child;
-      }
-    }
-  }
-  decompile(componentInstance, parent) {
-    if (!parent) { parent = new TuxVNode('template'); }
-    let vnode = componentInstance._vnode;
-    this.resolveVNode(vnode, parent);
-    return parent;
-  }
-  resolveVNode(vnode, parent) {
-    if (!vnode) return;
-    let cIns = vnode.componentInstance;
-    if (cIns && cIns._isTux) {
-      this.decompile(vnode.componentInstance, parent);
-      return;
-    }
-    if (vnode.tag) {
-      let tuxVNode = new TuxVNode(vnode.tag.replace(/vue-component-\d+-/g, ''), vnode.data);
-      parent.child.push(tuxVNode);
-      if (vnode.children) {
-        for (let i = 0; i < vnode.children.length; i++) {
-          this.resolveVNode(vnode.children[i], tuxVNode);
-        }
-      }
-      if (cIns) {
-        Object.assign(tuxVNode.data, { attrs: vnode.componentOptions.propsData });
-        if (cIns.$slots) {
-          this.resolveSlots(tuxVNode, cIns.$slots);
-        }
-      }
-    }
-    if (vnode.text) {
-      parent.child.push(createTextVNode(vnode.text));
-    }
-  }
-  resolveSlots(parent, slots) {
-    for (let key in slots) {
-      let temp = parent;
-      if (key !== 'default') {
-        temp = new TuxVNode('template', {
-          attrs: {
-            [`v-slot:${key}`]: undefined
-          }
-        });
-        parent.child.push(temp);
-      }
-      for (let i = 0; i < slots[key].length; i++) {
-        this.resolveVNode(slots[key][i], temp);
-      }
-    }
+    this.genCode();
   }
   genCode() {
     let gen = new CodeGenerator(this.root);
     gen.start();
-    this.codes = gen.codes;
-    return this.codes;
-  }
-}
-
-function createTextVNode(val) {
-  return new TuxVNode(undefined, undefined, undefined, String(val));
-}
-
-function clone(object) {
-  if (object === null || object === undefined) {
-    return object;
-  }
-  if (typeof (object) === 'object') {
-    if (object instanceof Array) {
-      let newArr = [];
-      for (let i = 0; i < object.length; i++) {
-        newArr[i] = clone(object[i]);
-      }
-      return newArr;
-    } else {
-      let newObj = {};
-      for (let key in object) {
-        newObj[key] = clone(object[key]);
-      }
-      return newObj;
-    }
-  } else {
-    return object;
+    this.codes = JsBeautify.html(gen.codes);
   }
 }

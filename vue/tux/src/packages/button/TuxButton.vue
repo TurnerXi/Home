@@ -1,7 +1,5 @@
 <template lang="html">
-   <el-button>
-     <template v-slot:default>默认按钮</template>
-   </el-button>
+   <el-button>默认按钮</el-button>
 </template>
 
 <script>
