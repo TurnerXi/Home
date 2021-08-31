@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      #trump {
+        position: absolute;
+        left: 50vw;
+        top: 50vh;
+        transform: translate(-50%, -50%);
+        width: 120px;
+        height: 120px;
+        background-image: url(./trump_run.png);
+        background-position: 2.5% 0%;
+        background-size: 600% 400%;
+        animation-duration: 0.5s;
+        animation-name: trump_run_bottom;
+        animation-timing-function: steps(5);
+        animation-iteration-count: infinite;
+        background-repeat: no-repeat;
+        background-color: #222222;
+      }
+
+      #trump[data-dir='bottom'] {
+        animation-name: trump_run_bottom;
+      }
+      #trump[data-dir='right'] {
+        animation-name: trump_run_right;
+      }
+      #trump[data-dir='top'] {
+        animation-name: trump_run_top;
+      }
+      #trump[data-dir='left'] {
+        animation-name: trump_run_left;
+      }
+
+      @keyframes trump_run_bottom {
+        0% {
+          background-position: 2.5% 0%;
+        }
+        100% {
+          background-position: 97.5% 0%;
+        }
+      }
+      @keyframes trump_run_right {
+        0% {
+          background-position: 5% 35%;
+        }
+        100% {
+          background-position: 97.5% 35%;
+        }
+      }
+      @keyframes trump_run_top {
+        0% {
+          background-position: 2.5% 70%;
+        }
+        100% {
+          background-position: 97.5% 70%;
+        }
+      }
+      @keyframes trump_run_left {
+        0% {
+          background-position: 0% 104%;
+        }
+        100% {
+          background-position: 95% 104%;
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener('keyup', (event) => {
+        const trump = document.getElementById('trump')
+        if (event.keyCode === 37) {
+          // left
+          trump.dataset.dir = 'left'
+        } else if (event.keyCode === 38) {
+          // top
+          trump.dataset.dir = 'top'
+        } else if (event.keyCode === 39) {
+          // right
+          trump.dataset.dir = 'right'
+        } else if (event.keyCode === 40) {
+          // bottom
+          trump.dataset.dir = 'bottom'
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <div id="trump"></div>
+  </body>
+</html>
